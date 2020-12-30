@@ -1,0 +1,171 @@
+.actions-section {
+  overflow: hidden;
+  &__main {
+    padding-top: 88px;
+    padding-bottom: 120px;
+    @media screen and (min-width: $lg-width) {
+      padding-top: 170px;
+      padding-bottom: 280px;
+    }
+  }
+  &__left{
+    margin-bottom: 70px;
+    @media screen and (min-width: $lg-width){
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    @media screen and (min-width: $md-width) {
+      max-width: 537px;
+    }
+
+    p {
+      @media screen and (min-width: $lg-width){
+        padding-right: 172px;
+      }
+    }
+  }
+
+  &__more {
+    margin-top: 70px;
+    &.desktop {
+      display: none;
+      @media screen and (min-width: $lg-width) {
+        display: inline-block;
+      }
+      margin-top: 70px;
+    }
+    &.mobile{
+      @media screen and (min-width: $lg-width){
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+    &::before,&::after{
+      position: absolute;
+      display: block;
+      @media screen and (min-width: $md-width){
+        content: '';
+      }
+    }
+    &::before{
+      left: -240px;
+      bottom: -26px;
+      width: 240px;
+      height: 805px;
+      background: url("../img/dest/actions/ship.svg") center / contain no-repeat;
+      z-index: -1;
+    }
+    &::after{
+      top: -44px;
+      right: -47px;
+      width: 93px;
+      height: 93px;
+      background: url("../img/dest/ui/balls.svg");
+      z-index: -1;
+    }
+    ul {
+      li {
+        width: 100%;
+        height: 290px;
+        overflow: hidden;
+        border: 1px solid #EBEBF0;
+        border-top: none;
+        &:not(:last-child){
+          margin-bottom: 20px;
+          @media screen and (min-width: $md-width){
+            margin-bottom: 0;
+
+          }
+        }
+
+        &:first-child{
+          border-top: 1px solid #EBEBF0;
+        }
+        @media screen and (min-width: $lg-width) {
+          height: 290px;
+        }
+
+        a {
+          display: block;
+          position: relative;
+          height: 100%;
+          color: $main-color;
+
+          &.hover {
+            color: white;
+            .actions-section__list-number{
+              color: white;
+            }
+
+            p {
+              &::after{
+                background: white;
+              }
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+          }
+
+          p {
+            position: absolute;
+            left: 52px;
+            right: 52px;
+            bottom: 60px;
+            margin: 0;
+            padding-left: 8px;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 110%;
+            text-transform: uppercase;
+            @media screen and (min-width: $md-width){
+              right: 76px;
+            }
+
+            &::before {
+              position: absolute;
+              top: 50%;
+              left: -66px;
+              display: block;
+              content: '';
+              width: 127px;
+              height: 127px;
+              background-image: url("../img/dest/ui/skew-lines_white.svg");
+              background-size: contain;
+              transform: translateY(-50%);
+            }
+            &::after{
+              position: absolute;
+              display: block;
+              content: '';
+              width: 3px;
+              left: -3px;
+              top: 4px;
+              bottom: 4px;
+              background: $accent-color;
+            }
+          }
+        }
+      }
+    }
+    &-number{
+      position: absolute;
+      left: -30px;
+      top: 4px;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: $main-color-light;
+    }
+  }
+}

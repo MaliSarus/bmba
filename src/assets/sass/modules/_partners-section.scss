@@ -1,0 +1,42 @@
+.partners-section {
+  overflow: hidden;
+  padding-top: (297px - 125px);
+  padding-bottom: 275px;
+
+  &__main {
+    position: relative;
+    .block-title{
+      margin-bottom: 9px;
+      @media screen and (min-width: $xl-width){
+        margin-bottom: 12px;
+      }
+    }
+  }
+  &__title{
+    margin-bottom: 30px;
+    @media screen and (min-width: $xl-width){
+      margin-bottom: 0;
+    }
+  }
+
+  &__slider {
+    @media screen and (min-width: $xl-width) {
+      margin-right: -25%;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .swiper-slide {
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: scale-down;
+      }
+    }
+  }
+}

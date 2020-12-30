@@ -1,0 +1,178 @@
+.history-section {
+
+  &__main {
+    position: relative;
+    padding-top: 307px;
+    padding-bottom: 133px;
+    background-image: url("../img/dest/history/ship.svg");
+    background-position: calc(100% - 189px) 185px;
+    background-repeat: no-repeat;
+  }
+
+  &__slider-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 65px;
+  }
+
+  &__slider-thumb {
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: auto;
+      padding: 102px;
+      border-radius: 100%;
+      background: transparent;
+      transition: background .2s;
+
+      .round {
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background: url("../img/dest/ui/history-round.svg") no-repeat center;
+        transition: background .25s;
+
+        &::before, &::after {
+          position: absolute;
+          display: block;
+          content: '';
+          width: 100px;
+          border-top: 1px dashed #CBCBD7;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: -1;
+        }
+
+        &::before {
+          left: 1px;
+        }
+
+        &::after {
+          right: 1px;
+        }
+
+        &:hover {
+          background: url("../img/dest/ui/history-round_hover.svg") no-repeat center;
+
+        }
+      }
+
+      .year {
+        position: absolute;
+        left: 50%;
+        bottom: 64px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
+        color: $main-color-light;
+        transform: translateX(-50%);
+        transition: color .15s, font-size .15s, font-weight .15s;
+      }
+
+      &-active {
+        background-image: url("../img/dest/history/active-round.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        .round {
+          width: 34px;
+          height: 34px;
+          background: url("../img/dest/ui/history-round_active.svg") no-repeat center;
+        }
+
+        .year {
+          font-weight: 600;
+          font-size: 16px;
+          color: $main-color;
+          line-height: 70%;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    bottom: 0px;
+    left: 93px;
+    width: 528px;
+    z-index: $z-medium;
+
+  }
+
+  &__slide {
+    padding-left: 35px;
+
+    .slide {
+
+      display: flex;
+      justify-content: flex-end;
+
+      &__year {
+        position: absolute;
+        top: 99px;
+        left: -35px;
+        padding: 21px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        text-align: center;
+        color: $main-color;
+        word-break: break-word;
+        background: #FFFFFF;
+        box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
+        width: 69px;
+        height: 69px;
+      }
+
+      &__block {
+        position: relative;
+        padding: 104px 55px 104px 70px;
+        width: calc(100% - 35px);
+        min-height: 493px;
+        background-image: url("../img/dest/history/1.jpg");
+        background-position: center;
+        background-size: cover;
+        color: white;
+
+        > :last-child {
+          margin-bottom: 0;
+        }
+
+        > :first-child {
+          margin-top: 0;
+        }
+
+        h3 {
+          font-size: 28px;
+          line-height: 110%;
+          text-transform: uppercase;
+        }
+
+        ul {
+          padding-left: 15px;
+          margin: 30px 0;
+
+          li {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 160%;
+
+            &:not(:last-child) {
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

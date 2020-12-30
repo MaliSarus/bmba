@@ -1,0 +1,67 @@
+.link {
+  position: relative;
+  display: inline-block;
+  padding: 26px 102px 26px 0;
+  color: $accent-color;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 115%;
+  text-transform: uppercase;
+  text-decoration: none;
+  &::before,&::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 73px;
+    content: '';
+  }
+  &::after{
+    background: url("../img/dest/ui/link-circle.svg") center / contain no-repeat;
+    transform: rotate(-180deg);
+    transition: transform .5s, background .5s;
+  }
+  &::before{
+    background-position: center calc(50%);
+    background-size: 19px 16px;
+    background-repeat: no-repeat;
+    background-image: url("../img/dest/ui/link-arrow.svg");
+  }
+  &:hover{
+    &::after{
+      background-image: url("../img/dest/ui/link-circle_hover.svg");
+      transform: rotate(0deg);
+    }
+  }
+  &_play{
+    cursor: pointer;
+    color: white;
+    &::before{
+      background-image: url("../img/dest/ui/play.svg");
+      background-size: 16px 16px;
+      background-position: calc(50% + 3px) center;
+    }
+    &::after{
+      background-image: url("../img/dest/ui/link-circle_white.svg");
+      transform: none;
+    }
+
+    &:hover{
+      &::after{
+        background-image: url("../img/dest/ui/link-circle_white.svg");
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.lines-background{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+

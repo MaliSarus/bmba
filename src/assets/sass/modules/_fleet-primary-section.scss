@@ -1,0 +1,48 @@
+.fleet-primary-section{
+  &__main{
+    @media screen and (min-width: $lg-width){
+      padding-top: 303px;
+      padding-bottom: 312px;
+    }
+  }
+  &__info{
+    h2{
+      @media screen and (min-width: $md-width){
+        margin-bottom: 70px;
+      }
+    }
+  }
+}
+
+.fleet-specs{
+  ul{
+    li{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      color: #9EBDB3;
+      @media screen and (min-width: $lg-width){
+        margin-bottom: 50px;
+      }
+      p{
+        color: $main-color;
+      }
+    }
+  }
+  &__value{
+
+    @media screen and (min-width: $lg-width){
+      margin-top: 10px;
+    }
+  }
+  &__num{
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 110%;
+  }
+  &__measure{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 110%;
+  }
+}

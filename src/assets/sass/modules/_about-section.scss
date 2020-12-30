@@ -1,0 +1,76 @@
+.about-section{
+  position: relative;
+  &__main{
+    padding-top: 120px;
+    padding-bottom: 45px;
+    @media screen and (min-width: $lg-width){
+      padding-top: 300px;
+      padding-bottom: 200px;
+    }
+  }
+  &__left{
+    @media screen and (min-width: $lg-width){
+      padding-right: 100px;
+    }
+    @media screen and (min-width: $xxl-width){
+      padding-right: 128px;
+    }
+    .list{
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        margin: -30px -20px;
+        @media screen and (min-width: $lg-width){
+          margin: (-75px / 2) -20px;
+        }
+        li{
+          flex-basis: 50%;
+          padding: 30px 20px;
+          @media screen and (min-width: $lg-width){
+            padding: (75px / 2) 20px;
+          }
+
+
+          .text {
+            > :first-child {
+              margin-top: 0;
+            }
+
+            > :last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__right{
+    margin-bottom: 60px;
+    @media screen and (min-width: $lg-width){
+      margin-bottom: 0;
+      padding-right: 107px;
+    }
+    .text {
+      > :first-child {
+        margin-top: 0;
+      }
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+      h2{
+        margin-bottom: 60px;
+        text-transform: uppercase;
+        @media screen and (min-width: $lg-width){
+          margin-bottom: 70px;
+        }
+      }
+    }
+  }
+  &__more{
+    margin-top: 60px;
+    @media screen and (min-width: $lg-width){
+      margin-top: 51px;
+    }
+  }
+}

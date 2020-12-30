@@ -1,0 +1,88 @@
+.text-and-slider-section {
+  .lines-background{
+    @media screen and (min-width: $xl-width) {
+      display: none;
+    }
+  }
+  &__main {
+    position: relative;
+    padding-top: 200px;
+
+    @media screen and (min-width: $xl-width) {
+      border-top: 1px solid #EBEBF0;
+      border-bottom: 1px solid #EBEBF0;
+    }
+  }
+  &__slider {
+    position: relative;
+    margin-bottom: 70px;
+    .swiper-wrapper{
+      display: flex;
+    }
+    .swiper-slide{
+      height: auto;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+    &::before,&::after{
+      position: absolute;
+      display: block;
+      content: '';
+    }
+    &::before{
+      left: 50px;
+      bottom: -41px;
+      width: 180px;
+      height: 180px;
+      background: url("../img/dest/text-and-slider/skew-lines.svg") left bottom;
+      background-size: contain;
+      z-index: $z-lowest;
+    }
+    &::after{
+      top: 143px;
+      right: -28px;
+      width: 58px;
+      height: 58px;
+      background: url("../img/dest/ui/dots-half.svg");
+      background-position: center;
+      z-index: 1;
+    }
+  }
+
+  &__text {
+    @media screen and (min-width: $lg-width) {
+      padding-left: 110px;
+      max-width: 530px;
+    }
+    @media screen and (min-width: $xl-width){
+      margin-top: 142px;
+    }
+
+    h2 {
+      margin-bottom: 60px;
+      font-size: 22px;
+      line-height: 110%;
+      @media screen and (min-width: $md-width){
+        font-size: 26px;
+      }
+      @media screen and (min-width: $lg-width) {
+        font-size: 22px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__slider-scrollbar {
+    margin-top: 80px;
+    position: relative;
+    height: 1px;
+
+    .swiper-scrollbar-drag {
+      background: #AEAED1;
+    }
+  }
+}

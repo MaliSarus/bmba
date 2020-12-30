@@ -1,0 +1,110 @@
+.our-news-section {
+  &__main {
+    padding-top: 120px;
+    padding-bottom: 140px;
+    @media screen and (min-width: $lg-width) {
+      padding-top: 296px;
+      padding-bottom: 270px;
+    }
+  }
+  &__titles{
+    margin-bottom: 60px;
+    @media screen and (min-width: $lg-width){
+      margin-bottom: 100px;
+    }
+  }
+  &__subtitle{
+    h2 {
+      font-size: 22px;
+      line-height: 110%;
+    }
+  }
+
+  &__news {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 60px;
+    @media screen and (min-width: $lg-width) {
+      max-width: 330px;
+      margin-bottom: 0;
+    }
+
+    .news {
+      &__image {
+        height: 290px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-position: center;
+          object-fit: cover;
+        }
+      }
+      &__text{
+        margin-top: 40px;
+        @media screen and (min-width: $lg-width){
+          margin-top: 70px;
+        }
+        time{
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 100%;
+          color: #71798B;
+          @media screen and (min-width: $lg-width){
+            font-size: 16px;
+          }
+          .news__year{
+            color: #B7C0CE;
+          }
+        }
+        h3{
+          margin: 24px 0 0;
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 110%;
+          color: #575A64;
+        }
+      }
+    }
+  }
+  &__last-news{
+    display: none;
+    @media screen and (min-width: $xl-width){
+      display: block;
+      max-width: 500px;
+    }
+    ul{
+      li{
+        &:not(:last-child){
+          margin-bottom: 70px;
+        }
+        a{
+          text-decoration: none;
+          time{
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 100%;
+            color: #71798B;
+            .news__year{
+              color: #B7C0CE;
+            }
+          }
+          h3{
+            margin: 14px 0 0;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+            color: #575A64;
+          }
+        }
+      }
+    }
+  }
+  &__more{
+    text-align: right;
+    @media screen and (min-width: $lg-width){
+      margin-top: 118px;
+
+    }
+  }
+}
