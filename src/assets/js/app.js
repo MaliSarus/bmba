@@ -1,7 +1,7 @@
 import changeHeaderStyle from "./modules/header";
 import addLinesBg from './modules/lines-bg';
 import Swiper from 'swiper/bundle';
-import Accordion from 'accordion-js'
+import initAccordion from "./modules/accordion";
 
 
 const xsWidth = 0;
@@ -103,13 +103,20 @@ function textAndSliderInit() {
 
 function historySliderInit() {
     const myThumbSwiper = new Swiper('.history-section__slider-thumb .swiper-container', {
-        slidesPerView: 9,
+        slidesPerView: 3,
         centeredSlides: true,
         loop: true,
         freeMode: true,
-        loopedSlides: 10, //looped slides should be the same
+        loopedSlides: 3, //looped slides should be the same
         watchSlidesVisibility: true,
         slideToClickedSlide: true,
+        breakpoints: {
+            1200: {
+                slidesPerView: 9,
+                loopedSlides: 10
+            },
+
+        }
     })
     const mySwiper = new Swiper('.history-section__slider .swiper-container', {
         loop: true,
@@ -150,7 +157,6 @@ function historySliderInit() {
 
 function videoContainerChangeWidth() {
     const videoContainer = document.querySelector('.video-section__video');
-    console.log(window.innerWidth)
     if (window.innerWidth >= xxlWidth) {
         const videoInfoBlock = document.querySelector('.video-section__block');
         const videoInfoBlockX = videoInfoBlock.getBoundingClientRect().left + videoInfoBlock.offsetWidth;
@@ -198,8 +204,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         historySliderInit();
     }
     if (isSet('.faq-section')) {
-        // const acrd = document.querySelector('.faq-section .accordion')
-        new Accordion('.faq-section .accordion-container')
+        const acc = document.querySelectorAll('.accordion .accordion__title');
+        initAccordion(acc)
     }
 })
 

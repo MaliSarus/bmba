@@ -17,6 +17,7 @@ include "./modules/our-news-section.php";
 include "./modules/features-section.php";
 include "./modules/history-section.php";
 include "./modules/faq-section.php";
+include "./modules/social-section.php";
 ?>
 
 

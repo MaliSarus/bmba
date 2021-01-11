@@ -7,6 +7,7 @@
   &__main {
     position: relative;
     padding-top: 200px;
+    overflow: hidden;
 
     @media screen and (min-width: $xl-width) {
       border-top: 1px solid #EBEBF0;

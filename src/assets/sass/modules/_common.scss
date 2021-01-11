@@ -120,6 +120,7 @@ h6 {
 
   ul {
     padding: 0;
+
     li {
       list-style: none;
       padding: 0;
@@ -128,15 +129,18 @@ h6 {
 }
 
 .text {
-   > :last-child{
-     margin-bottom: 0;
-   }
-  > :first-child{
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  > :first-child {
     margin-top: 0;
   }
-  h2{
+
+  h2 {
     text-transform: uppercase;
   }
+
   p {
     font-weight: 500;
     font-size: 14px;
@@ -166,25 +170,25 @@ h6 {
     line-height: 100%;
     color: #B6C0CE;
     content: attr(data-title-num);
-    @media screen and (min-width: $md-width){
+    @media screen and (min-width: $md-width) {
       display: inline-block;
     }
   }
 }
 
-.hidden{
+.hidden {
   overflow: hidden;
 }
 
-.hamburger-inner,.hamburger-inner::before, .hamburger-inner::after{
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   transition: background-color .25s;
 }
 
-.with-lines{
+.with-lines {
   position: relative;
 }
 
-.swiper-pagination{
+.swiper-pagination {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -194,7 +198,8 @@ h6 {
   box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
   z-index: 2;
   transition: left .5s;
-  &-bullet{
+
+  &-bullet {
     display: block;
     border-radius: 100%;
     width: 6px;
@@ -202,8 +207,9 @@ h6 {
     margin: 0px 25px;
     background: #CBCBD7;
     cursor: pointer;
-    &-active{
-      &::before{
+
+    &-active {
+      &::before {
         display: none;
         content: attr(data-index);
       }
@@ -211,9 +217,10 @@ h6 {
   }
 }
 
-.quote{
+.quote {
   position: relative;
-  &::before{
+
+  &::before {
     position: absolute;
     left: -40px;
     top: 15px;
@@ -228,7 +235,7 @@ h6 {
   }
 }
 
-.scrollbar{
+.scrollbar {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -236,6 +243,20 @@ h6 {
   height: 100%;
 }
 
-.position-relative{
+.position-relative {
   position: relative;
+}
+
+.accordion {
+  &__title {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    outline: none;
+  }
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 }

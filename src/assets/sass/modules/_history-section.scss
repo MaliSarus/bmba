@@ -2,18 +2,24 @@
 
   &__main {
     position: relative;
-    padding-top: 307px;
-    padding-bottom: 133px;
+    padding-top: 74px;
+    padding-bottom: 120px;
+    @media screen and (min-width: $xl-width) {
+      padding-top: 307px;
+      padding-bottom: 133px;
+    }
     background-image: url("../img/dest/history/ship.svg");
     background-position: calc(100% - 189px) 185px;
     background-repeat: no-repeat;
   }
 
   &__slider-wrapper {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 65px;
+    @media screen and (min-width: $xl-width){
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 65px;
+    }
   }
 
   &__slider-thumb {
@@ -88,6 +94,9 @@
           width: 34px;
           height: 34px;
           background: url("../img/dest/ui/history-round_active.svg") no-repeat center;
+          &:hover {
+            background: url("../img/dest/ui/history-round_active.svg") no-repeat center;
+          }
         }
 
         .year {
@@ -101,21 +110,27 @@
   }
 
   &__slider {
-    position: absolute;
-    bottom: 0px;
-    left: 93px;
-    width: 528px;
-    z-index: $z-medium;
+    @media screen and (min-width: $xl-width) {
+      position: absolute;
+      bottom: 0px;
+      left: 93px;
+      width: 528px;
+      z-index: $z-medium;
+    }
 
   }
 
   &__slide {
     padding-left: 35px;
+    height: auto;
 
     .slide {
 
       display: flex;
       justify-content: flex-end;
+      &__block{
+        height: 100%;
+      }
 
       &__year {
         position: absolute;
@@ -137,12 +152,14 @@
       &__block {
         position: relative;
         padding: 104px 55px 104px 70px;
-        width: calc(100% - 35px);
         min-height: 493px;
         background-image: url("../img/dest/history/1.jpg");
         background-position: center;
         background-size: cover;
         color: white;
+        @media screen and (min-width: $xl-width){
+          width: calc(100% - 35px);
+        }
 
         > :last-child {
           margin-bottom: 0;

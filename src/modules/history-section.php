@@ -7,8 +7,8 @@
                         <div class="history-section__slider">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide history-section__slide slide">
-                                        <article class="slide__block">
+                                    <div class="swiper-slide history-section__slide ">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20 <br> 11</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -20,7 +20,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>12</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -32,7 +32,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>13</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -44,7 +44,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>14</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -56,7 +56,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>15</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -68,7 +68,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>16</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -80,7 +80,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>17</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -92,7 +92,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>18</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -104,7 +104,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>19</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
@@ -116,7 +116,7 @@
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
-                                        <article class="slide__block">
+                                        <article class="slide__block slide">
                                             <div class="slide__year">20<br>20</div>
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
