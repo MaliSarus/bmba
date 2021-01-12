@@ -1,9 +1,10 @@
 .text-and-slider-section {
-  .lines-background{
+  .lines-background {
     @media screen and (min-width: $xl-width) {
       display: none;
     }
   }
+
   &__main {
     position: relative;
     padding-top: 200px;
@@ -14,36 +15,55 @@
       border-bottom: 1px solid #EBEBF0;
     }
   }
+
   &__slider {
     position: relative;
-    margin-bottom: 70px;
-    .swiper-wrapper{
+    margin-bottom: 47px;
+    @media screen and (min-width: $lg-width){
+      margin-bottom: 80px;
+    }
+
+    .swiper-wrapper {
       display: flex;
     }
-    .swiper-slide{
+
+    .swiper-slide {
       height: auto;
     }
-    img{
+
+    img {
       width: 100%;
       height: 100%;
       object-position: center;
       object-fit: cover;
     }
-    &::before,&::after{
+
+    &::before, &::after {
       position: absolute;
       display: block;
       content: '';
     }
-    &::before{
-      left: 50px;
-      bottom: -41px;
-      width: 180px;
-      height: 180px;
-      background: url("../img/dest/text-and-slider/skew-lines.svg") left bottom;
+
+    &::before {
+      right: 0px;
+      bottom: -29px;
+      width: 100px;
+      height: 100px;
+      background: url("../img/dest/text-and-slider/skew-lines_mobile.svg") left bottom;
       background-size: contain;
+      background-repeat: no-repeat;
       z-index: $z-lowest;
+      @media screen and (min-width: $lg-width){
+        width: 180px;
+        height: 180px;
+        right: unset;
+        left: 50px;
+        bottom: -41px;
+        background: url("../img/dest/text-and-slider/skew-lines.svg") left bottom;
+      }
     }
-    &::after{
+
+    &::after {
       top: 143px;
       right: -28px;
       width: 58px;
@@ -59,7 +79,7 @@
       padding-left: 110px;
       max-width: 530px;
     }
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       margin-top: 142px;
     }
 
@@ -67,7 +87,7 @@
       margin-bottom: 60px;
       font-size: 22px;
       line-height: 110%;
-      @media screen and (min-width: $md-width){
+      @media screen and (min-width: $md-width) {
         font-size: 26px;
       }
       @media screen and (min-width: $lg-width) {
@@ -76,11 +96,70 @@
       }
     }
   }
+  &__controls{
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__slider-arrows{
+    position: absolute;
+    bottom: 1px;
+    right: 30px;
+    height: 120px;
+    box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
+
+    z-index: $z-medium;
+    @media screen and (min-width: $lg-width){
+      left: 90px;
+      height: 160px;
+      width: 90px;
+    }
+  }
+  &__fraction {
+    position: relative;
+    left: unset;
+    bottom: unset;
+    display: flex;
+    justify-content: center;
+    max-width: 56px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: #B6C0CE;
+    text-align: left;
+    margin-right: 14px;
+    @media screen and (min-width: $lg-width){
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translateZ(0) rotate(-90deg) translate(100px,35px) ;
+    }
+
+    .swiper-pagination {
+
+      &-current {
+        position: absolute;
+        left: 0;
+        color: $main-color;
+      }
+      &-total{
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
 
   &__slider-scrollbar {
-    margin-top: 80px;
     position: relative;
+    width: 100%;
     height: 1px;
+    background: #EBEBF0;
+    transform: translateY(-1px);
+    @media screen and (min-width: $lg-width) {
+      transform: none;
+      //margin-top: 80px;
+    }
 
     .swiper-scrollbar-drag {
       background: #AEAED1;

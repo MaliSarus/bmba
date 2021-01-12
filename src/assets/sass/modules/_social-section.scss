@@ -53,6 +53,9 @@
   &__text{
     word-break: break-word;
     @media screen and (min-width: $lg-width){
+      padding-left: 70px;
+    }
+    @media screen and (min-width: $xxl-width){
       padding-left: 130px;
       padding-right: 180px;
     }

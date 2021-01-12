@@ -12,6 +12,10 @@
                 <div class="col-12 col-xl-3">
                     <div class="partners-section__title text">
                         <h2>наши партнеры</h2>
+                        <div class="slider-arrows slider-arrows_horizontal partners-section__slider-arrows">
+                            <div class="slider-arrows__next"></div>
+                            <div class="slider-arrows__prev"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-xl-9">

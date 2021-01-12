@@ -8,7 +8,8 @@
   line-height: 115%;
   text-transform: uppercase;
   text-decoration: none;
-  &::before,&::after{
+
+  &::before, &::after {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -17,38 +18,44 @@
     width: 73px;
     content: '';
   }
-  &::after{
+
+  &::after {
     background: url("../img/dest/ui/link-circle.svg") center / contain no-repeat;
     transform: rotate(-180deg);
     transition: transform .5s, background .5s;
   }
-  &::before{
+
+  &::before {
     background-position: center calc(50%);
     background-size: 19px 16px;
     background-repeat: no-repeat;
     background-image: url("../img/dest/ui/link-arrow.svg");
   }
-  &:hover{
-    &::after{
+
+  &:hover {
+    &::after {
       background-image: url("../img/dest/ui/link-circle_hover.svg");
       transform: rotate(0deg);
     }
   }
-  &_play{
+
+  &_play {
     cursor: pointer;
     color: white;
-    &::before{
+
+    &::before {
       background-image: url("../img/dest/ui/play.svg");
       background-size: 16px 16px;
       background-position: calc(50% + 3px) center;
     }
-    &::after{
+
+    &::after {
       background-image: url("../img/dest/ui/link-circle_white.svg");
       transform: none;
     }
 
-    &:hover{
-      &::after{
+    &:hover {
+      &::after {
         background-image: url("../img/dest/ui/link-circle_white.svg");
         transform: rotate(180deg);
       }
@@ -56,12 +63,76 @@
   }
 }
 
-.lines-background{
+.lines-background {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   z-index: 0;
+}
+
+.slider-arrows {
+  position: relative;
+  width: 60px;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  &:before{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+    content: '';
+    height: 2px;
+    transform: translateY(-50%);
+    background: url("../img/dest/ui/dashed-border.svg") center ;
+    background-size: contain;
+  }
+  &_horizontal{
+    margin-left: auto;
+    background: transparent;
+    flex-direction: row-reverse;
+    width: 78px;
+    height: 40px;
+    .slider-arrows__next, .slider-arrows__prev{
+      background-position: 100% center;
+    }
+    .slider-arrows__next{
+      background-position: 100% center;
+    }
+    &::before{
+      top: 10px;
+      bottom: 10px;
+      right: unset;
+      left: 50%;
+      content: '';
+      width: 2px;
+      height: auto;
+      transform: translateX(-50%);
+      background-image: url("../img/dest/ui/dashed-border_vertical.svg");
+    }
+  }
+  &__next, &__prev {
+    flex-basis: 50%;
+    position: relative;
+    background: url("../img/dest/ui/arrow.svg") center no-repeat;
+    background-size: 9px 16px;
+    cursor: pointer;
+    transition: background .2s;
+    &:focus{
+      outline: none;
+    }
+    &.hover{
+      background-image: url("../img/dest/ui/arrow_hover.svg");
+    }
+    &.unhover{
+      background-image: url("../img/dest/ui/arrow_unhover.svg");
+    }
+  }
+  &__prev{
+    transform: rotate(180deg);
+  }
 }
 

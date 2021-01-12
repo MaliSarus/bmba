@@ -1,15 +1,55 @@
 <section class="fleet-primary-section with-lines">
+    <div class="fleet-primary-section__background-title background-title h-100">
+        <div class="container-fluid container-xl h-100">
+            <div class="row">
+                <div class="col-12 col-xl-5 offset-xl-7 p-0 p-xl-3">
+                    <h2 class="fleet-primary-section__background-word background-word">Fleet</h2>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="fleet-primary-section__main">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-3 d-none d-lg-block">
                     <div class="block-title" data-title-num="05">флот</div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-lg-3">
-                    <div class="fleet-primary-section__info text">
-                        <h2>Felix</h2>
+                <div class="col-12 col-lg-9 order-lg-2">
+                    <div class="fleet-primary-section__slider-and-arrows">
+                        <div class="fleet-primary-section__slider">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/1.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/2.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/1.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fleet-primary-section__pagination swiper-pagination"></div>
+                        </div>
+                        <div class="slider-arrows fleet-primary-section__slider-arrows">
+                            <div class="slider-arrows__next"></div>
+                            <div class="slider-arrows__prev"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-3 order-lg-1">
+                    <div class="block-title d-lg-none" data-title-num="05">флот</div>
+                    <div class="fleet-primary-section__info text h-100">
+                        <div class="fleet-primary-section__title">
+                            <h2>Felix</h2>
+                            <div class="slider-arrows slider-arrows_horizontal fleet-primary-section__slider-arrows">
+                                <div class="slider-arrows__next"></div>
+                                <div class="slider-arrows__prev"></div>
+                            </div>
+                        </div>
                         <div class="list fleet-specs">
                             <ul>
                                 <li>
@@ -35,27 +75,20 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-9">
-                    <div class="fleet-primary-section__slider">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/1.jpg" alt=""></div>
-                                <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/2.jpg" alt=""></div>
-                            </div>
-                            <div class="swiper-pagination"></div>
+                        <div class="fleet-primary-section__more">
+                            <a href="#" class="link">Все судна</a>
                         </div>
                     </div>
                 </div>
+
             </div>
-<!--            <div class="row">-->
-<!--                <div class="col-lg-9 offset-lg-3 d-none d-lg-block">-->
-<!--                    <div class="actions-primary-section__slider-pagination">-->
-<!--                        -->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="row">-->
+            <!--                <div class="col-lg-9 offset-lg-3 d-none d-lg-block">-->
+            <!--                    <div class="actions-primary-section__slider-pagination">-->
+            <!--                        -->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </div>
 </section>

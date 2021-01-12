@@ -13,15 +13,27 @@
     }
   }
   &__title{
+    display: flex;
+    align-items: center;
     margin-bottom: 30px;
     @media screen and (min-width: $xl-width){
+      margin-bottom: 0;
+      display: block;
+    }
+    h2{
       margin-bottom: 0;
     }
   }
 
+
   &__slider {
     @media screen and (min-width: $xl-width) {
       margin-right: -25%;
+    }
+    &-arrows{
+      @media screen and (min-width: $xl-width) {
+        display: none;
+      }
     }
 
     .swiper-wrapper {

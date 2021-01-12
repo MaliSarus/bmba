@@ -1,4 +1,13 @@
 <section class="history-section with-lines">
+    <div class="history-section__background-title background-title">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <h2 class="history-section__background-word background-word">history</h2>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="history-section__main">
         <div class="history-section__slider-wrapper">
             <div class="container">
@@ -17,6 +26,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, repudiandae</li>
                                                 </ul>
                                             </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
+                                            </div>
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
@@ -28,6 +41,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, nulla?</li>
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, nulla?</li>
                                                 </ul>
+                                            </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
                                             </div>
                                         </article>
                                     </div>
@@ -41,6 +58,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, soluta?</li>
                                                 </ul>
                                             </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
+                                            </div>
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
@@ -52,6 +73,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate</li>
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate</li>
                                                 </ul>
+                                            </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
                                             </div>
                                         </article>
                                     </div>
@@ -65,6 +90,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, veniam!</li>
                                                 </ul>
                                             </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
+                                            </div>
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
@@ -76,6 +105,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, libero!</li>
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, libero!</li>
                                                 </ul>
+                                            </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
                                             </div>
                                         </article>
                                     </div>
@@ -89,6 +122,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, quam!</li>
                                                 </ul>
                                             </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
+                                            </div>
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
@@ -100,6 +137,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
                                                 </ul>
+                                            </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
                                             </div>
                                         </article>
                                     </div>
@@ -113,6 +154,10 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
                                                 </ul>
                                             </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
+                                            </div>
                                         </article>
                                     </div>
                                     <div class="swiper-slide history-section__slide">
@@ -125,10 +170,26 @@
                                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
                                                 </ul>
                                             </div>
+                                            <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
+                                                <div class="slider-arrows__next"></div>
+                                                <div class="slider-arrows__prev"></div>
+                                            </div>
                                         </article>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="history-section__slider-arrows-wrapper d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="slider-arrows history-section__slider-arrows">
+                            <div class="slider-arrows__next"></div>
+                            <div class="slider-arrows__prev"></div>
                         </div>
                     </div>
                 </div>

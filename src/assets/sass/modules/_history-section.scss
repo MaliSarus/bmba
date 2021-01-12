@@ -1,5 +1,20 @@
 .history-section {
 
+  &__background-title {
+    left: 10px;
+    @media screen and (min-width: $lg-width) {
+      left: 0;
+    }
+  }
+
+  .background-word {
+    overflow: hidden;
+    @media screen and (min-width: $lg-width) {
+      font-size: 210px;
+      transform: translateX(-45px);
+    }
+  }
+
   &__main {
     position: relative;
     padding-top: 74px;
@@ -14,7 +29,7 @@
   }
 
   &__slider-wrapper {
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       position: absolute;
       left: 0;
       right: 0;
@@ -22,22 +37,37 @@
     }
   }
 
+  &__slider-arrows-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 120px;
+  }
+
   &__slider-thumb {
+
+    @media screen and (min-width: $xl-width) {
+      margin-top: 0;
+    }
+
     .swiper-wrapper {
       display: flex;
     }
 
     .swiper-slide {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      position: relative;
+      padding: 43px;
       height: auto;
-      padding: 102px;
       border-radius: 100%;
       background: transparent;
       transition: background .2s;
+      @media screen and (min-width: $xl-width) {
+        padding: 102px;
+      }
 
       .round {
         cursor: pointer;
@@ -51,11 +81,14 @@
           position: absolute;
           display: block;
           content: '';
-          width: 100px;
+          width: calc(50% - 34px / 2);
           border-top: 1px dashed #CBCBD7;
           top: 50%;
           transform: translateY(-50%);
           z-index: -1;
+          @media screen and (min-width: $xl-width) {
+            width: 100px;
+          }
         }
 
         &::before {
@@ -75,13 +108,16 @@
       .year {
         position: absolute;
         left: 50%;
-        bottom: 64px;
+        bottom: 0;
         font-weight: 500;
         font-size: 12px;
         line-height: 100%;
         color: $main-color-light;
         transform: translateX(-50%);
         transition: color .15s, font-size .15s, font-weight .15s;
+        @media screen and (min-width: $xl-width) {
+          bottom: 64px;
+        }
       }
 
       &-active {
@@ -94,6 +130,7 @@
           width: 34px;
           height: 34px;
           background: url("../img/dest/ui/history-round_active.svg") no-repeat center;
+
           &:hover {
             background: url("../img/dest/ui/history-round_active.svg") no-repeat center;
           }
@@ -118,6 +155,28 @@
       z-index: $z-medium;
     }
 
+    &::before {
+      position: absolute;
+      bottom: -65px;
+      left: -30px;
+      display: block;
+      width: 146px;
+      height: 146px;
+      background: url("../img/dest/ui/balls.svg") center;
+      z-index: $z-medium;
+      @media screen and (min-width: $xl-width) {
+        content: '';
+      }
+    }
+
+    &-arrows {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      height: 120px;
+      background: transparent;
+      transform: translateY(-22px);
+    }
   }
 
   &__slide {
@@ -125,10 +184,11 @@
     height: auto;
 
     .slide {
-
+      position: relative;
       display: flex;
       justify-content: flex-end;
-      &__block{
+
+      &__block {
         height: 100%;
       }
 
@@ -157,7 +217,7 @@
         background-position: center;
         background-size: cover;
         color: white;
-        @media screen and (min-width: $xl-width){
+        @media screen and (min-width: $xl-width) {
           width: calc(100% - 35px);
         }
 
@@ -187,6 +247,24 @@
             &:not(:last-child) {
               margin-bottom: 30px;
             }
+          }
+        }
+      }
+
+      .history-section__slider-arrows {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: unset;
+        width: auto;
+        height: 60px;
+        transform: none;
+
+        .slider-arrows {
+          &__next, &__prev {
+            filter: brightness(100);
+            background-position: calc(100% - 30px) center;
           }
         }
       }

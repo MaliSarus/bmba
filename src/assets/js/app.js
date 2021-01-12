@@ -2,6 +2,7 @@ import changeHeaderStyle from "./modules/header";
 import addLinesBg from './modules/lines-bg';
 import Swiper from 'swiper/bundle';
 import initAccordion from "./modules/accordion";
+// import homePageTopInit from "./modules/home-page-top";
 
 
 const xsWidth = 0;
@@ -39,17 +40,28 @@ function fleetPimarySliderInit() {
     const mySwiper = new Swiper('.fleet-primary-section__slider .swiper-container', {
         loop: true,
         pagination: {
-            el: '.swiper-pagination',
+            el: '.fleet-primary-section__slider .swiper-pagination',
             clickable: true,
             renderBullet: function (index, className) {
-                return `<span class="${className}" data-index="${index}"></span>`;
+                const formIndex = index < 10 ? '0' + (index + 1) : index + 1
+                return `<span class="${className}" data-index="${formIndex}"></span>`;
             },
         },
+        navigation: {
+            nextEl: `.fleet-primary-section__slider-arrows .slider-arrows__next`,
+            prevEl: `.fleet-primary-section__slider-arrows .slider-arrows__prev`,
+        }
     })
 
     mySwiper.on('slideChangeTransitionStart', function () {
         const swiperPagination = document.querySelector('.fleet-primary-section__slider .swiper-pagination')
-        swiperPagination.style.left = mySwiper.width / realSlides * mySwiper.realIndex + 'px'
+        if (window.innerWidth > xlWidth) {
+            const fleetBackgroundTitle = document.querySelector('.fleet-primary-section__background-word');
+            const maxBackgroundTitleOffset = 100;
+            const currentBackgroundTitleOffset = mySwiper.realIndex * maxBackgroundTitleOffset / realSlides
+            fleetBackgroundTitle.style.top = `calc(50% - ${currentBackgroundTitleOffset}px)`
+        }
+        swiperPagination.style.left = (mySwiper.width - swiperPagination.offsetWidth) / (realSlides - 1) * mySwiper.realIndex + 'px'
     })
 }
 
@@ -78,19 +90,42 @@ function partnersSliderInit() {
                 spaceBetween: 180,
                 centeredSlides: false
             },
+        },
+        navigation: {
+            nextEl: `.partners-section__slider-arrows .slider-arrows__next`,
+            prevEl: `.partners-section__slider-arrows .slider-arrows__prev`,
         }
     })
 }
 
 function textAndSliderInit() {
-    const realSlides = document.querySelectorAll('.text-and-slider-section__slider .swiper-slide').length;
+    const sliderContainers = document.querySelectorAll('.text-and-slider-section')
+    sliderContainers.forEach((slider, index) => {
+        slider.classList.add('s' + index);
+        const realSlides = slider.querySelectorAll('.text-and-slider-section__slider .swiper-slide').length;
 
-    const mySwiper = new Swiper('.text-and-slider-section__slider .swiper-container', {
-        slidesPerView: 1,
-        scrollbar: {
-            el: '.text-and-slider-section__slider-scrollbar .scrollbar',
-        },
+        const mySwiper = new Swiper(`.s${index} .text-and-slider-section__slider .swiper-container`, {
+            slidesPerView: 1,
+            scrollbar: {
+                el: `.s${index} .text-and-slider-section__slider-scrollbar .scrollbar`,
+            },
+            pagination: {
+                el: `.s${index} .text-and-slider-section__fraction`,
+                type: 'custom',
+                renderCustom: function (swiper, current, total) {
+                    const formCurrent = current < 10 ? '0' + current : current;
+                    return `<span class="swiper-pagination-current">${formCurrent}</span>
+                       / 
+                    <span class="swiper-pagination-total">${total}</span>`
+                }
+            },
+            navigation: {
+                nextEl: `.s${index} .slider-arrows__next`,
+                prevEl: `.s${index} .slider-arrows__prev`,
+            },
+        })
     })
+
 
     // const swiperScrollBar= document.querySelector('.text-and-slider-section__slider-scrollbar');
     // const swiperScrollBarDrag = document.querySelector('.text-and-slider-section__slider-scrollbar .scrollbar__drag');
@@ -112,11 +147,19 @@ function historySliderInit() {
         slideToClickedSlide: true,
         breakpoints: {
             1200: {
+                slidesPerView: 6,
+                loopedSlides: 7
+            },
+            1600: {
                 slidesPerView: 9,
                 loopedSlides: 10
-            },
+            }
 
-        }
+        },
+        navigation: {
+            nextEl: `.history-section__slider-arrows .slider-arrows__next`,
+            prevEl: `.history-section__slider-arrows  .slider-arrows__prev`,
+        },
     })
     const mySwiper = new Swiper('.history-section__slider .swiper-container', {
         loop: true,
@@ -170,6 +213,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
     changeHeaderStyle();
     hamburgerHandle();
 
+    if (isSet('.slider-arrows')) {
+        const sliderArrows = document.querySelectorAll('.slider-arrows');
+        sliderArrows.forEach(arrows => {
+            arrows.addEventListener('mouseenter', function (event) {
+                const nextArrow = this.querySelector('.slider-arrows__next');
+                const prevArrow = this.querySelector('.slider-arrows__prev');
+                nextArrow.addEventListener('mouseenter', function () {
+                    this.classList.add('hover');
+                    prevArrow.classList.add('unhover');
+                })
+                nextArrow.addEventListener('mouseleave', function () {
+                    this.classList.remove('hover');
+                    prevArrow.classList.remove('unhover');
+                })
+                prevArrow.addEventListener('mouseenter', function () {
+                    this.classList.add('hover');
+                    nextArrow.classList.add('unhover');
+                })
+                prevArrow.addEventListener('mouseleave', function () {
+                    this.classList.remove('hover')
+                    nextArrow.classList.remove('unhover');
+                })
+            })
+        })
+    }
+
 
     if (isSet('.with-lines')) {
         const linesSections = document.querySelectorAll('.with-lines');
@@ -177,6 +246,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             addLinesBg(section);
         })
     }
+
+
     if (isSet('.fleet-primary-section')) {
         fleetPimarySliderInit()
     }

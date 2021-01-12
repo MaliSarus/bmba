@@ -1,5 +1,7 @@
 .text-and-picture-section {
-  overflow: hidden;
+  @media screen and (min-width: $lg-width){
+    overflow: hidden;
+  }
   &__main {
     @media screen and (min-width: $lg-width) {
       padding: 150px 0;
