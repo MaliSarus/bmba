@@ -61,6 +61,27 @@
       }
     }
   }
+  &_white{
+    color: white;
+    cursor: pointer;
+    &::after {
+      background-image: url("../img/dest/ui/link-circle_white.svg");
+      transform: none;
+    }
+    &::before {
+      background-position: center calc(50%);
+      background-size: 19px 16px;
+      background-repeat: no-repeat;
+      background-image: url("../img/dest/ui/link-arrow.svg");
+      filter: brightness(100);
+    }
+    &:hover {
+      &::after {
+        background-image: url("../img/dest/ui/link-circle_white.svg");
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
 
 .lines-background {

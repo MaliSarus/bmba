@@ -1,0 +1,22 @@
+.two-column-list-section{
+  &__list{
+    ul{
+      display: grid;
+      grid-template-columns: repeat(2,295px);
+      column-gap: 90px;
+      row-gap: 75px;
+      li{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 160%;
+        color: $main-color-light;
+        p{
+          font-weight: bold;
+          font-size: 46px;
+          line-height: 100%;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

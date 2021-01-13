@@ -285,3 +285,11 @@ h6 {
   opacity: 0.05;
 }
 
+.columns{
+  &_two{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 65px;
+  }
+}
+

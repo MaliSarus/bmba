@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-grid.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script defer src="assets/js/app.min.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
             <nav>
                 <ul>
                     <li><a href="about-us.php">О компании</a></li>
-                    <li><a href="services.php">Услуги</a></li>
+                    <li><a href="services-page.php">Услуги</a></li>
                     <li><a href="cost.php">Расчет стоимости</a></li>
                     <li><a href="fleet.php">Флот</a></li>
                     <li><a href="geo.php">География</a></li>

@@ -61,6 +61,7 @@
   }
   &__slider-and-arrows{
     position: relative;
+    height: 100%;
     @media screen and (min-width: $lg-width) {
       padding-right: 128px;
     }
