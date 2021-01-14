@@ -12,9 +12,6 @@ include "./modules/actions-section.php";
 include "./modules/fleet-primary-section.php";
 include "./modules/video-section.php";
 include "./modules/partners-section.php";
-
-
-include "./modules/faq-section.php";
 include "./modules/social-section.php";
 ?>
 

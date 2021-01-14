@@ -11,5 +11,5 @@ include "./modules/service.php";
 <!------------------------------------------------------------->
 
 <?php
-//include "./modules/footer.php";
+include "./modules/footer.php";
 //?>

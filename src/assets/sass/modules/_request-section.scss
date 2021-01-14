@@ -1,3 +1,13 @@
 .request-section{
-
+  &__block{
+    padding-left: 310px;
+    background-clip: padding-box;
+    background-size: cover;
+    background: url("../img/dest/request/bg.jpg") center no-repeat;
+    background-size: cover;
+  }
+  &__form{
+    padding: 97px 0 57px 93px;
+    background:  #F7FAF9;
+  }
 }

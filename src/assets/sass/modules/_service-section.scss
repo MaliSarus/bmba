@@ -1,13 +1,16 @@
 .service-section{
-  background: url("../img/dest/services-page/1.jpg") center no-repeat;
-  background-size: cover;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
+
+  &__background{
+    background: url("../img/dest/services-page/1.jpg") center no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
   &__main{
     padding-top: 80px;
     @media screen and (min-width: $xxl-width){

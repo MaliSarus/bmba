@@ -25,7 +25,7 @@
         <div class="header__menu transparent-border_right">
             <nav>
                 <ul>
-                    <li><a href="about-us.php">О компании</a></li>
+                    <li><a href="about-page.php">О компании</a></li>
                     <li><a href="services-page.php">Услуги</a></li>
                     <li><a href="cost.php">Расчет стоимости</a></li>
                     <li><a href="fleet.php">Флот</a></li>

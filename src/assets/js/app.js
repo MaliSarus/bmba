@@ -8,10 +8,11 @@ import initAccordion from "./modules/accordion";
 import {videoContainerChangeWidth, videoPlayButtonHandle} from "./modules/video";
 import sliderArrowsHandle from "./modules/slider-arrows";
 import {servicesCardInit} from "./modules/services";
+import documentsSliderInit from "./modules/documents";
+import fslightbox from 'fslightbox'
+import formInit from "./modules/form";
 
 // import homePageTopInit from "./modules/home-page-top";
-
-
 
 
 function isSet(element) {
@@ -56,9 +57,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         const acc = document.querySelectorAll('.accordion .accordion__title');
         initAccordion(acc)
     }
-    if (isSet('.services-section')){
+    if (isSet('.services-section')) {
 
         servicesCardInit()
+    }
+    if (isSet('form')) {
+        formInit()
+    }
+    if (isSet('.documents-section')) {
+        documentsSliderInit();
     }
 })
 
