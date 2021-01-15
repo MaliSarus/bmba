@@ -1,6 +1,6 @@
 import {changeHeaderStyle, hamburgerHandle} from "./modules/header";
 import addLinesBg from './modules/lines-bg';
-import fleetPimarySliderInit from "./modules/fleet";
+import fleetPrimarySliderInit from "./modules/fleet";
 import partnersSliderInit from "./modules/partners";
 import textAndSliderInit from "./modules/text-and-slider";
 import historySliderInit from "./modules/history";
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
     if (isSet('.fleet-primary-section')) {
-        fleetPimarySliderInit()
+        fleetPrimarySliderInit()
     }
     if (isSet('.video-section')) {
         videoContainerChangeWidth();

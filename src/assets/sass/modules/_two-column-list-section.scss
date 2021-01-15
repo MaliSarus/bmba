@@ -2,19 +2,32 @@
   &__list{
     ul{
       display: grid;
-      grid-template-columns: repeat(2,295px);
-      column-gap: 90px;
-      row-gap: 75px;
+      grid-template-columns: repeat(2,1fr);
+      column-gap: 18px;
+      row-gap: 40px;
+      @media screen and (min-width: $xxl-width){
+        grid-template-columns: repeat(2,295px);
+        column-gap: 90px;
+        row-gap: 75px;
+      }
+
       li{
         font-weight: 500;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 160%;
         color: $main-color-light;
-        p{
+        @media screen and (min-width: $md-width) {
+          font-size: 16px;
+        }
+          p{
+          margin-top: 0;
           font-weight: bold;
-          font-size: 46px;
+          font-size: 22px;
           line-height: 100%;
           color: $main-color;
+          @media screen and (min-width: $md-width){
+            font-size: 46px;
+          }
         }
       }
     }

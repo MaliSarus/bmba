@@ -1,10 +1,11 @@
 import Swiper from "swiper/bundle";
 import {xlWidth} from "./window-width-values";
+import getParents from "./getParents";
+import customPaginationInit from "./customPagination";
 
-export default function fleetPimarySliderInit() {
+export default function fleetPrimarySliderInit() {
     const realSlides = document.querySelectorAll('.fleet-primary-section__slider .swiper-slide').length;
     const mySwiper = new Swiper('.fleet-primary-section__slider .swiper-container', {
-        loop: true,
         pagination: {
             el: '.fleet-primary-section__slider .swiper-pagination',
             clickable: true,
@@ -19,14 +20,22 @@ export default function fleetPimarySliderInit() {
         }
     })
 
-    mySwiper.on('slideChangeTransitionStart', function () {
-        const swiperPagination = document.querySelector('.fleet-primary-section__slider .swiper-pagination')
-        if (window.innerWidth > xlWidth) {
-            const fleetBackgroundTitle = document.querySelector('.fleet-primary-section__background-word');
-            const maxBackgroundTitleOffset = 100;
-            const currentBackgroundTitleOffset = mySwiper.realIndex * maxBackgroundTitleOffset / realSlides
-            fleetBackgroundTitle.style.top = `calc(50% - ${currentBackgroundTitleOffset}px)`
-        }
-        swiperPagination.style.left = (mySwiper.width - swiperPagination.offsetWidth) / (realSlides - 1) * mySwiper.realIndex + 'px'
-    })
+    if (getParents(document.querySelector('.fleet-primary-section__slider'),document.querySelector('.service-fleet-section')))
+    {
+        const paginationContainer = document.querySelector('.service-fleet-section .fleet-primary-section__pagination');
+        customPaginationInit(paginationContainer,mySwiper,realSlides,5)
+    }
+    else {
+
+        mySwiper.on('slideChangeTransitionStart', function () {
+            const swiperPagination = document.querySelector('.fleet-primary-section__slider .swiper-pagination')
+            if (window.innerWidth > xlWidth) {
+                const fleetBackgroundTitle = document.querySelector('.fleet-primary-section__background-word');
+                const maxBackgroundTitleOffset = 100;
+                const currentBackgroundTitleOffset = mySwiper.realIndex * maxBackgroundTitleOffset / realSlides
+                fleetBackgroundTitle.style.top = `calc(50% - ${currentBackgroundTitleOffset}px)`
+            }
+            swiperPagination.style.left = (mySwiper.width - swiperPagination.offsetWidth) / (realSlides - 1) * mySwiper.realIndex + 'px'
+        })
+    }
 }

@@ -2,6 +2,9 @@
     <div class="service-section__background"></div>
     <div class="service-section__main h-100">
         <div class="service-section__content">
+            <div class="service-section__back-wrapper">
+                <a href="#" class="link_back service-section__back"></a>
+            </div>
             <section class="text-section">
                 <div class="row">
                     <div class="col-12">
@@ -95,6 +98,73 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="fleet-primary-section service-fleet-section">
+                <div class="fleet-primary-section__main">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="fleet-primary-section__slider-and-arrows">
+                                <div class="fleet-primary-section__slider">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/1.jpg"
+                                                                           alt="">
+                                            </div>
+                                            <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/2.jpg"
+                                                                           alt="">
+                                            </div>
+                                            <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/1.jpg"
+                                                                           alt="">
+                                            </div>
+                                            <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/2.jpg"
+                                                                           alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12">
+                            <div class="fleet-primary-section__info text h-100">
+                                <div class="block-title">Флот</div>
+                                <div class="fleet-primary-section__title">
+                                    <h2>Felix</h2>
+                                    <div class="fleet-primary-section__pagination swiper-pagination"></div>
+                                </div>
+                                <div class="list fleet-specs">
+                                    <ul>
+                                        <li>
+                                            Мощность
+                                            <p class="fleet-specs__value">
+                                                <span class="fleet-specs__num">951</span>
+                                                <span class="fleet-specs__measure">л.с.</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            Скорость полного хода
+                                            <p class="fleet-specs__value">
+                                                <span class="fleet-specs__num">12</span>
+                                                <span class="fleet-specs__measure">узлов</span>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            Тяга на гаке
+                                            <p class="fleet-specs__value">
+                                                <span class="fleet-specs__num">15</span>
+                                                <span class="fleet-specs__measure">тонн</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="fleet-primary-section__more">
+                                    <a href="#" class="link">Все судна</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -213,11 +283,12 @@
                     <div class="col-12">
                         <div class="documents-section__title text">
                             <h2>Документы</h2>
+                            <div class="documents-section__pagination swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 hidden">
                         <div class="documents-section__slider">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
@@ -230,19 +301,83 @@
                                         <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
                                             <img src="../assets/img/dest/documents/doc.jpg" alt="">
                                         </a>
-                                    </div><div class="swiper-slide">
+                                    </div>
+                                    <div class="swiper-slide">
                                         <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
                                             <img src="../assets/img/dest/documents/doc.jpg" alt="">
                                         </a>
-                                    </div><div class="swiper-slide">
+                                    </div>
+                                    <div class="swiper-slide">
                                         <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
                                             <img src="../assets/img/dest/documents/doc.jpg" alt="">
                                         </a>
-                                    </div><div class="swiper-slide">
+                                    </div>
+                                    <div class="swiper-slide">
                                         <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
                                             <img src="../assets/img/dest/documents/doc.jpg" alt="">
                                         </a>
-                                    </div><div class="swiper-slide">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
+                                            <img src="../assets/img/dest/documents/doc.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
                                         <a data-fslightbox href="../assets/img/dest/documents/doc.jpg">
                                             <img src="../assets/img/dest/documents/doc.jpg" alt="">
                                         </a>

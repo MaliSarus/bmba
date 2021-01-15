@@ -1,5 +1,3 @@
-import Cleave from "cleave.js";
-
 export default function formInit() {
     const mailPattern = /^[\.a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
     const formMailInput = document.querySelectorAll('form input[type="email"]');

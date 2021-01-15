@@ -1,13 +1,15 @@
 .services-section {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   height: 100vh;
   background-image: url("../img/dest/services-page/1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: background .5s;
-  &::before{
+
+  &::before {
     position: absolute;
     left: 0;
     top: 0;
@@ -15,16 +17,31 @@
     right: 0;
     display: block;
     content: '';
-    background: linear-gradient(180deg, rgba(42, 84, 130, 0) 66.73%, rgba(33, 66, 102, 0.81) 100%);
+    background: linear-gradient(0deg, rgba(11, 21, 32, 0.2), rgba(11, 21, 32, 0.2)), linear-gradient(0deg, rgba(59, 135, 249, 0.14), rgba(59, 135, 249, 0.14)), linear-gradient(180deg, rgba(42, 84, 130, 0.8) 0%, rgba(42, 84, 130, 0) 15.55%);
+    @media screen and (min-width: $xl-width){
+      background: linear-gradient(180deg, rgba(42, 84, 130, 0) 66.73%, rgba(33, 66, 102, 0.81) 100%);
+
+    }
+  }
+
+  &__main {
+    padding-top: 80px;
+    @media screen and (min-width: $xl-width) {
+      padding-top: 0;
+    }
   }
 
   &__lines {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    @media screen and (min-width: $xxl-width) {
+    display: none;
+    @media screen and (min-width: $xl-width) {
+      display: block;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    @media screen and (min-width: $xxl-width){
       top: 93px;
     }
   }
@@ -44,17 +61,25 @@
     flex-basis: calc(100% / 3);
     max-height: 100%;
 
+    &:not(:last-child){
+      border-bottom: 1px solid white;
+    }
+    @media screen and (min-width: $xl-width) {
+      border-bottom: none;
+    }
+
     a {
       position: relative;
       display: block;
-      padding-top: 80px;
       height: 100%;
       overflow: hidden;
       text-decoration: none;
-      @media screen and (min-width: $xxl-width) {
+      padding: 68px 0 60px;
+      @media screen and (min-width: $xl-width) {
         padding: 93px 0 100px 0;
       }
-      &::before{
+
+      &::before {
         position: absolute;
         left: 0;
         top: 0;
@@ -70,9 +95,10 @@
       }
 
       &:hover {
-        &::before{
+        &::before {
           opacity: 1;
         }
+
         .services-section__service-content {
           transform: none !important;
         }
@@ -83,8 +109,13 @@
       margin: 0;
       padding: 0;
       display: flex;
-      flex-wrap: wrap;
+
       height: 100%;
+      flex-direction: column;
+      @media screen and (min-width: $xl-width) {
+        flex-direction: row;
+
+      }
     }
 
     &-block {
@@ -94,16 +125,23 @@
       flex-direction: column;
       color: white;
       width: 100%;
+      padding: 0 20px;
+      @media screen and (min-width: $xl-width) {
+        padding: 0 50px 0 50px;
+      }
       @media screen and (min-width: $xxl-width) {
-        padding: 0 150px 0 50px;
+        padding-right: 150px;
       }
     }
 
     &-number {
       position: relative;
       width: 100%;
-      padding-top: 150px;
-      padding-bottom: 5px;
+
+      padding-bottom: 18px;
+      @media screen and (min-width: $xl-width) {
+        padding-top: 150px;
+      }
     }
 
     &-content {
@@ -113,6 +151,8 @@
       transition: transform .5s;
 
       h2 {
+        margin: 0;
+        padding-top: 17px;
         position: relative;
         text-transform: uppercase;
         line-height: 100%;
@@ -122,16 +162,22 @@
           font-size: 22px;
           margin-bottom: 40px;
         }
-        &::before{
+
+        &::before {
           position: absolute;
           display: block;
           content: '';
-          @media screen and (min-width: $md-width){
+          left: 0;
+          top: 0;
+          width: 21px;
+          height: 2px;
+          background: white;
+          @media screen and (min-width: $xl-width) {
             left: -50px;
             top: 0;
             bottom: 0;
             width: 3px;
-            background: white;
+
           }
         }
       }
@@ -139,9 +185,9 @@
 
     &-hidden.text {
       position: relative;
-      display: flex;
-      flex-direction: column;
+      display: none;
       @media screen and (min-width: $xl-width) {
+        display: flex;
         margin-top: 30px;
         padding-bottom: 140px;
       }

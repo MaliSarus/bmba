@@ -82,6 +82,29 @@
       }
     }
   }
+  &_back{
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: $accent-color;
+    transform: rotate(180deg);
+    @media screen and (min-width: $lg-width){
+      width: 70px;
+      height: 70px;
+    }
+    &::before{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: block;
+      content: '';
+      width: 18px;
+      height: 15px;
+      background: url("../img/dest/ui/link-arrow.svg");
+      transform: translate(-50%,-50%);
+      filter: brightness(100);
+    }
+  }
 }
 
 .lines-background {

@@ -21,12 +21,15 @@
         border: none;
         border-bottom: 1px solid #CBCBD7;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 100%;
         color:  $dark-grey;
         background: transparent;
         transition: border-bottom-color .2s;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        @media screen and (min-width: $lg-width){
+          font-size: 16px;
+        }
         &:hover{
           border-bottom-color: $dark-grey;
         }
@@ -52,7 +55,7 @@
       }
       &__content{
         &-text{
-          padding-top: 21px;
+          padding-top: 19px;
           padding-bottom: 30px;
         }
       }

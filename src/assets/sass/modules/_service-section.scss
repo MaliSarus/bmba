@@ -1,41 +1,264 @@
-.service-section{
+.service-section {
 
-  &__background{
+  &__background {
     background: url("../img/dest/services-page/1.jpg") center no-repeat;
     background-size: cover;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+    padding-bottom: 72%;
+    @media screen and (min-width: $xl-width) {
+      padding-bottom: 0;
+      position: fixed;
+      height: 100%;
+      left: 0;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
   }
-  &__main{
-    padding-top: 80px;
-    @media screen and (min-width: $xxl-width){
+
+  &__main {
+    background: url("../img/dest/service/line.svg") repeat-y 20px top;
+    @media screen and (min-width: $xl-width) {
       display: flex;
       justify-content: flex-end;
       margin: 0 auto;
-      padding: 92px 20px 0 20px;
+      padding: 80px 20px 0 20px;
       max-width: 1780px;
-
+      background: transparent;
+    }
+    @media screen and (min-width: $xxl-width){
+      padding-top: 92px;
     }
   }
-  &__content{
+  &__back{
+    position: absolute;
+    top: -35px;
+    @media screen and (min-width: $xl-width){
+      position: sticky;
+      left: 0;
+      top: 206px;
+    }
+    &-wrapper{
+      @media screen and (min-width: $xl-width){
+        position: absolute;
+        left: -35px;
+        top: 206px;
+        bottom: 200px;
+      }
+    }
+  }
+
+  &__content {
+    padding: 105px 20px 130px;
     min-height: 100%;
-    @media screen and (min-width: $xxl-width){
-      padding: 150px 111px 224px;
+    position: relative;
+
+    @media screen and (min-width: $xl-width) {
+      animation: load 1s forwards ease-in-out;
+      padding: 150px 111px 193px;
       width: 976px;
       background: #F7FAF9;
       box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.2);
     }
-    section{
-      @media screen and (min-width: $xxl-width){
-        &:not(:last-child){
+
+    h2 {
+      margin-bottom: 60px;
+      font-size: 22px;
+      @media screen and (min-width: $md-width) {
+        margin-bottom: 70px;
+        font-size: 46px;
+      }
+    }
+
+    section {
+      &:not(:last-child) {
+        margin-bottom: 100px;
+      }
+
+      @media screen and (min-width: $xxl-width) {
+        &:not(:last-child) {
           margin-bottom: 200px;
+        }
+        &.fleet-primary-section {
+          margin-bottom: 136px;
         }
       }
     }
+
+    .fleet-primary-section {
+      padding-bottom: 58px;
+      position: relative;
+      @media screen and (min-width: $xxl-width) {
+        padding-bottom: 136px;
+      }
+
+      &::before {
+        position: absolute;
+        left: 0;
+        right: -20px;
+        bottom: 0;
+        display: block;
+        content: '';
+        height: 1px;
+        background: #EBEBF0;
+        @media screen and (min-width: $xxl-width) {
+          left: -111px;
+          right: -111px;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        left: 41px;
+        display: block;
+        content: '';
+        bottom: -42px;
+        width: 91px;
+        height: 172px;
+        background: url("../img/dest/service/bg-ship_mobile.svg") center no-repeat;
+        background-size: contain;
+        @media screen and (min-width: $xxl-width) {
+          left: unset;
+          right: -68px;
+          bottom: -66px;
+          width: 141px;
+          height: 266px;
+        }
+      }
+
+      &__main {
+        padding: 0;
+      }
+
+      &__slider {
+        height: 221px;
+        @media screen and (min-width: $sm-width){
+          height: 350px;
+        }
+        @media screen and (min-width: $xl-width){
+          height: 449px;
+        }
+      }
+
+      &__slider-and-arrows {
+        padding-right: 0;
+        margin-bottom: 72px;
+        height: auto;
+      }
+
+      &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        h2 {
+          margin-bottom: 0;
+        }
+      }
+
+      &__pagination {
+        position: relative;
+        align-items: center;
+        margin-right: -12.5px;
+        padding: 37px 0;
+        transform: none;
+
+        .swiper-pagination {
+          &-bullet {
+            cursor: pointer;
+            margin: 0 12.5px;
+
+            &-active {
+              &::before {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              }
+
+              &::after {
+                background: #F7FAF9;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
+      }
+
+      &__info {
+        padding-bottom: 0;
+
+        .block-title {
+          &::before {
+            content: none;
+          }
+        }
+
+        .list {
+          ul {
+            width: 100%;
+            @media screen and (min-width: $lg-width){
+              display: flex;
+              justify-content: space-between;
+            }
+
+            li {
+              margin-bottom: 15px;
+              @media screen and (min-width: $lg-width) {
+                margin-bottom: 0;
+                &:nth-child(1n) {
+                  * {
+                    text-align: left !important;
+                  }
+                }
+
+                &:nth-child(2n) {
+                  * {
+                    text-align: center !important;
+                  }
+                }
+
+                &:nth-child(3n) {
+                  * {
+                    text-align: right !important;
+                  }
+                }
+              }
+            }
+          }
+
+        }
+
+        .fleet-specs {
+          &__value {
+            @media screen and (min-width: $xxl-width) {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      &__more {
+        margin-top: 60px;
+        position: static;
+        transform: none;
+        text-align: right;
+        @media screen and (min-width: $xxl-width) {
+          text-align: left;
+          margin-top: 90px;
+        }
+      }
+    }
+  }
+
+
+}
+
+@keyframes load {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: none;
   }
 }

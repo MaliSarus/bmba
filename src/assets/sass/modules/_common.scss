@@ -288,8 +288,11 @@ h6 {
 .columns{
   &_two{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 65px;
+    gap: 60px;
+    @media screen and (min-width: $lg-width){
+      grid-template-columns: repeat(2,1fr);
+      gap: 65px;
+    }
   }
 }
 
