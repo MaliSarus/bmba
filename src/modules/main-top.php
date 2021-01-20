@@ -1,4 +1,4 @@
-<section class="main-top home-page">
+<section class="main-top home-page header-to-transparent">
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-12">

@@ -1,34 +1,40 @@
 import {xlWidth} from "./window-width-values";
 
 function servicesCardSetHeight({servicesTitles, servicesHiddenText, servicesContent}) {
-    let minTitleHeight = servicesTitles[1].offsetHeight;
-    for (let i = 0; i < servicesTitles.length; i++) {
-        minTitleHeight = servicesTitles[i].offsetHeight < minTitleHeight ?
-            servicesTitles[i].offsetHeight
-            : minTitleHeight
-    }
-    servicesTitles.forEach(title => {
-        title.style.maxHeight = minTitleHeight + 'px';
-    })
+    let minTitleHeight = 0;
+    // for (let i = 0; i < servicesTitles.length; i++) {
+    //     minTitleHeight = servicesTitles[i].offsetHeight > minTitleHeight ?
+    //         servicesTitles[i].offsetHeight
+    //         : minTitleHeight
+    // }
+    // servicesTitles.forEach(title => {
+    //     title.style.height = minTitleHeight + 'px';
+    // })
+    //
+    // let maxTextHeight = 0;
+    // for (let i = 0; i < servicesHiddenText.length; i++) {
+    //     maxTextHeight = servicesHiddenText[i].offsetHeight > maxTextHeight ?
+    //         servicesHiddenText[i].offsetHeight
+    //         : maxTextHeight
+    // }
+    //
+    // servicesHiddenText.forEach(text => {
+    //     text.style.height = maxTextHeight + 'px';
+    // })
 
-    let maxTextHeight = 0;
-    for (let i = 0; i < servicesHiddenText.length; i++) {
-        maxTextHeight = servicesHiddenText[i].offsetHeight > maxTextHeight ?
-            servicesHiddenText[i].offsetHeight
-            : maxTextHeight
-    }
+    servicesContent.forEach((elem, index) => {
+        window.addEventListener('load',function () {
+            const elemTitle = elem.querySelector('.services-section__title')
+            const offset = elemTitle.offsetHeight;
+            console.log(`title[${index}] height: `, offset);
+            elem.style.transform = `translateY(calc(100% - ${offset}px))`;
+            elemTitle.style.transform = `translateY(-140px)`
 
-    servicesHiddenText.forEach(text => {
-        text.style.height = maxTextHeight + 'px';
-    })
-
-    servicesContent.forEach(elem => {
-        const offset = elem.querySelector('.services-section__title').offsetHeight
-        elem.style.transform = `translateY(calc(100% - ${offset}px))`;
+        })
     })
 }
 
-function servicesCardDeletHeight({servicesTitles, servicesHiddenText, servicesContent}){
+function servicesCardDeletHeight({servicesTitles, servicesHiddenText, servicesContent}) {
     servicesHiddenText.forEach(text => {
         text.removeAttribute('style');
     })
@@ -43,7 +49,7 @@ function servicesCardDeletHeight({servicesTitles, servicesHiddenText, servicesCo
 export function servicesCardInit() {
 
     const servicesLink = document.querySelectorAll('.services-section__service a')
-    const servicesSection = document.querySelector('.services-section')
+    const servicesSectionBg = document.querySelector('.services-section__background')
     const elementsToSetHeight = {
         servicesTitles: document.querySelectorAll('.services-section__title'),
         servicesHiddenText: document.querySelectorAll('.services-section__service-hidden'),
@@ -56,14 +62,14 @@ export function servicesCardInit() {
     servicesLink.forEach(link => {
         link.addEventListener('mouseover', function () {
             const backgroundImage = this.dataset.bg;
-            servicesSection.style.backgroundImage = `url("${backgroundImage}")`;
+            servicesSectionBg.style.backgroundImage = `url("${backgroundImage}")`;
         })
     })
-    window.addEventListener('resize', function () {
-        if (window.innerWidth >= xlWidth) {
-            servicesCardSetHeight(elementsToSetHeight)
-        } else {
-            servicesCardDeletHeight(elementsToSetHeight)
-        }
-    })
+    // window.addEventListener('resize', function () {
+    //     if (window.innerWidth >= xlWidth) {
+    //         servicesCardSetHeight(elementsToSetHeight)
+    //     } else {
+    //         servicesCardDeletHeight(elementsToSetHeight)
+    //     }
+    // })
 }

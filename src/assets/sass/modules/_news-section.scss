@@ -1,0 +1,259 @@
+.news-section {
+  &__main {
+    padding-top: calc(93px + 115px);
+    @media screen and (min-width: $xl-width) {
+      padding-bottom: 100px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @media screen and (min-width: $lg-width) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__left {
+    flex-basis: 100%;
+    margin-bottom: 100px;
+    @media screen and (min-width: $xl-width) {
+      flex-basis: 226px;
+      margin-bottom: 0;
+    }
+
+    a {
+      display: none;
+    }
+  }
+
+  &__center {
+    position: relative;
+    padding-bottom: 125px;
+    @media screen and (min-width: $xl-width) {
+      margin: 0 auto;
+      padding-bottom: 0;
+    }
+
+    &::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 1px;
+      display: block;
+      content: '';
+      background: #E5E5E5;
+      
+    }
+    .tab {
+      visibility: hidden;
+      opacity: 0;
+      //display: none;
+      transition: opacity 2s, visibillity 2s;
+      position: absolute;
+      max-width: 750px;
+
+      &.active {
+        position: static;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__right {
+    padding-top: 20px;
+    position: sticky;
+    top: 134px;
+
+    > h3 {
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+      }
+    }
+
+    .news {
+      text-decoration: none;
+
+      time {
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      h3 {
+        margin-top: 14px;
+        font-size: 16px;
+        line-height: 1;
+      }
+    }
+  }
+
+  &__years {
+    margin: 0;
+    padding-left: 0;
+    padding-top: 43px;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (min-width: $xl-width) {
+      padding-top: 0;
+      padding-left: 33px;
+      display: block;
+    }
+
+    li {
+      cursor: pointer;
+      list-style: none;
+      //transition: margin .2s;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 110%;
+      color: $main-color-light;
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+      &.active {
+
+        color: $dark-grey;
+        @media screen and (min-width: $xl-width) {
+          margin: 40px 0;
+        }
+      }
+
+      &:first-child {
+        margin-top: 0 !important;
+      }
+
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &-wrapper {
+      position: sticky;
+      top: 134px;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        content: '';
+        height: 2px;
+        background: url("../img/dest/news/dashed-border_mobile.svg") left top repeat-x;
+        @media screen and (min-width: $xl-width) {
+          bottom: 0;
+          right: unset;
+          width: 2px;
+          height: auto;
+          background: url("../img/dest/news/dashed-border.svg") left top repeat-y;
+        }
+
+      }
+
+      .round {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 38px;
+        height: 38px;
+        transform: translateY(-50%);
+        background: url("../img/dest/news/round.svg") center no-repeat;
+        background-size: contain;
+        transition: top .2s, left .2s;
+        @media screen and (min-width: $xl-width) {
+          transform: translate(calc(-50% + 1px), -25%);
+        }
+      }
+    }
+  }
+
+  &__center {
+    .tab {
+
+    }
+  }
+
+  &__news {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+        @media screen and (min-width: $xl-width) {
+          margin-bottom: 70px;
+        }
+      }
+    }
+
+    &-item {
+      display: flex;
+      text-decoration: none;
+    }
+
+    .news {
+
+      &__image {
+        width: 96px;
+        flex-shrink: 0;
+        height: auto;
+        min-height: 76px;
+        @media screen and (min-width: $xl-width) {
+          width: 237px;
+          min-height: 190px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      &__text {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        margin-top: 0;
+        margin-left: 20px;
+        @media screen and (min-width: $xl-width) {
+          margin-left: 70px;
+          padding-top: 40px;
+          padding-bottom: 65px;
+        }
+
+        time {
+          font-size: 12px;
+          @media screen and (min-width: $xl-width) {
+            font-size: 16px;
+          }
+        }
+
+        h3 {
+          margin-top: 10px;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 110%;
+          color: #575A64;
+          @media screen and (min-width: $xl-width) {
+            margin-top: 24px;
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}

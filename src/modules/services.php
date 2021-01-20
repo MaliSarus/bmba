@@ -1,4 +1,5 @@
-<section class="services-section ">
+<section class="services-section header-to-transparent">
+    <div class="services-section__background"></div>
     <div class="services-section__lines">
         <div class="container-fluid h-100">
             <div class="row h-100">

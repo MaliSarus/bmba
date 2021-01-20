@@ -1,5 +1,6 @@
 import {changeHeaderStyle, hamburgerHandle} from "./modules/header";
-import addLinesBg from './modules/lines-bg';
+import {addLinesBg,addTwoLinesBg} from './modules/lines-bg';
+
 import fleetPrimarySliderInit from "./modules/fleet";
 import partnersSliderInit from "./modules/partners";
 import textAndSliderInit from "./modules/text-and-slider";
@@ -11,6 +12,8 @@ import {servicesCardInit} from "./modules/services";
 import documentsSliderInit from "./modules/documents";
 import fslightbox from 'fslightbox'
 import formInit from "./modules/form";
+import {newsYearsSliderInit} from "./modules/news";
+import {changeNewBgWidth} from "./modules/new";
 
 // import homePageTopInit from "./modules/home-page-top";
 
@@ -32,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         const linesSections = document.querySelectorAll('.with-lines');
         linesSections.forEach((section) => {
             addLinesBg(section);
+        })
+    }
+    if (isSet('.with-lines_two')) {
+        const linesSections = document.querySelectorAll('.with-lines_two');
+        linesSections.forEach((section) => {
+            addTwoLinesBg(section);
         })
     }
 
@@ -66,6 +75,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     if (isSet('.documents-section')) {
         documentsSliderInit();
+    }
+    if (isSet('.news-section')){
+        newsYearsSliderInit()
+    }
+    if (isSet('.new-section')){
+        changeNewBgWidth()
+        window.addEventListener('resize', changeNewBgWidth)
     }
 })
 

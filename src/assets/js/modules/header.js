@@ -1,7 +1,7 @@
 export function changeHeaderStyle(){
     const windowTop = window.scrollY
     const header = document.querySelector('header');
-    const mainTop = document.querySelector('.main-top');
+    const mainTop = document.querySelector('.header-to-transparent');
     if (mainTop) {
         const headerOffset = windowTop + header.offsetHeight;
         const mainTopHeight = mainTop.offsetHeight;
