@@ -29,7 +29,7 @@
                     <li><a href="services-page.php">Услуги</a></li>
                     <li><a href="cost.php">Расчет стоимости</a></li>
                     <li><a href="fleet.php">Флот</a></li>
-                    <li><a href="geo.php">География</a></li>
+                    <li><a href="geo-page.php">География</a></li>
                     <li><a href="contacts.php">Контакты</a></li>
                 </ul>
             </nav>

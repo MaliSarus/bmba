@@ -89,6 +89,16 @@
     &.invalid{
       border-left: 3px solid #FB4667;
     }
+    &.value{
+      &::after {
+        background: url("../img/dest/ui/form-value-icon.svg") center no-repeat;
+      }
+    }
+    &.date{
+      &::after {
+        background: url("../img/dest/ui/form_calendar.svg") center no-repeat;
+      }
+    }
     &.name{
       &::after {
         background: url("../img/dest/ui/form_name.svg") center no-repeat;

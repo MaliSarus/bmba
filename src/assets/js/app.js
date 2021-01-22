@@ -14,6 +14,8 @@ import fslightbox from 'fslightbox'
 import formInit from "./modules/form";
 import {newsYearsSliderInit} from "./modules/news";
 import {changeNewBgWidth} from "./modules/new";
+import {initMap} from "./modules/geo";
+import {initCalc} from "./modules/calc";
 
 // import homePageTopInit from "./modules/home-page-top";
 
@@ -82,6 +84,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (isSet('.new-section')){
         changeNewBgWidth()
         window.addEventListener('resize', changeNewBgWidth)
+    }
+    if (isSet('.geo-section')){
+        initMap()
+    }
+    if (isSet('.calc-section')){
+        initCalc()
     }
 })
 

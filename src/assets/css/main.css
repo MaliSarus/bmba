@@ -263,6 +263,561 @@
   content: '\2013';
 }
 
+.mx-icon-left:before,
+.mx-icon-right:before,
+.mx-icon-double-left:before,
+.mx-icon-double-right:before,
+.mx-icon-double-left:after,
+.mx-icon-double-right:after {
+  content: '';
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  border-style: solid;
+  border-color: currentColor;
+  border-width: 2px 0 0 2px;
+  border-radius: 1px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate(-45deg) scale(0.7);
+  -ms-transform: rotate(-45deg) scale(0.7);
+  transform: rotate(-45deg) scale(0.7);
+}
+
+.mx-icon-double-left:after {
+  left: -4px;
+}
+
+.mx-icon-double-right:before {
+  left: 4px;
+}
+
+.mx-icon-right:before,
+.mx-icon-double-right:before,
+.mx-icon-double-right:after {
+  -webkit-transform: rotate(135deg) scale(0.7);
+  -ms-transform: rotate(135deg) scale(0.7);
+  transform: rotate(135deg) scale(0.7);
+}
+
+.mx-btn {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 7px 15px;
+  margin: 0;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  color: #575A64;
+  white-space: nowrap;
+}
+
+.mx-btn:hover {
+  border-color: #1284e7;
+  color: #1284e7;
+}
+
+.mx-btn-text {
+  border: 0;
+  padding: 0 4px;
+  text-align: left;
+  line-height: inherit;
+}
+
+.mx-scrollbar {
+  height: 100%;
+}
+
+.mx-scrollbar:hover .mx-scrollbar-track {
+  opacity: 1;
+}
+
+.mx-scrollbar-wrap {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mx-scrollbar-track {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  width: 6px;
+  z-index: 1;
+  border-radius: 4px;
+  opacity: 0;
+  -webkit-transition: opacity 0.24s ease-out;
+  -o-transition: opacity 0.24s ease-out;
+  transition: opacity 0.24s ease-out;
+}
+
+.mx-scrollbar-track .mx-scrollbar-thumb {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba(144, 147, 153, 0.3);
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.mx-zoom-in-down-enter-active,
+.mx-zoom-in-down-leave-active {
+  opacity: 1;
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+}
+
+.mx-zoom-in-down-enter,
+.mx-zoom-in-down-leave-to {
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  transform: scaleY(0);
+}
+
+.mx-datepicker {
+  position: relative;
+  display: block;
+  width: 210px;
+}
+
+.mx-datepicker svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.mx-datepicker-range {
+  width: 320px;
+}
+
+.mx-datepicker-inline {
+  width: auto;
+}
+
+.mx-input-wrapper {
+  position: relative;
+}
+
+.mx-input-wrapper .mx-icon-clear {
+  display: none;
+}
+
+.mx-input-wrapper:hover .mx-icon-clear {
+  display: block;
+}
+
+.mx-input-wrapper:hover .mx-icon-clear + .mx-icon-calendar {
+  display: none;
+}
+
+.mx-input {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 34px;
+  padding: 6px 30px;
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.mx-input:hover,
+.mx-input:focus {
+  border-color: #409aff;
+}
+
+.mx-input:disabled,
+.mx-input.disabled {
+  color: #ccc;
+  background-color: #f3f3f3;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.mx-input:focus {
+  outline: none;
+}
+
+.mx-input::-ms-clear {
+  display: none;
+}
+
+.mx-icon-calendar,
+.mx-icon-clear {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.5);
+  vertical-align: middle;
+}
+
+.mx-icon-clear {
+  cursor: pointer;
+}
+
+.mx-icon-clear:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.mx-datepicker-main {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #575A64;
+  background-color: #fff;
+}
+
+.mx-datepicker-popup {
+  position: absolute;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  z-index: 2001;
+}
+
+.mx-datepicker-sidebar {
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100px;
+  padding: 6px;
+  overflow: auto;
+}
+
+.mx-datepicker-sidebar + .mx-datepicker-content {
+  margin-left: 100px;
+  border-left: 1px solid #e8e8e8;
+}
+
+.mx-datepicker-body {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mx-btn-shortcut {
+  display: block;
+  padding: 0 6px;
+  line-height: 24px;
+}
+
+.mx-range-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mx-datepicker-header {
+  padding: 6px 8px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.mx-datepicker-footer {
+  padding: 6px 8px;
+  text-align: right;
+  border-top: 1px solid #e8e8e8;
+}
+
+.mx-calendar {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mx-calendar + .mx-calendar {
+  border-left: 1px solid #e8e8e8;
+}
+
+.mx-calendar-header,
+.mx-time-header {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.mx-btn-icon-left,
+.mx-btn-icon-double-left {
+  float: left;
+}
+
+.mx-btn-icon-right,
+.mx-btn-icon-double-right {
+  float: right;
+}
+
+.mx-btn-icon-double-left,
+.mx-btn-icon-double-right {
+  display: none;
+}
+
+.mx-calendar-header-label,
+.mx-calendar-header-label button {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 110%;
+  /* or 18px */
+  text-transform: uppercase;
+  color: #2F333E;
+}
+
+.mx-calendar-decade-separator {
+  margin: 0 2px;
+}
+
+.mx-calendar-decade-separator:after {
+  content: '~';
+}
+
+.mx-calendar-content {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mx-calendar-content .cell {
+  cursor: pointer;
+}
+
+.mx-calendar-content .cell:hover {
+  color: white;
+  background-color: rgba(33, 107, 112, 0.3);
+}
+
+.mx-calendar-content .cell.active {
+  color: #fff;
+  background-color: #216B70;
+}
+
+.mx-calendar-content .cell.in-range {
+  color: #575A64;
+  background-color: #dee9ea;
+}
+
+.mx-calendar-content .cell.disabled {
+  cursor: not-allowed;
+  color: #ccc;
+  background-color: #f3f3f3;
+}
+
+.mx-calendar-week-mode .mx-date-row {
+  cursor: pointer;
+}
+
+.mx-calendar-week-mode .mx-date-row:hover {
+  background-color: rgba(33, 107, 112, 0.3);
+}
+
+.mx-calendar-week-mode .mx-date-row.mx-active-week {
+  background-color: #dee9ea;
+}
+
+.mx-calendar-week-mode .mx-date-row .cell:hover {
+  color: inherit;
+  background-color: transparent;
+}
+
+.mx-calendar-week-mode .mx-date-row .cell.active {
+  color: inherit;
+  background-color: transparent;
+}
+
+.mx-week-number {
+  opacity: 0.5;
+}
+
+.mx-table {
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 5px;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.mx-table th {
+  padding-bottom: 15px;
+  font-weight: 500;
+}
+
+.mx-table td {
+  padding: 0;
+}
+
+.mx-table-date td {
+  height: 54px;
+  font-size: 16px;
+  background: #F9F9FC;
+}
+
+.mx-table-date .today {
+  color: #216B70;
+}
+
+.mx-table-date .cell.not-current-month {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mx-time {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 224px;
+  background: #fff;
+}
+
+.mx-time + .mx-time {
+  border-left: 1px solid #e8e8e8;
+}
+
+.mx-calendar-time {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mx-time-header {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.mx-time-content {
+  height: 224px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.mx-time-columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mx-time-column {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  border-left: 1px solid #e8e8e8;
+  text-align: center;
+}
+
+.mx-time-column:first-child {
+  border-left: 0;
+}
+
+.mx-time-column .mx-time-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mx-time-column .mx-time-list::after {
+  content: '';
+  display: block;
+  height: 192px;
+}
+
+.mx-time-column .mx-time-item {
+  cursor: pointer;
+  font-size: 12px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.mx-time-column .mx-time-item:hover {
+  color: #575A64;
+  background-color: #f4f8f8;
+}
+
+.mx-time-column .mx-time-item.active {
+  color: #1284e7;
+  background-color: transparent;
+  font-weight: 700;
+}
+
+.mx-time-column .mx-time-item.disabled {
+  cursor: not-allowed;
+  color: #ccc;
+  background-color: #f3f3f3;
+}
+
+.mx-time-option {
+  cursor: pointer;
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.mx-time-option:hover {
+  color: #575A64;
+  background-color: #f4f8f8;
+}
+
+.mx-time-option.active {
+  color: #1284e7;
+  background-color: transparent;
+  font-weight: 700;
+}
+
+.mx-time-option.disabled {
+  cursor: not-allowed;
+  color: #ccc;
+  background-color: #f3f3f3;
+}
+
 * {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -930,6 +1485,14 @@ h6 {
   border-left: 3px solid #FB4667;
 }
 
+.form__input.value::after {
+  background: url("../img/dest/ui/form-value-icon.svg") center no-repeat;
+}
+
+.form__input.date::after {
+  background: url("../img/dest/ui/form_calendar.svg") center no-repeat;
+}
+
 .form__input.name::after {
   background: url("../img/dest/ui/form_name.svg") center no-repeat;
 }
@@ -1266,10 +1829,6 @@ h6 {
   overflow: hidden;
   width: 100%;
   height: 100vh;
-}
-
-.main-top.home-page {
-  background-image: url("../img/dest/home-page/photo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1449,15 +2008,23 @@ h6 {
   color: #2F333E;
 }
 
-.actions-section__list ul li a.hover {
+.actions-section__list ul li a:hover {
   color: white;
 }
 
-.actions-section__list ul li a.hover .actions-section__list-number {
+.actions-section__list ul li a:hover img {
+  opacity: 0;
+}
+
+.actions-section__list ul li a:hover img.hover {
+  opacity: 1;
+}
+
+.actions-section__list ul li a:hover .actions-section__list-number {
   color: white;
 }
 
-.actions-section__list ul li a.hover p::after {
+.actions-section__list ul li a:hover p::after {
   background: white;
 }
 
@@ -1468,6 +2035,19 @@ h6 {
   object-position: center;
   -o-object-fit: cover;
   object-fit: cover;
+  opacity: 1;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.actions-section__list ul li a img.hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
 }
 
 .actions-section__list ul li a p {
@@ -1541,6 +2121,21 @@ h6 {
 
 .fleet-primary-section__title h2 {
   margin: 0;
+}
+
+.fleet-primary-section__tabs {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% + 35px);
+}
+
+.fleet-primary-section__info.active {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  position: relative;
+  opacity: 1;
 }
 
 .fleet-primary-section__more {
@@ -1914,24 +2509,6 @@ h6 {
   object-position: center;
 }
 
-.text-and-picture-section__picture .picture-wrapper::before {
-  position: absolute;
-  left: 50%;
-  bottom: -21px;
-  display: block;
-  content: '';
-  width: 60px;
-  height: 60px;
-  background-image: url("../img/dest/ui/logo-on-green.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
 .text-and-picture-section__picture::before,
 .text-and-picture-section__picture::after {
   position: absolute;
@@ -1960,6 +2537,29 @@ h6 {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+
+.text-and-picture-section__logo {
+  position: absolute;
+  left: 50%;
+  bottom: -21px;
+  display: block;
+  content: '';
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.text-and-picture-section__logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .text-and-slider-section__main {
@@ -3534,6 +4134,368 @@ h6 {
   color: #8E97AC;
 }
 
+.geo-section {
+  position: relative;
+  margin-top: 80px;
+}
+
+.geo-section__video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: none;
+}
+
+.geo-section__video.desktop {
+  display: none;
+}
+
+.geo-section__video-wrapper {
+  height: 685px;
+  display: none;
+}
+
+.geo-section__map {
+  height: 685px;
+}
+
+.geo-section__map .ymaps-2-1-78-ground-pane {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.geo-section__info {
+  position: relative;
+  width: 100%;
+  padding: 60px 20px;
+  background: #F7FAF9;
+  -webkit-box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+.geo-section__info h1 {
+  text-transform: uppercase;
+}
+
+.geo-section__placemark {
+  width: auto;
+  min-width: 190px;
+  padding: 15px 30px;
+  position: absolute;
+  background-color: white;
+  -webkit-transform: translate(-50%, calc(-100% - 20px));
+  -ms-transform: translate(-50%, calc(-100% - 20px));
+  transform: translate(-50%, calc(-100% - 20px));
+  -webkit-box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+.geo-section__placemark::before {
+  position: absolute;
+  display: block;
+  content: '';
+  left: 50%;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  background: white;
+  -webkit-transform: translate(-50%, 50%) rotate(45deg);
+  -ms-transform: translate(-50%, 50%) rotate(45deg);
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.geo-section__placemark-icon {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  background: #216B70;
+  border: 3px solid white;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.geo-section .placemark_bottom {
+  -webkit-transform: translate(-50%, 20px);
+  -ms-transform: translate(-50%, 20px);
+  transform: translate(-50%, 20px);
+}
+
+.geo-section .placemark_bottom::before {
+  bottom: unset;
+  top: 0;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.geo-section .placemark__image {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.3);
+}
+
+.geo-section .placemark__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.geo-section .placemark__subtitle {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 110%;
+  color: #9EBDB3;
+  margin-bottom: 1px;
+}
+
+.geo-section .placemark__title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  color: #575A64;
+}
+
+.calc-section {
+  position: relative;
+  border-top: 1px solid #EBEBF0;
+  border-bottom: 1px solid #EBEBF0;
+}
+
+.calc-section__back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: url("../img/dest/calc/bg.jpg") left top no-repeat;
+  background-size: contain;
+}
+
+.calc-section__back-layout {
+  width: 100%;
+  height: 100%;
+  background: #F7FAF9;
+}
+
+.calc-section__title h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.calc-section__title p {
+  margin: 0;
+}
+
+.calc-section__float-values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.calc-section__float-values .form__input-wrapper {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-transition: opacity .25s;
+  -o-transition: opacity .25s;
+  transition: opacity .25s;
+}
+
+.calc-section__float-values .form__input-wrapper label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #575A64;
+}
+
+.calc-section__float-values .form__input-wrapper label span {
+  font-weight: 500;
+  color: #B7C0CE;
+}
+
+.calc-section__float-values .form__input-wrapper.disabled {
+  opacity: .5;
+}
+
+.calc-section__volume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #575A64;
+}
+
+.calc-section__volume-title,
+.calc-section__volume-value {
+  margin: 0;
+}
+
+.calc-section__volume-title span,
+.calc-section__volume-value span {
+  font-weight: 500;
+  color: #B7C0CE;
+}
+
+.calc-section__volume-title {
+  margin-right: 40px;
+}
+
+.calc-section__formula {
+  display: block;
+  text-align: right;
+}
+
+.calc-section__checkbox {
+  margin: 70px 0;
+}
+
+.calc-section__checkbox label {
+  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #575A64;
+}
+
+.calc-section__checkbox label::before {
+  display: block;
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 2px solid #CBCBD7;
+  margin-right: 18px;
+}
+
+.calc-section__checkbox input {
+  display: none;
+}
+
+.calc-section__checkbox input:checked + label::before {
+  border: 6px solid #216B70;
+}
+
+.calc-section__date {
+  max-width: 237px;
+}
+
+.calc-section__date label {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #575A64;
+  margin-bottom: 20px;
+}
+
+.calc-section__form-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 70px;
+  padding-top: 40px;
+  border-top: 2px dotted #CBCBD7;
+}
+
+.calc-section__result p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #9EBDB3;
+  margin: 0;
+}
+
+.calc-section__result p.calc-section__result-value {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #2F333E;
+}
+
+.calc-section__submit button {
+  border: none;
+  background: transparent;
+}
+
+.calc-section__datepicker {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 567px;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  z-index: 1000;
+  background: white;
+  padding: 80px;
+}
+
+.calc-section__datepicker.open {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 .footer {
   background-color: #252832;
   background-image: url("../img/dest/footer/bg-ship.svg");
@@ -3671,6 +4633,18 @@ h6 {
   .documents-section__slider .swiper-slide a {
     height: 300px;
   }
+
+  .geo-section__video {
+    display: block;
+  }
+
+  .geo-section__video-wrapper {
+    display: block;
+  }
+
+  .geo-section__map {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -3801,6 +4775,11 @@ h6 {
     font-size: 32px;
   }
 
+  .calc-section__float-values {
+    margin: -10px;
+    margin-bottom: 30px;
+  }
+
   .footer {
     background-position: 43px calc(100% - 33px);
   }
@@ -3907,8 +4886,17 @@ h6 {
   }
 
   .fleet-primary-section__info {
-    position: relative;
+    position: absolute;
+    width: 100%;
     padding-bottom: 70px;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
   }
 
   .fleet-primary-section__more {
@@ -4043,17 +5031,6 @@ h6 {
     padding: 150px 0;
   }
 
-  .text-and-picture-section__picture .picture-wrapper::before {
-    width: 100px;
-    height: 100px;
-    bottom: unset;
-    left: -48px;
-    top: 130px;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
-
   .text-and-picture-section__picture::before {
     top: 100px;
     left: -80px;
@@ -4070,6 +5047,17 @@ h6 {
     top: unset;
     bottom: 52px;
     right: -46px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+
+  .text-and-picture-section__logo {
+    width: 100px;
+    height: 100px;
+    bottom: unset;
+    left: -48px;
+    top: 130px;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
@@ -4252,6 +5240,36 @@ h6 {
 
   .news-section__title {
     margin-bottom: 70px;
+  }
+
+  .geo-section {
+    margin-top: 0;
+    height: 100vh;
+  }
+
+  .geo-section__video.mobile {
+    display: none;
+  }
+
+  .geo-section__video.desktop {
+    display: block;
+  }
+
+  .geo-section__info {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    bottom: 0;
+    width: 374px;
+    padding: 92px 40px;
+    -webkit-box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.1);
+  }
+
+  .geo-section__info h1 {
+    font-size: 22px;
+    line-height: 120%;
+    margin-bottom: 50px;
   }
 
   .footer__block {
@@ -4686,6 +5704,35 @@ h6 {
     font-size: 46px;
     text-transform: none;
   }
+
+  .geo-section__video-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .calc-section__back-layout {
+    width: 64%;
+    margin-left: auto;
+  }
+
+  .calc-section__front {
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
+
+  .calc-section__title {
+    margin-bottom: 100px;
+  }
+
+  .calc-section__float-values .form__input-wrapper {
+    -ms-flex-preferred-size: calc(100% / 3);
+    flex-basis: calc(100% / 3);
+  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -4844,5 +5891,18 @@ h6 {
 
   .new-section__content {
     padding-right: 150px;
+  }
+
+  .geo-section__info {
+    top: 93px;
+  }
+}
+
+@media (max-width: 750px) {
+  .mx-range-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }

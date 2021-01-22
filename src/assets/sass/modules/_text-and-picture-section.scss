@@ -1,7 +1,8 @@
 .text-and-picture-section {
-  @media screen and (min-width: $lg-width){
+  @media screen and (min-width: $lg-width) {
     overflow: hidden;
   }
+
   &__main {
     @media screen and (min-width: $lg-width) {
       padding: 150px 0;
@@ -16,17 +17,19 @@
       margin-bottom: 50px;
     }
   }
-  &__picture{
+
+  &__picture {
     position: relative;
     height: 466px;
-    @media screen and (min-width: $md-width){
+    @media screen and (min-width: $md-width) {
       height: 650px;
     }
 
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       height: auto;
     }
-    .picture-wrapper{
+
+    .picture-wrapper {
       position: relative;
       display: block;
 
@@ -37,36 +40,16 @@
         object-position: center;
       }
 
-      &::before{
-        position: absolute;
-        left: 50%;
-        bottom: -21px;
-        display: block;
-        content: '';
-        width: 60px;
-        height: 60px;
-        background-image: url("../img/dest/ui/logo-on-green.svg");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        z-index: 1;
-        transform: translateX(-50%);
-        @media screen and (min-width: $lg-width){
-          width: 100px;
-          height: 100px;
-          bottom: unset;
-          left: -48px;
-          top: 130px;
-          transform: none;
-        }
-      }
+
     }
-    &::before,&::after{
+
+    &::before, &::after {
       position: absolute;
       display: block;
       content: '';
     }
-    &::before{
+
+    &::before {
       bottom: -41px;
       left: 50%;
       width: 100px;
@@ -74,7 +57,7 @@
       background: url("../img/dest/text-and-picture/skew-lines.svg");
       z-index: $z-lowest;
       transform: translateX(-50%);
-      @media screen and (min-width: $lg-width){
+      @media screen and (min-width: $lg-width) {
         top: 100px;
         left: -80px;
         width: 160px;
@@ -84,19 +67,46 @@
         transform: none;
       }
     }
-    &::after{
+
+    &::after {
       right: 20px;
       top: -47px;
       width: 94px;
       height: 94px;
       background: url("../img/dest/ui/dots-half.svg");
       transform: rotate(-90deg);
-      @media screen and (min-width: $lg-width){
+      @media screen and (min-width: $lg-width) {
         top: unset;
         bottom: 52px;
         right: -46px;
         transform: none;
       }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    bottom: -21px;
+    display: block;
+    content: '';
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    transform: translateX(-50%);
+    @media screen and (min-width: $lg-width) {
+      width: 100px;
+      height: 100px;
+      bottom: unset;
+      left: -48px;
+      top: 130px;
+      transform: none;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: contain;
     }
   }
 }

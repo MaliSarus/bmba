@@ -96,8 +96,14 @@
           height: 100%;
           color: $main-color;
 
-          &.hover {
+          &:hover {
             color: white;
+            img{
+              opacity: 0;
+              &.hover{
+                opacity: 1;
+              }
+            }
             .actions-section__list-number{
               color: white;
             }
@@ -114,6 +120,16 @@
             height: 100%;
             object-position: center;
             object-fit: cover;
+            opacity: 1;
+            transition: opacity .5s;
+            &.hover{
+              position: absolute;
+              left: 0;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              opacity: 0;
+            }
           }
 
           p {

@@ -35,7 +35,8 @@
                                     <ul>
                                         <li>
                                             <a href="#" class="hover">
-                                                <img src="../assets/img/dest/actions/1.png" alt="">
+                                                <img src="../assets/img/dest/actions/1.jpg" alt="">
+                                                <img src="../assets/img/dest/actions/1_hover.jpg" alt="" class="hover">
                                                 <p data-num="01.">
                                                     <span class="actions-section__list-number">01.</span>
                                                     швартовка и отшвартовка судов
@@ -44,7 +45,8 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img src="../assets/img/dest/actions/2.png" alt="">
+                                                <img src="../assets/img/dest/actions/2.jpg" alt="">
+                                                <img src="../assets/img/dest/actions/2_hover.jpg" alt="" class="hover">
                                                 <p data-num="02.">
                                                     <span class="actions-section__list-number">02.</span>
                                                     буксировка и буксирное сопровождение на акватории
@@ -53,7 +55,8 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img src="../assets/img/dest/actions/3.png" alt="">
+                                                <img src="../assets/img/dest/actions/3.jpg" alt="">
+                                                <img src="../assets/img/dest/actions/3_hover.jpg" alt="" class="hover">
                                                 <p data-num="03.">
                                                     <span class="actions-section__list-number">03.</span>
                                                     эскортирование крупнотоннажных судов

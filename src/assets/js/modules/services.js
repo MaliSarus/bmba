@@ -1,32 +1,10 @@
 import {xlWidth} from "./window-width-values";
 
 function servicesCardSetHeight({servicesTitles, servicesHiddenText, servicesContent}) {
-    let minTitleHeight = 0;
-    // for (let i = 0; i < servicesTitles.length; i++) {
-    //     minTitleHeight = servicesTitles[i].offsetHeight > minTitleHeight ?
-    //         servicesTitles[i].offsetHeight
-    //         : minTitleHeight
-    // }
-    // servicesTitles.forEach(title => {
-    //     title.style.height = minTitleHeight + 'px';
-    // })
-    //
-    // let maxTextHeight = 0;
-    // for (let i = 0; i < servicesHiddenText.length; i++) {
-    //     maxTextHeight = servicesHiddenText[i].offsetHeight > maxTextHeight ?
-    //         servicesHiddenText[i].offsetHeight
-    //         : maxTextHeight
-    // }
-    //
-    // servicesHiddenText.forEach(text => {
-    //     text.style.height = maxTextHeight + 'px';
-    // })
-
     servicesContent.forEach((elem, index) => {
         window.addEventListener('load',function () {
             const elemTitle = elem.querySelector('.services-section__title')
             const offset = elemTitle.offsetHeight;
-            console.log(`title[${index}] height: `, offset);
             elem.style.transform = `translateY(calc(100% - ${offset}px))`;
             elemTitle.style.transform = `translateY(-140px)`
 
@@ -65,11 +43,11 @@ export function servicesCardInit() {
             servicesSectionBg.style.backgroundImage = `url("${backgroundImage}")`;
         })
     })
-    // window.addEventListener('resize', function () {
-    //     if (window.innerWidth >= xlWidth) {
-    //         servicesCardSetHeight(elementsToSetHeight)
-    //     } else {
-    //         servicesCardDeletHeight(elementsToSetHeight)
-    //     }
-    // })
+    window.addEventListener('resize', function () {
+        if (window.innerWidth >= xlWidth) {
+            servicesCardSetHeight(elementsToSetHeight)
+        } else {
+            servicesCardDeletHeight(elementsToSetHeight)
+        }
+    })
 }

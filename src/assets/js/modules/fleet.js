@@ -26,9 +26,12 @@ export default function fleetPrimarySliderInit() {
         customPaginationInit(paginationContainer,mySwiper,realSlides,5)
     }
     else {
-
+        const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
         mySwiper.on('slideChangeTransitionStart', function () {
             const swiperPagination = document.querySelector('.fleet-primary-section__slider .swiper-pagination')
+            tabs.forEach(tab=>{
+                tab.classList.remove('active')
+            });
             if (window.innerWidth > xlWidth) {
                 const fleetBackgroundTitle = document.querySelector('.fleet-primary-section__background-word');
                 const maxBackgroundTitleOffset = 100;
@@ -36,6 +39,10 @@ export default function fleetPrimarySliderInit() {
                 fleetBackgroundTitle.style.top = `calc(50% - ${currentBackgroundTitleOffset}px)`
             }
             swiperPagination.style.left = (mySwiper.width - swiperPagination.offsetWidth) / (realSlides - 1) * mySwiper.realIndex + 'px'
+        })
+        mySwiper.on('slideChangeTransitionEnd', function () {
+            const index = mySwiper.realIndex;
+            tabs[index].classList.add('active')
         })
     }
 }

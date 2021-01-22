@@ -40,11 +40,26 @@
       margin: 0;
     }
   }
+  &__tabs{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% + 35px);
+  }
 
   &__info {
     @media screen and (min-width: $lg-width) {
-      position: relative;
+      position: absolute;
+      width: 100%;
       padding-bottom: 70px;
+      transform: translateX(-100%);
+      transition: transform .5s;
+
+    }
+    &.active{
+      transform: none;
+      position: relative;
+      opacity: 1;
     }
   }
 

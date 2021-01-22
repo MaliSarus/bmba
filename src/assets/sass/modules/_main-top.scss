@@ -1,31 +1,31 @@
-.main-top{
+.main-top {
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  &.home-page{
-    background-image: url("../img/dest/home-page/photo.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  &__text{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 57px;
-    @media screen and (min-width: $md-width){
+    @media screen and (min-width: $md-width) {
       padding-bottom: 90px;
     }
   }
-  &__title{
+
+  &__title {
     position: relative;
     color: white;
     text-transform: uppercase;
-    @media screen and (min-width: $md-width){
+    @media screen and (min-width: $md-width) {
       padding-top: 18px;
       padding-bottom: 26px;
     }
-    &::before{
+
+    &::before {
       position: absolute;
       top: 35px;
       left: -64px;
@@ -37,26 +37,28 @@
       background-size: cover;
       z-index: 0;
       filter: brightness(100);
-      @media screen and (min-width: $md-width){
+      @media screen and (min-width: $md-width) {
         top: 0;
         left: -74px;
         width: 145px;
         height: 100%;
       }
     }
-    h1{
+
+    h1 {
       margin: 0;
       font-style: normal;
       font-weight: bold;
       font-size: 42px;
       line-height: 100%;
-      @media screen and (min-width: $md-width){
+      @media screen and (min-width: $md-width) {
         font-size: 62px;
       }
-      div{
+
+      div {
         font-size: 22px;
         margin-bottom: 14px;
-        @media screen and (min-width: $md-width){
+        @media screen and (min-width: $md-width) {
           margin-bottom: 0;
           font-size: 46px;
         }

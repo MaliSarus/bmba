@@ -30,6 +30,9 @@
                 <div class="col-12 col-xl-5 p-0 pl-sm-3 pr-sm-3 order-1 order-xl-0">
                     <div class="text-and-picture-section__picture h-100">
                         <div class="picture-wrapper h-100">
+                            <div class="text-and-picture-section__logo">
+                                <img src="./assets/img/dest/ui/logo-on-green.svg" alt="">
+                            </div>
                             <img src="./assets/img/dest/text-and-picture/1.jpg" alt="">
                         </div>
                     </div>
