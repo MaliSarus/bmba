@@ -48,12 +48,15 @@
   }
 
   &__info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: transform .4s;
     @media screen and (min-width: $lg-width) {
-      position: absolute;
-      width: 100%;
       padding-bottom: 70px;
       transform: translateX(-100%);
-      transition: transform .5s;
 
     }
     &.active{

@@ -1,8 +1,11 @@
-.calc-section{
+.calc-section {
   position: relative;
-  border-top: 1px solid #EBEBF0;
-  border-bottom: 1px solid #EBEBF0;
-  &__back{
+  @media screen and (min-width: $xl-width) {
+    border-top: 1px solid #EBEBF0;
+    border-bottom: 1px solid #EBEBF0;
+  }
+
+  &__back {
     position: absolute;
     left: 0;
     top: 0;
@@ -10,11 +13,12 @@
     right: 0;
     background: url("../img/dest/calc/bg.jpg") left top no-repeat;
     background-size: contain;
-    &-layout{
+
+    &-layout {
       width: 100%;
       height: 100%;
       background: #F7FAF9;
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $xl-width) {
         width: 64%;
         margin-left: auto;
 
@@ -22,113 +26,176 @@
 
     }
   }
-  &__front{
-    @media screen and (min-width: $xl-width){
+
+  &__front {
+    @media screen and (min-width: $xl-width) {
       padding-top: 150px;
       padding-bottom: 100px;
     }
   }
-  &__title{
-    @media screen and (min-width: $xl-width){
+
+  &__block {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #DFE9E5;
+      @media screen and (min-width: $xl-width) {
+        content: none;
+      }
+    }
+  }
+
+  &__title {
+    @media screen and (min-width: $xl-width) {
       margin-bottom: 100px;
     }
-    h2{
+
+    h2 {
       margin-top: 0;
       margin-bottom: 30px;
     }
-    p{
+
+    p {
       margin: 0;
     }
   }
-  &__float-values{
+
+  &__float-values {
     display: flex;
     flex-wrap: wrap;
-    @media screen and (min-width: $md-width){
+    margin: -20px 0;
+    margin-bottom: 40px;
+    @media screen and (min-width: $xl-width) {
       margin: -10px;
       margin-bottom: 30px;
     }
-    .form__input-wrapper{
-     flex-basis: 100%;
-      padding: 10px;
+
+    .form__input-wrapper {
+      flex-basis: 100%;
+      padding: 20px 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: opacity .25s;
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $xl-width) {
+        padding: 10px;
         flex-basis: calc(100% / 3);
       }
-      label{
+
+      label {
         display: block;
         margin-bottom: 20px;
         font-weight: 600;
         font-size: 16px;
         line-height: 100%;
         color: $dark-grey;
-        span{
+
+        span {
           font-weight: 500;
           color: #B7C0CE;
         }
       }
-      &.disabled{
+
+      &.disabled {
         opacity: .5;
       }
     }
   }
-  &__volume{
+
+  &__volume {
     display: flex;
     justify-content: flex-start;
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;
     color: $dark-grey;
-    &-title,&-value{
+
+    &-title, &-value {
       margin: 0;
+
       span {
         font-weight: 500;
         color: #B7C0CE;
       }
     }
-    &-title{
+
+    &-title {
       margin-right: 40px;
     }
 
   }
-  &__formula{
+
+  &__formula {
     display: block;
-    text-align: right;
+    text-align: left;
+    margin-top: 15px;
+    @media screen and (min-width: $xl-width) {
+      margin-top: 0;
+      text-align: right;
+    }
   }
-  &__checkbox{
-    margin: 70px 0;
-    label{
+
+  &__checkbox {
+    margin: 55px 0 60px;
+    @media screen and (min-width: $xl-width) {
+      margin: 70px 0;
+    }
+
+    label {
       cursor: pointer;
       position: relative;
       display: flex;
       align-items: center;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 100%;
       color: $dark-grey;
-      &::before{
+      @media screen and (min-width: $xl-width) {
+        font-size: 16px;
+      }
+
+      &::before {
         display: block;
         content: '';
         width: 30px;
         height: 30px;
         border: 2px solid #CBCBD7;
         margin-right: 18px;
+        flex-shrink: 0;
       }
     }
-    input{
+
+    input {
       display: none;
-      &:checked + label{
-        &::before{
+
+      &:checked + label {
+        &::before {
           border: 6px solid $accent-color;
         }
       }
     }
   }
-  &__date{
-    max-width: 237px;
-    label{
+
+  &__date {
+    @media screen and (min-width: $xl-width) {
+      max-width: 237px;
+    }
+
+    &-wrapper {
+      margin: 0;
+      @media screen and (min-width: $md-width) {
+        margin-top: 0;
+      }
+    }
+
+    label {
       display: block;
       font-weight: 600;
       font-size: 16px;
@@ -137,52 +204,166 @@
       margin-bottom: 20px;
     }
   }
-  &__form{
-    &-footer{
+
+  &__form {
+    margin-top: 120px;
+    @media screen and (min-width: $xl-width) {
+      margin-top: 0;
+    }
+
+    &-footer {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-top: 70px;
-      padding-top: 40px;
+      flex-wrap: wrap;
+      margin-top: 65px;
+      padding-top: 35px;
       border-top: 2px dotted #CBCBD7;
+      @media screen and (min-width: $xl-width) {
+        margin-top: 70px;
+        padding-top: 40px;
+
+      }
     }
   }
-  &__result{
-    p{
+
+  &__result {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 100%;
+    margin-bottom: 60px;
+    @media screen and (min-width: $xl-width) {
+      margin-bottom: 0;
+      align-items: unset;
+      justify-content: unset;
+      flex-basis: unset;
+    }
+
+    p {
       font-weight: 500;
       font-size: 16px;
       line-height: 100%;
       color: #9EBDB3;
       margin: 0;
-      &.calc-section__result-value{
-        margin-top: 10px;
+      @media screen and (min-width: $xl-width) {
+        flex-basis: 100%;
+      }
+
+      &.calc-section__result-value {
         font-weight: bold;
         font-size: 22px;
         line-height: 110%;
         text-transform: uppercase;
         color: #2F333E;
+        @media screen and (min-width: $xl-width) {
+          margin-top: 10px;
+        }
       }
     }
   }
-  &__submit{
-    button{
+
+  &__submit {
+    flex-basis: 100%;
+    text-align: right;
+    @media screen and (min-width: $xl-width) {
+      flex-basis: unset;
+    }
+
+    button {
+      cursor: pointer;
       border: none;
       background: transparent;
     }
   }
-  &__datepicker{
+
+  &__datepicker {
     position: fixed;
     right: 0;
     top: 0;
     bottom: 0;
-    width: 567px;
+    width: 100%;
     transform: translateX(100%);
     transition: transform .5s;
     z-index: $z-highest;
     background: white;
-    padding: 80px;
-    &.open{
+    padding: 80px 20px;
+    @media screen and (min-width: $sm-width) {
+      width: 567px;
+      padding: 80px;
+    }
+
+    &.open {
       transform: none;
+    }
+
+    td.highlight {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 50%;
+        bottom: 7px;
+        display: block;
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background: #FB4667;
+        transform: translateX(-50%);
+      }
+    }
+
+    &-title {
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 110%;
+      text-transform: uppercase;
+      color: #2F333E;
+      margin-bottom: 100px;
+    }
+
+    &-add {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 37px;
+      border-bottom: 1px solid #EBEBF0;
+      margin-bottom: 37px;
+
+      p {
+        margin: 0;
+      }
+
+      p:nth-child(1) {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        color: $dark-grey;
+        position: relative;
+        padding-left: 25px;
+        &::before{
+          position: absolute;
+          left: 0;
+          top: 50%;
+          display: block;
+          content: '';
+          width: 10px;
+          height: 10px;
+          border-radius: 100%;
+          background: #FB4667;
+          transform: translateY(-50%);
+        }
+      }
+
+      p:nth-child(2) {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        text-align: right;
+        color: #B7C0CE;
+
+      }
     }
   }
 }

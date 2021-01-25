@@ -16,6 +16,7 @@
 
 
   a {
+    position: relative;
     display: flex;
     align-items: center;
     height: 100%;
@@ -25,10 +26,23 @@
     text-decoration: none;
     color: $dark-grey;
     transition: background-color .15s, color .25s;
-
+    &::before{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      content: '';
+      height: 2px;
+      background: transparent;
+      transition: background-color .5s;
+    }
     &:hover {
-      background: $accent-color;
-      color: white;
+      //background: $accent-color;
+      //color: white;
+      &::before{
+        background: $accent-color;
+      }
     }
   }
 
@@ -93,11 +107,11 @@
     &:hover{
       .logo {
         &_white {
-          display: block;
+          display: none;
         }
 
         &_green {
-          display: none;
+          display: block;
         }
       }
     }
@@ -114,10 +128,26 @@
 
     a {
       &:hover {
-        background: rgba(255, 255, 255, 0.3);
+        //background: rgba(255, 255, 255, 0.3);
+        &::before{
+          background: white;
+        }
       }
     }
 
+    .header__logo{
+      &:hover{
+        .logo {
+          &_white {
+            display: block;
+          }
+
+          &_green {
+            display: none;
+          }
+        }
+      }
+    }
     .logo {
       &_white {
         display: block;
@@ -135,6 +165,14 @@
     .header__phone, .header__lang, .header__menu {
       a {
         @media screen and (min-width: $xxl-width) {
+          color: white;
+        }
+      }
+    }
+    .header__menu{
+      a{
+        &.current{
+          background: rgba(255, 255, 255, 0.3);
           color: white;
         }
       }
@@ -219,7 +257,10 @@
           a {
 
             padding: 0 ($link-gap / 2);
-
+            &.current{
+              background: $accent-color;
+              color: white;
+            }
           }
         }
       }
@@ -287,6 +328,10 @@
           text-transform: uppercase;
           font-weight: bold;
           color: $main-color;
+          &.current{
+            background: $accent-color;
+            color: white;
+          }
         }
       }
     }

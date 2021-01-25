@@ -573,25 +573,54 @@
 .mx-time-header {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 34px;
-  line-height: 34px;
+  height: auto;
   text-align: center;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 30px;
 }
 
 .mx-btn-icon-left,
 .mx-btn-icon-double-left {
-  float: left;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .mx-btn-icon-right,
 .mx-btn-icon-double-right {
-  float: right;
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
 }
 
 .mx-btn-icon-double-left,
 .mx-btn-icon-double-right {
   display: none;
+}
+
+.mx-calendar-header-label {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .mx-calendar-header-label,
@@ -602,6 +631,16 @@
   /* or 18px */
   text-transform: uppercase;
   color: #2F333E;
+}
+
+.mx-calendar-header-label .mx-btn-current-year,
+.mx-calendar-header-label button .mx-btn-current-year {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  color: #939DAC;
 }
 
 .mx-calendar-decade-separator {
@@ -684,6 +723,10 @@
 .mx-table th {
   padding-bottom: 15px;
   font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  color: #9EBDB3;
 }
 
 .mx-table td {
@@ -1562,6 +1605,7 @@ h6 {
 }
 
 .header a {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1579,9 +1623,22 @@ h6 {
   transition: background-color .15s, color .25s;
 }
 
-.header a:hover {
+.header a::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  content: '';
+  height: 2px;
+  background: transparent;
+  -webkit-transition: background-color .5s;
+  -o-transition: background-color .5s;
+  transition: background-color .5s;
+}
+
+.header a:hover::before {
   background: #216B70;
-  color: white;
 }
 
 .header.open .header__logo {
@@ -1628,19 +1685,27 @@ h6 {
 }
 
 .header__logo:hover .logo_white {
-  display: block;
+  display: none;
 }
 
 .header__logo:hover .logo_green {
-  display: none;
+  display: block;
 }
 
 .header_transparent {
   background: transparent;
 }
 
-.header_transparent a:hover {
-  background: rgba(255, 255, 255, 0.3);
+.header_transparent a:hover::before {
+  background: white;
+}
+
+.header_transparent .header__logo:hover .logo_white {
+  display: block;
+}
+
+.header_transparent .header__logo:hover .logo_green {
+  display: none;
 }
 
 .header_transparent .logo_white {
@@ -1655,6 +1720,11 @@ h6 {
 .header_transparent .hamburger-inner::before,
 .header_transparent .hamburger-inner::after {
   background-color: white;
+}
+
+.header_transparent .header__menu a.current {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
 }
 
 .header__logo {
@@ -1749,6 +1819,11 @@ h6 {
   padding: 0 25px;
 }
 
+.header__menu nav ul li a.current {
+  background: #216B70;
+  color: white;
+}
+
 .header__lang a {
   padding: 0 68px;
   color: #575A64;
@@ -1818,6 +1893,11 @@ h6 {
   text-transform: uppercase;
   font-weight: bold;
   color: #2F333E;
+}
+
+.mobile-nav .header__menu ul li a.current {
+  background: #216B70;
+  color: white;
 }
 
 .desktop-nav {
@@ -2128,6 +2208,21 @@ h6 {
   overflow: hidden;
   width: 100%;
   height: calc(100% + 35px);
+}
+
+.fleet-primary-section__info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  -o-transition: transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
 }
 
 .fleet-primary-section__info.active {
@@ -4140,13 +4235,9 @@ h6 {
 }
 
 .geo-section__video {
-  position: absolute;
   left: 0;
   top: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
-  height: 100%;
   -o-object-position: center;
   object-position: center;
   -o-object-fit: cover;
@@ -4159,7 +4250,7 @@ h6 {
 }
 
 .geo-section__video-wrapper {
-  height: 685px;
+  position: relative;
   display: none;
 }
 
@@ -4278,8 +4369,6 @@ h6 {
 
 .calc-section {
   position: relative;
-  border-top: 1px solid #EBEBF0;
-  border-bottom: 1px solid #EBEBF0;
 }
 
 .calc-section__back {
@@ -4298,6 +4387,21 @@ h6 {
   background: #F7FAF9;
 }
 
+.calc-section__block {
+  position: relative;
+}
+
+.calc-section__block::before {
+  position: absolute;
+  display: block;
+  content: '';
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #DFE9E5;
+}
+
 .calc-section__title h2 {
   margin-top: 0;
   margin-bottom: 30px;
@@ -4313,12 +4417,14 @@ h6 {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  margin: -20px 0;
+  margin-bottom: 40px;
 }
 
 .calc-section__float-values .form__input-wrapper {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
-  padding: 10px;
+  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4382,11 +4488,12 @@ h6 {
 
 .calc-section__formula {
   display: block;
-  text-align: right;
+  text-align: left;
+  margin-top: 15px;
 }
 
 .calc-section__checkbox {
-  margin: 70px 0;
+  margin: 55px 0 60px;
 }
 
 .calc-section__checkbox label {
@@ -4399,7 +4506,7 @@ h6 {
   -ms-flex-align: center;
   align-items: center;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 100%;
   color: #575A64;
 }
@@ -4411,6 +4518,8 @@ h6 {
   height: 30px;
   border: 2px solid #CBCBD7;
   margin-right: 18px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .calc-section__checkbox input {
@@ -4421,8 +4530,8 @@ h6 {
   border: 6px solid #216B70;
 }
 
-.calc-section__date {
-  max-width: 237px;
+.calc-section__date-wrapper {
+  margin: 0;
 }
 
 .calc-section__date label {
@@ -4432,6 +4541,10 @@ h6 {
   line-height: 100%;
   color: #575A64;
   margin-bottom: 20px;
+}
+
+.calc-section__form {
+  margin-top: 120px;
 }
 
 .calc-section__form-footer {
@@ -4444,9 +4557,28 @@ h6 {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: 70px;
-  padding-top: 40px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 65px;
+  padding-top: 35px;
   border-top: 2px dotted #CBCBD7;
+}
+
+.calc-section__result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  margin-bottom: 60px;
 }
 
 .calc-section__result p {
@@ -4458,7 +4590,6 @@ h6 {
 }
 
 .calc-section__result p.calc-section__result-value {
-  margin-top: 10px;
   font-weight: bold;
   font-size: 22px;
   line-height: 110%;
@@ -4466,7 +4597,14 @@ h6 {
   color: #2F333E;
 }
 
+.calc-section__submit {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  text-align: right;
+}
+
 .calc-section__submit button {
+  cursor: pointer;
   border: none;
   background: transparent;
 }
@@ -4476,7 +4614,7 @@ h6 {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 567px;
+  width: 100%;
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
@@ -4487,13 +4625,89 @@ h6 {
   transition: transform .5s, -webkit-transform .5s;
   z-index: 1000;
   background: white;
-  padding: 80px;
+  padding: 80px 20px;
 }
 
 .calc-section__datepicker.open {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
+}
+
+.calc-section__datepicker td.highlight {
+  position: relative;
+}
+
+.calc-section__datepicker td.highlight::before {
+  position: absolute;
+  left: 50%;
+  bottom: 7px;
+  display: block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background: #FB4667;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.calc-section__datepicker-title {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #2F333E;
+  margin-bottom: 100px;
+}
+
+.calc-section__datepicker-add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 37px;
+  border-bottom: 1px solid #EBEBF0;
+  margin-bottom: 37px;
+}
+
+.calc-section__datepicker-add p {
+  margin: 0;
+}
+
+.calc-section__datepicker-add p:nth-child(1) {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #575A64;
+  position: relative;
+  padding-left: 25px;
+}
+
+.calc-section__datepicker-add p:nth-child(1)::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #FB4667;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.calc-section__datepicker-add p:nth-child(2) {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: right;
+  color: #B7C0CE;
 }
 
 .footer {
@@ -4645,6 +4859,11 @@ h6 {
   .geo-section__map {
     display: none;
   }
+
+  .calc-section__datepicker {
+    width: 567px;
+    padding: 80px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -4775,9 +4994,8 @@ h6 {
     font-size: 32px;
   }
 
-  .calc-section__float-values {
-    margin: -10px;
-    margin-bottom: 30px;
+  .calc-section__date-wrapper {
+    margin-top: 0;
   }
 
   .footer {
@@ -4886,17 +5104,10 @@ h6 {
   }
 
   .fleet-primary-section__info {
-    position: absolute;
-    width: 100%;
     padding-bottom: 70px;
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
-    -webkit-transition: -webkit-transform .5s;
-    transition: -webkit-transform .5s;
-    -o-transition: transform .5s;
-    transition: transform .5s;
-    transition: transform .5s, -webkit-transform .5s;
   }
 
   .fleet-primary-section__more {
@@ -5253,6 +5464,17 @@ h6 {
 
   .geo-section__video.desktop {
     display: block;
+    height: 100%;
+  }
+
+  .geo-section__video-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .geo-section__info {
@@ -5705,14 +5927,9 @@ h6 {
     text-transform: none;
   }
 
-  .geo-section__video-wrapper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+  .calc-section {
+    border-top: 1px solid #EBEBF0;
+    border-bottom: 1px solid #EBEBF0;
   }
 
   .calc-section__back-layout {
@@ -5725,13 +5942,75 @@ h6 {
     padding-bottom: 100px;
   }
 
+  .calc-section__block::before {
+    content: none;
+  }
+
   .calc-section__title {
     margin-bottom: 100px;
   }
 
+  .calc-section__float-values {
+    margin: -10px;
+    margin-bottom: 30px;
+  }
+
   .calc-section__float-values .form__input-wrapper {
+    padding: 10px;
     -ms-flex-preferred-size: calc(100% / 3);
     flex-basis: calc(100% / 3);
+  }
+
+  .calc-section__formula {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  .calc-section__checkbox {
+    margin: 70px 0;
+  }
+
+  .calc-section__checkbox label {
+    font-size: 16px;
+  }
+
+  .calc-section__date {
+    max-width: 237px;
+  }
+
+  .calc-section__form {
+    margin-top: 0;
+  }
+
+  .calc-section__form-footer {
+    margin-top: 70px;
+    padding-top: 40px;
+  }
+
+  .calc-section__result {
+    margin-bottom: 0;
+    -webkit-box-align: unset;
+    -ms-flex-align: unset;
+    align-items: unset;
+    -webkit-box-pack: unset;
+    -ms-flex-pack: unset;
+    justify-content: unset;
+    -ms-flex-preferred-size: unset;
+    flex-basis: unset;
+  }
+
+  .calc-section__result p {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+
+  .calc-section__result p.calc-section__result-value {
+    margin-top: 10px;
+  }
+
+  .calc-section__submit {
+    -ms-flex-preferred-size: unset;
+    flex-basis: unset;
   }
 }
 

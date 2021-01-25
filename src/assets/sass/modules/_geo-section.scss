@@ -7,13 +7,9 @@
     height: 100vh;
   }
   &__video{
-    position: absolute;
     left: 0;
     top: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
-    height: 100%;
     object-position: center;
     object-fit: cover;
     display: none;
@@ -29,15 +25,16 @@
       display: none;
       @media screen and (min-width: $lg-width){
         display: block;
+        height: 100%;
       }
     }
     &-wrapper{
-      height: 685px;
+      position: relative;
       display: none;
       @media screen and (min-width: $sm-width){
         display: block;
       }
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $lg-width){
         position: absolute;
         left: 0;
         top: 0;

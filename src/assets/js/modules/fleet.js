@@ -1,5 +1,5 @@
 import Swiper from "swiper/bundle";
-import {xlWidth} from "./window-width-values";
+import {lgWidth, xlWidth} from "./window-width-values";
 import getParents from "./getParents";
 import customPaginationInit from "./customPagination";
 
@@ -43,6 +43,23 @@ export default function fleetPrimarySliderInit() {
         mySwiper.on('slideChangeTransitionEnd', function () {
             const index = mySwiper.realIndex;
             tabs[index].classList.add('active')
+        })
+        window.addEventListener('resize', function () {
+            const tabsWrapper = document.querySelector('.fleet-primary-section__tabs');
+            const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
+            if (window.innerWidth < lgWidth) {
+                let maxTabHeight = 0;
+                tabs.forEach(tab => {
+                    if (tab.offsetHeight > maxTabHeight) {
+                        maxTabHeight = tab.offsetHeight;
+                    }
+                })
+                tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
+            }
+            else{
+                tabsWrapper.removeAttribute('style');
+            }
+
         })
     }
 }

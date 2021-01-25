@@ -4,9 +4,14 @@ import Datepicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ru';
 
 const calcTemplate = `
- <div class="calc-section__block "">
+ <div class="calc-section__block">
      <div class="calc-section__datepicker" :class="{open:datePickerFocus}">
-      <datepicker inline v-model="date" valueType="DD.MM.YYYY" @pick="pickDate" />
+        <div class="calc-section__datepicker-title">выбор даты прибытия</div>
+        <div class="calc-section__datepicker-add">
+            <p>Ветер свыше 14 м/с</p>
+            <p>Коэффициент 1,15</p>
+        </div>
+      <datepicker inline v-model="date" valueType="DD.MM.YYYY" @pick="pickDate" :get-classes="getClasses"/>
     </div>
    
     <div class="calc-section__title text">
@@ -64,7 +69,7 @@ const calcTemplate = `
         </div>
         <div class="row">
             <div class="col-12">
-                <div class="form__group">
+                <div class="form__group calc-section__date-wrapper">
                     <div class="form__input-wrapper calc-section__date">
                         <label for="">Дата прибытия</label>
                         <div class="form__input date">
@@ -105,6 +110,8 @@ export function initCalc() {
             nonGoingFleet: false,
             datePickerFocus: false,
             date: '',
+            highlightedDate: [],
+            isHighlightedDateSelect: false,
         },
         components: {
             datepicker: Datepicker
@@ -128,7 +135,12 @@ export function initCalc() {
                 }
             },
             windCoefficient() {
-                return 1
+                if(this.isHighlightedDateSelect){
+                    return 1.15
+                }
+                else{
+                    return 1
+                }
             },
             seasonCoefficient() {
                 return 1
@@ -149,11 +161,25 @@ export function initCalc() {
             }
         },
         methods: {
-            pickDate() {
+            pickDate(date) {
+                if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
+                    this.isHighlightedDateSelect = true
+                }
+                else {
+                    this.isHighlightedDateSelect = false
+                }
                 this.datePickerFocus = false
+            },
+            getClasses(date) {
+                if (this.highlightedDate !== []) {
+                    if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
+                        return "highlight";
+                    }
+                    return "";
+                }
             }
         },
-        mounted() {
+        created() {
             const that = this
             document.addEventListener('click', function (event) {
                 const datePicker = document.getElementsByClassName('calc-section__datepicker')[0];
@@ -165,15 +191,26 @@ export function initCalc() {
                 }
             })
 
+            let token = '';
             axios
-                .get('https://pfa.foreca.com/api/v1/location/search/Ust\'-Luga?lang=ru',{
-                    headers:{
-                        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9wZmEuZm9yZWNhLmNvbVwvYXV0aG9yaXplXC90b2tlbiIsImlhdCI6MTYxMTMxMTkxMCwiZXhwIjoxNjExMzE5MTEwLCJuYmYiOjE2MTEzMTE5MTAsImp0aSI6IjhkNTkwMzE0MTJiMjg3NDUiLCJzdWIiOiJibWJhIiwiZm10IjoiWERjT2hqQzQwK0FMamxZVHRqYk9pQT09In0.iOpiDYJvOuT4eXKTvIzGvCFOPKqOchQ8198buOQf_hY'
-                    }
+                .get('http://bmba.sotbisite.beget.tech/ajax/get_token.php')
+                .then(res => {
+                    token = res.data
+                    axios
+                        .get('https://pfa.foreca.com/api/v1/forecast/daily/100478036?periods=14', {
+                            headers: {
+                                Authorization: 'Bearer ' + token
+                            }
+                        })
+                        .then(res => {
+                            this.highlightedDate = res.data.forecast.filter(data => data.maxWindSpeed >= 6);
+                            this.highlightedDate = this.highlightedDate.map(data => {
+                                const dateParts = data.date.split('-');
+                                return new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+                            })
+                        })
                 })
-                .then(res=>{
-                    console.log(res)
-                })
+
         }
     })
 }
