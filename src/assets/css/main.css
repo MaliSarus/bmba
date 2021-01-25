@@ -4387,6 +4387,23 @@ h6 {
   background: #F7FAF9;
 }
 
+.calc-section.service-calc {
+  border: none;
+}
+
+.calc-section.service-calc .calc-section__title h2 {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.calc-section.calc-page {
+  margin-top: 80px;
+}
+
+.calc-section.calc-page .calc-section__back {
+  position: static;
+}
+
 .calc-section__block {
   position: relative;
 }
@@ -4710,6 +4727,171 @@ h6 {
   color: #B7C0CE;
 }
 
+.contacts-section {
+  margin-top: 80px;
+  padding-top: 85px;
+  padding-bottom: 95px;
+  position: relative;
+}
+
+.contacts-section__background-lines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.contacts-section__background-lines .line {
+  border-left: 1px solid #DFE9E5;
+}
+
+.contacts-section__title {
+  margin-bottom: 60px;
+}
+
+.contacts-section__subtitle {
+  margin-bottom: 40px;
+}
+
+.contacts-section__subtitle h3 {
+  font-size: 22px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #2F333E;
+  font-weight: bold;
+}
+
+.contacts-section__address {
+  margin-bottom: 100px;
+}
+
+.contacts-section__address address {
+  font-style: normal;
+}
+
+.contacts-section__address-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.contacts-section__address-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.contacts-section__address-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #9EBDB3;
+  margin: 0 0 20px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.contacts-section__address-text,
+.contacts-section__address-text a {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 110%;
+  color: #575A64;
+  text-decoration: none;
+}
+
+.contacts-section__left {
+  margin-bottom: 100px;
+}
+
+.contacts-section__left > :last-child {
+  margin-bottom: 0;
+}
+
+.contacts-section__right {
+  overflow: hidden;
+}
+
+.contacts-section__right .contacts-section__subtitle {
+  margin-bottom: 60px;
+}
+
+.contacts-section__metro-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #9EBDB3;
+  margin-bottom: 20px;
+}
+
+.contacts-section__metro .metro__station {
+  position: relative;
+  padding-left: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #575A64;
+}
+
+.contacts-section__metro .metro__station span {
+  font-weight: 500;
+  color: #B7C0CE;
+}
+
+.contacts-section__metro .metro__station::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  content: '';
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.contacts-section__metro .metro_red::before {
+  background: #F05F5F;
+}
+
+.contacts-section__metro .metro_blue::before {
+  background: #70A6F5;
+}
+
+.contacts-section__metro .metro__map img {
+  width: 100%;
+}
+
+.contacts-section__metro ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: 60px;
+}
+
+.contacts-section__metro ul li {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  list-style: none;
+}
+
+.contacts-section__metro ul li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 .footer {
   background-color: #252832;
   background-image: url("../img/dest/footer/bg-ship.svg");
@@ -4996,6 +5178,36 @@ h6 {
 
   .calc-section__date-wrapper {
     margin-top: 0;
+  }
+
+  .contacts-section__address address {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    row-gap: 50px;
+  }
+
+  .contacts-section__address-item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .contacts-section__metro ul {
+    margin: -10px -16px;
+    margin-bottom: 45px;
+  }
+
+  .contacts-section__metro ul li:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .contacts-section__metro ul li {
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    padding: 10px 16px;
   }
 
   .footer {
@@ -5937,6 +6149,47 @@ h6 {
     margin-left: auto;
   }
 
+  .calc-section.calc-page .calc-page__volume {
+    max-width: 771px;
+  }
+
+  .calc-section.calc-page .calc-section__back-layout {
+    width: 77%;
+  }
+
+  .calc-section.calc-page .calc-section__front {
+    padding-top: 123px;
+    padding-bottom: 74px;
+  }
+
+  .calc-section.calc-page .calc-section__block {
+    padding-left: 130px;
+    max-width: 1260px;
+  }
+
+  .calc-section.calc-page .calc-section__float-values {
+    max-width: 751px;
+  }
+
+  .calc-section.calc-page .calc-page__date-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .calc-section.calc-page .calc-page__date-wrapper .calc-section__date {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+
   .calc-section__front {
     padding-top: 150px;
     padding-bottom: 100px;
@@ -6011,6 +6264,31 @@ h6 {
   .calc-section__submit {
     -ms-flex-preferred-size: unset;
     flex-basis: unset;
+  }
+
+  .contacts-section {
+    padding-top: 100px;
+    padding-bottom: 135px;
+  }
+
+  .contacts-section__title {
+    margin-bottom: 70px;
+  }
+
+  .contacts-section__subtitle {
+    margin-bottom: 50px;
+  }
+
+  .contacts-section__address {
+    margin-bottom: 90px;
+  }
+
+  .contacts-section__left {
+    margin-bottom: 0;
+  }
+
+  .contacts-section__right .contacts-section__subtitle {
+    margin-bottom: 70px;
   }
 }
 
@@ -6174,6 +6452,14 @@ h6 {
 
   .geo-section__info {
     top: 93px;
+  }
+
+  .calc-section.calc-page {
+    margin-top: 93px;
+  }
+
+  .contacts-section {
+    margin-top: 93px;
   }
 }
 

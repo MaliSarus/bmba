@@ -17,6 +17,13 @@
                     </div>
                 </div>
             </section>
+            <section class="calc-section service-calc">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="calc"></div>
+                    </div>
+                </div>
+            </section>
             <section class="two-column-text-section">
                 <div class="row">
                     <div class="col-12">

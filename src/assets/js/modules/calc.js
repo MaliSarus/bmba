@@ -2,6 +2,7 @@ import Vue from 'vue/dist/vue.js'
 import axios from 'axios'
 import Datepicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ru';
+import {xlWidth} from "./window-width-values";
 
 const calcTemplate = `
  <div class="calc-section__block">
@@ -15,36 +16,48 @@ const calcTemplate = `
     </div>
    
     <div class="calc-section__title text">
-        <h2>Рассчет стоимости</h2>
+        <h2>Расчет стоимости</h2>
         <p>Заполните поля, чтобы рассчитать стоимость услуги</p>
     </div>
-    <form action="#" class="calc-section__form form">
-        <div class="row">
-            <div class="col-12">
+    <form action="#" class="calc-section__form form" @submit.prevent="formSubmit">
+        <div class="row" >
+            <div class="col-12" :class="{
+            'd-flex': calcPage,
+            'justify-content-between': calcPage
+            }">
                 <div class="form__group calc-section__float-values">
                     <div class="form__input-wrapper">
                         <label for="#">Длина судна <span>(LQA)</span></label>
                         <div class="form__input calc-section__float-value value">
-                            <input type="text" v-model.number="fleetLength">
+                            <input type="number" v-model="fleetLength">
                         </div>
                     </div>
                     <div class="form__input-wrapper" :class="{disabled: checkFleetWidth}">
                         <label for="#">Ширина судна <span>(B)</span></label>
     
                         <div class="form__input calc-section__float-value value">
-                            <input type="text" v-model.number="fleetWidth" :disabled="checkFleetWidth">
+                            <input type="number" v-model="fleetWidth" :disabled="checkFleetWidth">
                         </div>
                     </div>
                     <div class="form__input-wrapper" :class="{disabled: checkFleetHeight}">
                         <label for="#">Высота борта судна <span>(D)</span></label>
                         <div class="form__input calc-section__float-value value">
-                            <input type="text" v-model.number="fleetHeight" :disabled="checkFleetHeight">
+                            <input type="number" v-model="fleetHeight" :disabled="checkFleetHeight">
                         </div>
                     </div>
                 </div>
+                <div class="form__group calc-section__date-wrapper calc-page__date-wrapper" v-if="datePickerInputOnCalcPageDestination">
+                    <div class="form__input-wrapper calc-section__date">
+                        <label for="">Дата прибытия</label>
+                        <div class="form__input date">
+                            <input type="text" @focus="datePickerFocus = true" :value="date">
+                        </div>
+                    </div>
+    
+                </div>
             </div>
         </div>
-        <div class="row align-items-center">
+        <div class="row align-items-center calc-page__volume">
             <div class="col-12 col-xl-6">
                 <div class="calc-section__volume">
                     <p class="calc-section__volume-title">Объем судна <span>(V)</span>:</p>
@@ -67,7 +80,7 @@ const calcTemplate = `
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" v-if="!datePickerInputOnCalcPageDestination">
             <div class="col-12">
                 <div class="form__group calc-section__date-wrapper">
                     <div class="form__input-wrapper calc-section__date">
@@ -112,13 +125,16 @@ export function initCalc() {
             date: '',
             highlightedDate: [],
             isHighlightedDateSelect: false,
+            seasonCoefficient: 1,
+            calcPage: false,
+            windowWidth: 1920
         },
         components: {
             datepicker: Datepicker
         },
         computed: {
             fleetVolume() {
-                return this.fleetLength * this.fleetWidth * this.fleetHeight;
+                return (this.fleetLength * this.fleetWidth * this.fleetHeight).toFixed(2);
             },
             fleetCoefficient() {
                 if (+this.fleetVolume < 30000) {
@@ -135,39 +151,55 @@ export function initCalc() {
                 }
             },
             windCoefficient() {
-                if(this.isHighlightedDateSelect){
+                if (this.isHighlightedDateSelect) {
                     return 1.15
-                }
-                else{
+                } else {
                     return 1
                 }
             },
-            seasonCoefficient() {
-                return 1
-            },
             result() {
-                const number = this.fleetVolume *
+                const number = (this.fleetVolume *
                     this.fleetCoefficient *
                     this.nonGoingCoefficient *
                     this.windCoefficient *
-                    this.seasonCoefficient * 2
+                    this.seasonCoefficient * 2).toFixed(0)
                 return new Intl.NumberFormat('ru-RU').format(number)
             },
             checkFleetWidth() {
+                if (this.fleetLength === ''){
+                    this.fleetWidth = ''
+                }
                 return this.fleetLength === ''
             },
             checkFleetHeight() {
+                if (this.fleetWidth === ''){
+                    this.fleetHeight = ''
+                }
                 return this.fleetWidth === ''
+            },
+            datePickerInputOnCalcPageDestination() {
+                return this.calcPage && this.windowWidth >= xlWidth
             }
         },
         methods: {
+            formSubmit(){
+              console.log('submit')
+            },
+            onResize() {
+                this.windowWidth = window.innerWidth;
+            },
             pickDate(date) {
                 if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
                     this.isHighlightedDateSelect = true
-                }
-                else {
+                } else {
                     this.isHighlightedDateSelect = false
                 }
+                const month = date.getMonth()
+
+                if(month >= 0 && month < 4){
+                    this.seasonCoefficient = 1.2
+                }
+
                 this.datePickerFocus = false
             },
             getClasses(date) {
@@ -180,7 +212,7 @@ export function initCalc() {
             }
         },
         created() {
-            const that = this
+            const that = this;
             document.addEventListener('click', function (event) {
                 const datePicker = document.getElementsByClassName('calc-section__datepicker')[0];
                 const datePickerInput = document.querySelector('.calc-section__date .form__input');
@@ -190,7 +222,8 @@ export function initCalc() {
                     that.datePickerFocus = false;
                 }
             })
-
+            window.addEventListener('resize', this.onResize)
+            this.onResize()
             let token = '';
             axios
                 .get('http://bmba.sotbisite.beget.tech/ajax/get_token.php')
@@ -210,7 +243,14 @@ export function initCalc() {
                             })
                         })
                 })
-
-        }
+        },
+        mounted() {
+            if (document.querySelector('.calc-page')) {
+                this.calcPage = true;
+            }
+        },
+        destroyed() {
+            window.removeEventListener('resize', this.onResize);
+        },
     })
 }
