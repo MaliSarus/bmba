@@ -16,8 +16,13 @@ import {newsYearsSliderInit} from "./modules/news";
 import {changeNewBgWidth} from "./modules/new";
 import {initMap} from "./modules/geo";
 import {initCalc} from "./modules/calc";
+import {lgWidth} from "./modules/window-width-values";
+import popupInit from "./modules/popup";
+import initFleetSection, {initScrollBar} from "./modules/fleet-section";
 
 // import homePageTopInit from "./modules/home-page-top";
+
+
 
 
 function isSet(element) {
@@ -27,6 +32,9 @@ function isSet(element) {
 document.addEventListener("DOMContentLoaded", function (event) {
     changeHeaderStyle();
     hamburgerHandle();
+    popupInit()
+
+
 
     if (isSet('.slider-arrows')) {
         sliderArrowsHandle()
@@ -87,9 +95,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     if (isSet('.geo-section')){
         initMap()
+        const hideInfoButton = document.querySelector('.geo-section__info-hide');
+        const infoBlock = document.querySelector('.geo-section__info');
+        hideInfoButton.addEventListener('click', function () {
+            infoBlock.classList.add('hide');
+            if (window.innerWidth < lgWidth){
+                infoBlock.style.marginTop = (infoBlock.offsetHeight * -1) + 'px';
+            }
+        })
+        window.addEventListener('resize', function () {
+            if (window.innerWidth < lgWidth){
+                if (infoBlock.classList.contains('hide')){
+                    infoBlock.style.marginTop = (infoBlock.offsetHeight * -1) + 'px';
+                }
+            }
+            else {
+                if (infoBlock.classList.contains('hide')){
+                    infoBlock.removeAttribute('style')
+                }
+            }
+        })
     }
     if (isSet('.calc-section')){
         initCalc()
+    }
+    if (isSet('.fleet-section')){
+        initFleetSection()
+        initScrollBar()
     }
 })
 

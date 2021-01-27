@@ -20,18 +20,25 @@ export default function fleetPrimarySliderInit() {
         }
     })
 
-    if (getParents(document.querySelector('.fleet-primary-section__slider'),document.querySelector('.service-fleet-section')))
-    {
-        const paginationContainer = document.querySelector('.service-fleet-section .fleet-primary-section__pagination');
-        customPaginationInit(paginationContainer,mySwiper,realSlides,5)
-    }
-    else {
+    if (getParents(document.querySelector('.fleet-primary-section__slider'), document.querySelector('.service-fleet-section'))) {
+        const paginationContainer = document.querySelectorAll('.service-fleet-section .fleet-primary-section__pagination');
+        paginationContainer.forEach(container => {
+            customPaginationInit(container, mySwiper, realSlides, 5)
+        })
+        const tabsWrapper = document.querySelector('.fleet-primary-section__tabs');
         const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
+
+        let maxTabHeight = 0;
+        tabs.forEach(tab => {
+            if (tab.offsetHeight > maxTabHeight) {
+                maxTabHeight = tab.offsetHeight;
+            }
+        })
+        tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
+
+    } else {
         mySwiper.on('slideChangeTransitionStart', function () {
             const swiperPagination = document.querySelector('.fleet-primary-section__slider .swiper-pagination')
-            tabs.forEach(tab=>{
-                tab.classList.remove('active')
-            });
             if (window.innerWidth > xlWidth) {
                 const fleetBackgroundTitle = document.querySelector('.fleet-primary-section__background-word');
                 const maxBackgroundTitleOffset = 100;
@@ -40,26 +47,31 @@ export default function fleetPrimarySliderInit() {
             }
             swiperPagination.style.left = (mySwiper.width - swiperPagination.offsetWidth) / (realSlides - 1) * mySwiper.realIndex + 'px'
         })
-        mySwiper.on('slideChangeTransitionEnd', function () {
-            const index = mySwiper.realIndex;
-            tabs[index].classList.add('active')
-        })
-        window.addEventListener('resize', function () {
-            const tabsWrapper = document.querySelector('.fleet-primary-section__tabs');
-            const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
-            if (window.innerWidth < lgWidth) {
-                let maxTabHeight = 0;
-                tabs.forEach(tab => {
-                    if (tab.offsetHeight > maxTabHeight) {
-                        maxTabHeight = tab.offsetHeight;
-                    }
-                })
-                tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
-            }
-            else{
-                tabsWrapper.removeAttribute('style');
-            }
-
-        })
     }
+    const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
+    mySwiper.on('slideChangeTransitionStart', function () {
+        tabs.forEach(tab => {
+            tab.classList.remove('active')
+        });
+    })
+    mySwiper.on('slideChangeTransitionEnd', function () {
+        const dataFloat = mySwiper.slides[mySwiper.realIndex].dataset.float;
+        document.querySelector(`.fleet-primary-section__tabs .fleet-primary-section__info[data-float="${dataFloat}"]`).classList.add('active')
+    })
+    window.addEventListener('resize', function () {
+        const tabsWrapper = document.querySelector('.fleet-primary-section__tabs');
+        const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
+        if (window.innerWidth < lgWidth) {
+            let maxTabHeight = 0;
+            tabs.forEach(tab => {
+                if (tab.offsetHeight > maxTabHeight) {
+                    maxTabHeight = tab.offsetHeight;
+                }
+            })
+            tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
+        } else {
+            if (!document.querySelector('.fleet-primary-section').classList.contains('service-fleet-section')) tabsWrapper.removeAttribute('style');
+        }
+
+    })
 }

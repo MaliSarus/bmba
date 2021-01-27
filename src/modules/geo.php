@@ -6,6 +6,10 @@
             компании совершать проводки судов во все российские порты России, а также стран Балтии. Наиболее
             перспективные направления: порт Санкт-Петербург, порты Приморск и Высоцк.
         </p>
+
+        <button class="geo-section__info-hide">
+            Скрыть
+        </button>
     </div>
     <div class="geo-section__video-wrapper">
         <video autoplay loop class="geo-section__video mobile">

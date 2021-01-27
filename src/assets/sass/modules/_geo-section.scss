@@ -61,6 +61,7 @@
     background: #F7FAF9;
     box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.05);
     z-index: 1;
+    transition: transform .5s, margin-top .5s;
     @media screen and (min-width: $lg-width){
       position: absolute;
       left: 0;
@@ -72,6 +73,21 @@
     }
     @media screen and (min-width: $xxl-width){
       top: 93px;
+    }
+    &.hide{
+      @media screen and (min-width: $lg-width){
+        transform: translateX(-100%);
+      }
+    }
+    &-hide{
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      text-align: right;
+      color: #9EBDB3;
+      border: none;
+      background: transparent;
     }
 
     h1{

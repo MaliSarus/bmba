@@ -1,0 +1,164 @@
+///**
+// * gemini-scrollbar
+// * @version 1.5.3
+// * @link http://noeldelgado.github.io/gemini-scrollbar/
+// * @license MIT
+// */
+//
+///* disable selection while dragging */
+//.gm-scrollbar-disable-selection {
+//  -webkit-touch-callout: none;
+//  -webkit-user-select: none;
+//  -khtml-user-select: none;
+//  -moz-user-select: none;
+//  -ms-user-select: none;
+//  user-select: none;
+//}
+//
+///* fallback for native floating scrollbars */
+//.gm-prevented {
+//  -webkit-overflow-scrolling: touch;
+//}
+//.gm-prevented > .gm-scrollbar {
+//  display: none;
+//}
+//
+///* actual gemini-scrollbar styles */
+//.gm-scrollbar-container {
+//  position: relative;
+//  overflow: hidden!important;
+//  width: 100%;
+//  height: 100%;
+//}
+//
+//.gm-scrollbar {
+//  position: absolute;
+//  right: 2px;
+//  bottom: 2px;
+//  z-index: 1;
+//  border-radius: 3px;
+//}
+//
+//.gm-scrollbar.-vertical {
+//  width: 6px;
+//  top: 2px;
+//}
+//
+//.gm-scrollbar.-horizontal {
+//  height: 6px;
+//  left: 2px;
+//}
+//
+//.gm-scrollbar .thumb {
+//  position: relative;
+//  display: block;
+//  width: 0;
+//  height: 0;
+//  cursor: pointer;
+//  border-radius: 0;
+//  background-color: $accent-color;
+//  transform: translate3d(0,0,0);
+//}
+//
+//.gm-scrollbar .thumb:hover,
+//.gm-scrollbar .thumb:active {
+//  background-color: $accent-color;
+//}
+//
+//.gm-scrollbar.-vertical .thumb {
+//  width: 100%;
+//  max-height: 65px;
+//}
+//
+//.gm-scrollbar.-horizontal .thumb {
+//  height: 100%;
+//  display: none;
+//}
+//
+//.gm-scrollbar-container .gm-scroll-view {
+//  padding-bottom: 0;
+//  max-height: 100%;
+//  width: 100%;
+//  height: 100%;
+//  overflow-y: scroll;
+//  transform: translate3d(0,0,0);
+//  -webkit-overflow-scrolling: touch;
+//}
+//
+///* @option: autoshow */
+//.gm-scrollbar-container.gm-autoshow .gm-scrollbar {
+//  opacity: 0;
+//  transition: opacity 120ms ease-out;
+//}
+//.gm-scrollbar-container.gm-autoshow:hover > .gm-scrollbar,
+//.gm-scrollbar-container.gm-autoshow:active > .gm-scrollbar,
+//.gm-scrollbar-container.gm-autoshow:focus > .gm-scrollbar {
+//  opacity: 1;
+//  transition: opacity 340ms ease-out;
+//}
+//
+//.gm-resize-trigger {
+//  position: absolute;
+//  display: block;
+//  top: 0;
+//  left: 0;
+//  height: 100%;
+//  width: 100%;
+//  overflow: hidden;
+//  pointer-events: none;
+//  z-index: -1;
+//  opacity: 0;
+//}
+
+
+.ss-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+.ss-content {
+  height: 100%;
+  width: calc(100% + 18px);
+  padding: 0 0 0 0;
+  position: relative;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.ss-content.rtl {
+  width: calc(100% + 18px);
+  right: auto;
+}
+
+.ss-scroll {
+  position: relative;
+  background: $accent-color;
+  width: 4px;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.25s linear;
+}
+
+.ss-hidden {
+  display: none;
+}
+
+.ss-container:hover .ss-scroll,
+.ss-container:active .ss-scroll {
+  opacity: 1;
+}
+
+.ss-grabbed {
+  -o-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+

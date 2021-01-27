@@ -40,10 +40,6 @@ export default  function customPaginationInit(container, mySwiper, realSlides,ma
         const slidesInGroup = mySwiper.realIndex;
 
         const currentGroupIndex =  Math.floor(slidesInGroup / sliderSlidesPerGroup);
-        console.log('sliderParam = ',mySwiper.params.slidesPerGroup )
-        console.log('slidersInGroup = ',slidesInGroup )
-        console.log('sslidesPerGroup = ',sliderSlidesPerGroup )
-        console.log('currentGroupIndex = ',currentGroupIndex )
         const offset = Math.floor((maxBullets - 2) / 2)
         paginationBullets.forEach((bullet, index) => {
             bullet.classList.remove('swiper-pagination-bullet-active');

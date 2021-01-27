@@ -22,8 +22,12 @@
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
                                                 <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, repudiandae</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, repudiandae</li>
+                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Laboriosam, repudiandae
+                                                    </li>
+                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Laboriosam, repudiandae
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
@@ -38,8 +42,12 @@
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
                                                 <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, nulla?</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, nulla?</li>
+                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Commodi, nulla?
+                                                    </li>
+                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Commodi, nulla?
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
@@ -54,8 +62,12 @@
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
                                                 <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, soluta?</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, soluta?</li>
+                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum,
+                                                        soluta?
+                                                    </li>
+                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum,
+                                                        soluta?
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
@@ -70,8 +82,12 @@
                                             <div class="slide__text text">
                                                 <h3>Заголовок слайда</h3>
                                                 <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate</li>
+                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Cupiditate
+                                                    </li>
+                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Cupiditate
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
@@ -84,10 +100,10 @@
                                         <article class="slide__block slide">
                                             <div class="slide__year">20<br>15</div>
                                             <div class="slide__text text">
-                                                <h3>Заголовок слайда</h3>
+                                                <h3>СТАРТ РАБОТ В ПОРТУ “ВЫСОЦК”</h3>
                                                 <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, veniam!</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, veniam!</li>
+                                                    <li>Приобретение вспомогательного буксира «Феликс»</li>
+                                                    <li>Приобретение вспомогательного технического судна «Мартин»</li>
                                                 </ul>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
@@ -100,11 +116,9 @@
                                         <article class="slide__block slide">
                                             <div class="slide__year">20<br>16</div>
                                             <div class="slide__text text">
-                                                <h3>Заголовок слайда</h3>
-                                                <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, libero!</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, libero!</li>
-                                                </ul>
+                                                <h3>СТАРТ РАБОТ С ПАО «СИБУР ХОЛДИНГ»</h3>
+                                                <p>Начало работ с ПАО «СИБУР Холдинг» по обеспечению буксирных операций
+                                                    и эскортированию газовозов.</p>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
                                                 <div class="slider-arrows__next"></div>
@@ -116,10 +130,17 @@
                                         <article class="slide__block slide">
                                             <div class="slide__year">20<br>17</div>
                                             <div class="slide__text text">
-                                                <h3>Заголовок слайда</h3>
+                                                <h3>РАСШИРЕНИЕ ФЛОТА И СОТРУДНИЧЕСТВА</h3>
                                                 <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, quam!</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, quam!</li>
+                                                    <li>Постройка и ввод в эксплуатацию судов «Кижуч» и «Черная
+                                                        барабулька».
+                                                    </li>
+                                                    <li>Начало работы с нефтеналивными терминалами (терминал «Усть-Луга
+                                                        Ойл» и Терминал перевалки нефти в Морском торговом порту
+                                                        Усть-Луга).
+                                                    </li>
+                                                    <li>Компания получила национальный сертификат «Лидер Отрасли 2017».
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
@@ -132,11 +153,9 @@
                                         <article class="slide__block slide">
                                             <div class="slide__year">20<br>18</div>
                                             <div class="slide__text text">
-                                                <h3>Заголовок слайда</h3>
-                                                <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
-                                                </ul>
+                                                <h3>НОВЫЕ РУБЕЖИ</h3>
+                                                <p>сумма выручки компании превысило 1 миллиард рублей. Число
+                                                    обработанных танкерных судов превысило 100</p>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
                                                 <div class="slider-arrows__next"></div>
@@ -148,10 +167,17 @@
                                         <article class="slide__block slide">
                                             <div class="slide__year">20<br>19</div>
                                             <div class="slide__text text">
-                                                <h3>Заголовок слайда</h3>
+                                                <h3>КОНТРАКТЫ С НЕФТЕТРЕЙДЕРАМИ И СУДОВЛАДЕЛЬЦАМИ</h3>
                                                 <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
+                                                    <li>Подписанные контракты с крупными нефтетрейдерами.
+                                                    </li>
+                                                    <li>Подписанные
+                                                        контракты с крупными судовладельцами (Сингапур, США, Греция,
+                                                        Швейцария, Бельгия).
+                                                    </li>
+                                                    <li>Сумма выручки 1 миллиард рублей. Число
+                                                        обработанных танкерных судов превысило 2
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
@@ -164,10 +190,14 @@
                                         <article class="slide__block slide">
                                             <div class="slide__year">20<br>20</div>
                                             <div class="slide__text text">
-                                                <h3>Заголовок слайда</h3>
+                                                <h3>НОВЫЕ СОТРУДНИЧЕСТВА</h3>
                                                 <ul>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
-                                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quos?</li>
+                                                    <li>Подписанные контракты с крупными судовладельцами ( Греция,
+                                                        Норвегия). Сумма выручки превысило 1 миллиард 100 тысяч рублей.
+                                                    </li>
+                                                    <li>Сумма выручки превысило 1 миллиард 100 тысяч рублей.
+                                                    </li>
+                                                    <li>Число обработанных танкерных судов превысило 250</li>
                                                 </ul>
                                             </div>
                                             <div class="slider-arrows slider-arrows_horizontal history-section__slider-arrows">
@@ -204,15 +234,15 @@
                         </div>
                         <div class="year">2011</div>
                     </div>
-                    <div class="swiper-slide" >
+                    <div class="swiper-slide">
                         <div class="round"></div>
                         <div class="year">2012</div>
                     </div>
-                    <div class="swiper-slide" >
+                    <div class="swiper-slide">
                         <div class="round"></div>
                         <div class="year">2013</div>
                     </div>
-                    <div class="swiper-slide" >
+                    <div class="swiper-slide">
                         <div class="round"></div>
                         <div class="year">2014</div>
                     </div>

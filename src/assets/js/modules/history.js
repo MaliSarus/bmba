@@ -31,33 +31,13 @@ export default function historySliderInit() {
         speed: 800
     });
 
-    const swiperChange = function () {
+    mySwiper.on('slideChangeTransitionEnd', function () {
         const rI = mySwiper.realIndex;
-        myThumbSwiper.slideToLoop(rI)
-        myThumbSwiper.on('slideChange', thumbChange)
-    }
-
-    const thumbChange = function () {
-        mySwiper.off('slideChange', swiperChange);
+        myThumbSwiper.slideToLoop(rI);
+    });
+    myThumbSwiper.on('slideChangeTransitionEnd', function () {
         const rI = myThumbSwiper.realIndex;
         mySwiper.slideToLoop(rI);
-        mySwiper.on('slideChange', swiperChange)
-    }
-
-    mySwiper.on('slideChange', swiperChange);
-    mySwiper.on('slideChangeTransitionStart', function () {
-        myThumbSwiper.off('slideChange', thumbChange);
-    });
-    mySwiper.on('slideChangeTransitionEnd', function () {
-        myThumbSwiper.on('slideChange', thumbChange);
-    });
-
-    myThumbSwiper.on('slideChange', thumbChange)
-    myThumbSwiper.on('slideChangeTransitionStart', function () {
-        mySwiper.off('slideChange', swiperChange);
-    })
-    myThumbSwiper.on('slideChangeTransitionEnd', function () {
-        mySwiper.on('slideChange', swiperChange);
     })
 
 }

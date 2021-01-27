@@ -12,7 +12,7 @@ const calcTemplate = `
             <p>Ветер свыше 14 м/с</p>
             <p>Коэффициент 1,15</p>
         </div>
-      <datepicker inline v-model="date" valueType="DD.MM.YYYY" @pick="pickDate" :get-classes="getClasses"/>
+      <datepicker inline v-model="form.date" valueType="DD.MM.YYYY" @pick="pickDate" :get-classes="getClasses"/>
     </div>
    
     <div class="calc-section__title text">
@@ -29,20 +29,20 @@ const calcTemplate = `
                     <div class="form__input-wrapper">
                         <label for="#">Длина судна <span>(LQA)</span></label>
                         <div class="form__input calc-section__float-value value">
-                            <input type="number" v-model="fleetLength">
+                            <input type="number" v-model="form.fleetLength">
                         </div>
                     </div>
                     <div class="form__input-wrapper" :class="{disabled: checkFleetWidth}">
                         <label for="#">Ширина судна <span>(B)</span></label>
     
                         <div class="form__input calc-section__float-value value">
-                            <input type="number" v-model="fleetWidth" :disabled="checkFleetWidth">
+                            <input type="number" v-model="form.fleetWidth" :disabled="checkFleetWidth">
                         </div>
                     </div>
                     <div class="form__input-wrapper" :class="{disabled: checkFleetHeight}">
                         <label for="#">Высота борта судна <span>(D)</span></label>
                         <div class="form__input calc-section__float-value value">
-                            <input type="number" v-model="fleetHeight" :disabled="checkFleetHeight">
+                            <input type="number" v-model="form.fleetHeight" :disabled="checkFleetHeight">
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ const calcTemplate = `
                     <div class="form__input-wrapper calc-section__date">
                         <label for="">Дата прибытия</label>
                         <div class="form__input date">
-                            <input type="text" @focus="datePickerFocus = true" :value="date">
+                            <input type="text" @focus="datePickerFocus = true" :value="form.date">
                         </div>
                     </div>
     
@@ -72,7 +72,7 @@ const calcTemplate = `
             <div class="col-12">
                 <div class="form__group">
                     <div class="calc-section__checkbox">
-                        <input type="checkbox" id="calc-section-form-checkbox" v-model="nonGoingFleet">
+                        <input type="checkbox" id="calc-section-form-checkbox" v-model="form.nonGoingFleet">
                         <label for="calc-section-form-checkbox">
                             Несамоходное судно или судно с неработающим ГД
                         </label>
@@ -86,7 +86,7 @@ const calcTemplate = `
                     <div class="form__input-wrapper calc-section__date">
                         <label for="">Дата прибытия</label>
                         <div class="form__input date">
-                            <input type="text" @focus="datePickerFocus = true" :value="date">
+                            <input type="text" @focus="datePickerFocus = true" :value="form.date">
                         </div>
                     </div>
     
@@ -112,39 +112,48 @@ const calcTemplate = `
 </div>
 `
 
+let formInfo = {}
+function setFormInformation(formFields) {
+    formInfo = {...formFields}
+}
+export function getFormInformation() {
+    return formInfo
+}
 export function initCalc() {
     new Vue({
         el: '#calc',
         template: calcTemplate,
         data: {
-            fleetLength: '',
-            fleetWidth: '',
-            fleetHeight: '',
-            nonGoingFleet: false,
+            form:{
+                fleetLength: '',
+                fleetWidth: '',
+                fleetHeight: '',
+                nonGoingFleet: false,
+                date: '',
+            },
             datePickerFocus: false,
-            date: '',
             highlightedDate: [],
             isHighlightedDateSelect: false,
             seasonCoefficient: 1,
             calcPage: false,
-            windowWidth: 1920
+            windowWidth: 0
         },
         components: {
             datepicker: Datepicker
         },
         computed: {
             fleetVolume() {
-                return (this.fleetLength * this.fleetWidth * this.fleetHeight).toFixed(2);
+                return (this.form.fleetLength * this.form.fleetWidth * this.form.fleetHeight).toFixed(2);
             },
             fleetCoefficient() {
-                if (+this.fleetVolume < 30000) {
+                if (+this.form.fleetVolume < 30000) {
                     return 4.89
-                } else if (+this.fleetVolume >= 30000 && +this.fleetVolume <= 100000) {
+                } else if (+this.form.fleetVolume >= 30000 && +this.form.fleetVolume <= 100000) {
                     return 4.24
                 } else return 3.69
             },
             nonGoingCoefficient() {
-                if (this.nonGoingFleet) {
+                if (this.form.nonGoingFleet) {
                     return 1.2
                 } else {
                     return 1
@@ -166,24 +175,37 @@ export function initCalc() {
                 return new Intl.NumberFormat('ru-RU').format(number)
             },
             checkFleetWidth() {
-                if (this.fleetLength === ''){
-                    this.fleetWidth = ''
+                if (this.form.fleetLength === ''){
+                    this.form.fleetWidth = ''
                 }
-                return this.fleetLength === ''
+                return this.form.fleetLength === ''
             },
             checkFleetHeight() {
-                if (this.fleetWidth === ''){
-                    this.fleetHeight = ''
+                if (this.form.fleetWidth === ''){
+                    this.form.fleetHeight = ''
                 }
-                return this.fleetWidth === ''
+                return this.form.fleetWidth === ''
             },
             datePickerInputOnCalcPageDestination() {
                 return this.calcPage && this.windowWidth >= xlWidth
+            },
+            valid(){
+                return +this.result !== 0 && this.form.date !== ''
             }
         },
         methods: {
             formSubmit(){
-              console.log('submit')
+              if (this.valid){
+                  const formInfo ={
+                      ...this.form,
+                      url: location.href
+                  }
+                  setFormInformation(formInfo)
+                  document.querySelector('.request-popup').classList.add('open')
+              }
+              else{
+                  console.log('Ошибка')
+              }
             },
             onResize() {
                 this.windowWidth = window.innerWidth;

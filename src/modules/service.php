@@ -135,39 +135,146 @@
 
                         </div>
                         <div class="col-12">
-                            <div class="fleet-primary-section__info text h-100">
-                                <div class="block-title">Флот</div>
-                                <div class="fleet-primary-section__title">
-                                    <h2>Felix</h2>
-                                    <div class="fleet-primary-section__pagination swiper-pagination"></div>
+                            <div class="fleet-primary-section__tabs">
+                                <div class="fleet-primary-section__info text active">
+                                    <div class="block-title">Флот</div>
+                                    <div class="fleet-primary-section__title">
+                                        <h2>Felix</h2>
+                                        <div class="fleet-primary-section__pagination swiper-pagination"></div>
+                                    </div>
+                                    <div class="list fleet-specs">
+                                        <ul>
+                                            <li>
+                                                Мощность
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">951</span>
+                                                    <span class="fleet-specs__measure">л.с.</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                Скорость полного хода
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">12</span>
+                                                    <span class="fleet-specs__measure">узлов</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                Тяга на гаке
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">15</span>
+                                                    <span class="fleet-specs__measure">тонн</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="fleet-primary-section__more">
+                                        <a href="#" class="link">Все судна</a>
+                                    </div>
                                 </div>
-                                <div class="list fleet-specs">
-                                    <ul>
-                                        <li>
-                                            Мощность
-                                            <p class="fleet-specs__value">
-                                                <span class="fleet-specs__num">951</span>
-                                                <span class="fleet-specs__measure">л.с.</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            Скорость полного хода
-                                            <p class="fleet-specs__value">
-                                                <span class="fleet-specs__num">12</span>
-                                                <span class="fleet-specs__measure">узлов</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            Тяга на гаке
-                                            <p class="fleet-specs__value">
-                                                <span class="fleet-specs__num">15</span>
-                                                <span class="fleet-specs__measure">тонн</span>
-                                            </p>
-                                        </li>
-                                    </ul>
+                                <div class="fleet-primary-section__info text">
+                                    <div class="block-title">Флот</div>
+                                    <div class="fleet-primary-section__title">
+                                        <h2>Felix</h2>
+                                        <div class="fleet-primary-section__pagination swiper-pagination"></div>
+                                    </div>
+                                    <div class="list fleet-specs">
+                                        <ul>
+                                            <li>
+                                                Мощность
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">951</span>
+                                                    <span class="fleet-specs__measure">л.с.</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                Скорость полного хода
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">12</span>
+                                                    <span class="fleet-specs__measure">узлов</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                Тяга на гаке
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">15</span>
+                                                    <span class="fleet-specs__measure">тонн</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="fleet-primary-section__more">
+                                        <a href="#" class="link">Все судна</a>
+                                    </div>
                                 </div>
-                                <div class="fleet-primary-section__more">
-                                    <a href="#" class="link">Все судна</a>
+                                <div class="fleet-primary-section__info text">
+                                    <div class="block-title">Флот</div>
+                                    <div class="fleet-primary-section__title">
+                                        <h2>Felix</h2>
+                                        <div class="fleet-primary-section__pagination swiper-pagination"></div>
+                                    </div>
+                                    <div class="list fleet-specs">
+                                        <ul>
+                                            <li>
+                                                Мощность
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">951</span>
+                                                    <span class="fleet-specs__measure">л.с.</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                Скорость полного хода
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">12</span>
+                                                    <span class="fleet-specs__measure">узлов</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                Тяга на гаке
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">15</span>
+                                                    <span class="fleet-specs__measure">тонн</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="fleet-primary-section__more">
+                                        <a href="#" class="link">Все судна</a>
+                                    </div>
+                                </div>
+                                <div class="fleet-primary-section__info text">
+                                    <div class="block-title">Флот</div>
+                                    <div class="fleet-primary-section__title">
+                                        <h2>Felix</h2>
+                                        <div class="fleet-primary-section__pagination swiper-pagination"></div>
+                                    </div>
+                                    <div class="list fleet-specs">
+                                        <ul>
+                                            <li>
+                                                Мощность
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">951</span>
+                                                    <span class="fleet-specs__measure">л.с.</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                Скорость полного хода
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">12</span>
+                                                    <span class="fleet-specs__measure">узлов</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                Тяга на гаке
+                                                <p class="fleet-specs__value">
+                                                    <span class="fleet-specs__num">15</span>
+                                                    <span class="fleet-specs__measure">тонн</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="fleet-primary-section__more">
+                                        <a href="#" class="link">Все судна</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -185,20 +292,20 @@
                                     Мы свяжемся с Вами
                                 </p>
                                 <div class="form__group">
-                                    <div class="form__input name">
+                                    <div class="form__input name valid">
                                         <input type="text" placeholder="Ваше имя">
                                     </div>
                                     <div class="form__input phone">
-                                        <input type="tel" placeholder="Телефон">
+                                        <input type="tel" placeholder="Телефон" required>
                                     </div>
                                     <div class="form__input email">
-                                        <input type="email" placeholder="E-mail">
+                                        <input type="email" placeholder="E-mail" required>
                                     </div>
                                 </div>
                                 <small>Нажимая на кнопку “отправить” вы соглашаетесь c политикой обработки персональных
                                     данных</small>
                                 <div class="form__submit">
-                                    <button class="link ">Отправить</button>
+                                    <button class="link">Отправить</button>
                                 </div>
                             </form>
                         </div>

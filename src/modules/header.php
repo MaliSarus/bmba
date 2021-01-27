@@ -13,6 +13,31 @@
 </head>
 
 <body>
+<div class="request-popup">
+    <div class="request-popup__block">
+        <form action="#" class="form request-popup__form">
+            <div class="form__title">Оформление заявки</div>
+            <div class="form__subtitle">Укажите свои данные и мы свяжемся с Вами в течение дня</div>
+            <div class="form__group">
+                <div class="form__input name valid"><input type="text" placeholder="Имя"></div>
+                <div class="form__input email"><input type="email" placeholder="E-mail" required></div>
+                <div class="form__input phone"><input type="tel" placeholder="Телефон" required></div>
+            </div>
+            <small>Нажимая на кнопку “отправить” вы соглашаетесь c политикой обработки персональных
+                данных</small>
+            <div class="form__submit">
+                <button class="link ">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="success-popup">
+    <div class="success-popup__block">
+        <div class="success-popup__title">Спасибо</div>
+        <div class="success-popup__subtitle">Ваша заявка отправлена</div>
+        <button class="link success-popup__close">Закрыть</button>
+    </div>
+</div>
 <header class="header header_transparent transparent-border_bottom">
     <div class="header__logo transparent-border_right">
         <a href="index.php" class="logo_white"><img src="../assets/img/dest/ui/logo-white.svg" alt=""></a>
@@ -65,11 +90,11 @@
                 </div>
             </div>
         </div>
-<!--        <div class="mobile-nav__row">-->
-<!--            <div class="mobile-nav__bottom-nav">-->
-<!--                <a href=""></a>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="mobile-nav__row">-->
+        <!--            <div class="mobile-nav__bottom-nav">-->
+        <!--                <a href=""></a>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
     <button class="hamburger hamburger--squeeze header__hamburger" type="button">
           <span class="hamburger-box">
