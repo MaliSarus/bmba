@@ -59,6 +59,8 @@
       margin-bottom: 60px;
       @media screen and (min-width: $xxl-width) {
         margin-bottom: 0;
+        margin-top: 229px;
+        margin-left: -280px;
       }
     }
 
@@ -105,7 +107,7 @@
     }
     @media screen and (min-width: $xxl-width) {
       margin-right: 100px;
-      padding: 90px 85px 115px 80px;
+      padding: 90px 100px 115px 80px;
     }
     &::before{
       width: 200px;
@@ -123,7 +125,7 @@
 }
 
 .info-card {
-  background-image: url("../img/dest/actions/ship.svg");
+  background-image: url("../img/dest/video/bg-ship.svg");
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: 90px 244px;
@@ -228,7 +230,7 @@
       @media screen and (min-width: $xxl-width) {
         bottom: unset;
         left: -40px;
-        top: 15px;
+        top: 7px;
       }
     }
   }

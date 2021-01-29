@@ -60,7 +60,7 @@
             </nav>
         </div>
         <div class="header__lang">
-            <a href="#">ENG</a>
+            <a href="#"><span class="header__lang-icon"></span>ENG</a>
         </div>
     </div>
     <div class="header__nav mobile-nav">
@@ -70,7 +70,7 @@
                     <a href="tel:+78124494712">+7 (812) 449 47 12</a>
                 </div>
                 <div class="header__lang">
-                    <a href="#">ENG</a>
+                    <a href="#"><span class="header__lang-icon mobile"></span>ENG</a>
                 </div>
             </div>
         </div>
@@ -90,11 +90,6 @@
                 </div>
             </div>
         </div>
-        <!--        <div class="mobile-nav__row">-->
-        <!--            <div class="mobile-nav__bottom-nav">-->
-        <!--                <a href=""></a>-->
-        <!--            </div>-->
-        <!--        </div>-->
     </div>
     <button class="hamburger hamburger--squeeze header__hamburger" type="button">
           <span class="hamburger-box">

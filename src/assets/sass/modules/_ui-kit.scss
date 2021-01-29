@@ -10,24 +10,46 @@
   text-decoration: none;
   border: none;
   background: transparent;
-
-  &::before, &::after {
+  span{
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     display: block;
-    width: 73px;
-    content: '';
+    width: 70px;
+    transition: transform .5s, opacity .5s;
+    opacity: 1;
+    background: url("../img/dest/ui/link-circle.png") center / contain no-repeat;
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      display: block;
+      content: '';
+      background: url("../img/dest/ui/link-dot.svg") left center no-repeat;
+      transition: transform .5s, background .5s;
+      transform: translateX(-2px);
+    }
+    &.hover{
+      opacity: 0;
+      background: url("../img/dest/ui/link-circle_hover.png") center / contain no-repeat;
+    }
   }
 
-  &::after {
-    background: url("../img/dest/ui/link-circle.svg") center / contain no-repeat;
-    transform: rotate(-180deg);
-    transition: transform .5s, background .5s;
-  }
+
+
+
 
   &::before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 70px;
+    display: block;
+    content: '';
     background-position: center calc(50%);
     background-size: 19px 16px;
     background-repeat: no-repeat;
@@ -35,9 +57,14 @@
   }
 
   &:hover {
-    &::after {
-      background-image: url("../img/dest/ui/link-circle_hover.svg");
-      transform: rotate(0deg);
+    span{
+      transform: rotate(180deg);
+      &:nth-child(1){
+        opacity: 0;
+      }
+      &:nth-child(2){
+        opacity: 1;
+      }
     }
   }
 
@@ -51,9 +78,19 @@
       background-position: calc(50% + 3px) center;
     }
 
-    &::after {
-      background-image: url("../img/dest/ui/link-circle_white.svg");
-      transform: none;
+    //&::after {
+    //  background-image: url("../img/dest/ui/link-circle_white.svg");
+    //  transform: none;
+    //}
+    span{
+      background: url("../img/dest/ui/link-circle_white.png") center / contain no-repeat;
+
+      &::before {
+        background: url("../img/dest/ui/link-dot_white.svg") left center no-repeat;
+      }
+      &.hover{
+        background: url("../img/dest/ui/link-circle_white.png") center / contain no-repeat;
+      }
     }
 
     &:hover {
@@ -66,9 +103,12 @@
   &_white{
     color: white;
     cursor: pointer;
-    &::after {
+    span{
       background-image: url("../img/dest/ui/link-circle_white.svg");
       transform: none;
+      &::before{
+        background-image: url("../img/dest/ui/link-dot_white.svg");
+      }
     }
     &::before {
       background-position: center calc(50%);
@@ -78,7 +118,7 @@
       filter: brightness(100);
     }
     &:hover {
-      &::after {
+      span{
         background-image: url("../img/dest/ui/link-circle_white.svg");
         transform: rotate(180deg);
       }

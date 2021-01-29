@@ -2,7 +2,7 @@
     <div class="video-section__video" data-id="TqaVNEE5Wbo">
         <div class="video-section__play">
             <div class="link link_play">
-                <div class="block-title" data-title-num="06"></div>
+                <div class="block-title" data-title-num="05"></div>
                 Смотреть видео
             </div>
         </div>
@@ -16,10 +16,10 @@
                             <div class="col-12 col-xxl-5 offset-xxl-7">
                                 <div class="video-section__info info-card">
                                     <div class="info-card__head">
-                                        <div class="info-card__image">
-                                            <div class="info-card__image-ratio"></div>
-                                            <img src="../assets/img/dest/video/photo.jpg" alt="">
-                                        </div>
+<!--                                        <div class="info-card__image">-->
+<!--                                            <div class="info-card__image-ratio"></div>-->
+<!--                                            <img src="../assets/img/dest/video/photo.jpg" alt="">-->
+<!--                                        </div>-->
                                         <div class="info-card__title">
                                             <h2>ГОНЧАРОВ
                                                 <span>Константин Васильевич</span>

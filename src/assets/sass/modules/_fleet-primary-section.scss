@@ -7,19 +7,20 @@
       padding-bottom: 312px;
     }
   }
-  &__background-word{
+
+  &__background-word {
     overflow: visible;
-    @media screen and (min-width: $lg-width){
+    @media screen and (min-width: $lg-width) {
       font-size: 260px;
     }
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       position: absolute;
       left: -100%;
-      top: 50%;
+      top: 115%;
       transform: rotate(-90deg) translate(-50%, 8px);
       transition: top .5s ease-in-out;
     }
-    @media screen and (min-width: $xxl-width){
+    @media screen and (min-width: $xxl-width) {
       transform: rotate(-90deg) translate(-50%, 160px);
     }
 
@@ -39,12 +40,22 @@
     h2 {
       margin: 0;
     }
+
+    .slider-arrows {
+      @media screen and (min-width: $lg-width) {
+        display: none;
+      }
+    }
   }
-  &__tabs{
+
+  &__tabs {
     position: relative;
     overflow: hidden;
     width: 100%;
     height: calc(100% + 35px);
+    &-wrapper{
+      position: relative;
+    }
   }
 
   &__info {
@@ -59,7 +70,8 @@
       transform: translateX(-100%);
 
     }
-    &.active{
+
+    &.active {
       transform: none;
       position: relative;
       opacity: 1;
@@ -74,17 +86,21 @@
       position: absolute;
       bottom: 0;
       left: 0;
+      text-align: left;
       transform: translateY(50%);
     }
   }
-  &__slider-and-arrows{
+
+  &__slider-and-arrows {
     position: relative;
     height: 100%;
     @media screen and (min-width: $lg-width) {
       padding-right: 128px;
     }
+
     .fleet-primary-section__slider-arrows {
       position: absolute;
+      display: none;
       right: 0;
       top: 50%;
       height: 120px;
@@ -92,9 +108,14 @@
       background: transparent;
       @media screen and (min-width: $lg-width) {
         display: flex;
+        &::before {
+          left: 0;
+          right: 0;
+        }
       }
     }
   }
+
   &__slider {
     position: relative;
     margin-bottom: 60px;
@@ -104,13 +125,32 @@
       max-height: 520px;
     }
 
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 45px;
+      width: 57px;
+      height: 57px;
+      display: block;
+      content: none;
+      background: url("../img/dest/fleet-primary/slider-dots.svg") center no-repeat;
+      background-size: contain;
+      transform: translateY(-50%);
+      z-index: 2;
+      @media screen and (min-width: $lg-width) {
+        content: '';
+      }
+    }
+
     .swiper {
-      &-container{
+      &-container {
         height: 100%;
       }
+
       &-wrapper {
         display: flex;
       }
+
       &-slide {
         height: auto;
 
@@ -122,24 +162,16 @@
         }
       }
     }
-
-
-
-    &-arrows {
-
-      @media screen and (min-width: $lg-width) {
-        display: none;
-      }
-    }
   }
 
   &__pagination {
     display: none;
     padding-top: 47px;
     padding-bottom: 47px;
-    transform: translateY(50%);
     @media screen and (min-width: $lg-width) {
       display: flex;
+      left: 50%;
+      transform: translate(-50%, 50%);
     }
 
     .swiper-pagination-bullet-active {
@@ -147,24 +179,28 @@
 
       &::before {
         position: absolute;
+        left: 50%;
+        top: 50%;
         display: block;
         content: '';
         width: 1px;
         height: 80px;
-        transform: translate(4px, -50%);
+        transform: translate(-50%, -50%);
         background: #EBEBF0;
       }
 
       &::after {
 
         position: absolute;
+        left: 50%;
+        top: 50%;
         padding: 12px 0;
         display: block;
         content: attr(data-index);
         font-weight: 600;
         font-size: 16px;
         line-height: 100%;
-        transform: translate(-5px, -19px);
+        transform: translate(-50%,-50%);
 
         background: white;
       }
@@ -201,6 +237,7 @@
         text-align: right;
         @media screen and (min-width: $lg-width) {
           text-align: left;
+          margin-top: 10px;
         }
       }
     }

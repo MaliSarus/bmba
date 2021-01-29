@@ -2,6 +2,7 @@ import Swiper from "swiper/bundle";
 import {lgWidth, xlWidth} from "./window-width-values";
 import getParents from "./getParents";
 import customPaginationInit from "./customPagination";
+import {getFullHeight} from "./helpers";
 
 export default function fleetPrimarySliderInit() {
     const realSlides = document.querySelectorAll('.fleet-primary-section__slider .swiper-slide').length;
@@ -25,8 +26,23 @@ export default function fleetPrimarySliderInit() {
         paginationContainer.forEach(container => {
             customPaginationInit(container, mySwiper, realSlides, 5)
         })
-        const tabsWrapper = document.querySelector('.fleet-primary-section__tabs');
-        const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
+
+
+    } else {
+        mySwiper.on('slideChangeTransitionStart', function () {
+            if (window.innerWidth > xlWidth) {
+                const fleetBackgroundTitle = document.querySelector('.fleet-primary-section__background-word');
+                const maxBackgroundTitleOffset = 100;
+                const currentBackgroundTitleOffset = mySwiper.realIndex * maxBackgroundTitleOffset / realSlides
+                fleetBackgroundTitle.style.top = `calc(115% - ${currentBackgroundTitleOffset}px)`
+            }
+        })
+    }
+
+
+
+    const tabsWrapper = document.querySelector('.fleet-primary-section__tabs');
+    const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
 
         let maxTabHeight = 0;
         tabs.forEach(tab => {
@@ -34,21 +50,15 @@ export default function fleetPrimarySliderInit() {
                 maxTabHeight = tab.offsetHeight;
             }
         })
-        tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
-
-    } else {
-        mySwiper.on('slideChangeTransitionStart', function () {
-            const swiperPagination = document.querySelector('.fleet-primary-section__slider .swiper-pagination')
-            if (window.innerWidth > xlWidth) {
-                const fleetBackgroundTitle = document.querySelector('.fleet-primary-section__background-word');
-                const maxBackgroundTitleOffset = 100;
-                const currentBackgroundTitleOffset = mySwiper.realIndex * maxBackgroundTitleOffset / realSlides
-                fleetBackgroundTitle.style.top = `calc(50% - ${currentBackgroundTitleOffset}px)`
-            }
-            swiperPagination.style.left = (mySwiper.width - swiperPagination.offsetWidth) / (realSlides - 1) * mySwiper.realIndex + 'px'
-        })
+        const moreButton = document.querySelector('.fleet-primary-section__more')
+        const moreButtonHeight = getFullHeight(moreButton)
+    if (window.innerWidth < lgWidth) {
+        tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px + ${moreButtonHeight}px)`
     }
-    const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
+    else {
+        tabsWrapper.style.height = `calc(${maxTabHeight}px + ${moreButtonHeight}px)`
+
+    }
     mySwiper.on('slideChangeTransitionStart', function () {
         tabs.forEach(tab => {
             tab.classList.remove('active')
@@ -61,7 +71,7 @@ export default function fleetPrimarySliderInit() {
     window.addEventListener('resize', function () {
         const tabsWrapper = document.querySelector('.fleet-primary-section__tabs');
         const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
-        if (window.innerWidth < lgWidth) {
+        // if (window.innerWidth < lgWidth) {
             let maxTabHeight = 0;
             tabs.forEach(tab => {
                 if (tab.offsetHeight > maxTabHeight) {
@@ -69,9 +79,9 @@ export default function fleetPrimarySliderInit() {
                 }
             })
             tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
-        } else {
-            if (!document.querySelector('.fleet-primary-section').classList.contains('service-fleet-section')) tabsWrapper.removeAttribute('style');
-        }
+        // } else {
+        //     if (!document.querySelector('.fleet-primary-section').classList.contains('service-fleet-section')) tabsWrapper.removeAttribute('style');
+        // }
 
     })
 }

@@ -1,9 +1,9 @@
-<div class="partners-section with-lines" >
+<section class="partners-section with-lines" >
     <div class="partners-section__main">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="block-title" data-title-num="07.">
+                    <div class="block-title" data-title-num="06">
                         Название блока
                     </div>
                 </div>
@@ -34,4 +34,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

@@ -39,7 +39,8 @@
                                                 <img src="../assets/img/dest/actions/1_hover.jpg" alt="" class="hover">
                                                 <p data-num="01.">
                                                     <span class="actions-section__list-number">01.</span>
-                                                    швартовка и отшвартовка судов
+                                                    швартовка и отшвартовка
+                                                    судов
                                                 </p>
                                             </a>
                                         </li>

@@ -19,6 +19,8 @@ import {initCalc} from "./modules/calc";
 import {lgWidth} from "./modules/window-width-values";
 import popupInit from "./modules/popup";
 import initFleetSection, {initScrollBar} from "./modules/fleet-section";
+import placeCircleElement from "./modules/circle-menu";
+import {getFullHeight, scrollTo} from "./modules/helpers";
 
 // import homePageTopInit from "./modules/home-page-top";
 
@@ -30,11 +32,29 @@ function isSet(element) {
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
+    if (isSet('.calc-section')){
+        initCalc()
+    }
+    if (isSet('.link')){
+        document.querySelectorAll('.link').forEach(link=>{
+            link.insertAdjacentHTML('beforeend', `<span></span><span class="hover"></span>`)
+        })
+    }
     changeHeaderStyle();
     hamburgerHandle();
-    popupInit()
+    popupInit();
 
 
+    if (isSet('.scrollable')){
+        const scrollableElements = document.querySelectorAll('.scrollable');
+        scrollableElements.forEach(el=>{
+            el.addEventListener('click', scrollTo)
+        })
+    }
+
+    if (isSet('.circle')){
+        placeCircleElement()
+    }
 
     if (isSet('.slider-arrows')) {
         sliderArrowsHandle()
@@ -116,13 +136,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         })
     }
-    if (isSet('.calc-section')){
-        initCalc()
-    }
+
     if (isSet('.fleet-section')){
         initFleetSection()
         initScrollBar()
     }
+
+
+
 })
 
 window.addEventListener('scroll', function () {

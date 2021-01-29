@@ -20,14 +20,14 @@
         display: flex;
         flex-wrap: wrap;
         margin: -30px -20px;
-        @media screen and (min-width: $lg-width){
-          margin: (-75px / 2) -20px;
-        }
         li{
           flex-basis: 50%;
           padding: 30px 20px;
-          @media screen and (min-width: $lg-width){
-            padding: (75px / 2) 20px;
+
+          h2{
+            @media screen and (min-width: $md-width){
+              margin-bottom: 30px;
+            }
           }
 
 
@@ -48,7 +48,7 @@
     margin-bottom: 60px;
     @media screen and (min-width: $lg-width){
       margin-bottom: 0;
-      padding-right: 107px;
+      max-width: 435px;
     }
     .text {
       > :first-child {

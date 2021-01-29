@@ -1,11 +1,53 @@
 .main-top {
+  position: relative;
   overflow: hidden;
   width: 100%;
   height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  &::before{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    content: '';
+    background: linear-gradient(180deg, rgba(42, 84, 130, 0) 67.53%, rgba(33, 66, 102, 0.7) 100%);
+  }
+  &__next{
+    display: none;
+    position: absolute;
+    right: 30px;
+    bottom: 115px;
+    padding-left: 27px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+    transform: rotate(-90deg);
+    @media screen and (min-width: $lg-width){
+      display: block;
+    }
+    @media  screen and (min-width: $xxl-width){
+      right: unset;
+      left: 30px;
+    }
+    &::before{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      content: '';
+      height: 1px;
+      width: 81px;
+      transform: translate(-100%,-50%);
+      background: white;
+    }
+  }
   &__text {
     display: flex;
     flex-direction: column;
@@ -33,15 +75,16 @@
       content: '';
       width: 108px;
       height: 108px;
-      background: url("../img/dest/ui/balls.svg") center no-repeat;
+      background: url("../img/dest/header/title-dots.svg") left top no-repeat;
       background-size: cover;
       z-index: 0;
       filter: brightness(100);
       @media screen and (min-width: $md-width) {
-        top: 0;
+        top: 50%;
         left: -74px;
         width: 145px;
-        height: 100%;
+        height: 145px;
+        transform: translateY(-50%);
       }
     }
 
@@ -58,6 +101,7 @@
       div {
         font-size: 22px;
         margin-bottom: 14px;
+        line-height: 100%;
         @media screen and (min-width: $md-width) {
           margin-bottom: 0;
           font-size: 46px;

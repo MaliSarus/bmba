@@ -1,5 +1,14 @@
 </main>
 <footer class="footer">
+    <div class="footer__background">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12">
+                    <div class="footer__background-block h-100"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="footer__wrapper">
         <div class="container">
             <div class="row">
@@ -47,7 +56,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-lg-6">
+                                        <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
                                             <address class="footer__contacts">
                                                 <div class="list">
                                                     <h5>Контакты</h5>

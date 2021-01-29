@@ -2,18 +2,54 @@
   $footer-text-color: #8E97AC;
   $footer-headings-color: white;
   background-color: #252832;
-  background-image: url("../img/dest/footer/bg-ship.svg");
-  background-size: 117px 215px;
-  background-position: calc(100% - 20px) calc(100% - 33px);
-  background-repeat: no-repeat;
-  background-blend-mode: screen;
-  @media screen and (min-width: $md-width){
-    background-position: 43px calc(100% - 33px);
-  }
-  &__wrapper{
+  //background-image: url("../img/dest/footer/bg-ship.svg");
+  //background-size: 117px 215px;
+  //background-position: calc(100% - 20px) calc(100% - 33px);
+  //background-repeat: no-repeat;
+  //background-blend-mode: screen;
+  //@media screen and (min-width: $md-width){
+  //  background-position: 43px calc(100% - 33px);
+  //}
+  position: relative;
+
+  &__wrapper {
     border-bottom: 1px solid #2F3340;
     margin-bottom: 80px;
   }
+
+  &__background {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+
+    &-block {
+      position: relative;
+      background-color: #252832;
+      background-image: url("../img/dest/footer/bg-ship.svg");
+      background-size: 117px 215px;
+      background-position: 100% calc(100% - 33px);
+      background-repeat: no-repeat;
+      background-blend-mode: screen;
+      @media screen and (min-width: $md-width) {
+        background-position: 43px calc(100% - 33px);
+
+      }
+
+      &::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 80px;
+        height: 1px;
+        display: block;
+        content: '';
+        background: #2F3340;
+      }
+    }
+  }
+
   &__block {
     position: relative;
     padding-top: 61px;
@@ -22,7 +58,7 @@
       padding-top: 96px;
     }
 
-    &::before{
+    &::before {
       position: absolute;
       bottom: -48px;
       right: 0;
@@ -32,7 +68,7 @@
       height: 215px;
       background-image: url("../img/dest/footer/bg-ship.svg");
       background-blend-mode: multiply;
-      @media screen and (min-width: $lg-width){
+      @media screen and (min-width: $lg-width) {
         left: 43px;
 
       }
@@ -65,6 +101,7 @@
     padding-left: 62px;
     @media screen and (min-width: $lg-width) {
       padding-left: 0;
+      padding-top: 30px;
     }
   }
 
@@ -84,14 +121,18 @@
   }
 
   &__nav {
-    > :last-child {
-      margin-bottom: 0;
+
+
+    @media screen and (min-width: $lg-width) {
+      max-width: 236px;
     }
 
     .list {
       margin-bottom: 60px;
-      @media screen and (min-width: $lg-width){
-        margin-bottom: 60px;
+      @media screen and (min-width: $lg-width) {
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
 
       h5 {
@@ -114,9 +155,11 @@
             line-height: 220%;
             font-size: 14px;
             transition: color .25s;
-            &:hover{
+
+            &:hover {
               color: white;
             }
+
             @media screen and (min-width: $lg-width) {
               font-size: 16px;
             }
@@ -128,10 +171,15 @@
 
   &__contacts {
     font-style: normal;
+    @media screen and (min-width: $lg-width) {
+      max-width: 234px;
+    }
 
     .list {
       margin-bottom: 64px;
-
+      @media screen and (min-width: $lg-width) {
+        margin-bottom: 0;
+      }
       h5 {
         text-transform: uppercase;
         color: $footer-headings-color;

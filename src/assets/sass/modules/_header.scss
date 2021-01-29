@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: $z-high;
+  z-index: $z-highest;
   display: flex;
-  background: white;
+  background: #F7FAF9;
 
   transition: background-color .25s;
   border-color: #EBEBF0;
@@ -19,13 +19,17 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 100%;
     text-decoration: none;
     color: $dark-grey;
     transition: background-color .15s, color .25s;
+    @media screen and (min-width: $xxl-width){
+      font-size: 16px;
+    }
     &::before{
       position: absolute;
       bottom: 0;
@@ -119,6 +123,11 @@
 
   &_transparent {
     background: transparent;
+    border-color: rgba(white,.3);
+
+    .transparent-border_right {
+      border-color: rgba(white,.3);
+    }
 
     * {
       @media screen and (min-width: $xxl-width) {
@@ -164,7 +173,7 @@
 
     .header__phone, .header__lang, .header__menu {
       a {
-        @media screen and (min-width: $xxl-width) {
+        @media screen and (min-width: $xl-width) {
           color: white;
         }
       }
@@ -175,6 +184,13 @@
           background: rgba(255, 255, 255, 0.3);
           color: white;
         }
+      }
+    }
+
+    .header__lang-icon{
+      background: url("../img/dest/header/lang-icon_white.svg") center no-repeat;
+      &.mobile{
+        background: url("../img/dest/header/lang-icon.svg") center no-repeat;
       }
     }
   }
@@ -193,7 +209,7 @@
       width: 100%;
       max-width: 182px;
       @media screen and (min-width: $xxl-width) {
-        padding: 15px 60px 15px 40px;
+        padding: 15px 40px;
         max-width: none;
       }
 
@@ -208,9 +224,10 @@
 
   &__phone {
     display: block;
+    flex-shrink: 0;
 
     a {
-      padding: 0 60px 0 40px;
+      padding: 0 40px;
       color: $dark-grey;
     }
   }
@@ -220,14 +237,14 @@
     z-index: 2;
     display: flex;
     align-items: center;
-    @media screen and (min-width: $xxl-width) {
+    @media screen and (min-width: $xl-width) {
       display: none;
     }
   }
 
   &__nav {
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     position: static;
     background: transparent;
   }
@@ -246,7 +263,7 @@
         margin: 0;
         padding: 0;
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
         height: 100%;
 
         li {
@@ -268,9 +285,23 @@
   }
 
   &__lang {
+    &-icon{
+      width: 16px;
+      height: 16px;
+      background: url("../img/dest/header/lang-icon.svg") center no-repeat;
+      background-size: contain;
+      margin-right: 10px;
+      transform: translateY(-1px);
+    }
     a {
-      padding: 0 68px;
+      position: relative;
       color: $dark-grey;
+      padding: 0 40px;
+
+      @media screen and (min-width: $xxl-width){
+        padding: 0 68px;
+
+      }
     }
   }
 }
@@ -285,7 +316,7 @@
   z-index: 1;
   display: block;
   padding-top: 92px;
-  background: white;
+  background:#F7FAF9;
   visibility: hidden;
   opacity: 0;
   transition: opacity .25s;
@@ -298,6 +329,9 @@
 
     &:hover {
       background: rgba($accent-color, .1);
+      &::before{
+        background: $accent-color;
+      }
     }
   }
 
@@ -341,7 +375,7 @@
 .desktop-nav {
   display: none;
   visibility: hidden;
-  @media screen and (min-width: $xxl-width) {
+  @media screen and (min-width: $xl-width) {
     display: flex;
     visibility: visible;
     flex-grow: 1;

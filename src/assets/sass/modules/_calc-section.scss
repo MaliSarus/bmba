@@ -350,7 +350,7 @@
     width: 100%;
     transform: translateX(100%);
     transition: transform .5s;
-    z-index: $z-highest;
+    z-index: $z-high;
     background: white;
     padding: 80px 20px;
     @media screen and (min-width: $sm-width) {
