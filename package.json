@@ -41,6 +41,7 @@
 		"lightgallery.js": "^1.4.0",
 		"rellax": "^1.12.1",
 		"simple-scrollbar": "^0.4.0",
+		"smoothscroll-polyfill": "^0.4.4",
 		"swiper": "^6.4.5",
 		"vue": "^2.6.12",
 		"vue-inline-datepicker": "^1.0.7",

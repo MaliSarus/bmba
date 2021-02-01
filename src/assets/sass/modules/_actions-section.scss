@@ -13,6 +13,12 @@
     @media screen and (min-width: $lg-width){
       margin-bottom: 0;
     }
+    .block-title{
+      margin-bottom: 20px;
+      @media screen and (min-width: $lg-width){
+        margin-bottom: 32px;
+      }
+    }
   }
 
   &__content {
@@ -34,7 +40,7 @@
   }
 
   &__more {
-    margin-top: 70px;
+    margin-top: 60px;
     &.desktop {
       display: none;
       @media screen and (min-width: $lg-width) {
@@ -99,7 +105,11 @@
           display: block;
           position: relative;
           height: 100%;
-          color: $main-color;
+          color: white;
+          @media screen and (min-width: $md-width){
+            color: $main-color;
+
+          }
 
           &:hover {
             color: white;
@@ -110,7 +120,9 @@
               }
             }
             .actions-section__list-number{
-              color: white;
+              @media screen and (min-width: $md-width){
+                color: white;
+              }
             }
 
             p {
@@ -125,31 +137,42 @@
             height: 100%;
             object-position: center;
             object-fit: cover;
-            opacity: 1;
+            opacity: 0;
             transition: opacity .5s;
+            @media screen and (min-width: $md-width){
+              opacity: 1;
+            }
             &.hover{
               position: absolute;
               left: 0;
               top: 0;
               right: 0;
               bottom: 0;
-              opacity: 0;
+              opacity: 1;
+              @media screen and (min-width: $md-width){
+                opacity: 0;
+              }
             }
           }
 
           p {
             position: absolute;
-            left: 55px;
-            right: 52px;
-            bottom: 60px;
+            left: 30px;
+            right: 30px;
+            bottom: 35px;
             margin: 0;
+            font-size: 14px;
             padding-left: 8px;
             font-weight: bold;
-            font-size: 22px;
             line-height: 110%;
             text-transform: uppercase;
+            //color: white;
             @media screen and (min-width: $md-width){
+              left: 55px;
+              bottom: 60px;
               right: 86px;
+              font-size: 22px;
+
             }
 
             &::before {
@@ -157,37 +180,67 @@
               top: 50%;
               left: -66px;
               display: block;
-              content: '';
+              content: none;
               width: 127px;
               height: 127px;
               background-image: url("../img/dest/ui/skew-lines_white.svg");
               background-size: contain;
               transform: translateY(-50%);
+              @media screen and (min-width: $md-width){
+                content: '';
+              }
             }
             &::after{
               position: absolute;
               display: block;
-              content: '';
               width: 3px;
               left: -3px;
               top: 4px;
               bottom: 4px;
+              content: none;
+
               background: $accent-color;
+              @media screen and (min-width: $md-width){
+                content: '';
+              }
             }
           }
         }
       }
     }
     &-number{
-      position: absolute;
-      left: 0;
-      top: 4px;
-      font-size: 16px;
+      display: block;
+      position: relative;
       font-weight: normal;
+      font-size: 14px;
       line-height: 100%;
       text-transform: uppercase;
-      color: $main-color-light;
-      transform: translateX(calc(-100% - 8px));
+      color: white;
+      padding-bottom: 20px;
+      margin-bottom: 17px;
+      @media screen and (min-width: $md-width){
+        position: absolute;
+        left: 0;
+        top: 4px;
+        color: $main-color-light;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        font-size: 16px;
+        transform: translateX(calc(-100% - 8px));
+      }
+      &::before{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        content: '';
+        width: 21px;
+        height: 2px;
+        background: white;
+        @media screen and (min-width: $md-width){
+          content: none;
+        }
+      }
     }
   }
 }

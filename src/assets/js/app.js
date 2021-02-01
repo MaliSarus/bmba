@@ -1,5 +1,5 @@
 import {changeHeaderStyle, hamburgerHandle} from "./modules/header";
-import {addLinesBg,addTwoLinesBg} from './modules/lines-bg';
+import {addLinesBg, addTwoLinesBg} from './modules/lines-bg';
 
 import fleetPrimarySliderInit from "./modules/fleet";
 import partnersSliderInit from "./modules/partners";
@@ -20,11 +20,9 @@ import {lgWidth} from "./modules/window-width-values";
 import popupInit from "./modules/popup";
 import initFleetSection, {initScrollBar} from "./modules/fleet-section";
 import placeCircleElement from "./modules/circle-menu";
-import {getFullHeight, scrollTo} from "./modules/helpers";
+import {getForecaToken, getFullHeight, scrollTo} from "./modules/helpers";
 
 // import homePageTopInit from "./modules/home-page-top";
-
-
 
 
 function isSet(element) {
@@ -32,27 +30,29 @@ function isSet(element) {
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    if (isSet('.calc-section')){
+    if (isSet('.calc-section')) {
+
         initCalc()
     }
-    if (isSet('.link')){
-        document.querySelectorAll('.link').forEach(link=>{
+    if (isSet('.link')) {
+        document.querySelectorAll('.link').forEach(link => {
             link.insertAdjacentHTML('beforeend', `<span></span><span class="hover"></span>`)
         })
     }
     changeHeaderStyle();
     hamburgerHandle();
+
     popupInit();
 
 
-    if (isSet('.scrollable')){
+    if (isSet('.scrollable')) {
         const scrollableElements = document.querySelectorAll('.scrollable');
-        scrollableElements.forEach(el=>{
+        scrollableElements.forEach(el => {
             el.addEventListener('click', scrollTo)
         })
     }
 
-    if (isSet('.circle')){
+    if (isSet('.circle')) {
         placeCircleElement()
     }
 
@@ -106,42 +106,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (isSet('.documents-section')) {
         documentsSliderInit();
     }
-    if (isSet('.news-section')){
+    if (isSet('.news-section')) {
         newsYearsSliderInit()
     }
-    if (isSet('.new-section')){
+    if (isSet('.new-section')) {
         changeNewBgWidth()
         window.addEventListener('resize', changeNewBgWidth)
     }
-    if (isSet('.geo-section')){
+    if (isSet('.geo-section')) {
         initMap()
         const hideInfoButton = document.querySelector('.geo-section__info-hide');
         const infoBlock = document.querySelector('.geo-section__info');
         hideInfoButton.addEventListener('click', function () {
             infoBlock.classList.add('hide');
-            if (window.innerWidth < lgWidth){
+            if (window.innerWidth < lgWidth) {
                 infoBlock.style.marginTop = (infoBlock.offsetHeight * -1) + 'px';
             }
         })
         window.addEventListener('resize', function () {
-            if (window.innerWidth < lgWidth){
-                if (infoBlock.classList.contains('hide')){
+            if (window.innerWidth < lgWidth) {
+                if (infoBlock.classList.contains('hide')) {
                     infoBlock.style.marginTop = (infoBlock.offsetHeight * -1) + 'px';
                 }
-            }
-            else {
-                if (infoBlock.classList.contains('hide')){
+            } else {
+                if (infoBlock.classList.contains('hide')) {
                     infoBlock.removeAttribute('style')
                 }
             }
         })
     }
 
-    if (isSet('.fleet-section')){
+    if (isSet('.fleet-section')) {
         initFleetSection()
         initScrollBar()
     }
-
 
 
 })

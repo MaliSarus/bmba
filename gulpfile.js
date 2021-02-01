@@ -18,7 +18,7 @@ const sassGlob     = require('gulp-sass-glob')
 
 function browsersync() {
     browserSync.init({
-        proxy: "bmba",
+        proxy: "bamba",
         notify: false,
         online: true
     })

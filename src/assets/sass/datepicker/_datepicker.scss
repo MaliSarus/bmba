@@ -175,10 +175,20 @@
 
 .#{$namespace}-btn-icon-left,
 .#{$namespace}-btn-icon-double-left {
+  *{
+    opacity: 0;
+  }
+  background: url("../img/dest/calc/calendar-prev.svg") center no-repeat;
+  background-size: contain;
   order: 1;
 }
 .#{$namespace}-btn-icon-right,
 .#{$namespace}-btn-icon-double-right {
+  *{
+    opacity: 0;
+  }
+  background: url("../img/dest/calc/calendar-next.svg") center no-repeat;
+  background-size: contain;
   order: 3;
 }
 .#{$namespace}-btn-icon-double-left, .#{$namespace}-btn-icon-double-right {

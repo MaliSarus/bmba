@@ -14,17 +14,62 @@
     right: 0;
     background: url("../img/dest/calc/bg.jpg") left top no-repeat;
     background-size: contain;
+    display: none;
+    @media screen and (min-width: $xl-width){
+      display: block;
+    }
+    &::before{
+      position: absolute;
+      left: 8px;
+      bottom: 90px;
+      display: block;
+      content: '';
+      width: 56px;
+      height: 164px;
+      background: url("../img/dest/calc/Dots.svg") center;
+    }
 
     &-layout {
+      position: relative;
       width: 100%;
       height: 100%;
       background: #F7FAF9;
       @media screen and (min-width: $xl-width) {
         width: 64%;
         margin-left: auto;
-
       }
+      &::before{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        content: 'COST';
+        font-weight: bold;
+        font-size: 210px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        opacity: 0.1;
+        transform: rotate(-90deg) translateY(-372px) translateX(190px);
+      }
+    }
+  }
+  &__weather{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    padding: 10px 17px 10px 17px;
+    background: white;
+    display: flex;
+    transform: translateY(54px);
 
+    @media screen and (min-width: $xl-width){
+      top: 177px;
+      left: 0;
+      padding: 10px 21px 10px 25px;
+      width: 260px;
+      height: 100px;
+      transform: translateX(calc(-100% + 50px));
     }
   }
   &.service-calc{
@@ -40,9 +85,14 @@
   }
   &.calc-page{
     margin-top: 80px;
+    @media screen and (min-width: $xl-width) {
+      border-top: none;
+      border-bottom: none;
+    }
     @media screen and (min-width: $xxl-width){
       margin-top: 93px;
     }
+
     .calc-page__volume{
       @media screen and (min-width: $xl-width) {
         max-width: 771px;
@@ -110,6 +160,7 @@
       bottom: 0;
       width: 1px;
       background: #DFE9E5;
+      z-index: 1;
       @media screen and (min-width: $xl-width) {
         content: none;
       }
@@ -117,7 +168,12 @@
   }
 
   &__title {
+    background: #F7FAF9;
+    padding-bottom: 70px;
+    padding-right: 20px;
     @media screen and (min-width: $xl-width) {
+      padding-right: 0;
+      padding-bottom: 0;
       margin-bottom: 100px;
     }
 
@@ -129,6 +185,17 @@
     p {
       margin: 0;
     }
+    &-wrapper{
+      position: relative;
+      margin-right: -20px;
+      padding-right: 80px;
+      background: url("../img/dest/calc/bg.jpg") right top no-repeat;
+      @media screen and (min-width: $xl-width){
+        margin-right: 0;
+        padding-right: 0;
+        background: transparent;
+      }
+    }
   }
 
   &__float-values {
@@ -136,6 +203,9 @@
     flex-wrap: wrap;
     margin: -20px 0;
     margin-bottom: 40px;
+    @media screen and (min-width: $md-width){
+      margin-top: -20px;
+    }
     @media screen and (min-width: $xl-width) {
       margin: -10px;
       margin-bottom: 30px;
@@ -344,13 +414,15 @@
 
   &__datepicker {
     position: fixed;
+    overflow: scroll;
     right: 0;
     top: 0;
     bottom: 0;
     width: 100%;
-    transform: translateX(100%);
-    transition: transform .5s;
-    z-index: $z-high;
+    max-height: 100vh;
+    transform: translateX(200%);
+    transition: transform 1s;
+    z-index: $z-highest;
     background: white;
     padding: 80px 20px;
     @media screen and (min-width: $sm-width) {
@@ -427,6 +499,27 @@
         text-align: right;
         color: #B7C0CE;
 
+      }
+    }
+    &-close{
+      cursor: pointer;
+      margin-top: 100px;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      color: #9EBDB3;
+      background: transparent;
+      transition: color .2s;
+
+      @media screen and (min-width: $sm-width) {
+        margin-top: 0;
+        position: absolute;
+        left: 80px;
+        bottom: 137px;
+      }
+      &:hover{
+        color: $accent-color;
       }
     }
   }

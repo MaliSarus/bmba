@@ -157,8 +157,9 @@
 
       &__pagination {
         position: relative;
+        left: unset;
         align-items: center;
-        margin-right: -12.5px;
+        //margin-right: -12.5px;
         padding: 37px 0;
         transform: none;
 
@@ -166,6 +167,9 @@
           &-bullet {
             cursor: pointer;
             margin: 0 12.5px;
+            &.hidden{
+              display: none;
+            }
 
             &-active {
               &::before {

@@ -1,7 +1,7 @@
 .partners-section {
   overflow: hidden;
-  padding-top: (297px - 125px);
-  padding-bottom: 275px;
+  padding-top: 120px;
+  padding-bottom: 100px;
 
   &__main {
     position: relative;
@@ -31,6 +31,10 @@
       margin-right: -25%;
     }
     &-arrows{
+      &::before{
+        top: 0;
+        bottom: 0;
+      }
       @media screen and (min-width: $xl-width) {
         display: none;
       }

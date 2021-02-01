@@ -1,4 +1,4 @@
-export default  function customPaginationInit(container, mySwiper, realSlides,maxBullets) {
+export default function customPaginationInit(container, mySwiper, realSlides, maxBullets) {
     const paginationContainer = container
     const slidesPerGroup = Math.ceil(realSlides / mySwiper.params.slidesPerGroup);
 
@@ -28,8 +28,10 @@ export default  function customPaginationInit(container, mySwiper, realSlides,ma
         if (prev && event.target === prev) {
             mySwiper.slidePrev()
         }
-        if (event.target == paginationBullet && event.target !== prev && event.target !== next){
+        const eventClassList = event.target.classList;
+        if (eventClassList.contains('swiper-pagination-bullet') && !eventClassList.contains('next') && !eventClassList.contains('prev')) {
             const index = (+event.target.dataset.index - 1) * mySwiper.params.slidesPerGroup
+            console.log(index)
             mySwiper.slideTo(index)
         }
     })
@@ -39,7 +41,7 @@ export default  function customPaginationInit(container, mySwiper, realSlides,ma
         const sliderSlidesPerGroup = mySwiper.params.slidesPerGroup;
         const slidesInGroup = mySwiper.realIndex;
 
-        const currentGroupIndex =  Math.floor(slidesInGroup / sliderSlidesPerGroup);
+        const currentGroupIndex = Math.floor(slidesInGroup / sliderSlidesPerGroup);
         const offset = Math.floor((maxBullets - 2) / 2)
         paginationBullets.forEach((bullet, index) => {
             bullet.classList.remove('swiper-pagination-bullet-active');
@@ -48,28 +50,30 @@ export default  function customPaginationInit(container, mySwiper, realSlides,ma
                 bullet.classList.remove('hidden')
             }
         })
-        for (let i = 0; i <= offset; i++) {
+        if (realSlides > 2) {
+            for (let i = 0; i <= offset; i++) {
 
-            if (currentGroupIndex >= offset && currentGroupIndex < paginationBullets.length - 1) {
-                paginationBullets[currentGroupIndex + offset].classList.remove('hidden');
-                paginationBullets[currentGroupIndex - offset].classList.remove('hidden');
-            }
-            if (offset > 0) {
-                if (currentGroupIndex === 0) {
-                    paginationBullets[currentGroupIndex + i + 1].classList.remove('hidden');
-                    paginationBullets[currentGroupIndex + offset * 2 + 1].classList.remove('hidden');
+                if (currentGroupIndex >= offset && currentGroupIndex < paginationBullets.length - 1) {
+                    paginationBullets[currentGroupIndex + offset].classList.remove('hidden');
+                    paginationBullets[currentGroupIndex - offset].classList.remove('hidden');
                 }
-                if (currentGroupIndex === paginationBullets.length - 1) {
-                    paginationBullets[currentGroupIndex - i - 1].classList.remove('hidden');
-                    paginationBullets[currentGroupIndex - offset * 2 - 1].classList.remove('hidden');
-                }
-                if (currentGroupIndex === offset) {
-                    paginationBullets[currentGroupIndex + i + 1].classList.remove('hidden');
-                    paginationBullets[currentGroupIndex + offset + 1].classList.remove('hidden');
-                }
-                if (currentGroupIndex === paginationBullets.length - 1 - offset) {
-                    paginationBullets[currentGroupIndex - i - 1].classList.remove('hidden');
-                    paginationBullets[currentGroupIndex - offset - 1].classList.remove('hidden');
+                if (offset > 0) {
+                    if (currentGroupIndex === 0) {
+                        paginationBullets[currentGroupIndex + i + 1].classList.remove('hidden');
+                        paginationBullets[currentGroupIndex + offset * 2 + 1].classList.remove('hidden');
+                    }
+                    if (currentGroupIndex === paginationBullets.length - 1) {
+                        paginationBullets[currentGroupIndex - i - 1].classList.remove('hidden');
+                        paginationBullets[currentGroupIndex - offset * 2 - 1].classList.remove('hidden');
+                    }
+                    if (currentGroupIndex === offset) {
+                        paginationBullets[currentGroupIndex + i + 1].classList.remove('hidden');
+                        paginationBullets[currentGroupIndex + offset + 1].classList.remove('hidden');
+                    }
+                    if (currentGroupIndex === paginationBullets.length - 1 - offset) {
+                        paginationBullets[currentGroupIndex - i - 1].classList.remove('hidden');
+                        paginationBullets[currentGroupIndex - offset - 1].classList.remove('hidden');
+                    }
                 }
             }
         }

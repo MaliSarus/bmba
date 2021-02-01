@@ -76,8 +76,11 @@
   }
 
   &__logo {
-    width: 182px;
+    width: 147px;
     margin-bottom: 27px;
+    @media screen and (min-width: $md-width){
+      width: 182px;
+    }
 
     a {
       display: block;

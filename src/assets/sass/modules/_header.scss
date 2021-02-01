@@ -56,7 +56,7 @@
     }
 
     .header__logo, .header__hamburger {
-      background: white;
+      //background: white;
       border-bottom: 1px solid #EBEBF0;
     }
 
@@ -212,6 +212,14 @@
         padding: 15px 40px;
         max-width: none;
       }
+      &::before{
+        left: 20px;
+        right: 20px;
+        @media screen and (min-width: $xxl-width){
+          left: 40px;
+          right: 40px;
+        }
+      }
 
       img {
         height: 100%;
@@ -229,6 +237,10 @@
     a {
       padding: 0 40px;
       color: $dark-grey;
+      &::before{
+        left: 40px;
+        right: 40px;
+      }
     }
   }
 
@@ -274,6 +286,10 @@
           a {
 
             padding: 0 ($link-gap / 2);
+            &::before{
+              left: ($link-gap / 2);
+              right: ($link-gap / 2);
+            }
             &.current{
               background: $accent-color;
               color: white;
@@ -300,7 +316,15 @@
 
       @media screen and (min-width: $xxl-width){
         padding: 0 68px;
+      }
 
+      &::before{
+        left: 40px;
+        right: 40px;
+        @media screen and (min-width: $xxl-width){
+          left: 68px;
+          right: 68px;
+        }
       }
     }
   }
@@ -344,6 +368,10 @@
   .header__phone, .header__lang {
     a {
       padding: 31px 20px;
+      &::before{
+        left: 20px;
+        right: 20px;
+      }
     }
   }
 
@@ -362,6 +390,10 @@
           text-transform: uppercase;
           font-weight: bold;
           color: $main-color;
+          &::before{
+            left: 10px;
+            right: 10px;
+          }
           &.current{
             background: $accent-color;
             color: white;

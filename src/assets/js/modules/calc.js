@@ -3,6 +3,18 @@ import axios from 'axios'
 import Datepicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ru';
 import {xlWidth} from "./window-width-values";
+import {getForecaToken} from "./helpers";
+
+let formInfo = {}
+const months = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'ноя.', 'дек.'];
+
+function setFormInformation(formFields) {
+    formInfo = {...formFields}
+}
+
+export function getFormInformation() {
+    return formInfo
+}
 
 const calcTemplate = `
  <div class="calc-section__block">
@@ -12,45 +24,60 @@ const calcTemplate = `
             <p>Ветер свыше 14 м/с</p>
             <p>Коэффициент 1,15</p>
         </div>
-      <datepicker inline v-model="form.date" valueType="DD.MM.YYYY" @pick="pickDate" :get-classes="getClasses"/>
+        <datepicker inline v-model="form.date" valueType="DD.MM.YYYY" @pick="pickDate" :get-classes="getClasses"/>
+        <button class="calc-section__datepicker-close" @click="datePickerFocus = false">Отмена</button>
     </div>
    
-    <div class="calc-section__title text">
-        <h2>Расчет стоимости</h2>
-        <p>Заполните поля, чтобы рассчитать стоимость услуги</p>
+    <div class="calc-section__title-wrapper">
+        <div class="calc-section__title text">
+            <div class="block-title" data-title-num="03">Калькулятор</div>
+            <h2>Расчет стоимости</h2>
+            <p>Заполните поля, чтобы рассчитать стоимость услуги</p>
+        </div>
+         <div class="calc-section__weather weather" v-show="windowWidth < 1200">
+                <div class="weather__date">
+                    <div class="weather__day">{{weather.day}}</div>
+                    <div class="weather__month">{{weather.month}}</div>
+                </div>
+                <div class="weather__values">
+                    <div class="weather__temp">Температура <span class="weather__value">{{weather.temp}}</span></div>
+                    <div class="weather__wind">Скорость ветра, м/с <span class="weather__value">{{weather.wind}}</span></div>
+                </div>
+            </div>
     </div>
     <form action="#" class="calc-section__form form" @submit.prevent="formSubmit">
         <div class="row" >
             <div class="col-12" :class="{
             'd-flex': calcPage,
-            'justify-content-between': calcPage
+            'justify-content-between': calcPage,
+            'flex-wrap':calcPage,
             }">
                 <div class="form__group calc-section__float-values">
                     <div class="form__input-wrapper">
-                        <label for="#">Длина судна <span>(LQA)</span></label>
-                        <div class="form__input calc-section__float-value value">
-                            <input type="number" v-model="form.fleetLength">
+                        <label for="calc-fleet-length">Длина судна <span>(LQA)</span></label>
+                        <div class="form__input calc-section__float-value value" @click="focusInput">
+                            <input id="calc-fleet-length" type="text" placeholder="Ввод..." v-model="form.fleetLength"  @keydown="allowNum($event)">
                         </div>
                     </div>
                     <div class="form__input-wrapper" :class="{disabled: checkFleetWidth}">
-                        <label for="#">Ширина судна <span>(B)</span></label>
+                        <label for="calc-fleet-width">Ширина судна <span>(B)</span></label>
     
-                        <div class="form__input calc-section__float-value value">
-                            <input type="number" v-model="form.fleetWidth" :disabled="checkFleetWidth">
+                        <div class="form__input calc-section__float-value value" @click="focusInput">
+                            <input id="calc-fleet-width" type="text" placeholder="Ввод..." v-model="form.fleetWidth" :disabled="checkFleetWidth" @keydown="allowNum($event)">
                         </div>
                     </div>
                     <div class="form__input-wrapper" :class="{disabled: checkFleetHeight}">
-                        <label for="#">Высота борта судна <span>(D)</span></label>
-                        <div class="form__input calc-section__float-value value">
-                            <input type="number" v-model="form.fleetHeight" :disabled="checkFleetHeight">
+                        <label for="calc-fleet-height">Высота борта судна <span>(D)</span></label>
+                        <div class="form__input calc-section__float-value value" @click="focusInput">
+                            <input id="calc-fleet-height" type="text" placeholder="Ввод..." v-model="form.fleetHeight" :disabled="checkFleetHeight" @keydown="allowNum($event)">
                         </div>
                     </div>
                 </div>
                 <div class="form__group calc-section__date-wrapper calc-page__date-wrapper" v-if="datePickerInputOnCalcPageDestination">
                     <div class="form__input-wrapper calc-section__date">
-                        <label for="">Дата прибытия</label>
-                        <div class="form__input date">
-                            <input type="text" @focus="datePickerFocus = true" :value="form.date">
+                        <label for="calc-date">Дата прибытия</label>
+                        <div class="form__input date" @click="focusInput">
+                            <input id="calc-date" type="text" placeholder="Выбрать дату" @focus="datePickerFocus = true" :value="form.date">
                         </div>
                     </div>
     
@@ -84,9 +111,9 @@ const calcTemplate = `
             <div class="col-12">
                 <div class="form__group calc-section__date-wrapper">
                     <div class="form__input-wrapper calc-section__date">
-                        <label for="">Дата прибытия</label>
-                        <div class="form__input date">
-                            <input type="text" @focus="datePickerFocus = true" :value="form.date">
+                        <label for="calc-date">Дата прибытия</label>
+                        <div class="form__input date" @click="focusInput">
+                            <input id="calc-date" type="text" placeholder="Выбрать дату" @focus="datePickerFocus = true" :value="form.date">
                         </div>
                     </div>
     
@@ -112,24 +139,24 @@ const calcTemplate = `
 </div>
 `
 
-let formInfo = {}
-function setFormInformation(formFields) {
-    formInfo = {...formFields}
-}
-export function getFormInformation() {
-    return formInfo
-}
+
 export function initCalc() {
     new Vue({
         el: '#calc',
         template: calcTemplate,
         data: {
-            form:{
+            form: {
                 fleetLength: '',
                 fleetWidth: '',
                 fleetHeight: '',
                 nonGoingFleet: false,
                 date: '',
+            },
+            weather: {
+                day: new Date().getDay(),
+                month: months[new Date().getMonth()],
+                temp: '...',
+                wind: '...'
             },
             datePickerFocus: false,
             highlightedDate: [],
@@ -143,7 +170,41 @@ export function initCalc() {
         },
         computed: {
             fleetVolume() {
-                return (this.form.fleetLength * this.form.fleetWidth * this.form.fleetHeight).toFixed(2);
+                if (this.floatFleetLength && this.floatFleetWidth && this.floatFleetHeight) {
+                    return (this.floatFleetLength *
+                        this.floatFleetWidth *
+                        this.floatFleetHeight)
+                        .toFixed(2);
+                } else {
+                    return 0
+                }
+            },
+            floatFleetLength() {
+                const val = parseFloat(this.form.fleetLength.replace(',', '.'));
+                if (val > 0) {
+                    return val
+                } else {
+                    this.form.fleetLength = ''
+                    return 0
+                }
+            },
+            floatFleetWidth() {
+                const val = parseFloat(this.form.fleetWidth.replace(',', '.'));
+                if (val > 0) {
+                    return val
+                } else {
+                    this.form.fleetWidth = ''
+                    return 0
+                }
+            },
+            floatFleetHeight() {
+                const val = parseFloat(this.form.fleetHeight.replace(',', '.'));
+                if (val > 0) {
+                    return val
+                } else {
+                    this.form.fleetHeight = ''
+                    return 0
+                }
             },
             fleetCoefficient() {
                 if (+this.form.fleetVolume < 30000) {
@@ -175,13 +236,13 @@ export function initCalc() {
                 return new Intl.NumberFormat('ru-RU').format(number)
             },
             checkFleetWidth() {
-                if (this.form.fleetLength === ''){
+                if (this.form.fleetLength === '') {
                     this.form.fleetWidth = ''
                 }
                 return this.form.fleetLength === ''
             },
             checkFleetHeight() {
-                if (this.form.fleetWidth === ''){
+                if (this.form.fleetWidth === '') {
                     this.form.fleetHeight = ''
                 }
                 return this.form.fleetWidth === ''
@@ -189,23 +250,22 @@ export function initCalc() {
             datePickerInputOnCalcPageDestination() {
                 return this.calcPage && this.windowWidth >= xlWidth
             },
-            valid(){
+            valid() {
                 return +this.result !== 0 && this.form.date !== ''
             }
         },
         methods: {
-            formSubmit(){
-              if (this.valid){
-                  const formInfo ={
-                      ...this.form,
-                      url: location.href
-                  }
-                  setFormInformation(formInfo)
-                  document.querySelector('.request-popup').classList.add('open')
-              }
-              else{
-                  console.log('Ошибка')
-              }
+            formSubmit() {
+                if (this.valid) {
+                    const formInfo = {
+                        ...this.form,
+                        url: location.href
+                    }
+                    setFormInformation(formInfo)
+                    document.querySelector('.request-popup').classList.add('open')
+                } else {
+                    console.log('Ошибка')
+                }
             },
             onResize() {
                 this.windowWidth = window.innerWidth;
@@ -218,7 +278,7 @@ export function initCalc() {
                 }
                 const month = date.getMonth()
 
-                if(month >= 0 && month < 4){
+                if (month >= 0 && month < 4) {
                     this.seasonCoefficient = 1.2
                 }
 
@@ -231,6 +291,17 @@ export function initCalc() {
                     }
                     return "";
                 }
+            },
+            allowNum(event) {
+                console.log(event); //keyCodes value
+                let keyCode = event.key;
+                if (keyCode !== ',' && isNaN(keyCode) && event.keyCode > 9) { // numbers, comma and control keys
+                    event.preventDefault();
+                }
+            },
+            focusInput(event) {
+                const input = event.currentTarget.querySelector('input');
+                input.focus()
             }
         },
         created() {
@@ -245,26 +316,36 @@ export function initCalc() {
                 }
             })
             window.addEventListener('resize', this.onResize)
-            this.onResize()
+            this.onResize();
             let token = '';
-            axios
-                .get('http://bmba.sotbisite.beget.tech/ajax/get_token.php')
-                .then(res => {
-                    token = res.data
-                    axios
-                        .get('https://pfa.foreca.com/api/v1/forecast/daily/100478036?periods=14', {
+
+
+            getForecaToken()
+                .then(() => {
+                        token = localStorage.getItem('fwk')
+                        console.log(token);
+                        axios.get('https://pfa.foreca.com/api/v1/forecast/daily/100478036?periods=14', {
                             headers: {
                                 Authorization: 'Bearer ' + token
                             }
                         })
-                        .then(res => {
-                            this.highlightedDate = res.data.forecast.filter(data => data.maxWindSpeed >= 6);
-                            this.highlightedDate = this.highlightedDate.map(data => {
-                                const dateParts = data.date.split('-');
-                                return new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+                            .then(res => {
+                                const forecast = res.data.forecast;
+                                this.highlightedDate = forecast.filter(data => data.maxWindSpeed >= 14);
+                                this.highlightedDate = this.highlightedDate.map(data => {
+                                    const dateParts = data.date.split('-');
+                                    return new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+                                })
+                                this.weather.temp = (forecast[0].minTemp + forecast[0].maxTemp) / 2;
+                                this.weather.wind = forecast[0].maxWindSpeed;
+                                const weatherDay = document.querySelector('.weather__day').textContent = this.weather.day;
+                                const weatherMonth = document.querySelector('.weather__month').textContent = this.weather.month;
+                                const weatherTemp = document.querySelector('.weather__temp .weather__value').innerHTML = this.weather.temp + '<sup>o</sup>';
+                                const weatherWind = document.querySelector('.weather__wind .weather__value').textContent = this.weather.wind;
                             })
-                        })
-                })
+                    }
+                )
+
         },
         mounted() {
             if (document.querySelector('.calc-page')) {

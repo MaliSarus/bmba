@@ -1,7 +1,7 @@
 <section class="fleet-primary-section with-lines">
     <div class="fleet-primary-section__background-title background-title h-100">
         <div class="container-fluid container-xl h-100">
-            <div class="row">
+            <div class="row h-100">
                 <div class="col-12 col-xl-5 offset-xl-7 p-0 p-xl-3">
                     <h2 class="fleet-primary-section__background-word background-word">Fleet</h2>
                 </div>
