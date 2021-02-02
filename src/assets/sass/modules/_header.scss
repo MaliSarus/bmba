@@ -9,12 +9,6 @@
 
   transition: background-color .25s;
   border-color: #EBEBF0;
-
-  .transparent-border_right {
-    border-color: #EBEBF0;
-  }
-
-
   a:not(.link_phone) {
     position: relative;
     display: flex;
@@ -27,28 +21,33 @@
     text-decoration: none;
     color: $dark-grey;
     transition: background-color .15s, color .25s;
-    @media screen and (min-width: $xxl-width){
+    @media screen and (min-width: $xxl-width) {
       font-size: 16px;
     }
-    &::before{
+
+    &::before {
       position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
       display: block;
       content: '';
       height: 2px;
       background: transparent;
       transition: background-color .5s;
     }
+
     &:hover {
       //background: $accent-color;
       //color: white;
-      &::before{
+      &::before {
         background: $accent-color;
       }
     }
   }
+
+  .transparent-border_right {
+    border-color: #EBEBF0;
+  }
+
 
   &.open {
 
@@ -57,7 +56,7 @@
     }
 
     .header__logo, .header__hamburger {
-      background:#F7FAF9;
+      background: #F7FAF9;
       border-bottom: 1px solid #EBEBF0;
     }
 
@@ -71,9 +70,9 @@
       }
     }
 
-    .header__logo{
-      &:hover{
-        .logo{
+    .header__logo {
+      &:hover {
+        .logo {
           &_white {
             display: none !important;
           }
@@ -90,8 +89,8 @@
       opacity: 1;
     }
 
-    a{
-      &:hover{
+    a {
+      &:hover {
         color: inherit;
       }
     }
@@ -108,8 +107,9 @@
       display: block !important;
     }
   }
-  &__logo{
-    &:hover{
+
+  &__logo {
+    &:hover {
       .logo {
         &_white {
           display: none !important;
@@ -124,10 +124,10 @@
 
   &_transparent {
     background: transparent;
-    border-color: rgba(white,.3);
+    border-color: rgba(white, .3);
 
     .transparent-border_right {
-      border-color: rgba(white,.3);
+      border-color: rgba(white, .3);
     }
 
     * {
@@ -139,14 +139,14 @@
     a {
       &:hover {
         //background: rgba(255, 255, 255, 0.3);
-        &::before{
-          background: white;
+        &::before {
+          background: white !important;
         }
       }
     }
 
-    .header__logo{
-      &:hover{
+    .header__logo {
+      &:hover {
         .logo {
           &_white {
             display: block !important;
@@ -158,6 +158,7 @@
         }
       }
     }
+
     .logo {
       &_white {
         display: block !important;
@@ -179,18 +180,20 @@
         }
       }
     }
-    .header__menu{
-      a{
-        &.current{
+
+    .header__menu {
+      a {
+        &.current {
           background: rgba(255, 255, 255, 0.3);
           color: white;
         }
       }
     }
 
-    .header__lang-icon{
+    .header__lang-icon {
       background: url("../img/dest/header/lang-icon_white.svg") center no-repeat;
-      &.mobile{
+
+      &.mobile {
         background: url("../img/dest/header/lang-icon.svg") center no-repeat;
       }
     }
@@ -213,10 +216,15 @@
         padding: 15px 40px;
         max-width: none;
       }
-      &::before{
+
+      &::before {
         left: 20px;
         right: 20px;
-        @media screen and (min-width: $xxl-width){
+        content: none !important;
+        @media screen and (min-width: $lg-width){
+          content: '' !important;
+        }
+        @media screen and (min-width: $xxl-width) {
           left: 40px;
           right: 40px;
         }
@@ -238,7 +246,8 @@
     a {
       padding: 0 40px;
       color: $dark-grey;
-      &::before{
+
+      &::before {
         left: 40px;
         right: 40px;
       }
@@ -250,6 +259,8 @@
     z-index: 2;
     display: flex;
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
     @media screen and (min-width: $xl-width) {
       display: none;
     }
@@ -287,11 +298,13 @@
           a {
 
             padding: 0 ($link-gap / 2);
-            &::before{
+
+            &::before {
               left: ($link-gap / 2);
               right: ($link-gap / 2);
             }
-            &.current{
+
+            &.current {
               background: $accent-color;
               color: white;
             }
@@ -302,7 +315,7 @@
   }
 
   &__lang {
-    &-icon{
+    &-icon {
       width: 16px;
       height: 16px;
       background: url("../img/dest/header/lang-icon.svg") center no-repeat;
@@ -310,25 +323,27 @@
       margin-right: 10px;
       transform: translateY(-1px);
     }
+
     a {
       position: relative;
       color: $dark-grey;
       padding: 0 40px;
 
-      @media screen and (min-width: $xxl-width){
+      @media screen and (min-width: $xxl-width) {
         padding: 0 68px;
       }
 
-      &::before{
+      &::before {
         left: 40px;
         right: 40px;
-        @media screen and (min-width: $xxl-width){
+        @media screen and (min-width: $xxl-width) {
           left: 68px;
           right: 68px;
         }
       }
     }
   }
+
 }
 
 .mobile-nav {
@@ -342,7 +357,7 @@
   display: block;
   padding-top: 92px;
   padding-bottom: 40px;
-  background:#F7FAF9;
+  background: #F7FAF9;
   visibility: hidden;
   opacity: 0;
   transition: opacity .25s;
@@ -355,7 +370,8 @@
 
     &:hover {
       background: rgba($accent-color, .1);
-      &::before{
+
+      &::before {
         background: $accent-color;
       }
     }
@@ -366,7 +382,8 @@
     justify-content: space-between;
     margin-bottom: 48px;
   }
-  &__bottom-nav{
+
+  &__bottom-nav {
     display: flex;
     justify-content: center;
   }
@@ -374,7 +391,8 @@
   .header__phone, .header__lang {
     a {
       padding: 31px 20px;
-      &::before{
+
+      &::before {
         left: 20px;
         right: 20px;
       }
@@ -397,11 +415,13 @@
           text-transform: uppercase;
           font-weight: bold;
           color: $main-color;
-          &::before{
+
+          &::before {
             left: 10px;
             right: 10px;
           }
-          &.current{
+
+          &.current {
             background: $accent-color;
             color: white;
           }

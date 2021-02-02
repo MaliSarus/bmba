@@ -1,6 +1,6 @@
 <section class="services-section header-to-transparent">
     <div class="services-section__background"></div>
-    <div class="services-section__lines">
+    <div class="services-section__lines first-section first-section_margin">
         <div class="container-fluid h-100">
             <div class="row h-100">
                 <div class="col-12 p-0 h-100 d-flex flex-column flex-lg-row flex-wrap">
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <div class="services-section__main h-100">
+    <div class="services-section__main h-100 first-section first-section_padding">
         <div class="container-fluid h-100">
             <div class="row h-100">
                 <div class="col-12 p-0 h-100">

@@ -34,7 +34,7 @@
   &__main {
     padding-top: 80px;
     @media screen and (min-width: $xl-width) {
-      padding-top: 0;
+      padding-top: 0 !important;
     }
   }
 
@@ -43,14 +43,12 @@
     @media screen and (min-width: $xl-width) {
       display: block;
       position: absolute;
-      top: 80px;
+      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
     }
-    @media screen and (min-width: $xxl-width){
-      top: 93px;
-    }
+
   }
 
   &__line {

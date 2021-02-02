@@ -1,9 +1,8 @@
 .geo-section{
   position: relative;
-  margin-top: 80px;
 
   @media screen and (min-width: $lg-width){
-    margin-top: 0;
+    margin-top: 0 !important;
     height: 100vh;
   }
   &__video{

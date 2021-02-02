@@ -15,10 +15,11 @@
     background: url("../img/dest/calc/bg.jpg") left top no-repeat;
     background-size: contain;
     display: none;
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       display: block;
     }
-    &::before{
+
+    &::before {
       position: absolute;
       left: 8px;
       bottom: 90px;
@@ -38,7 +39,8 @@
         width: 64%;
         margin-left: auto;
       }
-      &::before{
+
+      &::before {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -54,21 +56,23 @@
       }
     }
   }
-  &__weather{
+
+  &__weather {
     position: absolute;
     bottom: 0;
     right: 20px;
 
     transform: translateY(54px);
 
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       top: 177px;
       left: 0;
       width: 260px;
       height: 100px;
       transform: translateX(calc(-100% + 50px));
     }
-    &::before{
+
+    &::before {
       position: absolute;
       right: 0;
       bottom: 0;
@@ -79,8 +83,8 @@
       background: url("../img/dest/calc/weather-skew-lines_mobile.svg") center no-repeat;
       background-size: contain;
       z-index: -1;
-      transform: translate(20px,25px);
-      @media screen and (min-width: $xl-width){
+      transform: translate(20px, 25px);
+      @media screen and (min-width: $xl-width) {
         bottom: 50%;
         width: 100px;
         height: 200px;
@@ -89,65 +93,72 @@
       }
     }
   }
-  &.service-calc{
+
+  &.service-calc {
     border: none;
-    .calc-section{
-      &__title{
-        h2{
+
+    .calc-section {
+      &__title {
+        h2 {
           font-size: 22px;
           margin-bottom: 30px;
         }
       }
     }
   }
-  &.calc-page{
-    margin-top: 80px;
+
+  &.calc-page {
     @media screen and (min-width: $xl-width) {
       border-top: none;
       border-bottom: none;
     }
-    @media screen and (min-width: $xxl-width){
-      margin-top: 93px;
+    .calc-section__back{
+      display: block;
     }
 
-    .calc-page__volume{
+    .calc-page__volume {
       @media screen and (min-width: $xl-width) {
         max-width: 771px;
       }
     }
+
     .calc-section {
-      &__back{
+      &__back {
         position: static;
       }
+
       &__back-layout {
         @media screen and (min-width: $xl-width) {
           width: 77%;
         }
       }
-      &__front{
+
+      &__front {
         @media screen and (min-width: $xl-width) {
           padding-top: 123px;
           padding-bottom: 74px;
         }
       }
-      &__block{
-        @media screen and (min-width: $xl-width){
+
+      &__block {
+        @media screen and (min-width: $xl-width) {
           padding-left: 130px;
           max-width: 1260px;
         }
       }
-      &__float-values{
-        @media screen and (min-width: $xl-width){
+
+      &__float-values {
+        @media screen and (min-width: $xl-width) {
           max-width: 751px;
         }
       }
 
     }
 
-    .calc-page__date-wrapper{
+    .calc-page__date-wrapper {
       @media screen and (min-width: $xl-width) {
         margin-bottom: 30px;
-        .calc-section__date{
+        .calc-section__date {
           height: 100%;
           display: flex;
           flex-direction: column;
@@ -185,10 +196,12 @@
   }
 
   &__title {
-    background: #F7FAF9;
+    padding-top: 40px;
     padding-bottom: 70px;
     padding-right: 20px;
+    background: #F7FAF9;
     @media screen and (min-width: $xl-width) {
+      padding-top: 0;
       padding-right: 0;
       padding-bottom: 0;
       margin-bottom: 100px;
@@ -196,18 +209,22 @@
 
     h2 {
       margin-top: 0;
-      margin-bottom: 30px;
+      margin-bottom: 60px;
+      @media screen and (min-width: $xl-width) {
+        margin-bottom: 30px;
+      }
     }
 
     p {
       margin: 0;
     }
-    &-wrapper{
+
+    &-wrapper {
       position: relative;
       margin-right: -20px;
       padding-right: 80px;
       background: url("../img/dest/calc/bg.jpg") right top no-repeat;
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $xl-width) {
         margin-right: 0;
         padding-right: 0;
         background: transparent;
@@ -220,7 +237,7 @@
     flex-wrap: wrap;
     margin: -20px 0;
     margin-bottom: 40px;
-    @media screen and (min-width: $md-width){
+    @media screen and (min-width: $md-width) {
       margin-top: -20px;
     }
     @media screen and (min-width: $xl-width) {
@@ -294,7 +311,7 @@
   }
 
   &__checkbox {
-    margin: 55px 0 60px;
+    margin: 60px 0;
     @media screen and (min-width: $xl-width) {
       margin: 70px 0;
     }
@@ -361,6 +378,9 @@
     @media screen and (min-width: $xl-width) {
       margin-top: 0;
     }
+    .form__checkbox{
+      margin: 0;
+    }
 
     &-footer {
       display: flex;
@@ -394,12 +414,13 @@
 
     p {
       font-weight: 500;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 100%;
       color: #9EBDB3;
       margin: 0;
       @media screen and (min-width: $xl-width) {
         flex-basis: 100%;
+        font-size: 16px;
       }
 
       &.calc-section__result-value {
@@ -495,7 +516,8 @@
         color: $dark-grey;
         position: relative;
         padding-left: 25px;
-        &::before{
+
+        &::before {
           position: absolute;
           left: 0;
           top: 50%;
@@ -518,7 +540,8 @@
 
       }
     }
-    &-close{
+
+    &-close {
       cursor: pointer;
       margin-top: 100px;
       border: none;
@@ -535,7 +558,8 @@
         left: 80px;
         bottom: 137px;
       }
-      &:hover{
+
+      &:hover {
         color: $accent-color;
       }
     }

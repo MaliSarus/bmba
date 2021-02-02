@@ -1,5 +1,6 @@
 import axios from "axios";
 import smoothscroll from 'smoothscroll-polyfill';
+
 smoothscroll.polyfill();
 
 export function offsetLeft(element) {
@@ -40,4 +41,14 @@ export function getForecaToken() {
         .then(res => {
             localStorage.setItem('fwk', res.data)
         })
+}
+
+export function setFirstSectionOffset(element) {
+    const headerHeight = document.querySelector('header').offsetHeight ;
+    if (element.classList.contains('first-section_padding')) {
+        element.style.paddingTop = headerHeight + 'px';
+    }
+    if (element.classList.contains('first-section_margin')){
+        element.style.marginTop = headerHeight + 'px';
+    }
 }

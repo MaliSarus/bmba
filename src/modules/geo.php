@@ -1,4 +1,4 @@
-<section class="geo-section">
+<section class="geo-section first-section first-section_margin">
     <div class="geo-section__info text">
         <h1>География</h1>
         <p>

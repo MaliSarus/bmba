@@ -1,4 +1,4 @@
-<section class="fleet-section">
+<section class="fleet-section first-section first-section_padding">
     <div class="fleet-section__background d-none d-xl-block">
         <div class="container-fluid h-100">
             <div class="row h-100">

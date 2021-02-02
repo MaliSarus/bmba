@@ -36,12 +36,15 @@
       left: 200px;
       bottom: 0;
       display: block;
-      content: '';
+      content: none;
       width: 146px;
       height: 146px;
       background: url("../img/dest/video/dots.svg") center;
       background-size: contain;
       transform: translateY(64px);
+      @media screen and (min-width: $xl-width){
+        content: '';
+      }
     }
 
     iframe {

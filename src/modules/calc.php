@@ -1,4 +1,4 @@
-<section class="calc-section calc-page">
+<section class="calc-section calc-page first-section first-section_margin">
     <div class="calc-section__back">
         <div class="calc-section__back-layout">
             <div class="calc-section__front">

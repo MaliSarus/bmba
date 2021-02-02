@@ -1,8 +1,7 @@
 .fleet-section {
-  margin-top: 80px;
   position: relative;
   @media screen and (min-width: $xl-width) {
-    height: calc(100vh - 93px);
+    height: 100vh;
   }
 
   &__background {

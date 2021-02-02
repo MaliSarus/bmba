@@ -20,7 +20,7 @@ import {lgWidth} from "./modules/window-width-values";
 import popupInit from "./modules/popup";
 import initFleetSection, {initScrollBar} from "./modules/fleet-section";
 import placeCircleElement from "./modules/circle-menu";
-import {getForecaToken, getFullHeight, scrollTo} from "./modules/helpers";
+import {getForecaToken, getFullHeight, scrollTo, setFirstSectionOffset} from "./modules/helpers";
 
 // import homePageTopInit from "./modules/home-page-top";
 
@@ -139,6 +139,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (isSet('.fleet-section')) {
         initFleetSection()
         initScrollBar()
+    }
+
+    if (isSet('.first-section')){
+        const firstSection = document.querySelectorAll('.first-section')
+        firstSection.forEach(section =>{
+            setFirstSectionOffset(section)
+        })
+        window.addEventListener('resize', function () {
+            firstSection.forEach(section =>{
+                setFirstSectionOffset(section)
+            })
+        })
+
     }
 
 

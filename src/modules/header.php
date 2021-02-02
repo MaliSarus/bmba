@@ -63,7 +63,7 @@
             <a href="#"><span class="header__lang-icon"></span>ENG</a>
         </div>
     </div>
-    <div class="header__nav mobile-nav d-flex flex-column">
+    <div class="header__nav mobile-nav d-flex flex-column first-section first-section_padding">
         <div class="mobile-nav__row">
             <div class="mobile-nav__top-nav">
                 <div class="header__lang">

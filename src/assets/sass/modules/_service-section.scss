@@ -17,16 +17,16 @@
 
   &__main {
     background: url("../img/dest/service/line.svg") repeat-y 20px top;
+    @media screen and (max-width: $xl-width){
+      padding-top: 0 !important;
+    }
     @media screen and (min-width: $xl-width) {
       display: flex;
       justify-content: flex-end;
       margin: 0 auto;
-      padding: 80px 20px 0 20px;
+      padding: 20px 20px 0 20px;
       max-width: 1780px;
       background: transparent;
-    }
-    @media screen and (min-width: $xxl-width){
-      padding-top: 92px;
     }
   }
   &__back{

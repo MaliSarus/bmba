@@ -99,7 +99,7 @@ const calcTemplate = `
         </div>
         <div class="row">
             <div class="col-12">
-                <div class="form__group">
+                <div class="form__group form__checkbox">
                     <div class="calc-section__checkbox">
                         <input type="checkbox" id="calc-section-form-checkbox" v-model="form.nonGoingFleet">
                         <label for="calc-section-form-checkbox">

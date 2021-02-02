@@ -19,7 +19,7 @@
   &__next{
     display: none;
     position: absolute;
-    right: 30px;
+    left: -155px;;
     bottom: 115px;
     padding-left: 27px;
     font-weight: 600;
@@ -31,10 +31,6 @@
     transform: rotate(-90deg);
     @media screen and (min-width: $lg-width){
       display: block;
-    }
-    @media  screen and (min-width: $xxl-width){
-      right: unset;
-      left: 30px;
     }
     &::before{
       position: absolute;
@@ -69,7 +65,7 @@
 
     &::before {
       position: absolute;
-      top: 35px;
+      top: 25px;
       left: -64px;
       display: block;
       content: '';

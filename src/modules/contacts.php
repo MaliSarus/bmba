@@ -1,4 +1,4 @@
-<section class="contacts-section">
+<section class="contacts-section first-section first-section_margin">
     <div class="contacts-section__background-lines h-100">
         <div class="container h-100">
             <div class="row h-100">
