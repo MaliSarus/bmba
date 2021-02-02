@@ -50,7 +50,7 @@
         text-transform: uppercase;
         color: #FFFFFF;
         opacity: 0.1;
-        transform: rotate(-90deg) translateY(-372px) translateX(190px);
+        transform: rotate(-90deg) translateY(-372px) translateX(400px);
       }
     }
   }
@@ -58,18 +58,35 @@
     position: absolute;
     bottom: 0;
     right: 20px;
-    padding: 10px 17px 10px 17px;
-    background: white;
-    display: flex;
+
     transform: translateY(54px);
 
     @media screen and (min-width: $xl-width){
       top: 177px;
       left: 0;
-      padding: 10px 21px 10px 25px;
       width: 260px;
       height: 100px;
       transform: translateX(calc(-100% + 50px));
+    }
+    &::before{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+      content: '';
+      width: 80px;
+      height: 80px;
+      background: url("../img/dest/calc/weather-skew-lines_mobile.svg") center no-repeat;
+      background-size: contain;
+      z-index: -1;
+      transform: translate(20px,25px);
+      @media screen and (min-width: $xl-width){
+        bottom: 50%;
+        width: 100px;
+        height: 200px;
+        background-image: url("../img/dest/calc/weather-skew-lines.svg");
+        transform: translate(calc(100% - 50px), 50%);
+      }
     }
   }
   &.service-calc{

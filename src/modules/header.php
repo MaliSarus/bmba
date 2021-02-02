@@ -63,14 +63,14 @@
             <a href="#"><span class="header__lang-icon"></span>ENG</a>
         </div>
     </div>
-    <div class="header__nav mobile-nav">
+    <div class="header__nav mobile-nav d-flex flex-column">
         <div class="mobile-nav__row">
             <div class="mobile-nav__top-nav">
-                <div class="header__phone">
-                    <a href="tel:+78124494712">+7 (812) 449 47 12</a>
-                </div>
                 <div class="header__lang">
                     <a href="#"><span class="header__lang-icon mobile"></span>ENG</a>
+                </div>
+                <div class="header__phone">
+                    <a href="tel:+78124494712">+7 (812) 449 47 12</a>
                 </div>
             </div>
         </div>
@@ -79,9 +79,10 @@
                 <div class="header__menu">
                     <nav>
                         <ul>
-                            <li><a href="about-page.php" class="current">О компании</a></li>
-                            <li><a href="services-page.php">Услуги</a></li>
+                            <li><a href="index.php" class="current">Главная</a></li>
+                            <li><a href="about-page.php">О компании</a></li>
                             <li><a href="calc-page.php">Расчет стоимости</a></li>
+                            <li><a href="services-page.php">Услуги</a></li>
                             <li><a href="fleet-page.php">Флот</a></li>
                             <li><a href="geo-page.php">География</a></li>
                             <li><a href="contacts-page.php">Контакты</a></li>
@@ -90,6 +91,12 @@
                 </div>
             </div>
         </div>
+        <div class="mobile-nav__row d-flex justify-content-center align-items-end flex-grow-1">
+            <div class="mobile-nav__bottom-nav">
+                <a href="tel:+78124494712" class="link link_phone"></a>
+            </div>
+        </div>
+
     </div>
     <button class="hamburger hamburger--squeeze header__hamburger" type="button">
           <span class="hamburger-box">

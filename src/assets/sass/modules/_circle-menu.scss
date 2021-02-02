@@ -11,20 +11,29 @@
   transform: translate(87%, -50%);
   z-index: $z-medium;
   transition: opacity .2s, visibility .2s;
-  @media screen and (min-width: $xl-width){
+  @media screen and (min-width: $xl-width) {
     display: block;
     opacity: 1;
     visibility: visible;
   }
 
-  &_white{
+  &_white {
     background: url("../img/dest/circle-menu/circle-bg_white.svg") center / contain no-repeat;
 
-    .circle__element{
-      &-icon{
+    .circle__element {
+      &-icon {
         background: url("../img/dest/circle-menu/field-icon_white.svg") center no-repeat;
       }
-      &-content{
+
+      &-content {
+        color: white;
+      }
+    }
+  }
+
+  &_footer {
+    .circle__element {
+      &-content {
         color: white;
       }
     }
@@ -45,11 +54,23 @@
     display: inline-block;
     transition: color .2s, font-size .2s, font-weight .2s;
     font-weight: 500;
-    &.active{
+
+    &.active {
       font-weight: 600 !important;
       font-size: 14px !important;
       line-height: 100%;
       opacity: 1 !important;
+    }
+
+    &.next, &.prev {
+      .circle__element {
+        &-icon {
+          background-size: 26px 26px;
+        }
+        &-content{
+          transform: translate(calc(-100% - 4px), -50%);
+        }
+      }
     }
 
     &-icon {
@@ -63,7 +84,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: opacity .2s, width .2s, height .2s;
+      transition: opacity .2s, background-size .2s;
     }
 
     &-content {
@@ -76,7 +97,7 @@
       text-align: right;
       color: $main-color;
       transform: translate(calc(-100% - 15px), -50%);
-      transition: left .2s, right .2s, top .2s, bottom .2s, transform .2s;
+      transition: left .2s, right .2s, top .2s, bottom .2s, transform .2s, color .2s;
 
     }
   }

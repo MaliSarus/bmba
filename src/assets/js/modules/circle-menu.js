@@ -5,10 +5,12 @@ function changeCircleMenuStyle(){
     const windowTop = window.scrollY
     const circleMenu = document.querySelector('.circle');
     const mainTop = document.querySelector('.header-to-transparent');
-    if (mainTop) {
-        const circleOffset = circleMenu.offsetHeight / 2 + offsetTop(circleMenu);
-        const mainTopHeight = mainTop.offsetHeight;
+    const footer = document.querySelector('footer');
+    const footerOffset = offsetTop(footer)
+    const circleOffset = circleMenu.offsetHeight / 2 + offsetTop(circleMenu);
 
+    if (mainTop) {
+        const mainTopHeight = mainTop.offsetHeight;
         circleOffset < mainTopHeight ?
             circleMenu.classList.add('circle_white')
             : circleMenu.classList.remove('circle_white');
@@ -16,6 +18,9 @@ function changeCircleMenuStyle(){
     else{
         circleMenu.classList.remove('header_white');
     }
+    circleOffset > footerOffset ?
+        circleMenu.classList.add('circle_footer')
+        : circleMenu.classList.remove('circle_footer');
 
 }
 

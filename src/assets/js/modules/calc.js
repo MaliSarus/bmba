@@ -35,6 +35,7 @@ const calcTemplate = `
             <p>Заполните поля, чтобы рассчитать стоимость услуги</p>
         </div>
          <div class="calc-section__weather weather" v-show="windowWidth < 1200">
+            <div class="weather__block">
                 <div class="weather__date">
                     <div class="weather__day">{{weather.day}}</div>
                     <div class="weather__month">{{weather.month}}</div>
@@ -44,6 +45,7 @@ const calcTemplate = `
                     <div class="weather__wind">Скорость ветра, м/с <span class="weather__value">{{weather.wind}}</span></div>
                 </div>
             </div>
+         </div>
     </div>
     <form action="#" class="calc-section__form form" @submit.prevent="formSubmit">
         <div class="row" >
@@ -126,7 +128,7 @@ const calcTemplate = `
                     <div class="calc-section__result">
                         <p>Итоговая стоимость</p>
                         <p class="calc-section__result-value">
-                            {{result}}р
+                            <span v-if="+result > 0">~</span>{{result}}<span v-if="+result > 0">&#8381</span>
                         </p>
                     </div>
                     <div class="calc-section__submit">

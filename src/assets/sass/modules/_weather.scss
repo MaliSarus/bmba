@@ -1,4 +1,13 @@
 .weather {
+  &__block{
+    height: 100%;
+    padding: 10px 17px 10px 17px;
+    background: white;
+    display: flex;
+    @media screen and (min-width: $xl-width){
+      padding: 10px 21px 10px 25px;
+    }
+  }
   &__date, &__values {
     display: flex;
     flex-direction: column;

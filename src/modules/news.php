@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="news-section__title text">
-                                <h2>Новости</h2>
+                                <h1>Новости</h1>
                             </div>
                         </div>
                     </div>

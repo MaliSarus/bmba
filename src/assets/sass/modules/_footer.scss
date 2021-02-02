@@ -2,14 +2,6 @@
   $footer-text-color: #8E97AC;
   $footer-headings-color: white;
   background-color: #252832;
-  //background-image: url("../img/dest/footer/bg-ship.svg");
-  //background-size: 117px 215px;
-  //background-position: calc(100% - 20px) calc(100% - 33px);
-  //background-repeat: no-repeat;
-  //background-blend-mode: screen;
-  //@media screen and (min-width: $md-width){
-  //  background-position: 43px calc(100% - 33px);
-  //}
   position: relative;
 
   &__wrapper {
@@ -55,23 +47,7 @@
     padding-top: 61px;
     padding-bottom: 105px;
     @media screen and (min-width: $lg-width) {
-      padding-top: 96px;
-    }
-
-    &::before {
-      position: absolute;
-      bottom: -48px;
-      right: 0;
-      display: block;
-      //content: '';
-      width: 117px;
-      height: 215px;
-      background-image: url("../img/dest/footer/bg-ship.svg");
-      background-blend-mode: multiply;
-      @media screen and (min-width: $lg-width) {
-        left: 43px;
-
-      }
+      padding-top: 93px;
     }
   }
 
@@ -150,6 +126,7 @@
       }
 
       ul {
+        margin: 0;
         li {
           a {
             color: $footer-text-color;
@@ -196,14 +173,18 @@
 
       ul {
         li {
-          margin-bottom: 40px;
           font-weight: 500;
           font-size: 14px;
           line-height: 100%;
           color: #656D81;
+          &:not(:last-child){
+            margin-bottom: 40px;
+          }
           @media screen and (min-width: $lg-width) {
-            margin-bottom: 60px;
             font-size: 16px;
+            &:not(:last-child){
+              margin-bottom: 60px;
+            }
           }
 
           a, p {

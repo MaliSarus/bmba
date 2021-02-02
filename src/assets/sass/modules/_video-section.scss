@@ -31,6 +31,18 @@
       position: relative;
       height: 780px;
     }
+    &::before{
+      position: absolute;
+      left: 200px;
+      bottom: 0;
+      display: block;
+      content: '';
+      width: 146px;
+      height: 146px;
+      background: url("../img/dest/video/dots.svg") center;
+      background-size: contain;
+      transform: translateY(64px);
+    }
 
     iframe {
       position: absolute;
