@@ -112,11 +112,11 @@
     &:hover{
       .logo {
         &_white {
-          display: none;
+          display: none !important;
         }
 
         &_green {
-          display: block;
+          display: block !important;
         }
       }
     }
@@ -149,22 +149,22 @@
       &:hover{
         .logo {
           &_white {
-            display: block;
+            display: block !important;
           }
 
           &_green {
-            display: none;
+            display: none !important;
           }
         }
       }
     }
     .logo {
       &_white {
-        display: block;
+        display: block !important;
       }
 
       &_green {
-        display: none;
+        display: none !important;
       }
     }
 
