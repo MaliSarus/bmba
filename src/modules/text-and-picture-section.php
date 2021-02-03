@@ -1,7 +1,7 @@
 <section class="text-and-picture-section with-lines">
     <div class="text-and-picture-section__main">
         <div class="container">
-            <div class="row align-items-end">
+            <div class="row">
                 <div class="col-12 col-xl-7 order-2 order-xl-0">
                     <div class="text-and-picture-section__text text ">
                         <p>

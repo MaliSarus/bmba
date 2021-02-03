@@ -1,11 +1,15 @@
 .features-section {
-  border-top: 1px solid #EBEBF0;
   border-bottom: 1px solid #EBEBF0;
 
   &__bg {
-    padding-top: 140px;
-    padding-bottom: 140px;
+    padding-bottom: 160px;
     position: relative;
+    border-left: 1px solid #EBEBF0;
+    @media screen and (min-width: $xl-width){
+      border-left: none;
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
 
     &::before {
       position: absolute;

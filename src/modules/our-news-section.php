@@ -1,4 +1,9 @@
 <section class="our-news-section with-lines">
+    <div class="our-news-section__borders">
+        <div class="container h-100">
+            <div class="our-news-section__border h-100"></div>
+        </div>
+    </div>
     <div class="our-news-section__main">
         <div class="container">
             <div class="row">
@@ -20,7 +25,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-md-6 col-xl-3">
-                    <a href="#" class="our-news-section__news news">
+                    <a href="#" class="our-news-section__news news news our-news-section__first-new">
                         <div class="news__image">
                             <img src="./assets/img/dest/our-news/1.jpg" alt="">
                         </div>

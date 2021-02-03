@@ -1,4 +1,6 @@
 import Swiper from "swiper/bundle";
+import {mdWidth} from "./window-width-values";
+import SimpleScrollbar from "simple-scrollbar";
 
 export default function historySliderInit() {
     const myThumbSwiper = new Swiper('.history-section__slider-thumb .swiper-container', {
@@ -28,7 +30,8 @@ export default function historySliderInit() {
     const mySwiper = new Swiper('.history-section__slider .swiper-container', {
         loop: true,
         loopedSlides: 10, //looped slides should be the same
-        speed: 800
+        speed: 800,
+        spaceBetween: 0,
     });
 
     mySwiper.on('slideChangeTransitionEnd', function () {
@@ -39,5 +42,21 @@ export default function historySliderInit() {
         const rI = myThumbSwiper.realIndex;
         mySwiper.slideToLoop(rI);
     })
+
+    const slideText = document.querySelectorAll('.history-section__slider .slide__text')
+    if (window.innerWidth >= xlWidth) {
+        slideText.forEach(el => {
+            SimpleScrollbar.initEl(el);
+        })
+    }
+    window.addEventListener('resize', function () {
+        if (window.innerWidth >= xlWidth) {
+            slideText.forEach(el => {
+                SimpleScrollbar.initEl(el);
+            })
+        }
+    })
+
+
 
 }

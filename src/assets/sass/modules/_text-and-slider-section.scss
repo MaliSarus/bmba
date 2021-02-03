@@ -7,12 +7,11 @@
 
   &__main {
     position: relative;
-    padding-top: 200px;
     overflow: hidden;
+    padding-top: 120px;
+    @media screen and (min-width: $xl-width){
+      padding-top: 200px;
 
-    @media screen and (min-width: $xl-width) {
-      border-top: 1px solid #EBEBF0;
-      border-bottom: 1px solid #EBEBF0;
     }
   }
 
@@ -49,9 +48,8 @@
       bottom: -29px;
       width: 100px;
       height: 100px;
-      background: url("../img/dest/text-and-slider/skew-lines_mobile.svg") left bottom;
       background-size: contain;
-      background-repeat: no-repeat;
+      background: url("../img/dest/text-and-slider/skew-lines_mobile.svg") no-repeat left bottom;
       z-index: $z-lowest;
       @media screen and (min-width: $lg-width){
         width: 180px;
@@ -68,19 +66,22 @@
       right: -28px;
       width: 58px;
       height: 58px;
-      background: url("../img/dest/ui/dots-half.svg");
-      background-position: center;
+      background: url("../img/dest/ui/dots-half.svg") center;
       z-index: 1;
     }
   }
 
   &__text {
-    @media screen and (min-width: $lg-width) {
+    @media screen and (min-width: $xl-width) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-right: 50px;
       padding-left: 110px;
       max-width: 530px;
     }
-    @media screen and (min-width: $xl-width) {
+    @media screen and (min-width: $xxl-width){
       margin-top: 142px;
+      padding-right: 0;
     }
 
     h2 {
@@ -98,9 +99,13 @@
   }
   &__controls{
     position: relative;
-    margin-bottom: 60px;
     display: flex;
     align-items: flex-end;
+    margin-bottom: 66px;
+    @media screen and (min-width: $xl-width){
+      margin-bottom: 0;
+    }
+
   }
   &__slider-arrows{
     position: absolute;
@@ -110,7 +115,7 @@
     box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
 
     z-index: $z-medium;
-    @media screen and (min-width: $lg-width){
+    @media screen and (min-width: $xl-width){
       left: 90px;
       height: 160px;
       width: 90px;
@@ -129,7 +134,7 @@
     color: #B6C0CE;
     text-align: left;
     margin-right: 14px;
-    @media screen and (min-width: $lg-width){
+    @media screen and (min-width: $xl-width){
       position: absolute;
       right: 0;
       bottom: 0;
@@ -156,7 +161,7 @@
     height: 1px;
     background: #EBEBF0;
     transform: translateY(-1px);
-    @media screen and (min-width: $lg-width) {
+    @media screen and (min-width: $xl-width) {
       transform: none;
       //margin-top: 80px;
     }

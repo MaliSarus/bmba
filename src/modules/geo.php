@@ -12,10 +12,10 @@
         </button>
     </div>
     <div class="geo-section__video-wrapper">
-        <video autoplay loop class="geo-section__video mobile">
+        <video autoplay loop muted class="geo-section__video mobile">
             <source src="../assets/video/geo_991.mp4" type='video/mp4'>
         </video>
-        <video autoplay loop class="geo-section__video desktop">
+        <video autoplay loop muted class="geo-section__video desktop">
             <source src="../assets/video/geo_1080.mp4" type='video/mp4'>
         </video>
     </div>

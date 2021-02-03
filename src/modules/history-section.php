@@ -3,7 +3,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 p-0">
-                    <h2 class="history-section__background-word background-word">history</h2>
+                    <h2 class="history-section__background-word background-word">
+                        <span>
+                            history
+                            <span class="block-title" data-title-num="02"></span>
+                        </span>
+                    </h2>
                 </div>
             </div>
         </div>

@@ -1,7 +1,9 @@
 .partners-section {
   overflow: hidden;
   padding-top: 120px;
-  padding-bottom: 100px;
+  @media screen and (min-width: $xl-width){
+    padding-bottom: 100px;
+  }
 
   &__main {
     position: relative;

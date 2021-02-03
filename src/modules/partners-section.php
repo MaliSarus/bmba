@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="block-title" data-title-num="06">
-                        Название блока
+                        Сотрудничество
                     </div>
                 </div>
             </div>

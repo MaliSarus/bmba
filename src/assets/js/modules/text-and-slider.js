@@ -16,9 +16,10 @@ export default function textAndSliderInit() {
                 type: 'custom',
                 renderCustom: function (swiper, current, total) {
                     const formCurrent = current < 10 ? '0' + current : current;
+                    const formTotal= total < 10 ? '0' + total : total;
                     return `<span class="swiper-pagination-current">${formCurrent}</span>
                        / 
-                    <span class="swiper-pagination-total">${total}</span>`
+                    <span class="swiper-pagination-total">${formTotal}</span>`
                 }
             },
             navigation: {

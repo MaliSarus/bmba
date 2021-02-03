@@ -1,8 +1,22 @@
 .our-news-section {
+  &__borders{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+  &__border{
+    @media screen and (min-width: $xl-width){
+      border-top: 1px solid #EBEBF0;
+      border-bottom: 1px solid #EBEBF0;
+    }
+
+  }
   &__main {
     padding-top: 120px;
     padding-bottom: 140px;
-    @media screen and (min-width: $lg-width) {
+    @media screen and (min-width: $xl-width) {
       padding-top: 296px;
       padding-bottom: 270px;
     }
@@ -11,6 +25,12 @@
     margin-bottom: 60px;
     @media screen and (min-width: $lg-width){
       margin-bottom: 100px;
+    }
+    h2{
+      font-size: 22px;
+      @media screen and (min-width: $lg-width){
+        font-size: 46px;
+      }
     }
   }
   &__subtitle{
@@ -63,6 +83,27 @@
           font-size: 22px;
           line-height: 110%;
           color: #575A64;
+        }
+      }
+    }
+  }
+  &__first-new{
+    .news__image{
+      position: relative;
+      &::before{
+        position: absolute;
+        top: 0;
+        right: 18px;
+        display: block;
+        content: '';
+        width: 58px;
+        height: 58px;
+        background: url("../img/dest/ui/dots-half.svg") center no-repeat;
+        transform: rotate(-90deg) translateX(50%);
+        @media screen and (min-width: $xl-width){
+          right: unset;
+          top: 47px;
+          transform: scale(-1,1) translateX(50%);
         }
       }
     }
