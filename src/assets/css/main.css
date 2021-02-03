@@ -6933,21 +6933,12 @@ h6 {
     font-size: 46px;
   }
 
-  .our-news-section__news {
-    max-width: 330px;
-    margin-bottom: 0;
-  }
-
   .our-news-section__news .news__text {
     margin-top: 70px;
   }
 
   .our-news-section__news .news__text time {
     font-size: 16px;
-  }
-
-  .our-news-section__more {
-    margin-top: 118px;
   }
 
   .features-section__bg::before {
@@ -7412,6 +7403,11 @@ h6 {
     padding-bottom: 270px;
   }
 
+  .our-news-section__news {
+    max-width: 330px;
+    margin-bottom: 0;
+  }
+
   .our-news-section__first-new .news__image::before {
     right: unset;
     top: 47px;
@@ -7422,6 +7418,11 @@ h6 {
 
   .our-news-section__last-news {
     display: block;
+    max-width: 500px;
+  }
+
+  .our-news-section__more {
+    margin-top: 118px;
     max-width: 500px;
   }
 

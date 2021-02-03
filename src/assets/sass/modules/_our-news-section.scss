@@ -44,7 +44,7 @@
     display: block;
     text-decoration: none;
     margin-bottom: 60px;
-    @media screen and (min-width: $lg-width) {
+    @media screen and (min-width: $xl-width) {
       max-width: 330px;
       margin-bottom: 0;
     }
@@ -143,8 +143,9 @@
   }
   &__more{
     text-align: right;
-    @media screen and (min-width: $lg-width){
+    @media screen and (min-width: $xl-width){
       margin-top: 118px;
+      max-width: 500px;
 
     }
   }
