@@ -169,7 +169,7 @@ h6 {
     font-size: 16px;
     line-height: 100%;
     color: #B6C0CE;
-    content: attr(data-title-num)'.';
+    content: attr(data-title-num) '.';
     transform: translateX(calc(-100% - 40px));
 
     @media screen and (min-width: $md-width) {
@@ -201,6 +201,7 @@ h6 {
   box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
   z-index: 2;
   transition: left .5s;
+
   .swiper-pagination {
     &-bullet {
       display: block;
@@ -211,10 +212,12 @@ h6 {
       background: #CBCBD7;
       cursor: pointer;
       opacity: 1;
-      &:first-child{
+
+      &:first-child {
         margin-left: 0;
       }
-      &:last-child{
+
+      &:last-child {
         margin-right: 0;
       }
 
@@ -267,6 +270,7 @@ h6 {
     text-align: left;
     outline: none;
   }
+
   &__content {
     max-height: 0;
     overflow: hidden;
@@ -274,16 +278,17 @@ h6 {
   }
 }
 
-.background-title{
+.background-title {
   position: absolute;
   top: 0;
   left: 10px;
   right: 0;
-  @media screen and (min-width: $lg-width){
+  @media screen and (min-width: $lg-width) {
     left: 0;
   }
 }
-.background-word{
+
+.background-word {
   overflow: hidden;
   margin: 0;
   font-weight: bold;
@@ -294,14 +299,19 @@ h6 {
   opacity: 0.05;
 }
 
-.columns{
-  &_two{
+.columns {
+  &_two {
     display: grid;
     gap: 60px;
-    @media screen and (min-width: $lg-width){
-      grid-template-columns: repeat(2,1fr);
+    @media screen and (min-width: $lg-width) {
+      grid-template-columns: repeat(2, 1fr);
       gap: 65px;
     }
   }
+}
+
+.h-100vh {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh) * 100);
 }
 

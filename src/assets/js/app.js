@@ -20,7 +20,7 @@ import {lgWidth} from "./modules/window-width-values";
 import popupInit from "./modules/popup";
 import initFleetSection, {initScrollBar} from "./modules/fleet-section";
 import placeCircleElement from "./modules/circle-menu";
-import {getForecaToken, getFullHeight, scrollTo, setFirstSectionOffset} from "./modules/helpers";
+import {getForecaToken, getFullHeight, scrollTo, setFirstSectionOffset, setHeightToMobileVh} from "./modules/helpers";
 
 // import homePageTopInit from "./modules/home-page-top";
 
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     hamburgerHandle();
 
     popupInit();
+    setHeightToMobileVh()
 
 
     if (isSet('.scrollable')) {

@@ -52,3 +52,8 @@ export function setFirstSectionOffset(element) {
         element.style.marginTop = headerHeight + 'px';
     }
 }
+
+export function setHeightToMobileVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}

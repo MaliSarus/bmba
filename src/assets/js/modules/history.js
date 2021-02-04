@@ -1,5 +1,5 @@
 import Swiper from "swiper/bundle";
-import {mdWidth} from "./window-width-values";
+import {mdWidth, xlWidth} from "./window-width-values";
 import SimpleScrollbar from "simple-scrollbar";
 
 export default function historySliderInit() {
