@@ -1,5 +1,5 @@
 <section class="service-section">
-    <div class="service-section__background"></div>
+    <div class="service-section__background" style="background: url('./assets/img/dest/services-page/1.jpg')"></div>
     <div class="service-section__main h-100 first-section first-section_padding">
         <div class="service-section__content">
             <div class="service-section__back-wrapper">
@@ -8,6 +8,7 @@
             <section class="text-section">
                 <div class="row">
                     <div class="col-12">
+                        <div class="block-title" data-title-num="01">Услуга БМБА</div>
                         <div class="text-section__text text">
                             <h2>швартовка и отшвартовка судов</h2>
                             <p>Мы редоставляем круглогодичные услуги по морской и межпортовой буксировке, ведению

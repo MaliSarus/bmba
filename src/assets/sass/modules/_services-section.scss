@@ -55,7 +55,7 @@
     flex-basis: calc(100% / 3);
 
     &:not(:last-child) {
-      border-right: 1px solid white;
+      border-right: 1px solid rgba(white,.3);
     }
   }
 
@@ -103,7 +103,6 @@
         transition: right .5s;
         @media screen and (min-width: $xl-width){
           left: 0;
-          top: 0;
           top: 0;
           right: 0;
           bottom: 0;
