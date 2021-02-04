@@ -4167,10 +4167,6 @@ h6 {
   transform: none !important;
 }
 
-.services-section__service a:hover .services-section__title {
-  margin-bottom: 70px;
-}
-
 .services-section__service-list {
   margin: 0;
   padding: 0;
@@ -6075,10 +6071,6 @@ h6 {
   transition: padding-left .5s, transform 1s, -webkit-transform 1s;
 }
 
-.float-section__list > ul > li > a:hover {
-  padding-left: 0;
-}
-
 .float-section__list > ul > li > a:hover .float-section__image {
   left: 50%;
   top: 50%;
@@ -6087,6 +6079,9 @@ h6 {
   transform: translate(-50%, -50);
   width: 100%;
   height: 100%;
+  -webkit-transition: left .5s, width .5s .5s, height .5s .5s;
+  -o-transition: left .5s, width .5s .5s, height .5s .5s;
+  transition: left .5s, width .5s .5s, height .5s .5s;
 }
 
 .float-section__list > ul > li > a:hover .float-section__image::before {
@@ -6106,9 +6101,9 @@ h6 {
   padding-top: 100%;
   position: relative;
   margin-bottom: 20px;
-  -webkit-transition: width .5s, height .5s;
-  -o-transition: width .5s, height .5s;
-  transition: width .5s, height .5s;
+  -webkit-transition: width .5s, height .5s, left .5s .5s;
+  -o-transition: width .5s, height .5s, left .5s .5s;
+  transition: width .5s, height .5s, left .5s .5s;
 }
 
 .float-section__image::before {
@@ -6121,6 +6116,9 @@ h6 {
   height: 60px;
   background: #216B70 url("../img/dest/float/arrow.svg") center no-repeat;
   background-size: 18px 15px;
+  -webkit-transition: right .5s;
+  -o-transition: right .5s;
+  transition: right .5s;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -7601,6 +7599,10 @@ h6 {
     opacity: 1;
   }
 
+  .services-section__service a:hover .services-section__title {
+    margin-bottom: 70px;
+  }
+
   .services-section__service-list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -7649,6 +7651,12 @@ h6 {
   .services-section__service-hidden.text .link {
     position: absolute;
     bottom: 0;
+  }
+
+  .services-section__title {
+    -webkit-transform: translateY(-140px);
+    -ms-transform: translateY(-140px);
+    transform: translateY(-140px);
   }
 
   .service-section__background {

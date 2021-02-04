@@ -1,18 +1,21 @@
 import {xlWidth} from "./window-width-values";
 
-function servicesCardSetHeight({servicesTitles, servicesHiddenText, servicesContent}) {
-    servicesContent.forEach((elem, index) => {
-        window.addEventListener('load',function () {
-            const elemTitle = elem.querySelector('.services-section__title')
-            const offset = elemTitle.offsetHeight;
-            elem.style.transform = `translateY(calc(100% - ${offset}px))`;
-            elemTitle.style.transform = `translateY(-140px)`
+function servicesCardSetHeight() {
 
-        })
+    const servicesContent = document.querySelectorAll('.services-section__service-content')
+    servicesContent.forEach(elem => {
+        const elemTitle = elem.querySelector('.services-section__title')
+        const offset = elemTitle.offsetHeight;
+        elem.style.transform = `translateY(calc(100% - ${offset}px))`;
     })
 }
 
-function servicesCardDeletHeight({servicesTitles, servicesHiddenText, servicesContent}) {
+function servicesCardDeletHeight() {
+
+    const servicesTitles = document.querySelectorAll('.services-section__title');
+    const servicesHiddenText = document.querySelectorAll('.services-section__service-hidden');
+    const servicesContent = document.querySelectorAll('.services-section__service-content');
+
     servicesHiddenText.forEach(text => {
         text.removeAttribute('style');
     })
@@ -28,13 +31,11 @@ export function servicesCardInit() {
 
     const servicesLink = document.querySelectorAll('.services-section__service a')
     const servicesSectionBg = document.querySelector('.services-section__background')
-    const elementsToSetHeight = {
-        servicesTitles: document.querySelectorAll('.services-section__title'),
-        servicesHiddenText: document.querySelectorAll('.services-section__service-hidden'),
-        servicesContent: document.querySelectorAll('.services-section__service-content')
-    }
+
     if (window.innerWidth >= xlWidth) {
-        servicesCardSetHeight(elementsToSetHeight)
+        window.addEventListener('load', function () {
+            servicesCardSetHeight()
+        })
     }
 
     servicesLink.forEach(link => {
@@ -44,10 +45,11 @@ export function servicesCardInit() {
         })
     })
     window.addEventListener('resize', function () {
+        console.log('resize')
         if (window.innerWidth >= xlWidth) {
-            servicesCardSetHeight(elementsToSetHeight)
+            servicesCardSetHeight()
         } else {
-            servicesCardDeletHeight(elementsToSetHeight)
+            servicesCardDeletHeight()
         }
     })
 }

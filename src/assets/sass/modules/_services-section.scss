@@ -130,7 +130,9 @@
           transform: none !important;
         }
         .services-section__title {
-          margin-bottom: 70px;
+          @media screen and (min-width: $xl-width) {
+            margin-bottom: 70px;
+          }
         }
       }
     }
@@ -257,6 +259,9 @@
     display: flex;
     align-items: flex-end;
     transition: transform .5s, margin-bottom .2s;
+    @media screen and (min-width: $xl-width) {
+      transform: translateY(-140px);
+    }
   }
 
 }

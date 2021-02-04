@@ -68,13 +68,15 @@
             height: 100%;
           }
           &:hover{
-            padding-left: 0;
+            //padding-left: 0;
             .float-section__image{
               left: 50%;
               top: 50%;
               transform: translate(-50%,-50);
               width: 100%;
               height: 100%;
+              transition: left .5s, width .5s .5s, height .5s .5s;
+
               &::before{
                 right: 20px;
                 transition: right .5s .5s;
@@ -93,7 +95,7 @@
     padding-top: 100%;
     position: relative;
     margin-bottom: 20px;
-    transition: width .5s, height .5s;
+    transition:  width .5s, height .5s, left .5s .5s;
     @media screen and (min-width: $lg-width){
       position: absolute;
       left: 0;
@@ -115,6 +117,7 @@
       height: 60px;
       background: $accent-color url("../img/dest/float/arrow.svg") center no-repeat;
       background-size: 18px 15px;
+      transition: right .5s;
       transform: translateY(-50%);
 
       z-index: 1;
