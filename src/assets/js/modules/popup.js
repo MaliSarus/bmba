@@ -27,4 +27,21 @@ export default function popupInit() {
             })
         }
     })
+
+    const videoPopup = document.querySelector('.video-popup')
+    videoPopup.addEventListener('click', function (event) {
+        const videoPopupBlock = this.querySelector('.video-popup__block')
+        const isClickInside = videoPopupBlock.contains(event.target);
+
+        if (!isClickInside) {
+            fadeOutEffect(videoPopup, function () {
+                videoPopup.classList.remove('open');
+                videoPopup.removeAttribute('style');
+                document.body.classList.remove('hidden')
+                const video = document.querySelector('iframe');
+                video.parentNode.removeChild(video);
+
+            })
+        }
+    })
 }

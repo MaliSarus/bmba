@@ -1,27 +1,31 @@
-<section class="news-section with-lines_two">
+<section class="news-section with-lines_two first-section first-section_padding">
     <div class="news-section__main">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-xl-10">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="news-section__title text">
-                                <h1>Новости</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-12 d-flex flex-wrap flex-xl-nowrap">
                             <div class="news-section__left">
                                 <a href="#" class="news-section__back">Назад</a>
-                                <div class="news-section__years-wrapper">
-                                    <div class="round"></div>
-                                    <ul class="news-section__years">
-                                        <li class="active">2020</li>
-                                        <li>2019</li>
-                                        <li>2018</li>
-                                        <li>2017</li>
-                                    </ul>
+                                <div class="news-section__left-content">
+                                    <div class="news-section__title text">
+                                        <h1>Новости</h1>
+                                        <div class="news-section__back">
+                                            <a href="#">Назад</a>
+                                        </div>
+                                    </div>
+                                    <div class="news-section__years-wrapper">
+                                        <div class="round"></div>
+                                        <ul class="news-section__years">
+                                            <li class="active">2020</li>
+                                            <li>2019</li>
+                                            <li>2018</li>
+                                            <li>2017</li>
+                                        </ul>
+                                    </div>
+                                    <div class="news-section__back">
+                                        <a href="#">Назад</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="news-section__center">
@@ -61,6 +65,7 @@
                                             </a>
                                         </li>
                                     </ul>
+                                    <button class="link news-section__more">Показать еще</button>
                                 </div>
                                 <div class="tab">
                                     <ul class="news-section__news">

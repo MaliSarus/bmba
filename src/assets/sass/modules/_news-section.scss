@@ -1,6 +1,6 @@
 .news-section {
   &__main {
-    padding-top: calc(93px + 115px);
+    padding-top: 115px;
     @media screen and (min-width: $xl-width) {
       padding-bottom: 100px;
     }
@@ -8,6 +8,8 @@
 
   &__title {
     margin-bottom: 50px;
+    position: relative;
+    padding-right: 55px;
     @media screen and (min-width: $lg-width) {
       margin-bottom: 70px;
     }
@@ -15,8 +17,14 @@
       font-size: 32px;
       line-height: 100%;
       text-transform: uppercase;
-      @media screen and (min-width: $lg-width){
+      @media screen and (min-width: $xxl-width){
         font-size: 46px;
+      }
+    }
+    .news-section__back{
+      display: block;
+      @media screen and (min-width: $xl-width){
+        display: none;
       }
     }
   }
@@ -28,9 +36,43 @@
       flex-basis: 226px;
       margin-bottom: 0;
     }
-
     a {
       display: none;
+    }
+    &-content{
+      position: sticky;
+      top: 134px;
+      @media screen and (min-width: $xl-width){
+        height: calc(100vh - 215px);
+        padding-bottom: 43px;
+      }
+      > .news-section__back{
+        display: none;
+        @media screen and (min-width: $xl-width) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__back{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @media screen and (min-width: $xl-width){
+      right: unset;
+      top: unset;
+      left: 0;
+      bottom: 27px;
+    }
+    a{
+      display: inline-block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      text-decoration: none;
+      color: #9EBDB3
     }
   }
 
@@ -41,6 +83,7 @@
     @media screen and (min-width: $xl-width) {
       margin: 0 auto;
       padding-bottom: 0;
+      padding-top: 107px;
     }
 
     &::before{
@@ -52,6 +95,9 @@
       display: block;
       content: '';
       background: #E5E5E5;
+      @media screen and (min-width: $xl-width){
+        content: none;
+      }
       
     }
     .tab {
@@ -72,7 +118,12 @@
       }
     }
   }
-
+  &__more{
+    margin-top: 50px;
+    @media screen and (min-width: $xl-width) {
+      margin-top: 70px;
+    }
+  }
   &__right {
     padding-top: 20px;
     position: sticky;
@@ -80,6 +131,7 @@
 
     > h3 {
       text-transform: uppercase;
+      font-size: 22px;
     }
 
     ul {
@@ -93,6 +145,9 @@
 
     .news {
       text-decoration: none;
+      &__text{
+        margin-top: 50px;
+      }
 
       time {
         font-size: 12px;
@@ -134,10 +189,7 @@
 
       &.active {
 
-        color: $dark-grey;
-        @media screen and (min-width: $xl-width) {
-          margin: 40px 0;
-        }
+        color: $main-color;
       }
 
       &:first-child {
@@ -150,8 +202,7 @@
     }
 
     &-wrapper {
-      position: sticky;
-      top: 134px;
+      position: relative;
 
       &::before {
         position: absolute;
@@ -189,11 +240,6 @@
     }
   }
 
-  &__center {
-    .tab {
-
-    }
-  }
 
   &__news {
     margin: 0;

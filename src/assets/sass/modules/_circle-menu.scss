@@ -26,6 +26,7 @@
       }
 
       &-content {
+        text-shadow: none;
         color: white;
       }
     }
@@ -34,6 +35,7 @@
   &_footer {
     .circle__element {
       &-content {
+        text-shadow: none;
         color: white;
       }
     }
@@ -97,6 +99,8 @@
       text-align: right;
       color: $main-color;
       transform: translate(calc(-100% - 15px), -50%);
+      text-shadow: rgba(#f7faf9,.6) 1px 1px 0, rgba(#f7faf9,.6) -1px -1px 0,
+      rgba(#f7faf9,.6) -1px 1px 0, rgba(#f7faf9,.6) 1px -1px 0;
       transition: left .2s, right .2s, top .2s, bottom .2s, transform .2s, color .2s;
 
     }

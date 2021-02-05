@@ -31,9 +31,28 @@
     position: absolute;
     left: 0;
     top: -62px;
-    transform: rotate(180deg) translateY(50%);
+    transform: rotate(180deg) translateY(calc(50% + 5px));
+    @media screen and (min-width: $lg-width){
+      width: 60px;
+      height: 60px;
+    }
     @media screen and (min-width: $xl-width){
       display: none;
+      box-shadow: none;
+    }
+    &::after{
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      display: block;
+      content: '';
+      width: 100px;
+      height: 45px;
+      background: url("../img/dest/service/link-back-lines_mobile.svg") center no-repeat;
+      background-size: contain;
+      @media screen and (min-width: $xl-width){
+        content: none;
+      };
     }
     &.desktop{
       display: none;
@@ -59,7 +78,7 @@
       max-width: 900px;
     }
     @media screen and (min-width: $xxl-width){
-      padding-right: 150px;
+      padding-right: 130px;
     }
     &::before{
       position: absolute;
@@ -100,6 +119,7 @@
 
     }
   }
+
   &__right{
 
     position: sticky;

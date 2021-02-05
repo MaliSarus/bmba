@@ -38,6 +38,12 @@
         <button class="link success-popup__close">Закрыть</button>
     </div>
 </div>
+
+<div class="video-popup">
+    <div class="video-popup__block">
+        <div class="video-popup__ratio"></div>
+    </div>
+</div>
 <header class="header header_transparent transparent-border_bottom">
     <div class="header__logo transparent-border_right">
         <a href="index.php" class="logo_white"><img src="../assets/img/dest/ui/logo-white.svg" alt=""></a>
@@ -47,7 +53,7 @@
         <div class="header__phone transparent-border_right">
             <a href="tel:+78124494712">+7 (812) 449 47 12</a>
         </div>
-        <div class="header__menu transparent-border_right">
+        <div class="header__menu">
             <nav>
                 <ul>
                     <li><a href="about-page.php" class="current">О компании</a></li>

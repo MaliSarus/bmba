@@ -218,16 +218,7 @@
       }
 
       &::before {
-        left: 20px;
-        right: 20px;
         content: none !important;
-        @media screen and (min-width: $lg-width){
-          content: '' !important;
-        }
-        @media screen and (min-width: $xxl-width) {
-          left: 40px;
-          right: 40px;
-        }
       }
 
       img {
@@ -250,6 +241,7 @@
       &::before {
         left: 40px;
         right: 40px;
+        content: none !important;
       }
     }
   }
@@ -315,6 +307,7 @@
   }
 
   &__lang {
+    display: none;
     &-icon {
       width: 16px;
       height: 16px;
