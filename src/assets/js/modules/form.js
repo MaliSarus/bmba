@@ -27,6 +27,7 @@ function requestSectionSubmit(form){
     };
     form.reset();
     document.querySelector('.success-popup').classList.add('open')
+    document.body.classList.add('hidden')
 }
 
 export default function formInit() {
@@ -34,7 +35,7 @@ export default function formInit() {
     const formMailInput = document.querySelectorAll('form input[type="email"]');
     const formNameInput = document.querySelectorAll('form .form__input.name input[type="text"]');
     const formPhoneInput = document.querySelectorAll('form input[type="tel"]');
-    const formInputs = document.querySelectorAll('form input[required]');
+    const formInputs = document.querySelectorAll('form input');
     const forms = document.querySelectorAll('form');
 
     formPhoneInput.forEach(phoneInput=>{
@@ -43,13 +44,10 @@ export default function formInit() {
         })
     })
     formInputs.forEach(input => {
-        // input.addEventListener('focus', function () {
-        //     const inputWrapper = this.parentNode
-        //     inputWrapper.classList.add('invalid')
-        // })
         input.addEventListener('input', function () {
             const inputVal = this.value;
             const inputWrapper = this.parentNode;
+            console.log(inputVal !== '')
             if(inputVal !== ''){
                 inputWrapper.classList.remove('invalid');
                 inputWrapper.classList.add('valid')
@@ -62,9 +60,13 @@ export default function formInit() {
 
     formMailInput.forEach(mailInput => {
         mailInput.addEventListener('input', function () {
+            // const regexp = new RegExp('[А-Яа-я]')
+            // if(regexp.test(this.value)){
+            //     this.value = this.value.replace(regexp,'')
+            // }
             const inputVal = this.value;
             const inputWrapper = this.parentNode
-            if (inputVal.search(mailPattern) == 0) {
+            if (inputVal.search(mailPattern) === 0) {
                 inputWrapper.classList.remove('invalid');
                 inputWrapper.classList.add('valid');
             } else {

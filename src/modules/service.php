@@ -1,7 +1,10 @@
 <section class="service-section">
-    <div class="service-section__background" style="background: url('./assets/img/dest/services-page/1.jpg')"></div>
+    <div class="service-section__background first-section first-section_margin" style="background-image: url('./assets/img/dest/services-page/1.jpg')"></div>
     <div class="service-section__main h-100 first-section first-section_padding">
         <div class="service-section__content">
+            <div class="service-section__back-wrapper link-lines-wrapper">
+                <div class="service-section__link-lines"></div>
+            </div>
             <div class="service-section__back-wrapper">
                 <a href="#" class="link_back service-section__back"></a>
             </div>
@@ -28,6 +31,7 @@
             <section class="two-column-text-section">
                 <div class="row">
                     <div class="col-12">
+                        <div class="block-title" data-title-num="03">Мы также предлагаем</div>
                         <div class="two-column-text-section__text text">
                             <h2>Дополнительные услуги</h2>
                             <div class="two-column-text-section__columns columns_two">
@@ -75,41 +79,16 @@
                     </div>
                 </div>
             </section>
-            <section class="two-column-list-section">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="two-column-list-section__text text">
-                            <h2>БМБА сегодня</h2>
-                            <div class="two-column-list-section__list list">
-                                <ul>
-                                    <li>
-                                        <p>3</p>
-                                        Основных порта <br>
-                                        Финского залива
-                                    </li>
-                                    <li>
-                                        <p>8</p>
-                                        Буксирных судов <br>
-                                        в составе флота
-                                    </li>
-                                    <li>
-                                        <p>250</p>
-                                        Членов экипажа плавсостава <br>
-                                        с большим опытом работы
-
-                                    </li>
-                                    <li>
-                                        <p>10 000+</p>
-                                        Судовладельцев обслуживались <br>
-                                        в БМБА за 2020 год
-                                    </li>
-                                </ul>
+            <section class="fleet-primary-section service-fleet-section">
+                <div class="fleet-primary-section__background-title background-title h-100 d-xl-none">
+                    <div class="container-fluid container-xl h-100">
+                        <div class="row h-100">
+                            <div class="col-12 col-xl-5 offset-xl-7 p-0 p-xl-3">
+                                <h2 class="fleet-primary-section__background-word background-word">Fleet</h2>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="fleet-primary-section service-fleet-section">
                 <div class="fleet-primary-section__main">
                     <div class="row">
                         <div class="col-12">
@@ -155,7 +134,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 p-0 pr-xl-3 pl-xl-3">
                         <div class="block-title">Флот</div>
                         <div class="fleet-primary-section__tabs-wrapper">
                             <div class="fleet-primary-section__tabs">
@@ -192,7 +171,6 @@
                                     </div>
                                 </div>
                                 <div class="fleet-primary-section__info text" data-float="2">
-                                    <div class="block-title">Флот</div>
                                     <div class="fleet-primary-section__title">
                                         <h2>Felix</h2>
                                         <div class="fleet-primary-section__pagination swiper-pagination"></div>
@@ -224,7 +202,6 @@
                                     </div>
                                 </div>
                                 <div class="fleet-primary-section__info text" data-float="3">
-                                    <div class="block-title">Флот</div>
                                     <div class="fleet-primary-section__title">
                                         <h2>Felix</h2>
                                         <div class="fleet-primary-section__pagination swiper-pagination"></div>
@@ -256,7 +233,6 @@
                                     </div>
                                 </div>
                                 <div class="fleet-primary-section__info text" data-float="4">
-                                    <div class="block-title">Флот</div>
                                     <div class="fleet-primary-section__title">
                                         <h2>Felix</h2>
                                         <div class="fleet-primary-section__pagination swiper-pagination"></div>
@@ -296,6 +272,41 @@
                     </div>
                 </div>
             </section>
+            <section class="two-column-list-section">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="block-title">Наши достижения</div>
+                        <div class="two-column-list-section__text text">
+                            <h2>БМБА сегодня</h2>
+                            <div class="two-column-list-section__list list">
+                                <ul>
+                                    <li>
+                                        <p>3</p>
+                                        Основных порта <br>
+                                        Финского залива
+                                    </li>
+                                    <li>
+                                        <p>8</p>
+                                        Буксирных судов <br>
+                                        в составе флота
+                                    </li>
+                                    <li>
+                                        <p>250</p>
+                                        Членов экипажа плавсостава <br>
+                                        с большим опытом работы
+
+                                    </li>
+                                    <li>
+                                        <p>10 000+</p>
+                                        Судовладельцев обслуживались <br>
+                                        в БМБА за 2020 год
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="request-section">
                 <div class="row">
                     <div class="col-12">
@@ -310,10 +321,10 @@
                                         <input type="text" placeholder="Ваше имя">
                                     </div>
                                     <div class="form__input phone">
-                                        <input type="tel" placeholder="Телефон" required>
+                                        <input type="tel" placeholder="Телефон">
                                     </div>
                                     <div class="form__input email">
-                                        <input type="email" placeholder="E-mail" required>
+                                        <input type="email" placeholder="E-mail">
                                     </div>
                                 </div>
                                 <small>Нажимая на кнопку “отправить” вы соглашаетесь c политикой обработки персональных
@@ -356,6 +367,7 @@
             <section class="faq-section">
                 <div class="row">
                     <div class="col-12">
+                        <div class="block-title">FAQ</div>
                         <div class="faq-section__title text">
                             <h2>часто задаваемые вопросы</h2>
                         </div>

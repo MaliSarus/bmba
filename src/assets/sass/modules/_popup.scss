@@ -4,10 +4,11 @@
   top: 0;
   bottom: 0;
   right: 0;
-  z-index: $z-high;
+  z-index: $z-highest + 1;
   visibility: hidden;
   opacity: 0;
   transition: opacity .5s;
+  background: rgba($accent-color, .3);
   &.open{
     visibility: visible;
     opacity: 1;
@@ -21,7 +22,7 @@
     justify-content: center;
     align-items: center;
     width: 567px;
-    height: 80vh;
+    min-height: 80vh;
     max-width: 100%;
     max-height: 100%;
     background: white;
@@ -36,7 +37,13 @@
 
 .request-popup{
   &__block{
-    padding: 0 110px;
+    padding: 50px 50px;
+    @media screen and (min-width: $lg-width){
+      padding: 50px 110px;
+    }
+  }
+  &__form{
+    overflow-y: auto;
   }
 }
 

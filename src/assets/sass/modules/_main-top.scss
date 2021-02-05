@@ -66,6 +66,7 @@
   }
   &__bottom-title {
     position: relative;
+    display: block;
     margin: 0;
     font-style: normal;
     font-weight: bold;
@@ -96,8 +97,9 @@
 
   }
   &__top-title {
-    font-size: 22px;
     margin-bottom: 14px;
+    display: block;
+    font-size: 22px;
     line-height: 100%;
     @media screen and (min-width: $md-width) {
       margin-bottom: 0;

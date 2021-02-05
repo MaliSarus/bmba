@@ -37,13 +37,8 @@ export default function fleetPrimarySliderInit() {
         })
         const moreButton = document.querySelector('.fleet-primary-section__more')
         const moreButtonHeight = getFullHeight(moreButton)
-        if (window.innerWidth < lgWidth) {
-            tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px`
-        }
-        else {
-            tabsWrapper.style.height = `${maxTabHeight}px`
+        tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px`
 
-        }
 
     } else {
         mySwiper.on('slideChangeTransitionStart', function () {
@@ -64,8 +59,7 @@ export default function fleetPrimarySliderInit() {
         const moreButtonHeight = getFullHeight(moreButton)
         if (window.innerWidth < lgWidth) {
             tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
-        }
-        else {
+        } else {
             tabsWrapper.style.height = `calc(${maxTabHeight}px + ${moreButtonHeight}px)`
 
         }
@@ -85,13 +79,13 @@ export default function fleetPrimarySliderInit() {
         const tabsWrapper = document.querySelector('.fleet-primary-section__tabs');
         const tabs = document.querySelectorAll('.fleet-primary-section__tabs .fleet-primary-section__info');
         // if (window.innerWidth < lgWidth) {
-            let maxTabHeight = 0;
-            tabs.forEach(tab => {
-                if (tab.offsetHeight > maxTabHeight) {
-                    maxTabHeight = tab.offsetHeight;
-                }
-            })
-            tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
+        let maxTabHeight = 0;
+        tabs.forEach(tab => {
+            if (tab.offsetHeight > maxTabHeight) {
+                maxTabHeight = tab.offsetHeight;
+            }
+        })
+        tabsWrapper.style.height = `calc(${maxTabHeight}px + 35px)`
         // } else {
         //     if (!document.querySelector('.fleet-primary-section').classList.contains('service-fleet-section')) tabsWrapper.removeAttribute('style');
         // }

@@ -1,4 +1,9 @@
 .service-section {
+  .block-title {
+    &::before {
+      content: none;
+    }
+  }
 
   &__background {
     background-position: center;
@@ -18,7 +23,7 @@
 
   &__main {
     background: url("../img/dest/service/line.svg") repeat-y 20px top;
-    @media screen and (max-width: $xl-width){
+    @media screen and (max-width: $xl-width) {
       padding-top: 0 !important;
     }
     @media screen and (min-width: $xl-width) {
@@ -30,20 +35,61 @@
       background: transparent;
     }
   }
-  &__back{
+
+  &__link-lines {
+    @media screen and (min-width: $xl-width) {
+      position: sticky;
+      left: 0;
+      top: 142px;
+      width: 200px;
+      height: 200px;
+      background: url("../img/dest/service/link-back-lines.svg") center no-repeat;
+      background-size: contain;
+      z-index: -1;
+    }
+  }
+
+  &__back {
     position: absolute;
     top: -35px;
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $lg-width) {
+      width: 60px;
+      height: 60px;
+    }
+    @media screen and (min-width: $xl-width) {
       position: sticky;
       left: 0;
       top: 206px;
+      width: 70px;
+      height: 70px;
     }
-    &-wrapper{
-      @media screen and (min-width: $xl-width){
+
+    &::after {
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      display: block;
+      content: '';
+      width: 100px;
+      height: 45px;
+      background: url("../img/dest/service/link-back-lines_mobile.svg") center no-repeat;
+      background-size: contain;
+      @media screen and (min-width: $xl-width) {
+        content: none;
+      }
+    }
+
+    &-wrapper {
+      @media screen and (min-width: $xl-width) {
         position: absolute;
         left: -35px;
         top: 206px;
         bottom: 200px;
+      }
+
+      &.link-lines-wrapper {
+        top: 142px;
+        left: -35px - 64px;
       }
     }
   }
@@ -61,6 +107,29 @@
       box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.2);
     }
 
+    .text-section {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: -105px;
+        right: -20px;
+        display: block;
+        content: '';
+        width: 176px;
+        height: 252px;
+        background: url("../img/dest/service/top-block-bg.svg") center no-repeat;
+        background-size: contain;
+        @media screen and (min-width: $xl-width) {
+          top: unset;
+          right: -111px;
+          bottom: -93px;
+          width: 340px;
+          height: 487px;
+        }
+      }
+    }
+
 
     h1, h2 {
       text-transform: uppercase;
@@ -69,6 +138,10 @@
       @media screen and (min-width: $md-width) {
         margin-bottom: 70px;
         font-size: 46px;
+      }
+
+      .fleet-primary-section__background-word {
+        font-size: 120px;
       }
     }
 
@@ -127,6 +200,20 @@
           height: 266px;
         }
       }
+      &__background-word {
+        @media screen and (min-width: 992px) {
+          top: 44%;
+          right: 0;
+          left: unset;
+          font-size: 120px;
+        }
+      }
+
+      &__title {
+        h2 {
+          color: #2F333E;
+        }
+      }
 
       &__main {
         padding: 0;
@@ -134,10 +221,10 @@
 
       &__slider {
         height: 221px;
-        @media screen and (min-width: $sm-width){
+        @media screen and (min-width: $sm-width) {
           height: 350px;
         }
-        @media screen and (min-width: $xl-width){
+        @media screen and (min-width: $xl-width) {
           height: 449px;
         }
       }
@@ -170,7 +257,8 @@
           &-bullet {
             cursor: pointer;
             margin: 0 12.5px;
-            &.hidden{
+
+            &.hidden {
               display: none;
             }
 
@@ -204,7 +292,7 @@
         .list {
           ul {
             width: 100%;
-            @media screen and (min-width: $lg-width){
+            @media screen and (min-width: $lg-width) {
               display: flex;
               justify-content: space-between;
             }
@@ -246,13 +334,13 @@
       }
 
       &__more {
-        margin-top: 60px;
+        margin-top: 25px;
         position: static;
         transform: none;
         text-align: right;
-        @media screen and (min-width: $xxl-width) {
+        @media screen and (min-width: $xl-width) {
           text-align: left;
-          margin-top: 90px;
+          margin-top: 55px;
         }
       }
     }

@@ -10,8 +10,8 @@
 
                     <div class="main-top__title">
                         <h1>
-                            <div class="main-top__top-title">предоставление услуг</div>
-                            <div class="main-top__bottom-title">буксирного флота</div>
+                            <span class="main-top__top-title">предоставление услуг</span>
+                            <span class="main-top__bottom-title">буксирного флота</span>
                         </h1>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ export default function popupInit() {
         fadeOutEffect(successPopup, function () {
             successPopup.classList.remove('open');
             successPopup.removeAttribute('style');
+            document.body.classList.remove('hidden')
         })
     })
 
@@ -22,6 +23,7 @@ export default function popupInit() {
             fadeOutEffect(requestPopup, function () {
                 requestPopup.classList.remove('open');
                 requestPopup.removeAttribute('style');
+                document.body.classList.remove('hidden')
             })
         }
     })

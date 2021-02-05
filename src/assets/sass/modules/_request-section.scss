@@ -1,18 +1,44 @@
-.request-section{
-  &__block{
-
-    @media screen and (min-width: $md-width){
+.request-section {
+  &__block {
+    position: relative;
+    @media screen and (min-width: $md-width) {
       padding-left: 310px;
       background-clip: padding-box;
       background-size: cover;
       background: url("../img/dest/request/bg.jpg") center no-repeat;
       background-size: cover;
     }
+    &::before{
+      position: absolute;
+      display: block;
+      width: 58px;
+      height: 58px;
+      left: 0;
+      top: 30px;
+      background: url("../img/dest/ui/dots-half.svg") center no-repeat;
+      transform: translateX(-50%) scale(-1,1);
+      @media screen and (min-width: $md-width){
+        content: '';
+      }
+    }
   }
-  &__form{
-    @media screen and (min-width: $md-width){
+
+  &__form {
+    @media screen and (min-width: $md-width) {
       padding: 97px 0 57px 93px;
-      background:  #F7FAF9;
+      background: #F7FAF9;
+    }
+    .form__title{
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .form__subtitle{
+      margin-top: 0;
+    }
+    .form__submit{
+      @media screen and (min-width: $md-width){
+        margin-top: 60px;
+      }
     }
   }
 }

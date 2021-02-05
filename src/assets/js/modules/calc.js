@@ -24,7 +24,14 @@ const calcTemplate = `
             <p>Ветер свыше 14 м/с</p>
             <p>Коэффициент 1,15</p>
         </div>
-        <datepicker inline v-model="form.date" valueType="DD.MM.YYYY" @pick="pickDate" :get-classes="getClasses"/>
+        <datepicker 
+            inline 
+            v-model="form.date" 
+            valueType="DD.MM.YYYY" 
+            @pick="pickDate" 
+            :get-classes="getClasses"
+            :disabled-date="(date) => date < new Date()"
+        />
         <button class="calc-section__datepicker-close" @click="datePickerFocus = false">Отмена</button>
     </div>
    
@@ -57,29 +64,80 @@ const calcTemplate = `
                 <div class="form__group calc-section__float-values">
                     <div class="form__input-wrapper">
                         <label for="calc-fleet-length">Длина судна <span>(LQA)</span></label>
-                        <div class="form__input calc-section__float-value value" @click="focusInput">
-                            <input id="calc-fleet-length" type="text" placeholder="Ввод..." v-model="form.fleetLength"  @keydown="allowNum($event)">
+                        <div 
+                            class="form__input calc-section__float-value value" 
+                            @click="focusInput" 
+                            :class="{valid: form.fleetLength !== ''}"
+                        >
+                            <input 
+                                id="calc-fleet-length" 
+                                type="text" 
+                                placeholder="Ввод..." 
+                                v-model="form.fleetLength"  
+                                @keydown="allowNum($event)"
+                            >
                         </div>
                     </div>
-                    <div class="form__input-wrapper" :class="{disabled: checkFleetWidth}">
+                    <div 
+                        class="form__input-wrapper" 
+                        :class="{disabled: checkFleetWidth}"
+                    >
                         <label for="calc-fleet-width">Ширина судна <span>(B)</span></label>
     
-                        <div class="form__input calc-section__float-value value" @click="focusInput">
-                            <input id="calc-fleet-width" type="text" placeholder="Ввод..." v-model="form.fleetWidth" :disabled="checkFleetWidth" @keydown="allowNum($event)">
+                        <div 
+                            class="form__input calc-section__float-value value" 
+                            :class="{valid: form.fleetWidth !== ''}"
+                            @click="focusInput"
+                        >
+                            <input 
+                                id="calc-fleet-width" 
+                                type="text" 
+                                placeholder="Ввод..." 
+                                v-model="form.fleetWidth" 
+                                :disabled="checkFleetWidth" 
+                                @keydown="allowNum($event)"
+                            >
                         </div>
                     </div>
-                    <div class="form__input-wrapper" :class="{disabled: checkFleetHeight}">
+                    <div 
+                        class="form__input-wrapper" 
+                        :class="{disabled: checkFleetHeight}"
+                    >
                         <label for="calc-fleet-height">Высота борта судна <span>(D)</span></label>
-                        <div class="form__input calc-section__float-value value" @click="focusInput">
-                            <input id="calc-fleet-height" type="text" placeholder="Ввод..." v-model="form.fleetHeight" :disabled="checkFleetHeight" @keydown="allowNum($event)">
+                        <div 
+                            class="form__input calc-section__float-value value" 
+                            :class="{valid: form.fleetHeight !== ''}"
+                            @click="focusInput"
+                        >
+                            <input 
+                                id="calc-fleet-height" 
+                                type="text" 
+                                placeholder="Ввод..." 
+                                v-model="form.fleetHeight" 
+                                :disabled="checkFleetHeight" 
+                                @keydown="allowNum($event)"
+                            >
                         </div>
                     </div>
                 </div>
-                <div class="form__group calc-section__date-wrapper calc-page__date-wrapper" v-if="datePickerInputOnCalcPageDestination">
+                <div 
+                    class="form__group calc-section__date-wrapper calc-page__date-wrapper" 
+                    v-if="datePickerInputOnCalcPageDestination"
+                >
                     <div class="form__input-wrapper calc-section__date">
                         <label for="calc-date">Дата прибытия</label>
-                        <div class="form__input date" @click="focusInput">
-                            <input id="calc-date" type="text" placeholder="Выбрать дату" @focus="datePickerFocus = true" :value="form.date">
+                        <div 
+                            class="form__input date" 
+                            :class="{valid: form.date !== ''}"
+                            @click="focusInput"
+                        >
+                            <input 
+                                id="calc-date" 
+                                type="text" 
+                                placeholder="Выбрать дату" 
+                                @focus="datePickerFocus = true" 
+                                :value="form.date"
+                            >
                         </div>
                     </div>
     
@@ -101,7 +159,11 @@ const calcTemplate = `
             <div class="col-12">
                 <div class="form__group form__checkbox">
                     <div class="calc-section__checkbox">
-                        <input type="checkbox" id="calc-section-form-checkbox" v-model="form.nonGoingFleet">
+                        <input 
+                            type="checkbox" 
+                            id="calc-section-form-checkbox" 
+                            v-model="form.nonGoingFleet"
+                        >
                         <label for="calc-section-form-checkbox">
                             Несамоходное судно или судно с неработающим ГД
                         </label>
@@ -109,13 +171,26 @@ const calcTemplate = `
                 </div>
             </div>
         </div>
-        <div class="row" v-if="!datePickerInputOnCalcPageDestination">
+        <div 
+            class="row" 
+            v-if="!datePickerInputOnCalcPageDestination"
+        >
             <div class="col-12">
                 <div class="form__group calc-section__date-wrapper">
                     <div class="form__input-wrapper calc-section__date">
                         <label for="calc-date">Дата прибытия</label>
-                        <div class="form__input date" @click="focusInput">
-                            <input id="calc-date" type="text" placeholder="Выбрать дату" @focus="datePickerFocus = true" :value="form.date">
+                        <div 
+                            class="form__input date" 
+                            :class="{valid: form.date !== ''}"
+                            @click="focusInput"
+                        >
+                            <input 
+                                id="calc-date" 
+                                type="text" 
+                                placeholder="Выбрать дату" 
+                                @focus="datePickerFocus = true" 
+                                :value="form.date"
+                            >
                         </div>
                     </div>
     
@@ -128,7 +203,7 @@ const calcTemplate = `
                     <div class="calc-section__result">
                         <p>Итоговая стоимость</p>
                         <p class="calc-section__result-value">
-                            <span v-if="+result > 0">~</span>{{result}}<span v-if="+result > 0">&#8381</span>
+                            <span v-if="+result !== 0">~</span>{{result}} <span v-if="+result !== 0">&#8381</span>
                         </p>
                     </div>
                     <div class="calc-section__submit">
@@ -265,6 +340,7 @@ export function initCalc() {
                     }
                     setFormInformation(formInfo)
                     document.querySelector('.request-popup').classList.add('open')
+                    document.body.classList.add('hidden')
                 } else {
                     console.log('Ошибка')
                 }
@@ -287,12 +363,25 @@ export function initCalc() {
                 this.datePickerFocus = false
             },
             getClasses(date) {
-                if (this.highlightedDate !== []) {
-                    if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
-                        return "highlight";
+                const today = new Date;
+                if(date.getTime()  < today.getTime()){
+                    if (this.highlightedDate !== []) {
+                        if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
+                            return "highlight prev-date";
+                        }
+                        return "prev-date";
                     }
-                    return "";
                 }
+                else{
+                    if (this.highlightedDate !== []) {
+                        if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
+                            return "highlight";
+                        }
+                        return "";
+                    }
+                }
+
+
             },
             allowNum(event) {
                 console.log(event); //keyCodes value

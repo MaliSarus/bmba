@@ -1,19 +1,29 @@
 .two-column-text-section{
+  .text{
+    .two-column-text-section__list{
+      >p{
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 100%;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        color: $main-color;
+        @media screen and (min-width: $xl-width){
+          font-size: 22px;
+          margin-bottom: 47px;
+
+        }
+      }
+    }
+  }
   &__list{
     margin-top: 0;
     &:not(:last-child){
       margin-bottom: 70px;
     }
-    >p{
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 100%;
-      text-transform: uppercase;
-      margin-bottom: 47px;
-      color: $main-color;
-    }
+
     ul{
-      padding-left: 15px;
+      padding-left: 11px;
       @media screen and (min-width: $lg-width){
         padding-left: 17px;
       }

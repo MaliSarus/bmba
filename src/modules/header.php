@@ -20,8 +20,8 @@
             <div class="form__subtitle">Укажите свои данные и мы свяжемся с Вами в течение дня</div>
             <div class="form__group">
                 <div class="form__input name valid"><input type="text" placeholder="Имя"></div>
-                <div class="form__input email"><input type="email" placeholder="E-mail" required></div>
-                <div class="form__input phone"><input type="tel" placeholder="Телефон" required></div>
+                <div class="form__input email"><input type="email" placeholder="E-mail"></div>
+                <div class="form__input phone"><input type="tel" placeholder="Телефон"></div>
             </div>
             <small>Нажимая на кнопку “отправить” вы соглашаетесь c политикой обработки персональных
                 данных</small>

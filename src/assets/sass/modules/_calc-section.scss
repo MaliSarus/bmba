@@ -5,6 +5,10 @@
     border-bottom: 1px solid #EBEBF0;
   }
 
+  .calc-section__datepicker{
+    display: none;
+  }
+
 
   &__back {
     position: absolute;
@@ -104,6 +108,9 @@
           margin-bottom: 30px;
         }
       }
+    }
+    .block-title{
+      display: none;
     }
   }
 
@@ -272,6 +279,7 @@
       }
 
       &.disabled {
+        pointer-events: none;
         opacity: .5;
       }
     }
@@ -552,12 +560,12 @@
       background: transparent;
       transition: color .2s;
 
-      @media screen and (min-width: $sm-width) {
-        margin-top: 0;
-        position: absolute;
-        left: 80px;
-        bottom: 137px;
-      }
+      //@media screen and (min-width: $sm-width) {
+      //  margin-top: 0;
+      //  position: absolute;
+      //  left: 80px;
+      //  bottom: 137px;
+      //}
 
       &:hover {
         color: $accent-color;

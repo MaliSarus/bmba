@@ -31,8 +31,9 @@ function isSet(element) {
 
 document.addEventListener("DOMContentLoaded", function (event) {
     if (isSet('.calc-section')) {
-
         initCalc()
+        const datepicker = document.querySelector('.calc-section__datepicker')
+        document.querySelector('main').appendChild(datepicker)
     }
     if (isSet('.link')) {
         document.querySelectorAll('.link').forEach(link => {
