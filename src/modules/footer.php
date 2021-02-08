@@ -87,8 +87,7 @@
         </div>
     </div>
 </footer>
-<!--<script src="./assets/js/jquery-ui.min.js"></script>-->
-
-
+</div>
+<script src="./assets/js/modules/fslightbox.js"></script>
 </body>
 </html>

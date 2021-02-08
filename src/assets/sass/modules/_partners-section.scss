@@ -4,6 +4,7 @@
   padding-bottom: 115px;
   @media screen and (min-width: $xl-width){
     padding-bottom: 300px;
+    background: url("../img/dest/partners/ship-bg.svg") left bottom no-repeat;
   }
 
   &__main {
@@ -25,6 +26,10 @@
     }
     h2{
       margin-bottom: 0;
+      font-size: 22px;
+      @media screen and (min-width: $xl-width){
+        font-size: 46px;
+      }
     }
   }
 

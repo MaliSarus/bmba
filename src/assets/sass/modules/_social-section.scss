@@ -31,7 +31,7 @@
   }
 
   &__container {
-    padding-top: 120px;
+    //padding-top: 120px;
     border-left: 1px solid #EBEBF0;
     @media screen and (min-width: $xl-width) {
       padding-top: 130px;
@@ -58,9 +58,12 @@
       .social-section__image {
 
           &::before {
-            left: 0;
+            left: 20px;
             top: 0;
             transform: rotate(-90deg) translateX(50%);
+            @media screen and (min-width: $sm-width){
+              left: 0;
+            }
             @media screen and (min-width: $xl-width){
               left: 80px;
             }

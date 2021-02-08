@@ -937,7 +937,8 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+.site-wrapper {
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -949,6 +950,14 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   background: #F7FAF9;
+}
+
+.site-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 1s, visibility 1s;
+  -o-transition: opacity 1s, visibility 1s;
+  transition: opacity 1s, visibility 1s;
 }
 
 main {
@@ -996,6 +1005,16 @@ h5 {
 
 h6 {
   font-size: 16px;
+}
+
+body.ready .preloader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.ready .site-wrapper {
+  opacity: 1;
+  visibility: visible;
 }
 
 .visually-hidden {
@@ -3213,6 +3232,7 @@ h6 {
 
 .partners-section__title h2 {
   margin-bottom: 0;
+  font-size: 22px;
 }
 
 .partners-section__slider-arrows::before {
@@ -3370,6 +3390,7 @@ h6 {
 }
 
 .text-and-slider-section__slider::after {
+  display: none;
   top: 143px;
   right: -28px;
   width: 58px;
@@ -3398,7 +3419,7 @@ h6 {
 .text-and-slider-section__slider-arrows {
   position: absolute;
   bottom: 1px;
-  right: 30px;
+  right: 20px;
   height: 120px;
   -webkit-box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
@@ -3510,9 +3531,9 @@ h6 {
 }
 
 .our-news-section__news .news__text h3 {
+  font-size: 16px;
   margin: 24px 0 0;
   font-weight: 600;
-  font-size: 22px;
   line-height: 110%;
   color: #575A64;
 }
@@ -3851,7 +3872,8 @@ h6 {
 .history-section__slide .slide__block {
   position: relative;
   padding: 70px 45px 70px 60px;
-  min-height: 493px;
+  min-height: 430px;
+  max-height: 430px;
   background-image: url("../img/dest/history/1.jpg");
   background-position: center;
   background-size: cover;
@@ -3868,13 +3890,18 @@ h6 {
 
 .history-section__slide .slide__block * {
   color: white;
+  font-size: 14px;
 }
 
 .history-section__slide .slide__block h3 {
-  font-size: 28px;
+  font-size: 20px;
   line-height: 110%;
   text-transform: uppercase;
   margin: 0 0 40px;
+}
+
+.history-section__slide .slide__block p {
+  font-size: 14px;
 }
 
 .history-section__slide .slide__block ul {
@@ -3884,8 +3911,8 @@ h6 {
 
 .history-section__slide .slide__block ul li {
   font-weight: 500;
-  font-size: 16px;
   line-height: 160%;
+  font-size: 14px;
 }
 
 .history-section__slide .slide__block ul li:not(:last-child) {
@@ -3996,7 +4023,7 @@ h6 {
 
 .faq-section__list .accordion__content-text {
   padding-top: 19px;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
 }
 
 .social-section {
@@ -4020,7 +4047,6 @@ h6 {
 }
 
 .social-section__container {
-  padding-top: 120px;
   border-left: 1px solid #EBEBF0;
 }
 
@@ -4029,7 +4055,7 @@ h6 {
 }
 
 .social-section__row:nth-child(odd) .social-section__image::before {
-  left: 0;
+  left: 20px;
   top: 0;
   -webkit-transform: rotate(-90deg) translateX(50%);
   -ms-transform: rotate(-90deg) translateX(50%);
@@ -4146,6 +4172,12 @@ h6 {
   -ms-flex-preferred-size: calc((100vh - 80px) / 3);
   flex-basis: calc((100vh - 80px) / 3);
   max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .services-section__service:not(:last-child) {
@@ -4155,10 +4187,10 @@ h6 {
 .services-section__service a {
   position: relative;
   display: block;
-  height: 100%;
   overflow: hidden;
   text-decoration: none;
   padding: 68px 0 60px;
+  width: 100%;
 }
 
 .services-section__service a::before {
@@ -4354,8 +4386,8 @@ h6 {
   font-size: 22px;
 }
 
-.service-section__content h1 .fleet-primary-section__background-word,
-.service-section__content h2 .fleet-primary-section__background-word {
+.service-section__content h1.fleet-primary-section__background-word,
+.service-section__content h2.fleet-primary-section__background-word {
   font-size: 120px;
 }
 
@@ -5442,9 +5474,22 @@ h6 {
   border: none;
 }
 
+.calc-section.service-calc .calc-section__form {
+  margin-top: 0;
+}
+
+.calc-section.service-calc .calc-section__weather {
+  display: none;
+}
+
 .calc-section.service-calc .calc-section__title h2 {
   font-size: 22px;
   margin-bottom: 30px;
+}
+
+.calc-section.service-calc .calc-section__title-wrapper {
+  margin-right: 0;
+  background: transparent;
 }
 
 .calc-section.service-calc .block-title {
@@ -5482,7 +5527,8 @@ h6 {
   background: #F7FAF9;
 }
 
-.calc-section__title h2 {
+.calc-section__title h2,
+.calc-section__title h1 {
   margin-top: 0;
   margin-bottom: 60px;
 }
@@ -5959,8 +6005,13 @@ h6 {
   background: #70A6F5;
 }
 
-.contacts-section__metro .metro__map img {
-  width: 100%;
+.contacts-section__metro .metro__map {
+  height: 240px;
+}
+
+.contacts-section__metro .metro__map .ymaps-2-1-78-ground-pane {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .contacts-section__metro ul {
@@ -6498,6 +6549,10 @@ h6 {
 }
 
 @media screen and (min-width: 576px) {
+  .social-section__row:nth-child(odd) .social-section__image::before {
+    left: 0;
+  }
+
   .service-section__content .fleet-primary-section__slider {
     height: 350px;
   }
@@ -7146,6 +7201,10 @@ h6 {
     font-size: 16px;
   }
 
+  .our-news-section__news .news__text h3 {
+    font-size: 22px;
+  }
+
   .features-section__bg::before {
     width: 487px;
     height: 363px;
@@ -7541,6 +7600,10 @@ h6 {
     color: white;
   }
 
+  .header__phone a {
+    cursor: default;
+  }
+
   .header__hamburger {
     display: none;
   }
@@ -7579,6 +7642,7 @@ h6 {
 
   .partners-section {
     padding-bottom: 300px;
+    background: url("../img/dest/partners/ship-bg.svg") left bottom no-repeat;
   }
 
   .partners-section__main .block-title {
@@ -7588,6 +7652,10 @@ h6 {
   .partners-section__title {
     margin-bottom: 0;
     display: block;
+  }
+
+  .partners-section__title h2 {
+    font-size: 46px;
   }
 
   .partners-section__slider {
@@ -7614,6 +7682,10 @@ h6 {
 
   .text-and-slider-section__main {
     padding-top: 200px;
+  }
+
+  .text-and-slider-section__slider::after {
+    display: block;
   }
 
   .text-and-slider-section__text {
@@ -7746,6 +7818,7 @@ h6 {
   }
 
   .history-section__slide .slide__block {
+    min-height: 493px;
     max-height: 493px;
     padding: 104px 55px 104px 70px;
     width: 100%;
@@ -7753,6 +7826,15 @@ h6 {
 
   .history-section__slide .slide__block h3 {
     margin-bottom: 30px;
+    font-size: 28px;
+  }
+
+  .history-section__slide .slide__block p {
+    font-size: 16px;
+  }
+
+  .history-section__slide .slide__block ul li {
+    font-size: 16px;
   }
 
   .history-section__slide .slide__year {
@@ -7814,6 +7896,7 @@ h6 {
   .services-section__service {
     -ms-flex-preferred-size: calc(100% / 3);
     flex-basis: calc(100% / 3);
+    display: block;
   }
 
   .services-section__service:not(:last-child) {
@@ -7822,6 +7905,8 @@ h6 {
 
   .services-section__service a {
     padding: 93px 0 0 0;
+    width: auto;
+    height: 100%;
   }
 
   .services-section__service a::before {
@@ -7936,11 +8021,10 @@ h6 {
     position: sticky;
     left: 0;
     top: 142px;
-    width: 200px;
+    width: 100px;
     height: 200px;
     background: url("../img/dest/service/link-back-lines.svg") center no-repeat;
-    background-size: contain;
-    z-index: -1;
+    z-index: 0;
   }
 
   .service-section__back {
@@ -8251,7 +8335,8 @@ h6 {
     margin-bottom: 100px;
   }
 
-  .calc-section__title h2 {
+  .calc-section__title h2,
+  .calc-section__title h1 {
     margin-bottom: 30px;
   }
 
@@ -8348,6 +8433,10 @@ h6 {
 
   .contacts-section__right .contacts-section__subtitle {
     margin-bottom: 70px;
+  }
+
+  .contacts-section__metro .metro__map {
+    height: 400px;
   }
 
   .fleet-section {

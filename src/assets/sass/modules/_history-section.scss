@@ -1,5 +1,5 @@
 .history-section {
-  @media screen and (min-width: $xl-width){
+  @media screen and (min-width: $xl-width) {
     padding-bottom: 355px;
   }
 
@@ -14,20 +14,23 @@
   .background-word {
     position: relative;
     overflow: hidden;
-    color: rgba(#216B70,.05);
+    color: rgba(#216B70, .05);
     opacity: 1;
     @media screen and (min-width: $lg-width) {
       font-size: 210px;
       transform: translateX(-45px);
     }
-    span{
+
+    span {
       position: relative;
     }
-    .block-title{
+
+    .block-title {
       position: absolute;
       right: -2%;
       top: 21%;
-      &::before{
+
+      &::before {
         transform: none;
       }
     }
@@ -229,7 +232,8 @@
       height: 120px;
       background: transparent;
       transform: translateY(-22px);
-      &::before{
+
+      &::before {
         left: 0;
         right: 0;
       }
@@ -248,10 +252,12 @@
       &__block {
         height: 100%;
       }
-      &__text{
+
+      &__text {
         overflow: hidden;
         padding-right: 10px;
-        .ss-scroll{
+
+        .ss-scroll {
           background: white;
         }
       }
@@ -259,12 +265,14 @@
       &__block {
         position: relative;
         padding: 70px 45px 70px 60px;
-        min-height: 493px;
+        min-height: 430px;
+        max-height: 430px;
         background-image: url("../img/dest/history/1.jpg");
         background-position: center;
         background-size: cover;
         color: white;
         @media screen and (min-width: $xl-width) {
+          min-height: 493px;
           max-height: 493px;
           padding: 104px 55px 104px 70px;
 
@@ -282,15 +290,24 @@
 
         * {
           color: white;
+          font-size: 14px;
         }
 
         h3 {
-          font-size: 28px;
+          font-size: 20px;
           line-height: 110%;
           text-transform: uppercase;
           margin: 0 0 40px;
-          @media screen and (min-width: $xl-width){
+          @media screen and (min-width: $xl-width) {
             margin-bottom: 30px;
+            font-size: 28px;
+          }
+        }
+
+        p {
+          font-size: 14px;
+          @media screen and (min-width: $xl-width) {
+            font-size: 16px;
           }
         }
 
@@ -300,12 +317,19 @@
 
           li {
             font-weight: 500;
-            font-size: 16px;
             line-height: 160%;
+            font-size: 14px;
 
             &:not(:last-child) {
               margin-bottom: 30px;
             }
+
+            @media screen and (min-width: $xl-width) {
+              font-size: 16px;
+
+            }
+
+
           }
         }
       }
@@ -325,7 +349,7 @@
         box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
         width: 60px;
         height: 60px;
-        @media screen and (min-width:$xl-width){
+        @media screen and (min-width: $xl-width) {
           padding: 21px;
           width: 69px;
           height: 69px;
@@ -344,7 +368,8 @@
         @media screen and (min-width: $xl-width) {
           display: none;
         }
-        &::before{
+
+        &::before {
           left: 50%;
           top: 0;
           bottom: 0;

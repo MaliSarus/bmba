@@ -82,8 +82,8 @@
                                 <li><div class="metro__station metro_red">Балтийская <span>(860 м)</span></div></li>
                                 <li><div class="metro__station metro_blue">Фрунзенская <span>(1,7 км)</span></div></li>
                             </ul>
-                            <div class="metro__map">
-                                <img src="./assets/img/dest/contacts/map.jpg" alt="">
+                            <div class="metro__map" id="contacts-section__map">
+
                             </div>
                         </div>
                     </div>

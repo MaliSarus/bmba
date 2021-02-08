@@ -105,16 +105,27 @@
     border: none;
 
     .calc-section {
+      &__form{
+        margin-top: 0;
+      }
+      &__weather{
+        display: none;
+      }
       &__title {
         h2 {
           font-size: 22px;
           margin-bottom: 30px;
+        }
+        &-wrapper{
+          margin-right: 0;
+          background: transparent;
         }
       }
     }
     .block-title{
       display: none;
     }
+
   }
 
   &.calc-page {
@@ -217,7 +228,7 @@
       margin-bottom: 100px;
     }
 
-    h2 {
+    h2, h1 {
       margin-top: 0;
       margin-bottom: 60px;
       @media screen and (min-width: $xl-width) {

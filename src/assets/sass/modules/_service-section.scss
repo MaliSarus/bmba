@@ -41,11 +41,10 @@
       position: sticky;
       left: 0;
       top: 142px;
-      width: 200px;
+      width: 100px;
       height: 200px;
       background: url("../img/dest/service/link-back-lines.svg") center no-repeat;
-      background-size: contain;
-      z-index: -1;
+      z-index: 0;
     }
   }
 
@@ -140,8 +139,9 @@
         font-size: 46px;
       }
 
-      .fleet-primary-section__background-word {
+      &.fleet-primary-section__background-word {
         font-size: 120px;
+
       }
     }
 

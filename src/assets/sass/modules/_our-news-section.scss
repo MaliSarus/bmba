@@ -80,11 +80,15 @@
           }
         }
         h3{
+          font-size: 16px;
           margin: 24px 0 0;
           font-weight: 600;
-          font-size: 22px;
           line-height: 110%;
           color: #575A64;
+          @media screen and (min-width: $lg-width){
+            font-size: 22px;
+
+          }
         }
       }
     }

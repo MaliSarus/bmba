@@ -35,13 +35,13 @@ export function getFullHeight(element) {
     return elementHeight + elmMargin;
 }
 
-export function getForecaToken() {
-    return axios
-        .get('http://bmba.sotbisite.beget.tech/ajax/get_token.php')
-        .then(res => {
-            localStorage.setItem('fwk', res.data)
-        })
-}
+// export function getForecaToken() {
+//     return axios
+//         .get('http://bmba.sotbisite.beget.tech/ajax/get_token.php')
+//         .then(res => {
+//             localStorage.setItem('fwk', res.data)
+//         })
+// }
 
 export function setFirstSectionOffset(element) {
     const headerHeight = document.querySelector('header').offsetHeight ;

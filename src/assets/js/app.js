@@ -10,7 +10,6 @@ import {videoContainerChangeWidth, videoPlayButtonHandle} from "./modules/video"
 import sliderArrowsHandle from "./modules/slider-arrows";
 import {servicesCardInit} from "./modules/services";
 import documentsSliderInit from "./modules/documents";
-import fslightbox from 'fslightbox'
 import formInit from "./modules/form";
 import {newsYearsSliderInit} from "./modules/news";
 import {changeNewBgWidth} from "./modules/new";
@@ -20,7 +19,8 @@ import {lgWidth} from "./modules/window-width-values";
 import popupInit from "./modules/popup";
 import initFleetSection, {initScrollBar} from "./modules/fleet-section";
 import placeCircleElement from "./modules/circle-menu";
-import {getForecaToken, getFullHeight, scrollTo, setFirstSectionOffset, setHeightToMobileVh} from "./modules/helpers";
+import {scrollTo, setFirstSectionOffset, setHeightToMobileVh} from "./modules/helpers";
+import contactsInit from "./modules/contacts";
 
 // import homePageTopInit from "./modules/home-page-top";
 
@@ -153,11 +153,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 setFirstSectionOffset(section)
             })
         })
-
     }
-
-
+    if (isSet('.contacts-section')){
+        contactsInit();
+    }
 })
+
 
 window.addEventListener('scroll', function () {
     changeHeaderStyle();

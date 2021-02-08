@@ -142,6 +142,10 @@
 
                                     <div class="fleet-primary-section__title">
                                         <h2>Felix</h2>
+                                        <div class="slider-arrows slider-arrows_horizontal fleet-primary-section__slider-arrows">
+                                            <div class="slider-arrows__next"></div>
+                                            <div class="slider-arrows__prev"></div>
+                                        </div>
                                         <div class="fleet-primary-section__pagination swiper-pagination"></div>
                                     </div>
                                     <div class="list fleet-specs">
@@ -383,9 +387,7 @@
                                     </button>
                                     <div class="accordion__content">
                                         <div class="accordion__content-text text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A earum eos
-                                                eveniet
-                                                ipsa</p>
+                                            <p>L orem ip sum ha s survi ved well into the 21st century and is used across prin t and digital formats throughou t the world. In factLorem ipsum has survived well into th</p>
                                         </div>
                                     </div>
                                 </li>

@@ -3,7 +3,7 @@ import axios from 'axios'
 import Datepicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ru';
 import {xlWidth} from "./window-width-values";
-import {getForecaToken} from "./helpers";
+// import {getForecaToken} from "./helpers";
 
 let formInfo = {}
 const months = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'ноя.', 'дек.'];
@@ -38,10 +38,14 @@ const calcTemplate = `
     <div class="calc-section__title-wrapper">
         <div class="calc-section__title text">
             <div class="block-title" data-title-num="03">Калькулятор</div>
-            <h2>Расчет стоимости</h2>
+            <h1 v-if="calcPage">Расчет стоимости</h1>
+            <h2 v-else>Расчет стоимости</h2>
             <p>Заполните поля, чтобы рассчитать стоимость услуги</p>
         </div>
-         <div class="calc-section__weather weather" v-show="windowWidth < 1200">
+         <div
+             class="calc-section__weather weather" 
+             v-show="windowWidth < 1200"
+         >
             <div class="weather__block">
                 <div class="weather__date">
                     <div class="weather__day">{{weather.day}}</div>
@@ -230,7 +234,7 @@ export function initCalc() {
                 date: '',
             },
             weather: {
-                day: new Date().getDay(),
+                day: new Date().getDate(),
                 month: months[new Date().getMonth()],
                 temp: '...',
                 wind: '...'
@@ -411,31 +415,31 @@ export function initCalc() {
             let token = '';
 
 
-            getForecaToken()
-                .then(() => {
-                        token = localStorage.getItem('fwk')
-                        console.log(token);
-                        axios.get('https://pfa.foreca.com/api/v1/forecast/daily/100478036?periods=14', {
-                            headers: {
-                                Authorization: 'Bearer ' + token
-                            }
-                        })
-                            .then(res => {
-                                const forecast = res.data.forecast;
-                                this.highlightedDate = forecast.filter(data => data.maxWindSpeed >= 14);
-                                this.highlightedDate = this.highlightedDate.map(data => {
-                                    const dateParts = data.date.split('-');
-                                    return new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
-                                })
-                                this.weather.temp = (forecast[0].minTemp + forecast[0].maxTemp) / 2;
-                                this.weather.wind = forecast[0].maxWindSpeed;
-                                const weatherDay = document.querySelector('.weather__day').textContent = this.weather.day;
-                                const weatherMonth = document.querySelector('.weather__month').textContent = this.weather.month;
-                                const weatherTemp = document.querySelector('.weather__temp .weather__value').innerHTML = this.weather.temp + '<sup>o</sup>';
-                                const weatherWind = document.querySelector('.weather__wind .weather__value').textContent = this.weather.wind;
-                            })
-                    }
-                )
+            // getForecaToken()
+            //     .then(() => {
+            //             token = localStorage.getItem('fwk')
+            //             console.log(token);
+            //             axios.get('https://pfa.foreca.com/api/v1/forecast/daily/100478036?periods=14', {
+            //                 headers: {
+            //                     Authorization: 'Bearer ' + token
+            //                 }
+            //             })
+            //                 .then(res => {
+            //                     const forecast = res.data.forecast;
+            //                     this.highlightedDate = forecast.filter(data => data.maxWindSpeed >= 14);
+            //                     this.highlightedDate = this.highlightedDate.map(data => {
+            //                         const dateParts = data.date.split('-');
+            //                         return new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+            //                     })
+            //                     this.weather.temp = (forecast[0].minTemp + forecast[0].maxTemp) / 2;
+            //                     this.weather.wind = forecast[0].maxWindSpeed;
+            //                     const weatherDay = document.querySelector('.weather__day').textContent = this.weather.day;
+            //                     const weatherMonth = document.querySelector('.weather__month').textContent = this.weather.month;
+            //                     const weatherTemp = document.querySelector('.weather__temp .weather__value').innerHTML = this.weather.temp + '<sup>o</sup>';
+            //                     const weatherWind = document.querySelector('.weather__wind .weather__value').textContent = this.weather.wind;
+            //                 })
+            //         }
+            //     )
 
         },
         mounted() {

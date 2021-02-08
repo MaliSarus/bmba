@@ -243,6 +243,9 @@
         right: 40px;
         content: none !important;
       }
+      @media screen and (min-width: $xl-width){
+        cursor: default;
+      }
     }
   }
 

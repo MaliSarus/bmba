@@ -44,19 +44,10 @@ export default function historySliderInit() {
     })
 
     const slideText = document.querySelectorAll('.history-section__slider .slide__text')
-    if (window.innerWidth >= xlWidth) {
-        slideText.forEach(el => {
-            SimpleScrollbar.initEl(el);
-        })
-    }
-    window.addEventListener('resize', function () {
-        if (window.innerWidth >= xlWidth) {
-            slideText.forEach(el => {
-                SimpleScrollbar.initEl(el);
-            })
-        }
-    })
 
+    slideText.forEach(el => {
+        SimpleScrollbar.initEl(el);
+    })
 
 
 }
