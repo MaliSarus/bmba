@@ -20,7 +20,7 @@ export function videoPlayButtonHandle() {
     videoPlayButton.addEventListener('click', function () {
         videoPopup.classList.add('open');
         document.body.classList.add('hidden')
-        const videoFrame = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+        const videoFrame = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
         videoBlock.insertAdjacentHTML('beforeend', videoFrame);
     })
 }

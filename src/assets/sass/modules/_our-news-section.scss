@@ -26,6 +26,8 @@
     @media screen and (min-width: $lg-width){
       margin-bottom: 100px;
     }
+  }
+  &__title{
     h2{
       font-size: 22px;
       @media screen and (min-width: $lg-width){

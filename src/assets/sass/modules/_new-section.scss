@@ -1,15 +1,12 @@
-.new-section{
+.new-section {
   min-height: 100vh;
-  padding-top: 80px;
-  @media screen and (min-width: $xxl-width){
-    padding-top: 93px;
-  }
-  &__background{
+
+  &__background {
     width: 100%;
     padding-top: 58%;
     background: url("../img/dest/new/bg_mobile.jpg") center no-repeat;
     background-size: cover;
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       padding-top: 0;
       position: absolute;
       left: 0;
@@ -17,30 +14,33 @@
       bottom: 0;
       background: url("../img/dest/new/bg.jpg") center no-repeat;
       background-size: cover;
-      margin-top: 93px;
     }
 
   }
-  &__main{
+
+  &__main {
     padding-top: 62px;
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       padding-top: 69px;
     }
   }
-  &__back{
+
+  &__back {
     position: absolute;
     left: 0;
     top: -62px;
     transform: rotate(180deg) translateY(calc(50% + 5px));
-    @media screen and (min-width: $lg-width){
+    box-shadow: 0px -20px 20px -7px rgba(0, 0, 0, 0.29);
+    @media screen and (min-width: $lg-width) {
       width: 60px;
       height: 60px;
     }
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       display: none;
       box-shadow: none;
     }
-    &::after{
+
+    &::after {
       position: absolute;
       left: -20px;
       top: -20px;
@@ -50,11 +50,12 @@
       height: 45px;
       background: url("../img/dest/service/link-back-lines_mobile.svg") center no-repeat;
       background-size: contain;
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $xl-width) {
         content: none;
       };
     }
-    &.desktop{
+
+    &.desktop {
       display: none;
       font-weight: 500;
       font-size: 16px;
@@ -62,25 +63,29 @@
       color: #9EBDB3;
       text-decoration: none;
       transform: none;
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $xl-width) {
         position: static;
         display: inline-block;
+        width: auto;
+        height: auto;
       }
     }
   }
-  &__content{
+
+  &__content {
     position: relative;
     padding-bottom: 115px;
 
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       padding-left: 130px;
       padding-right: 50px;
       max-width: 900px;
     }
-    @media screen and (min-width: $xxl-width){
+    @media screen and (min-width: $xxl-width) {
       padding-right: 130px;
     }
-    &::before{
+
+    &::before {
       position: absolute;
       left: 0;
       top: 0;
@@ -90,7 +95,8 @@
       width: 1px;
       background: #DFE9E5;
     }
-    time{
+
+    time {
       display: block;
       font-weight: 500;
       font-size: 16px;
@@ -98,67 +104,132 @@
       color: $main-color-light;
       padding-top: 31px;
       margin-bottom: 27px;
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $xl-width) {
         display: none;
       }
-      .new-section__year{
+
+      .new-section__year {
         color: #B7C0CE;
       }
     }
-    h1{
+
+    h1 {
       font-size: 22px;
       line-height: 110%;
       text-transform: uppercase;
-      @media screen and (min-width: $md-width){
+      margin-bottom: 45px;
+      @media screen and (min-width: $md-width) {
         font-size: 32px;
+        margin-bottom: 60px;
       }
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $xl-width) {
         font-size: 46px;
         text-transform: none;
+        margin-bottom: 70px;
       }
 
     }
   }
 
-  &__right{
+  &__date {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    width: 80px;
+    height: 160px;
+    background: url("../img/dest/new/date-lines.svg") center no-repeat;
+    background-size: contain;
+    &-block {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      padding: 18px 25px;
+      background: white;
+      box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      text-transform: uppercase;
+      color: $main-color;
+      transform: translate(-50%, -50%);
+    }
+    &-year{
+      font-weight: bold;
+      font-size: 46px;
+      line-height: 100%;
+    }
+    &-month{
+      margin-top: 7px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 110%;
+    }
+  }
+
+  &__right {
 
     position: sticky;
     top: 65px;
     height: calc(100vh - 93px - 69px);
     padding-bottom: 126px;
     padding-top: 65px;
-    >h3{
+
+    > h3 {
       text-transform: uppercase;
+      font-size: 22px;
+      @media screen and (min-width: $xl-width) {
+        margin-bottom: 70px;
+      }
     }
-    ul{
+
+    ul {
       margin: 0;
       padding: 0;
       list-style: none;
-      li{
+
+      li {
         padding: 0;
-        .news{
+
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
+
+        .news {
           text-decoration: none;
-          time{
+
+          &__text {
+            margin-top: 0;
+          }
+
+          time {
             font-size: 12px;
           }
-          h3{
+
+          h3 {
             font-size: 16px;
           }
         }
       }
     }
   }
-  &__addition{
+
+  &__addition {
     position: absolute;
     left: 0;
     bottom: 0;
     padding-bottom: 90px;
-    ul{
+
+    ul {
       margin: 0;
       padding: 0;
-      li{
+
+      li {
         list-style: none;
-        a{
+
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+
+        a {
           font-weight: 500;
           font-size: 16px;
           line-height: 220%;
