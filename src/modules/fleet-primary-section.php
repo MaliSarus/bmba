@@ -1,4 +1,4 @@
-<section class="fleet-primary-section with-lines">
+<section class="fleet-primary-section with-lines" data-order="4" data-short="Флот" id="four">
     <div class="fleet-primary-section__background-title background-title h-100">
         <div class="container-fluid container-xl h-100">
             <div class="row h-100">
@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-3 d-none d-lg-block">
-                    <div class="block-title" data-title-num="04">флот</div>
+                    <div class="block-title">флот</div>
                 </div>
             </div>
             <div class="row">
@@ -45,7 +45,7 @@
 
                 </div>
                 <div class="col-12 col-lg-3 order-lg-1">
-                    <div class="block-title d-lg-none" data-title-num="04">флот</div>
+                    <div class="block-title d-lg-none">флот</div>
                     <div class="fleet-primary-section__tabs-wrapper">
                         <div class="fleet-primary-section__tabs">
                             <div class="fleet-primary-section__info text active" data-float="kizhuch">

@@ -1,4 +1,4 @@
-<section class="actions-section with-lines">
+<section class="actions-section with-lines" data-order="2" data-short="Услуги" id="two">
     <div class="actions-section__main">
         <div class="container">
             <div class="row align-items-center">
@@ -6,7 +6,7 @@
                     <div class="actions-section__left">
                         <div class="row">
                             <div class="col-12">
-                                <div class="block-title" data-title-num="02">наши Услуги</div>
+                                <div class="block-title">наши Услуги</div>
                             </div>
                             <div class="col-12">
                                 <div class="text actions-section__content">

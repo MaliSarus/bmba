@@ -140,9 +140,9 @@
 }
 
 .hamburger--squeeze .hamburger-inner::before {
-  -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-  -o-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  -o-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
 }
 
 .hamburger--squeeze .hamburger-inner::after {
@@ -168,9 +168,9 @@
 .hamburger--squeeze.is-active .hamburger-inner::before {
   top: 0;
   opacity: 0;
-  -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-  -o-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  -o-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
 }
 
 .hamburger--squeeze.is-active .hamburger-inner::after {
@@ -1674,8 +1674,9 @@ body.ready .site-wrapper {
   padding: 50px 50px;
 }
 
-.request-popup__form {
-  overflow-y: auto;
+.success-popup__block {
+  padding: 50px 50px;
+  text-align: center;
 }
 
 .success-popup__title {
@@ -2047,6 +2048,26 @@ body.ready .site-wrapper {
   font-size: 22px;
   line-height: 110%;
   color: #575A64;
+}
+
+.weather {
+  position: relative;
+}
+
+.weather::after {
+  position: absolute;
+  display: block;
+  content: 'Порт Усть-Луга';
+  font-size: 36px;
+  font-weight: bold;
+  color: #71798B;
+  text-transform: uppercase;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .1;
+  line-height: .7;
+  text-align: right;
 }
 
 .weather__block {
@@ -2570,6 +2591,7 @@ body.ready .site-wrapper {
   text-transform: uppercase;
   text-decoration: none;
   color: #FFFFFF;
+  z-index: 500;
 }
 
 .main-top__next::before {
@@ -5635,7 +5657,7 @@ body.ready .site-wrapper {
   bottom: 0;
   width: 1px;
   background: #DFE9E5;
-  z-index: 1;
+  z-index: 0;
 }
 
 .calc-section__title {
@@ -5984,21 +6006,7 @@ body.ready .site-wrapper {
 }
 
 .calc-section__datepicker-close {
-  cursor: pointer;
   margin-top: 100px;
-  border: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 100%;
-  color: #9EBDB3;
-  background: transparent;
-  -webkit-transition: color .2s;
-  -o-transition: color .2s;
-  transition: color .2s;
-}
-
-.calc-section__datepicker-close:hover {
-  color: #216B70;
 }
 
 .contacts-section {
@@ -7064,6 +7072,10 @@ body.ready .site-wrapper {
     padding: 50px 110px;
   }
 
+  .success-popup__block {
+    padding: 50px 110px;
+  }
+
   .video-popup__block {
     max-width: 80%;
     width: auto;
@@ -7742,6 +7754,18 @@ body.ready .site-wrapper {
     display: block;
     opacity: 1;
     visibility: visible;
+  }
+
+  .weather::after {
+    color: white;
+    top: 0;
+    bottom: unset;
+    text-align: left;
+    font-size: 22px;
+    -webkit-transform: translateY(-100%) translateX(-2px);
+    -ms-transform: translateY(-100%) translateX(-2px);
+    transform: translateY(-100%) translateX(-2px);
+    opacity: 1;
   }
 
   .weather__block {

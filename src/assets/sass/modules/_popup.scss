@@ -42,12 +42,16 @@
       padding: 50px 110px;
     }
   }
-  &__form{
-    overflow-y: auto;
-  }
 }
 
 .success-popup{
+  &__block{
+    padding: 50px 50px;
+    @media screen and (min-width: $lg-width){
+      padding: 50px 110px;
+    }
+    text-align: center;
+  }
   &__title{
     font-weight: bold;
     font-size: 22px;

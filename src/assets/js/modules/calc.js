@@ -5,6 +5,7 @@ import 'vue2-datepicker/locale/ru';
 import {xlWidth} from "./window-width-values";
 // import {getForecaToken} from "./helpers";
 
+const baseURL = 'http://bmbasite.beget.tech/ajax/get_forecast.php'
 let formInfo = {}
 const months = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'ноя.', 'дек.'];
 
@@ -36,7 +37,7 @@ const calcTemplate = `
             <p>Зимняя навигация</p>
             <p>Коэффициент 1,2</p>
         </div>
-        <button class="calc-section__datepicker-close" @click="datePickerFocus = false">Отмена</button>
+        <button class="link success-popup__close calc-section__datepicker-close" @click="datePickerFocus = false">Отмена</button>
     </div>
    
     <div class="calc-section__title-wrapper">
@@ -56,8 +57,8 @@ const calcTemplate = `
                     <div class="weather__month">{{weather.month}}</div>
                 </div>
                 <div class="weather__values">
-                    <div class="weather__temp">Температура <span class="weather__value">{{weather.temp}}</span></div>
-                    <div class="weather__wind">Скорость ветра, м/с <span class="weather__value">{{weather.wind}}</span></div>
+                    <div class="weather__temp">Температура <span class="weather__value">{{weather.temp}} <sup>o</sup></span></div>
+                    <div class="weather__wind">Ветер, м/с <span class="weather__value">{{weather.wind}}</span></div>
                 </div>
             </div>
          </div>
@@ -316,7 +317,11 @@ export function initCalc() {
                 }
             },
             result() {
-                const number = (this.fleetVolume *
+                const fleetVolume = (this.floatFleetLength *
+                        this.floatFleetWidth *
+                        this.floatFleetHeight)
+                        .toFixed(2);
+                const number = (fleetVolume *
                     this.fleetCoefficient *
                     this.nonGoingCoefficient *
                     this.windCoefficient *
@@ -370,6 +375,9 @@ export function initCalc() {
                 if (month >= 0 && month < 4 || month === 11) {
                     this.seasonCoefficient = 1.2
                 }
+                else {
+                    this.seasonCoefficient = 1
+                }
 
                 this.datePickerFocus = false
             },
@@ -382,14 +390,13 @@ export function initCalc() {
                         result.push("highlight");
                     }
                 }
-                if(date.getMonth() >= 0 && date.getMonth() < 4 || date.getMonth() === 11){
+                if (date.getMonth() >= 0 && date.getMonth() < 4 || date.getMonth() === 11) {
                     result.push("winter")
                 }
                 return result.join(' ')
 
             },
             allowNum(event) {
-                console.log(event); //keyCodes value
                 let keyCode = event.key;
                 if (keyCode !== ',' && keyCode !== '.' && isNaN(keyCode) && event.keyCode > 9) { // numbers, comma and control keys
                     event.preventDefault();
@@ -415,33 +422,31 @@ export function initCalc() {
             this.onResize();
             let token = '';
 
-
-            // getForecaToken()
-            //     .then(() => {
-            //             token = localStorage.getItem('fwk')
-            //             console.log(token);
-            //             axios.get('https://pfa.foreca.com/api/v1/forecast/daily/100478036?periods=14', {
-            //                 headers: {
-            //                     Authorization: 'Bearer ' + token
-            //                 }
-            //             })
-            //                 .then(res => {
-            //                     const forecast = res.data.forecast;
-            //                     this.highlightedDate = forecast.filter(data => data.maxWindSpeed >= 14);
-            //                     this.highlightedDate = this.highlightedDate.map(data => {
-            //                         const dateParts = data.date.split('-');
-            //                         return new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
-            //                     })
-            //                     this.weather.temp = (forecast[0].minTemp + forecast[0].maxTemp) / 2;
-            //                     this.weather.wind = forecast[0].maxWindSpeed;
-            //                     const weatherDay = document.querySelector('.weather__day').textContent = this.weather.day;
-            //                     const weatherMonth = document.querySelector('.weather__month').textContent = this.weather.month;
-            //                     const weatherTemp = document.querySelector('.weather__temp .weather__value').innerHTML = this.weather.temp + '<sup>o</sup>';
-            //                     const weatherWind = document.querySelector('.weather__wind .weather__value').textContent = this.weather.wind;
-            //                 })
-            //         }
-            //     )
-
+            axios.get(baseURL + '?type=current')
+                .then(res => {
+                    const current = res.data.current;
+                    this.weather.temp = current.temperature;
+                    this.weather.wind = current.windSpeed;
+                    document.querySelector('.weather__day').textContent = this.weather.day;
+                    document.querySelector('.weather__month').textContent = this.weather.month;
+                    document.querySelector('.weather__temp .weather__value').innerHTML = this.weather.temp + '<sup>o</sup>';
+                    document.querySelector('.weather__wind .weather__value').textContent = this.weather.wind;
+                })
+                .catch(rej =>{
+                    console.log(rej)
+                })
+            axios.get(baseURL + '?type=daily')
+                .then(res => {
+                    const forecast = res.data.forecast;
+                    this.highlightedDate = forecast.filter(data => data.maxWindSpeed >= 14);
+                    this.highlightedDate = this.highlightedDate.map(data => {
+                        const dateParts = data.date.split('-');
+                        return new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+                    })
+                })
+                .catch(rej =>{
+                    console.log(rej)
+                })
         },
         mounted() {
             if (document.querySelector('.calc-page')) {
@@ -451,5 +456,15 @@ export function initCalc() {
         destroyed() {
             window.removeEventListener('resize', this.onResize);
         },
+        watch:{
+            datePickerFocus(val){
+                if(val){
+                    document.body.classList.add('hidden')
+                }
+                else {
+                    document.body.classList.remove('hidden')
+                }
+            }
+        }
     })
 }

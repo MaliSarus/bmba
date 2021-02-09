@@ -1,8 +1,8 @@
-<section class="video-section with-lines">
+<section class="video-section with-lines" data-order="5" data-short="Видео" id="fife">
     <div class="video-section__video" data-id="TqaVNEE5Wbo">
         <div class="video-section__play">
             <div class="link link_play">
-                <div class="block-title" data-title-num="05"></div>
+                <div class="block-title"></div>
                 Смотреть видео
             </div>
         </div>

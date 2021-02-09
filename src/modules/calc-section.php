@@ -1,4 +1,4 @@
-<section class="calc-section">
+<section class="calc-section" data-order="3" data-short="Калькулятор" id="tree">
     <div class="calc-section__back">
         <div class="calc-section__back-layout">
             <div class="calc-section__weather weather d-none d-xl-block">
@@ -9,7 +9,7 @@
                     </div>
                     <div class="weather__values">
                         <div class="weather__temp">Температура <span class="weather__value">...</span></div>
-                        <div class="weather__wind">Скорость ветра, м/с <span class="weather__value">...</span></div>
+                        <div class="weather__wind">Ветер, м/с <span class="weather__value">...</span></div>
                     </div>
                 </div>
             </div>

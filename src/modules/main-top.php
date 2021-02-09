@@ -1,6 +1,6 @@
-<section class="main-top header-to-transparent h-100vh" style="background-image: url('./assets/img/dest/home-page/photo.jpg')">
+<section class="main-top header-to-transparent h-100vh" style="background-image: url('./assets/img/dest/home-page/photo.jpg')" data-short="БМБА" id="zero">
     <!--    Для страницы О компании  style="background-image: url('./assets/img/dest/home-page/photo_2.jpg')-->
-    <a class="main-top__next scrollable" href="#section_1">
+    <a class="main-top__next scrollable" href="#one">
         далее
     </a>
     <div class="container h-100">

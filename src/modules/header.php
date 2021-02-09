@@ -36,7 +36,6 @@
     }
 
     .preloader-ready {
-
         display: none;
     }
 
@@ -84,13 +83,13 @@
         <div class="request-popup__block">
             <form action="#" class="form request-popup__form">
                 <div class="form__title">Оформление заявки</div>
-                <div class="form__subtitle">Укажите свои данные и мы свяжемся с Вами в течение дня</div>
+<!--                <div class="form__subtitle">Укажите свои данные и мы свяжемся с Вами в течение дня</div>-->
                 <div class="form__group">
                     <div class="form__input name valid"><input type="text" placeholder="Имя"></div>
                     <div class="form__input email"><input type="email" placeholder="E-mail"></div>
                     <div class="form__input phone"><input type="tel" placeholder="Телефон"></div>
                 </div>
-                <small>Нажимая на кнопку “отправить” вы соглашаетесь c политикой обработки персональных
+                <small>Нажимая на кнопку “Отправить” Вы соглашаетесь c политикой обработки персональных
                     данных</small>
                 <div class="form__submit">
                     <button class="link ">Отправить</button>
@@ -101,7 +100,7 @@
     <div class="success-popup">
         <div class="success-popup__block">
             <div class="success-popup__title">Спасибо</div>
-            <div class="success-popup__subtitle">Ваша заявка отправлена</div>
+            <div class="success-popup__subtitle">Заявка отправлена. Наш менеджер перезвонит Вам в ближайшее время для уточнения деталей.</div>
             <button class="link success-popup__close">Закрыть</button>
         </div>
     </div>

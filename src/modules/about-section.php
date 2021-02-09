@@ -1,9 +1,9 @@
-<section class="about-section with-lines">
+<section class="about-section with-lines" data-order="1" data-short="БМБА" id="one">
     <div class="about-section__main">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-5 offset-lg-7">
-                    <div class="block-title" data-title-num="01">БМБА</div>
+                    <div class="block-title">БМБА</div>
                 </div>
             </div>
             <div class="row ">

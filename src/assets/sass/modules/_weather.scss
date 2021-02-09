@@ -1,4 +1,30 @@
 .weather {
+  position: relative;
+  &::after{
+    position: absolute;
+    display: block;
+    content: 'Порт Усть-Луга';
+    font-size: 36px;
+    font-weight: bold;
+    color: $main-color-light;
+    text-transform: uppercase;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .1;
+    line-height: .7;
+    text-align: right;
+
+    @media screen and (min-width: $xl-width){
+      color: white;
+      top: 0;
+      bottom: unset;
+      text-align: left;
+      font-size: 22px;
+      transform: translateY(-100%) translateX(-2px);
+      opacity: 1;
+    }
+  }
   &__block {
     height: 100%;
     padding: 10px 22px 10px 22px;

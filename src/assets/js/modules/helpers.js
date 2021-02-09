@@ -15,7 +15,7 @@ export function nodeListToArray(nodeList) {
     return Array.prototype.slice.call(nodeList);
 }
 
-export function scrollTo(event) {
+export function scrollTo(event, callback = function () {}) {
     event.preventDefault();
     const linkHref = event.currentTarget.getAttribute('href');
     const elementTo = document.querySelector(linkHref)
@@ -26,6 +26,13 @@ export function scrollTo(event) {
         top: offsetPosition,
         behavior: "smooth"
     });
+    const callbackInterval = setInterval(function () {
+
+        if (Math.trunc(window.scrollY) - 1 <= offsetPosition && Math.trunc(window.scrollY) + 1 >= offsetPosition){
+            callback();
+            clearInterval(callbackInterval)
+        }
+    },100)
 }
 
 export function getFullHeight(element) {

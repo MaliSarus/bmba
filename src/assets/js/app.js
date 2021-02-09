@@ -76,6 +76,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
         })
     }
 
+    const sections = document.querySelectorAll('section')
+    sections.forEach(section =>{
+        const order = section.getAttribute('data-order');
+        const sectionBlockTitle = section.querySelectorAll('.block-title');
+        sectionBlockTitle.forEach(title => {
+            const formatOrder = order < 10 ? '0' + order : order
+            title.setAttribute('data-title-num',formatOrder)
+        })
+
+    })
+
 
     if (isSet('.fleet-primary-section')) {
         fleetPrimarySliderInit()

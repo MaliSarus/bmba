@@ -214,7 +214,7 @@
       bottom: 0;
       width: 1px;
       background: #DFE9E5;
-      z-index: 1;
+      z-index: 0;
       @media screen and (min-width: $xl-width) {
         content: none;
       }
@@ -593,26 +593,7 @@
     }
 
     &-close {
-      cursor: pointer;
       margin-top: 100px;
-      border: none;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 100%;
-      color: #9EBDB3;
-      background: transparent;
-      transition: color .2s;
-
-      //@media screen and (min-width: $sm-width) {
-      //  margin-top: 0;
-      //  position: absolute;
-      //  left: 80px;
-      //  bottom: 137px;
-      //}
-
-      &:hover {
-        color: $accent-color;
-      }
     }
   }
 }

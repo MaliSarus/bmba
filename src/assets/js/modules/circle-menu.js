@@ -1,7 +1,8 @@
 import {gsap} from "gsap";
 import {nodeListToArray, offsetLeft, offsetTop, scrollTo} from "./helpers";
 
-function changeCircleMenuStyle(){
+let oldActiveSectionIndex = 0;
+function changeCircleMenuStyle() {
     const windowTop = window.scrollY
     const circleMenu = document.querySelector('.circle');
     const mainTop = document.querySelector('.header-to-transparent');
@@ -14,13 +15,50 @@ function changeCircleMenuStyle(){
         circleOffset < mainTopHeight ?
             circleMenu.classList.add('circle_white')
             : circleMenu.classList.remove('circle_white');
-    }
-    else{
+    } else {
         circleMenu.classList.remove('header_white');
     }
     circleOffset > footerOffset ?
         circleMenu.classList.add('circle_footer')
         : circleMenu.classList.remove('circle_footer');
+
+}
+
+function changeActiveMenuItem() {
+    const windowTop = window.scrollY + window.innerHeight / 2;
+    const circleWrapper = document.querySelector('.circle__wrapper')
+    const circleElements = nodeListToArray(circleWrapper.querySelectorAll('.circle__element'))
+    const sections = [];
+    circleElements.forEach(el => {
+        sections.push(document.querySelector(el.getAttribute('href')))
+    })
+
+    sections.forEach((section, index) => {
+        const sectionOffset = offsetTop(section);
+        const sectionBottomOffset = sectionOffset + section.offsetHeight;
+        const rotateType = {
+            isSame: false,
+            isPrev: false,
+            isNext: false,
+        };
+        if (windowTop >= sectionOffset && windowTop <= sectionBottomOffset) {
+            if (oldActiveSectionIndex > index) {
+                rotateType.isPrev = true
+            }
+            if (oldActiveSectionIndex < index) {
+                rotateType.isNext = true
+            }
+            if (oldActiveSectionIndex === index) {
+                rotateType.isSame = true
+            }
+            if (!rotateType.isSame) {
+                const element = circleElements.filter(element => element.getAttribute('href') === '#' + section.getAttribute('id'))
+                setClassesToElements(element[0])
+                rotateCircle(element[0], rotateType)
+                oldActiveSectionIndex = index
+            }
+        }
+    })
 
 }
 
@@ -60,10 +98,11 @@ function placeCircleElement() {
 
 
 let oldDegree = 0;
+let rotateToClick = false;
 
 
-function setClassesToElements(event) {
-    const that = event.currentTarget;
+function setClassesToElements(element) {
+    const that = element;
     const circleElements = document.querySelectorAll('.circle__element');
     const circleElementsArray = nodeListToArray(circleElements);
     const clickedElementIndex = circleElementsArray.indexOf(that)
@@ -91,8 +130,8 @@ function setClassesToElements(event) {
     })
 }
 
-function rotateCircle(event, {isSame, isPrev, isNext}) {
-    const that = event.currentTarget;
+function rotateCircle(element, {isSame, isPrev, isNext}) {
+    const that = element;
     const fieldIcon = that.querySelector('.circle__element-icon')
     const circle = document.querySelector('.circle'),
         circleOffsetLeft = offsetLeft(circle),
@@ -126,8 +165,11 @@ function rotateCircle(event, {isSame, isPrev, isNext}) {
 }
 
 function fieldClickHandle(event) {
+    rotateToClick = true;
     // Листаем до элемента
-    scrollTo(event);
+    scrollTo(event, function () {
+        rotateToClick = false;
+    });
     // Листаем до элемента!
 
     // Узнаем, какого рода переход
@@ -139,11 +181,11 @@ function fieldClickHandle(event) {
     // Узнаем, какого рода переход!
 
     //Назначаем классы
-    setClassesToElements(event)
+    setClassesToElements(event.currentTarget)
     //Назначаем классы!
 
     // Прокручиваем круг
-    rotateCircle(event, rotateType)
+    rotateCircle(event.currentTarget, rotateType)
     // Прокручиваем круг!
 }
 
@@ -152,12 +194,14 @@ export default function initCircleMenu() {
     const sections = document.querySelectorAll('section');
     const circleWrapper = document.querySelector('.circle__wrapper')
     sections.forEach((section, index) => {
-        section.setAttribute('id', `section_${index}`)
+        const sectionId = section.getAttribute('id');
+        const sectionShortName = section.getAttribute('data-short');
+
         const circleElementTemplate = `
-            <a href="#section_${index}" class="circle__element">
+            <a href="#${sectionId}" class="circle__element">
                 <div class="circle__element-icon">
                 </div>               
-                <div class="circle__element-content">section ${index}</div>
+                <div class="circle__element-content">${sectionShortName}</div>
             </a>
         `
         circleWrapper.insertAdjacentHTML('beforeend', circleElementTemplate);
@@ -169,5 +213,10 @@ export default function initCircleMenu() {
     })
     changeCircleMenuStyle()
 
-    window.addEventListener('scroll', changeCircleMenuStyle)
+    window.addEventListener('scroll', function () {
+        changeCircleMenuStyle();
+        if (!rotateToClick) {
+            changeActiveMenuItem();
+        }
+    })
 }
