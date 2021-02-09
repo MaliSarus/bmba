@@ -1062,6 +1062,89 @@ body.ready .site-wrapper {
   padding: 0;
 }
 
+.list.pic-list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -20px;
+  margin-left: -20px;
+}
+
+.list.pic-list ul li {
+  padding-bottom: 56px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.list.pic-list ul li a {
+  position: relative;
+  display: inline-block;
+  height: 242px;
+}
+
+.list.pic-list ul li a::before {
+  position: absolute;
+  left: 50%;
+  bottom: -34px;
+  display: block;
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  background-image: url("../img/dest/ui/loop.svg");
+  background-position: center;
+  background-size: 21px 21px;
+  background-repeat: no-repeat;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.list.pic-list ul li a:hover::before {
+  opacity: 1;
+}
+
+.list.pic-list ul li a img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.list.doc-list ul li {
+  position: relative;
+  padding-left: 34px;
+}
+
+.list.doc-list ul li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  content: '';
+  width: 30px;
+  background-image: url("../img/dest/rights/pdf-file.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.list.doc-list ul li a {
+  padding: 10px 0;
+  display: inline-block;
+}
+
 .text > :last-child {
   margin-bottom: 0;
 }
@@ -5041,6 +5124,11 @@ body.ready .site-wrapper {
 
 .new-section {
   min-height: 100vh;
+  position: relative;
+}
+
+.new-section.new-section_rights .new-section__content {
+  max-width: none;
 }
 
 .new-section__background {
@@ -5124,6 +5212,34 @@ body.ready .site-wrapper {
   line-height: 110%;
   text-transform: uppercase;
   margin-bottom: 45px;
+}
+
+.new-section__content h2 {
+  font-size: 18px;
+  text-transform: none;
+}
+
+.new-section__content a {
+  font-weight: 500;
+  color: #9EBDB3;
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+
+.new-section__content a:hover {
+  color: #216B70;
+}
+
+.new-section__content address {
+  font-style: normal;
+  font-weight: 500;
+  color: #2F333E;
+  font-size: 14px;
+}
+
+.new-section__content .doc-list a {
+  text-decoration: none;
 }
 
 .new-section__date {
@@ -5449,6 +5565,7 @@ body.ready .site-wrapper {
   position: absolute;
   bottom: 0;
   right: 20px;
+  left: 20px;
   -webkit-transform: translateY(54px);
   -ms-transform: translateY(54px);
   transform: translateY(54px);
@@ -5541,9 +5658,6 @@ body.ready .site-wrapper {
 
 .calc-section__title-wrapper {
   position: relative;
-  margin-right: -20px;
-  padding-right: 80px;
-  background: url("../img/dest/calc/bg.jpg") right top no-repeat;
 }
 
 .calc-section__float-values {
@@ -5751,7 +5865,7 @@ body.ready .site-wrapper {
 
 .calc-section__datepicker {
   position: fixed;
-  overflow: scroll;
+  overflow-y: auto;
   right: 0;
   top: 0;
   bottom: 0;
@@ -5776,11 +5890,17 @@ body.ready .site-wrapper {
   transform: none;
 }
 
-.calc-section__datepicker td.highlight {
+.calc-section__datepicker .mx-datepicker {
+  margin-bottom: 30px;
+}
+
+.calc-section__datepicker td.highlight,
+.calc-section__datepicker td.winter {
   position: relative;
 }
 
-.calc-section__datepicker td.highlight::before {
+.calc-section__datepicker td.highlight::before,
+.calc-section__datepicker td.winter::before {
   position: absolute;
   left: 50%;
   bottom: 7px;
@@ -5793,6 +5913,14 @@ body.ready .site-wrapper {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+.calc-section__datepicker td.highlight::before {
+  background: #FB4667;
+}
+
+.calc-section__datepicker td.winter::before {
+  background: #70A6F5;
 }
 
 .calc-section__datepicker-title {
@@ -5812,8 +5940,6 @@ body.ready .site-wrapper {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding-bottom: 37px;
-  border-bottom: 1px solid #EBEBF0;
-  margin-bottom: 37px;
 }
 
 .calc-section__datepicker-add p {
@@ -5850,6 +5976,10 @@ body.ready .site-wrapper {
   line-height: 100%;
   text-align: right;
   color: #B7C0CE;
+}
+
+.calc-section__datepicker-add.winter p:nth-child(1)::before {
+  background-color: #70A6F5;
 }
 
 .calc-section__datepicker-close {
@@ -6575,6 +6705,10 @@ body.ready .site-wrapper {
 }
 
 @media screen and (min-width: 576px) {
+  .list.pic-list ul li a {
+    height: 300px;
+  }
+
   .social-section__row:nth-child(odd) .social-section__image::before {
     left: 0;
   }
@@ -6597,6 +6731,12 @@ body.ready .site-wrapper {
 
   .geo-section__map {
     display: none;
+  }
+
+  .calc-section__weather {
+    left: 0;
+    width: 300px;
+    height: 100px;
   }
 
   .calc-section__datepicker {
@@ -6804,6 +6944,10 @@ body.ready .site-wrapper {
     margin-bottom: 60px;
   }
 
+  .new-section__content h2 {
+    font-size: 28px;
+  }
+
   .calc-section__float-values {
     margin-top: -20px;
   }
@@ -6890,6 +7034,11 @@ body.ready .site-wrapper {
 @media screen and (min-width: 992px) {
   .list > p {
     margin-bottom: 40px;
+  }
+
+  .list.pic-list ul li a::before {
+    width: 69px;
+    height: 69px;
   }
 
   .background-title {
@@ -8256,6 +8405,10 @@ body.ready .site-wrapper {
     max-width: 900px;
   }
 
+  .new-section__content::before {
+    content: none;
+  }
+
   .new-section__content time {
     display: none;
   }
@@ -8264,6 +8417,14 @@ body.ready .site-wrapper {
     font-size: 46px;
     text-transform: none;
     margin-bottom: 70px;
+  }
+
+  .new-section__content h2 {
+    font-size: 36px;
+  }
+
+  .new-section__content address {
+    font-size: 16px;
   }
 
   .new-section__right > h3 {
@@ -8440,6 +8601,10 @@ body.ready .site-wrapper {
   .calc-section__submit {
     -ms-flex-preferred-size: unset;
     flex-basis: unset;
+  }
+
+  .calc-section__datepicker .mx-datepicker {
+    margin-bottom: 60px;
   }
 
   .contacts-section {

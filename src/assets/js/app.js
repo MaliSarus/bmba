@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (isSet('form')) {
         formInit()
     }
-    if (isSet('.documents-section')) {
+    if (isSet('.documents-section__slider')) {
         documentsSliderInit();
     }
     if (isSet('.news-section')) {

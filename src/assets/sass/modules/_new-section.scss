@@ -1,5 +1,11 @@
 .new-section {
   min-height: 100vh;
+  position: relative;
+  &.new-section_rights{
+    .new-section__content{
+      max-width: none;
+    }
+  }
 
   &__background {
     width: 100%;
@@ -94,6 +100,9 @@
       content: '';
       width: 1px;
       background: #DFE9E5;
+      @media screen and (min-width: $xl-width){
+        content: none;
+      }
     }
 
     time {
@@ -127,7 +136,40 @@
         text-transform: none;
         margin-bottom: 70px;
       }
+    }
 
+    h2 {
+      font-size: 18px;
+      text-transform: none;
+      @media screen and (min-width: $md-width) {
+        font-size: 28px;
+      }
+      @media screen and (min-width: $xl-width) {
+        font-size: 36px;
+      }
+    }
+    a{
+      font-weight: 500;
+      color: #9EBDB3;
+      transition: color .25s;
+      //text-decoration: none;
+      &:hover{
+        color: $accent-color;
+      }
+    }
+    address{
+      font-style: normal;
+      font-weight: 500;
+      color: $main-color;
+      font-size: 14px;
+      @media screen and (min-width: $xl-width){
+        font-size: 16px;
+      }
+    }
+    .doc-list{
+      a{
+        text-decoration: none;
+      }
     }
   }
 

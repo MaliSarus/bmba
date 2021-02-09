@@ -20,10 +20,6 @@ const calcTemplate = `
  <div class="calc-section__block">
      <div class="calc-section__datepicker" :class="{open:datePickerFocus}">
         <div class="calc-section__datepicker-title">выбор даты прибытия</div>
-        <div class="calc-section__datepicker-add">
-            <p>Ветер свыше 14 м/с</p>
-            <p>Коэффициент 1,15</p>
-        </div>
         <datepicker 
             inline 
             v-model="form.date" 
@@ -32,6 +28,14 @@ const calcTemplate = `
             :get-classes="getClasses"
             :disabled-date="(date) => date < new Date()"
         />
+        <div class="calc-section__datepicker-add">
+            <p>Ветер свыше 14 м/с</p>
+            <p>Коэффициент 1,15</p>
+        </div>
+        <div class="calc-section__datepicker-add winter">
+            <p>Зимняя навигация</p>
+            <p>Коэффициент 1,2</p>
+        </div>
         <button class="calc-section__datepicker-close" @click="datePickerFocus = false">Отмена</button>
     </div>
    
@@ -40,7 +44,7 @@ const calcTemplate = `
             <div class="block-title" data-title-num="03">Калькулятор</div>
             <h1 v-if="calcPage">Расчет стоимости</h1>
             <h2 v-else>Расчет стоимости</h2>
-            <p>Заполните поля, чтобы рассчитать стоимость услуги</p>
+            <p>Заполните поля, чтобы рассчитать стоимость услуг буксирного флота</p>
         </div>
          <div
              class="calc-section__weather weather" 
@@ -141,6 +145,7 @@ const calcTemplate = `
                                 placeholder="Выбрать дату" 
                                 @focus="datePickerFocus = true" 
                                 :value="form.date"
+                                readonly
                             >
                         </div>
                     </div>
@@ -194,6 +199,7 @@ const calcTemplate = `
                                 placeholder="Выбрать дату" 
                                 @focus="datePickerFocus = true" 
                                 :value="form.date"
+                                readonly
                             >
                         </div>
                     </div>
@@ -252,10 +258,11 @@ export function initCalc() {
         computed: {
             fleetVolume() {
                 if (this.floatFleetLength && this.floatFleetWidth && this.floatFleetHeight) {
-                    return (this.floatFleetLength *
+                    const value = (this.floatFleetLength *
                         this.floatFleetWidth *
                         this.floatFleetHeight)
                         .toFixed(2);
+                    return new Intl.NumberFormat('ru-RU').format(value)
                 } else {
                     return 0
                 }
@@ -360,7 +367,7 @@ export function initCalc() {
                 }
                 const month = date.getMonth()
 
-                if (month >= 0 && month < 4) {
+                if (month >= 0 && month < 4 || month === 11) {
                     this.seasonCoefficient = 1.2
                 }
 
@@ -368,29 +375,23 @@ export function initCalc() {
             },
             getClasses(date) {
                 const today = new Date;
-                if(date.getTime()  < today.getTime()){
-                    if (this.highlightedDate !== []) {
-                        if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
-                            return "highlight prev-date";
-                        }
-                        return "prev-date";
-                    }
-                }
-                else{
-                    if (this.highlightedDate !== []) {
-                        if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
-                            return "highlight";
-                        }
-                        return "";
-                    }
-                }
+                let result = [];
 
+                if (this.highlightedDate !== []) {
+                    if (this.highlightedDate.find(v => v.getTime() === date.getTime())) {
+                        result.push("highlight");
+                    }
+                }
+                if(date.getMonth() >= 0 && date.getMonth() < 4 || date.getMonth() === 11){
+                    result.push("winter")
+                }
+                return result.join(' ')
 
             },
             allowNum(event) {
                 console.log(event); //keyCodes value
                 let keyCode = event.key;
-                if (keyCode !== ',' && isNaN(keyCode) && event.keyCode > 9) { // numbers, comma and control keys
+                if (keyCode !== ',' && keyCode !== '.' && isNaN(keyCode) && event.keyCode > 9) { // numbers, comma and control keys
                     event.preventDefault();
                 }
             },

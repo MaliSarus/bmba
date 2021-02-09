@@ -68,8 +68,13 @@
     position: absolute;
     bottom: 0;
     right: 20px;
-
+    left: 20px;
     transform: translateY(54px);
+    @media screen and (min-width: $sm-width){
+      left: 0;
+      width: 300px;
+      height: 100px;
+    }
 
     @media screen and (min-width: $xl-width) {
       top: 177px;
@@ -245,9 +250,6 @@
 
     &-wrapper {
       position: relative;
-      margin-right: -20px;
-      padding-right: 80px;
-      background: url("../img/dest/calc/bg.jpg") right top no-repeat;
       @media screen and (min-width: $xl-width) {
         margin-right: 0;
         padding-right: 0;
@@ -477,7 +479,7 @@
 
   &__datepicker {
     position: fixed;
-    overflow: scroll;
+    overflow-y: auto;
     right: 0;
     top: 0;
     bottom: 0;
@@ -497,9 +499,15 @@
       transform: none;
     }
 
-    td.highlight {
-      position: relative;
+    .mx-datepicker{
+      margin-bottom: 30px;
+      @media screen and (min-width: $xl-width){
+        margin-bottom: 60px;
+      }
+    }
 
+    td.highlight, td.winter {
+      position: relative;
       &::before {
         position: absolute;
         left: 50%;
@@ -511,6 +519,17 @@
         border-radius: 100%;
         background: #FB4667;
         transform: translateX(-50%);
+      }
+
+    }
+    td.highlight{
+      &::before {
+        background: #FB4667;
+      }
+    }
+    td.winter{
+      &::before {
+        background: #70A6F5;
       }
     }
 
@@ -527,8 +546,8 @@
       display: flex;
       justify-content: space-between;
       padding-bottom: 37px;
-      border-bottom: 1px solid #EBEBF0;
-      margin-bottom: 37px;
+      //border-bottom: 1px solid #EBEBF0;
+      //margin-bottom: 37px;
 
       p {
         margin: 0;
@@ -563,6 +582,13 @@
         text-align: right;
         color: #B7C0CE;
 
+      }
+      &.winter{
+        p:nth-child(1) {
+          &::before{
+            background-color: #70A6F5;
+          }
+        }
       }
     }
 
