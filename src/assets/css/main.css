@@ -140,9 +140,9 @@
 }
 
 .hamburger--squeeze .hamburger-inner::before {
-  -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-  -o-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  -o-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
 }
 
 .hamburger--squeeze .hamburger-inner::after {
@@ -168,9 +168,9 @@
 .hamburger--squeeze.is-active .hamburger-inner::before {
   top: 0;
   opacity: 0;
-  -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-  -o-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  -o-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
 }
 
 .hamburger--squeeze.is-active .hamburger-inner::after {
@@ -5529,8 +5529,10 @@ body.ready .site-wrapper {
 
 .calc-section__title h2,
 .calc-section__title h1 {
+  font-size: 32px;
   margin-top: 0;
   margin-bottom: 60px;
+  text-transform: uppercase;
 }
 
 .calc-section__title p {
@@ -5890,6 +5892,11 @@ body.ready .site-wrapper {
   margin-bottom: 60px;
 }
 
+.contacts-section__title h1 {
+  text-transform: uppercase;
+  font-size: 32px;
+}
+
 .contacts-section__subtitle {
   margin-bottom: 40px;
 }
@@ -6007,6 +6014,21 @@ body.ready .site-wrapper {
 
 .contacts-section__metro .metro__map {
   height: 240px;
+}
+
+.contacts-section__metro .metro__map-placemark {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  background-image: url("../img/dest/ui/logo-icon.svg");
+  background-size: 30px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .contacts-section__metro .metro__map .ymaps-2-1-78-ground-pane {
@@ -6148,6 +6170,10 @@ body.ready .site-wrapper {
   max-height: 100%;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+}
+
+.fleet-section__right .ss-scroll {
+  max-height: 65px;
 }
 
 .fleet-section__right .ss-content {
@@ -7386,6 +7412,11 @@ body.ready .site-wrapper {
     margin-bottom: 50px;
   }
 
+  .fleet-section {
+    background: url("../img/dest/fleet/bg-ship.svg") left bottom no-repeat;
+    background-size: 465px 280px;
+  }
+
   .fleet-section__specs ul li {
     font-size: 16px;
     display: -webkit-box;
@@ -8000,7 +8031,7 @@ body.ready .site-wrapper {
     left: 0;
     top: 0;
     right: 0;
-    z-index: -1;
+    z-index: 0;
   }
 
   .service-section__main {
@@ -8338,6 +8369,7 @@ body.ready .site-wrapper {
   .calc-section__title h2,
   .calc-section__title h1 {
     margin-bottom: 30px;
+    font-size: 46px;
   }
 
   .calc-section__title-wrapper {
@@ -8417,6 +8449,10 @@ body.ready .site-wrapper {
 
   .contacts-section__title {
     margin-bottom: 70px;
+  }
+
+  .contacts-section__title h1 {
+    font-size: 46px;
   }
 
   .contacts-section__subtitle {

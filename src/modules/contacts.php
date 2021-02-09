@@ -14,7 +14,7 @@
                 <div class="col-12 col-xl-7">
                     <div class="contacts-section__left">
                         <div class="contacts-section__title text">
-                            <h2>Контакты</h2>
+                            <h1>Контакты</h1>
                         </div>
                         <div class="contacts-section__address">
                             <address>

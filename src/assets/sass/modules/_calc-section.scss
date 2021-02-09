@@ -229,10 +229,13 @@
     }
 
     h2, h1 {
+      font-size: 32px;
       margin-top: 0;
       margin-bottom: 60px;
+      text-transform: uppercase;
       @media screen and (min-width: $xl-width) {
         margin-bottom: 30px;
+        font-size: 46px;
       }
     }
 

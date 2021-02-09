@@ -1,5 +1,9 @@
 .fleet-section {
   position: relative;
+  @media screen and (min-width: $lg-width){
+    background: url("../img/dest/fleet/bg-ship.svg") left bottom no-repeat;
+    background-size: 465px 280px;
+  }
   @media screen and (min-width: $xl-width) {
     height: 100vh;
   }
@@ -117,7 +121,9 @@
     @media screen and (min-width: $md-width) {
       max-width: 413px;
     }
-
+    .ss-scroll{
+      max-height: 65px;
+    }
     .ss-content {
       width: 100%;
       @media screen and (min-width: $md-width) {

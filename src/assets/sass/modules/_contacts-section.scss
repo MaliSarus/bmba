@@ -21,6 +21,14 @@
     @media screen and (min-width: $xl-width) {
       margin-bottom: 70px;
     }
+    h1{
+      text-transform: uppercase;
+      font-size: 32px;
+      @media screen and (min-width: $xl-width) {
+        font-size: 46px;
+
+      }
+    }
   }
   &__subtitle{
     margin-bottom: 40px;
@@ -142,6 +150,17 @@
       }
       &__map{
         height: 240px;
+        &-placemark{
+          width: 50px;
+          height: 50px;
+          background-color: white;
+          background-image: url("../img/dest/ui/logo-icon.svg");
+          background-size: 30px 30px;
+          background-position: center;
+          background-repeat: no-repeat;
+          transform: translate(-50%,-50%);
+          box-shadow: 0 10px 20px rgba(black, .2);
+        }
         .ymaps-2-1-78-ground-pane{
           filter: grayscale(1);
         }

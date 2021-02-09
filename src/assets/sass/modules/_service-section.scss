@@ -17,7 +17,7 @@
       left: 0;
       top: 0;
       right: 0;
-      z-index: -1;
+      z-index: 0;
     }
   }
 
@@ -141,7 +141,6 @@
 
       &.fleet-primary-section__background-word {
         font-size: 120px;
-
       }
     }
 
