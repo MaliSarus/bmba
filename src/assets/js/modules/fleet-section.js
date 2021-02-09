@@ -15,6 +15,16 @@ export function initScrollBar() {
 
 export default function initFleetSection() {
 
-    const mySwiper = new Swiper('.fleet-section__slider .swiper-container')
+    const mySwiper = new Swiper('.fleet-section__slider .swiper-container',{
+        pagination: {
+            el: '.fleet-section__slider .swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                console.log('render')
+                const formIndex = index < 10 ? '0' + (index + 1) : index + 1
+                return `<span class="${className}" data-index="${formIndex}"></span>`;
+            },
+        }
+    })
 
 }

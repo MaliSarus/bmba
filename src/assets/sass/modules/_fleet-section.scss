@@ -23,7 +23,9 @@
     justify-content: space-between;
     @media screen and (min-width: $md-width){
       padding-top: 115px;
-      padding-right: 10px;
+    }
+    @media screen and (min-width: $xl-width){
+      max-width: 753px;
     }
     .link_back{
       position: absolute;

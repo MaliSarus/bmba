@@ -127,6 +127,7 @@
       line-height: 110%;
       text-transform: uppercase;
       margin-bottom: 45px;
+      margin-top: 0;
       @media screen and (min-width: $md-width) {
         font-size: 32px;
         margin-bottom: 60px;
@@ -162,7 +163,7 @@
       font-weight: 500;
       color: $main-color;
       font-size: 14px;
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $md-width){
         font-size: 16px;
       }
     }

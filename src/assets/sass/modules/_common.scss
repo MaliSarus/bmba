@@ -92,29 +92,6 @@ body.ready {
   }
 }
 
-//.preloader {
-//  position: fixed;
-//  left: 0;
-//  top: 0;
-//  bottom: 0;
-//  right: 0;
-//  display: flex;
-//  justify-content: center;
-//  align-items: center;
-//  z-index: 10001;
-//  background: white;
-//  transition: opacity 1s, visibility 1s;
-//
-//  &-load, &-ready {
-//    max-width: 100%;
-//    object-position: center;
-//  }
-//
-//  &-ready {
-//    width: 508px;
-//    display: none;
-//  }
-//}
 
 .visually-hidden {
   position: absolute;
@@ -214,7 +191,7 @@ body.ready {
             width: 100%;
             height: 100%;
             object-position: center;
-            object-fit: contain;
+            object-fit: cover;
           }
         }
 

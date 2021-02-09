@@ -30,18 +30,19 @@
     }
 
     .preloader-load, .preloader-ready {
+        width: 254px;
         max-width: 100%;
         object-position: center;
     }
 
     .preloader-ready {
-        width: 508px;
+
         display: none;
     }
 
 </style>
 <div class="preloader">
-    <img class="preloader-load" src="./assets/img/dest/ui/preloader.gif" alt="" data-sec="4000">
+    <video class="preloader-load" src="./assets/img/dest/ui/bmba-preloader.mp4" alt="" type="video/mp4" autoplay muted></video>
     <img class="preloader-ready" src="./assets/img/dest/ui/preloader-ready.svg" alt="">
 </div>
 <script>
