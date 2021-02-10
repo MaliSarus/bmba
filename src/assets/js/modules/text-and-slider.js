@@ -8,15 +8,13 @@ export default function textAndSliderInit() {
 
         const mySwiper = new Swiper(`.s${index} .text-and-slider-section__slider .swiper-container`, {
             slidesPerView: 1,
-            scrollbar: {
-                el: `.s${index} .text-and-slider-section__slider-scrollbar .scrollbar`,
-            },
+            loop: true,
             pagination: {
                 el: `.s${index} .text-and-slider-section__fraction`,
                 type: 'custom',
                 renderCustom: function (swiper, current, total) {
                     const formCurrent = current < 10 ? '0' + current : current;
-                    const formTotal= total < 10 ? '0' + total : total;
+                    const formTotal= realSlides < 10 ? '0' + realSlides : realSlides;
                     return `<span class="swiper-pagination-current">${formCurrent}</span>
                        / 
                     <span class="swiper-pagination-total">${formTotal}</span>`
@@ -27,6 +25,17 @@ export default function textAndSliderInit() {
                 prevEl: `.s${index} .slider-arrows__prev`,
             },
         })
+        const scrollbarWrapper = slider.querySelector('.text-and-slider-section__slider-scrollbar .scrollbar');
+        scrollbarWrapper.insertAdjacentHTML('beforeend',`<div class="scrollbar-drag"></div>`)
+        const scrollbarDrag = scrollbarWrapper.querySelector('.scrollbar-drag');
+        const scrollbarOffset = scrollbarWrapper.offsetWidth / realSlides;
+
+        scrollbarDrag.style.width = scrollbarOffset + 'px';
+        mySwiper.on('slideChangeTransitionEnd', function () {
+            const index = mySwiper.realIndex;
+            scrollbarDrag.style.left = index * scrollbarOffset + 'px'
+        })
+
     })
 
 

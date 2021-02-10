@@ -1,11 +1,12 @@
 .fleet-section {
   position: relative;
-  @media screen and (min-width: $lg-width){
+  @media screen and (min-width: $lg-width) {
     background: url("../img/dest/fleet/bg-ship.svg") left bottom no-repeat;
     background-size: 465px 280px;
   }
   @media screen and (min-width: $xl-width) {
     height: 100vh;
+    min-height: 700px;
   }
 
   &__background {
@@ -21,20 +22,50 @@
     padding-top: 60px;
     display: flex;
     justify-content: space-between;
-    @media screen and (min-width: $md-width){
-      padding-top: 115px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      display: block;
+      width: 1px;
+      content: '';
+      background: #DFE9E5;
+      z-index: 0;
     }
-    @media screen and (min-width: $xl-width){
+
+    @media screen and (min-width: $md-width) {
+      padding-top: 115px;
+      &::before {
+        content: none;
+      }
+    }
+    @media screen and (min-width: $xl-width) {
       max-width: 753px;
     }
-    .link_back{
+
+    .link_back {
       position: absolute;
       left: 0;
       top: 0;
       box-shadow: 0px -20px 20px -7px rgba(0, 0, 0, 0.29);
-      transform: translateY(-50%) rotate(180deg);
+      transform: translateY(calc(-50% - 5px)) rotate(180deg);
       z-index: 1;
-      @media screen and (min-width: $md-width){
+
+      &::after {
+        position: absolute;
+        left: -20px;
+        top: -20px;
+        display: block;
+        content: '';
+        width: 100px;
+        height: 45px;
+        background: url(../img/dest/service/link-back-lines_mobile.svg) center no-repeat;
+        background-size: contain;
+      }
+
+      @media screen and (min-width: $md-width) {
         display: none;
       }
     }
@@ -123,9 +154,11 @@
     @media screen and (min-width: $md-width) {
       max-width: 413px;
     }
-    .ss-scroll{
+
+    .ss-scroll {
       max-height: 65px;
     }
+
     .ss-content {
       width: 100%;
       @media screen and (min-width: $md-width) {
@@ -171,6 +204,11 @@
       li {
         display: flex;
         font-size: 14px;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
         @media screen and (min-width: $lg-width) {
           font-size: 16px;
           display: flex;
@@ -188,7 +226,7 @@
           }
         }
 
-        .fleet-specs__num,.fleet-specs__measure {
+        .fleet-specs__num, .fleet-specs__measure {
           font-size: 14px;
           @media screen and (min-width: $md-width) {
             font-size: 16px;
@@ -200,7 +238,7 @@
 
   &__addition {
     margin-bottom: 60px;
-    @media screen and (min-width: $xl-width){
+    @media screen and (min-width: $xl-width) {
       margin-bottom: 80px;
     }
 
@@ -247,23 +285,45 @@
       }
     }
 
+    p {
+      font-size: 12px;
+      @media screen and (min-width: $md-width) {
+        font-size: 16px;
+      }
+    }
+
     p:last-child {
       margin-bottom: 0;
     }
   }
 
   &__slider {
+    position: relative;
     background: #000;
     height: 100%;
-    &.fleet-section__slider_mobile{
+
+    &::before {
+      position: absolute;
+      left: -100px;
+      bottom: 0;
+      display: block;
+      width: 100px;
+      height: 200px;
+      content: '';
+      background: url("../img/dest/fleet/skew-lines.svg") center no-repeat;
+    }
+
+    &.fleet-section__slider_mobile {
       height: auto;
-      @media screen and (min-width: $xl-width){
+      @media screen and (min-width: $xl-width) {
         display: none;
       }
-      .swiper-wrapper{
+
+      .swiper-wrapper {
         display: flex;
       }
-      .swiper-slide{
+
+      .swiper-slide {
         display: flex;
         height: auto;
       }
@@ -279,5 +339,13 @@
         object-position: center;
       }
     }
+  }
+
+  &__pagination {
+    top: unset;
+    right: unset;
+    left: -50px !important;
+    bottom: 50px !important;
+    transform: none !important;
   }
 }

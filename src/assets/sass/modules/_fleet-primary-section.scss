@@ -76,6 +76,9 @@
     overflow: hidden;
     width: 100%;
     height: calc(100% + 35px);
+    @media screen and (min-width: $xl-width){
+      max-height: 520px;
+    }
     &-wrapper{
       position: relative;
     }

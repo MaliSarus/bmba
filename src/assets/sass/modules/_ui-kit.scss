@@ -104,7 +104,7 @@
 
     &:hover {
       &::after {
-        background-image: url("../img/dest/ui/link-circle_white.svg");
+        background-image: url("../img/dest/ui/link-circle_white.png");
         transform: rotate(180deg);
       }
     }
@@ -113,7 +113,7 @@
     color: white;
     cursor: pointer;
     span{
-      background-image: url("../img/dest/ui/link-circle_white.svg");
+      background-image: url("../img/dest/ui/link-circle_white.png");
       transform: none;
       &::before{
         background-image: url("../img/dest/ui/link-dot_white.svg");
@@ -128,7 +128,7 @@
     }
     &:hover {
       span{
-        background-image: url("../img/dest/ui/link-circle_white.svg");
+        background-image: url("../img/dest/ui/link-circle_white.png");
         transform: rotate(180deg);
       }
     }

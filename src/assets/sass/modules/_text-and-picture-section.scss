@@ -57,7 +57,7 @@
       width: 100px;
       height: 95px;
       background: url("../img/dest/text-and-picture/skew-lines.svg");
-      z-index: $z-lowest;
+      z-index: 0;
       transform: translateX(-50%);
       @media screen and (min-width: $lg-width) {
         top: 100px;

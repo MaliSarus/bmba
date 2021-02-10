@@ -129,29 +129,6 @@ const calcTemplate = `
                         </div>
                     </div>
                 </div>
-                <div 
-                    class="form__group calc-section__date-wrapper calc-page__date-wrapper" 
-                    v-if="datePickerInputOnCalcPageDestination"
-                >
-                    <div class="form__input-wrapper calc-section__date">
-                        <label for="calc-date">Дата прибытия</label>
-                        <div 
-                            class="form__input date" 
-                            :class="{valid: form.date !== ''}"
-                            @click="focusInput"
-                        >
-                            <input 
-                                id="calc-date" 
-                                type="text" 
-                                placeholder="Выбрать дату" 
-                                @focus="datePickerFocus = true" 
-                                :value="form.date"
-                                readonly
-                            >
-                        </div>
-                    </div>
-    
-                </div>
             </div>
         </div>
         <div class="row align-items-center calc-page__volume">
@@ -181,10 +158,7 @@ const calcTemplate = `
                 </div>
             </div>
         </div>
-        <div 
-            class="row" 
-            v-if="!datePickerInputOnCalcPageDestination"
-        >
+        <div class="row">
             <div class="col-12">
                 <div class="form__group calc-section__date-wrapper">
                     <div class="form__input-wrapper calc-section__date">
@@ -339,9 +313,6 @@ export function initCalc() {
                     this.form.fleetHeight = ''
                 }
                 return this.form.fleetWidth === ''
-            },
-            datePickerInputOnCalcPageDestination() {
-                return this.calcPage && this.windowWidth >= xlWidth
             },
             valid() {
                 return +this.result !== 0 && this.form.date !== ''

@@ -19,11 +19,11 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <a href="#" class="link actions-section__more desktop">
-                                    Все услуги
-                                </a>
-                            </div>
+<!--                            <div class="col-12">-->
+<!--                                <a href="#" class="link actions-section__more desktop">-->
+<!--                                    Все услуги-->
+<!--                                </a>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>

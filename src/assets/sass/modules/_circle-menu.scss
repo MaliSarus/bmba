@@ -94,8 +94,9 @@
       position: absolute;
       top: 50%;
       left: 0;
+      display: block;
       padding: 15px 0;
-      width: 200%;
+      width: auto;
       text-align: right;
       color: $main-color;
       transform: translate(calc(-100% - 15px), -50%);

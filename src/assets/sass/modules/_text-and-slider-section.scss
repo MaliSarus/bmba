@@ -170,8 +170,12 @@
       //margin-top: 80px;
     }
 
-    .swiper-scrollbar-drag {
+    .scrollbar-drag {
       background: #AEAED1;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      transition: left .2s;
     }
   }
 }

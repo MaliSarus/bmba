@@ -15,9 +15,8 @@
                                 <div class="swiper-slide" data-float="beluga"><img src="../assets/img/dest/fleet-primary/2.jpg" alt="">
                                 </div>
                             </div>
-                            <div class="fleet-primary-section__pagination swiper-pagination"></div>
-
                         </div>
+                        <div class="fleet-primary-section__pagination fleet-section__pagination swiper-pagination"></div>
                     </div>
                 </div>
             </div>

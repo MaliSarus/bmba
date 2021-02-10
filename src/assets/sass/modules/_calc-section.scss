@@ -117,10 +117,6 @@
         display: none;
       }
       &__title {
-        h2 {
-          font-size: 22px;
-          margin-bottom: 30px;
-        }
         &-wrapper{
           margin-right: 0;
           background: transparent;
@@ -137,9 +133,22 @@
     @media screen and (min-width: $xl-width) {
       border-top: none;
       border-bottom: none;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .block-title{
+      display: none;
     }
     .calc-section__back{
-      display: block;
+      display: flex;
+      flex-grow: 1;
+      &-layout{
+        height: auto;
+        &::before{
+          content: none;
+        }
+      }
     }
 
     .calc-page__volume {
@@ -167,18 +176,13 @@
       }
 
       &__block {
+        padding-bottom: 100px;
         @media screen and (min-width: $xl-width) {
+          padding-bottom: 0;
           padding-left: 130px;
           max-width: 1260px;
         }
       }
-
-      &__float-values {
-        @media screen and (min-width: $xl-width) {
-          max-width: 751px;
-        }
-      }
-
     }
 
     .calc-page__date-wrapper {

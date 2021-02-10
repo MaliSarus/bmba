@@ -85,7 +85,7 @@
                             </div>
                             <div class="fleet-primary-section__info text" data-float="chernaya-barabulka">
                                 <div class="fleet-primary-section__title">
-                                    <h2>Felix_2</h2>
+                                    <h2>Черная барабулька</h2>
                                     <div class="slider-arrows slider-arrows_horizontal fleet-primary-section__slider-arrows">
                                         <div class="slider-arrows__next"></div>
                                         <div class="slider-arrows__prev"></div>

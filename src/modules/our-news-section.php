@@ -25,7 +25,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-md-6 col-xl-3">
-                    <a href="#" class="our-news-section__news news news our-news-section__first-new">
+                    <a href="#" class="our-news-section__news news our-news-section__first-new">
                         <div class="news__image">
                             <img src="./assets/img/dest/our-news/1.jpg" alt="">
                         </div>

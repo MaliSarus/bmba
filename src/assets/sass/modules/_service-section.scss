@@ -51,6 +51,7 @@
   &__back {
     position: absolute;
     top: -35px;
+    z-index: 1;
     @media screen and (min-width: $lg-width) {
       width: 60px;
       height: 60px;
