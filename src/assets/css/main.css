@@ -2568,7 +2568,7 @@ body.ready .site-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 55px);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -5452,7 +5452,45 @@ body.ready .site-wrapper {
   transition: transform .5s, margin-top .5s, -webkit-transform .5s;
 }
 
+.geo-section__info::before {
+  position: absolute;
+  bottom: 30px;
+  right: 37px;
+  display: block;
+  width: 97px;
+  height: 120px;
+  background: url("../img/dest/geo/skew-lines.svg") center no-repeat;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: right .5s;
+  -o-transition: right .5s;
+  transition: right .5s;
+}
+
+.geo-section__info::after {
+  position: absolute;
+  display: block;
+  content: '';
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #DFE9E5;
+  z-index: 0;
+}
+
+.geo-section__info.hide .geo-section__info-hide {
+  -webkit-transform: translateX(-50%) translateY(-10px);
+  -ms-transform: translateX(-50%) translateY(-10px);
+  transform: translateX(-50%) translateY(-10px);
+}
+
 .geo-section__info-hide {
+  position: absolute;
+  padding: 21px 26px 23px;
+  left: 50%;
+  bottom: 0;
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
@@ -5460,11 +5498,50 @@ body.ready .site-wrapper {
   text-align: right;
   color: #9EBDB3;
   border: none;
-  background: transparent;
+  background: #F7FAF9;
+  -webkit-transform: translateX(-50%) translateY(100%);
+  -ms-transform: translateX(-50%) translateY(100%);
+  transform: translateX(-50%) translateY(100%);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  -webkit-box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.05);
+}
+
+.geo-section__info-open {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  padding: 21px 26px 23px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: right;
+  color: #9EBDB3;
+  background: #F7FAF9;
+  z-index: 10;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.geo-section__info-open.active {
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 .geo-section__info h1 {
   text-transform: uppercase;
+  margin-bottom: 60px;
 }
 
 .geo-section__placemark {
@@ -7665,15 +7742,46 @@ body.ready .site-wrapper {
     top: 80px;
     bottom: 0;
     width: 374px;
-    padding: 92px 40px;
+    padding: 92px 60px;
     -webkit-box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.1);
   }
 
+  .geo-section__info::before {
+    content: '';
+  }
+
+  .geo-section__info::after {
+    content: none;
+  }
+
   .geo-section__info.hide {
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
+    -webkit-transform: translateX(calc(-100% + 60px));
+    -ms-transform: translateX(calc(-100% + 60px));
+    transform: translateX(calc(-100% + 60px));
+  }
+
+  .geo-section__info.hide .geo-section__info-hide {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+
+  .geo-section__info.hide::before {
+    right: 0;
+  }
+
+  .geo-section__info-hide {
+    left: unset;
+    right: 60px;
+    bottom: 60px;
+    padding: 21px 0 23px;
+    background: transparent;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 
   .geo-section__info h1 {
@@ -7929,6 +8037,10 @@ body.ready .site-wrapper {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+  }
+
+  .main-top {
+    height: 100vh;
   }
 
   .fleet-primary-section__background-word {

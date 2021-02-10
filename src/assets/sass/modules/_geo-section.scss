@@ -67,18 +67,61 @@
       top: 80px;
       bottom: 0;
       width: 374px;
-      padding: 92px 40px;
+      padding: 92px 60px;
       box-shadow: 0px 40px 40px -10px rgba(0, 0, 0, 0.1);
     }
     @media screen and (min-width: $xxl-width){
       top: 93px;
     }
-    &.hide{
+    &::before{
+      position: absolute;
+      bottom: 30px;
+      right: 37px;
+      display: block;
+      width: 97px;
+      height: 120px;
+      background: url("../img/dest/geo/skew-lines.svg") center no-repeat;
+      transform: translateX(100%);
+      transition: right .5s;
       @media screen and (min-width: $lg-width){
-        transform: translateX(-100%);
+        content: '';
       }
     }
+    &::after{
+      position: absolute;
+      display: block;
+      content: '';
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #DFE9E5;
+      z-index: 0;
+      @media screen and (min-width: $lg-width){
+        content: none;
+      }
+    }
+    &.hide{
+      .geo-section__info-hide{
+        transform: translateX(-50%) translateY(-10px);
+      }
+      @media screen and (min-width: $lg-width){
+        .geo-section__info-hide{
+          transform: none;
+        }
+        transform: translateX(calc(-100% + 60px));
+        &::before{
+          right: 0;
+        }
+      }
+    }
+
+
     &-hide{
+      position: absolute;
+      padding: 21px 26px 23px;
+      left: 50%;
+      bottom: 0;
       cursor: pointer;
       font-weight: 500;
       font-size: 16px;
@@ -86,11 +129,44 @@
       text-align: right;
       color: #9EBDB3;
       border: none;
-      background: transparent;
+      background: #F7FAF9;
+      transform: translateX(-50%) translateY(100%);
+      transition: transform .5s;
+      box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.05);
+      @media screen and (min-width: $lg-width){
+        left: unset;
+        right: 60px;
+        bottom: 60px;
+        padding: 21px 0 23px;
+        background: transparent;
+        transform: none;
+        box-shadow: none;
+      }
+    }
+    &-open{
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      bottom: 60px;
+      padding: 21px 26px 23px;
+      border: none;
+      outline: none;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      text-align: right;
+      color: #9EBDB3;
+      background: #F7FAF9;
+      z-index: 10;
+      transition: transform .5s;
+      &.active{
+        transform: translateX(-100%);
+      }
     }
 
     h1{
       text-transform: uppercase;
+      margin-bottom: 60px;
       @media screen and (min-width: $lg-width){
         font-size: 22px;
         line-height: 120%;

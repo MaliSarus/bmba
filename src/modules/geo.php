@@ -1,5 +1,6 @@
 <section class="geo-section first-section first-section_margin">
-    <div class="geo-section__info text">
+    <button class="geo-section__info-open">Показать</button>
+    <div class="geo-section__info hide text">
         <h1>География</h1>
         <p>
             БМБА оказывает услуги в основных портах Финского залива. Нахождение флота в порту Усть-Луга позволяет

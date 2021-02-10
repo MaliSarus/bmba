@@ -130,10 +130,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
         initMap()
         const hideInfoButton = document.querySelector('.geo-section__info-hide');
         const infoBlock = document.querySelector('.geo-section__info');
+        const openButton = document.querySelector('.geo-section__info-open')
         hideInfoButton.addEventListener('click', function () {
             infoBlock.classList.add('hide');
+            openButton.classList.remove('active')
             if (window.innerWidth < lgWidth) {
                 infoBlock.style.marginTop = (infoBlock.offsetHeight * -1) + 'px';
+            }
+        })
+        openButton.addEventListener('click', function () {
+            this.classList.add('active')
+            infoBlock.classList.remove('hide');
+            if (window.innerWidth < lgWidth) {
+                infoBlock.removeAttribute('style');
             }
         })
         window.addEventListener('resize', function () {

@@ -1,0 +1,29 @@
+<svg width="97" height="120" viewBox="0 0 97 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.4" clip-path="url(#clip0)">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="-103" y="-80" width="200" height="200">
+<rect x="-103" y="-80" width="200" height="200" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="-208.715" y="23.061" width="10" height="302" transform="rotate(-45 -208.715 23.061)" fill="white"/>
+<rect x="-194.572" y="8.91895" width="10" height="302" transform="rotate(-45 -194.572 8.91895)" fill="white"/>
+<rect x="-180.431" y="-5.22314" width="10" height="302" transform="rotate(-45 -180.431 -5.22314)" fill="white"/>
+<rect x="-166.288" y="-19.3655" width="10" height="302" transform="rotate(-45 -166.288 -19.3655)" fill="white"/>
+<rect x="-152.146" y="-33.5076" width="10" height="302" transform="rotate(-45 -152.146 -33.5076)" fill="white"/>
+<rect x="-138.004" y="-47.6497" width="10" height="302" transform="rotate(-45 -138.004 -47.6497)" fill="white"/>
+<rect x="-67.2939" y="-118.36" width="10" height="302" transform="rotate(-45 -67.2939 -118.36)" fill="white"/>
+<rect x="-123.862" y="-61.7917" width="10" height="302" transform="rotate(-45 -123.862 -61.7917)" fill="white"/>
+<rect x="-53.1514" y="-132.502" width="10" height="302" transform="rotate(-45 -53.1514 -132.502)" fill="white"/>
+<rect x="-109.72" y="-75.9338" width="10" height="302" transform="rotate(-45 -109.72 -75.9338)" fill="white"/>
+<rect x="-39.0088" y="-146.645" width="10" height="302" transform="rotate(-45 -39.0088 -146.645)" fill="white"/>
+<rect x="-95.5781" y="-90.0759" width="10" height="302" transform="rotate(-45 -95.5781 -90.0759)" fill="white"/>
+<rect x="-24.8672" y="-160.787" width="10" height="302" transform="rotate(-45 -24.8672 -160.787)" fill="white"/>
+<rect x="-81.4355" y="-104.218" width="10" height="302" transform="rotate(-45 -81.4355 -104.218)" fill="white"/>
+<rect x="-10.7246" y="-174.929" width="10" height="302" transform="rotate(-45 -10.7246 -174.929)" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="97" height="120" fill="white"/>
+</clipPath>
+</defs>
+</svg>
