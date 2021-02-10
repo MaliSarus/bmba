@@ -6,6 +6,11 @@
     padding-top: 100px;
     padding-bottom: 135px;
   }
+  .block-title{
+    &::before{
+      content: none;
+    }
+  }
   &__background-lines{
     position: absolute;
     left: 0;
@@ -31,7 +36,7 @@
     }
   }
   &__subtitle{
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     @media screen and (min-width: $xl-width) {
       margin-bottom: 50px;
     }
@@ -70,11 +75,14 @@
     }
     &-title{
       font-weight: 500;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 100%;
       color: #9EBDB3;
       margin: 0 0 20px;
-      flex-grow: 1;
+      @media screen and (min-width: $md-width){
+        font-size: 16px;
+
+      }
     }
     &-text, &-text a{
       margin: 0;

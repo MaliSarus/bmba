@@ -13,6 +13,7 @@
             <div class="row align-items-xl-end">
                 <div class="col-12 col-xl-7">
                     <div class="contacts-section__left">
+                        <div class="block-title">Связь с нами</div>
                         <div class="contacts-section__title text">
                             <h1>Контакты</h1>
                         </div>

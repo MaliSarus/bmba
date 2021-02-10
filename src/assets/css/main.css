@@ -6135,6 +6135,10 @@ body.ready .site-wrapper {
   position: relative;
 }
 
+.contacts-section .block-title::before {
+  content: none;
+}
+
 .contacts-section__background-lines {
   position: absolute;
   left: 0;
@@ -6157,7 +6161,7 @@ body.ready .site-wrapper {
 }
 
 .contacts-section__subtitle {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .contacts-section__subtitle h3 {
@@ -6192,13 +6196,10 @@ body.ready .site-wrapper {
 
 .contacts-section__address-title {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 100%;
   color: #9EBDB3;
   margin: 0 0 20px;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
 }
 
 .contacts-section__address-text,
@@ -7156,6 +7157,10 @@ body.ready .site-wrapper {
 
   .contacts-section__address-item:not(:last-child) {
     margin-bottom: 0;
+  }
+
+  .contacts-section__address-title {
+    font-size: 16px;
   }
 
   .contacts-section__metro ul {
