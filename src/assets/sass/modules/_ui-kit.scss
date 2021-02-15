@@ -215,15 +215,38 @@
     background: url("../img/dest/ui/arrow.svg") center no-repeat;
     background-size: 9px 16px;
     cursor: pointer;
-    transition: background .2s;
+    &::before,&::after{
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      display: block;
+      content: '';
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 9px 16px;
+      transition: opacity .2s;
+    }
+    &::before{
+      background-image: url("../img/dest/ui/arrow_hover.svg");
+    }
+    &::after{
+      background-image: url("../img/dest/ui/arrow_unhover.svg");
+    }
     &:focus{
       outline: none;
     }
     &.hover{
-      background-image: url("../img/dest/ui/arrow_hover.svg");
+      &::before{
+        opacity: 1;
+      }
     }
     &.unhover{
-      background-image: url("../img/dest/ui/arrow_unhover.svg");
+      &::after{
+        opacity: 1;
+      }
     }
   }
   &__prev{

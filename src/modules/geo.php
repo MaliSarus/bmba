@@ -1,6 +1,6 @@
 <section class="geo-section first-section first-section_margin">
-    <button class="geo-section__info-open">Показать</button>
-    <div class="geo-section__info hide text">
+    <button class="geo-section__info-open active">Показать</button>
+    <div class="geo-section__info text">
         <h1>География</h1>
         <p>
             БМБА оказывает услуги в основных портах Финского залива. Нахождение флота в порту Усть-Луга позволяет
@@ -12,7 +12,7 @@
             Скрыть
         </button>
     </div>
-    <div class="geo-section__video-wrapper">
+    <div class="geo-section__video-wrapper first-section first-section_padding">
         <video autoplay loop muted class="geo-section__video mobile">
             <source src="../assets/video/geo_991.mp4" type='video/mp4'>
         </video>

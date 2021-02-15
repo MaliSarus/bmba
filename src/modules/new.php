@@ -1,17 +1,19 @@
 <section class="new-section with-lines_two first-section first-section_margin">
-    <div class="new-section__background"></div>
+    <div class="new-section__background">
+        <div class="new-section__date d-none d-xl-block">
+            <div class="new-section__date-block">
+                <span class="new-section__date-year">12</span>
+                <br>
+                <span class="new-section__date-month">ноя.</span>
+            </div>
+        </div>
+    </div>
     <div class="new-section__main ">
         <div class="container ">
             <div class="row ">
                 <div class="col-12 col-xl-8 offset-xl-2 col-xxl-7 offset-xxl-3 ">
                     <div class="new-section__content text">
-                        <div class="new-section__date d-none d-xl-block">
-                            <div class="new-section__date-block">
-                                <span class="new-section__date-year">12</span>
-                                <br>
-                                <span class="new-section__date-month">ноя.</span>
-                            </div>
-                        </div>
+
                         <a href="#" class="new-section__back link_back"></a>
                         <a href="#" class="new-section__back desktop">Назад</a>
                         <time>12 ноября <span class="new-section__year">2020</span></time>

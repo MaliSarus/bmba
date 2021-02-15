@@ -257,13 +257,6 @@
                                                     <span class="fleet-specs__measure">узлов</span>
                                                 </p>
                                             </li>
-                                            <li>
-                                                Тяга на гаке
-                                                <p class="fleet-specs__value">
-                                                    <span class="fleet-specs__num">15</span>
-                                                    <span class="fleet-specs__measure">тонн</span>
-                                                </p>
-                                            </li>
                                         </ul>
                                     </div>
 
@@ -321,13 +314,13 @@
                                     Мы свяжемся с Вами
                                 </p>
                                 <div class="form__group">
-                                    <div class="form__input name valid">
+                                    <div class="form__input name no-required">
                                         <input type="text" placeholder="Ваше имя">
                                     </div>
-                                    <div class="form__input phone">
+                                    <div class="form__input phone required">
                                         <input type="tel" placeholder="Телефон">
                                     </div>
-                                    <div class="form__input email">
+                                    <div class="form__input email required">
                                         <input type="email" placeholder="E-mail">
                                     </div>
                                 </div>

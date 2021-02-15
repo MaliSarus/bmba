@@ -34,6 +34,9 @@
 
   &_footer {
     .circle__element {
+      &-icon {
+        background: url("../img/dest/circle-menu/field-icon_white.svg") center no-repeat;
+      }
       &-content {
         text-shadow: none;
         color: white;

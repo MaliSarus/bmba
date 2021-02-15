@@ -1,3 +1,6 @@
+<div class="float-call-link">
+    <a class="link link_phone" href="tel:+78124494712"></a>
+</div>
 </main>
 <footer class="footer">
     <div class="footer__background">
@@ -62,8 +65,10 @@
                                                     <h5>Контакты</h5>
                                                     <ul>
                                                         <li>
-                                                            Санкт-Петербург
-                                                            <p>ул. Маршала Говорова,<br> д.52, БЦ «Алкотел»</p>
+                                                            <a href="https://yandex.ru/maps/?rtext=~59.901545%2C30.289107">
+                                                                Санкт-Петербург
+                                                                <p>ул. Маршала Говорова,<br> д.52, БЦ «Алкотел»</p>
+                                                            </a>
                                                         </li>
                                                         <li>
                                                             E-mail

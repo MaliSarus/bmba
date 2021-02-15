@@ -1,10 +1,7 @@
-import Vue from 'vue/dist/vue.js'
+import Vue from 'vue/dist/vue.min.js'
 import axios from 'axios'
 import Datepicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ru';
-import {xlWidth} from "./window-width-values";
-// import {getForecaToken} from "./helpers";
-
 const baseURL = 'http://bmbasite.beget.tech/ajax/get_forecast.php'
 let formInfo = {}
 const months = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'ноя.', 'дек.'];
@@ -74,7 +71,7 @@ const calcTemplate = `
                     <div class="form__input-wrapper">
                         <label for="calc-fleet-length">Длина судна <span>(LQA)</span></label>
                         <div 
-                            class="form__input calc-section__float-value value" 
+                            class="form__input calc-section__float-value value required" 
                             @click="focusInput" 
                             :class="{valid: form.fleetLength !== ''}"
                         >
@@ -83,7 +80,7 @@ const calcTemplate = `
                                 type="text" 
                                 placeholder="Ввод..." 
                                 v-model="form.fleetLength"  
-                                @keydown="allowNum($event)"
+                                @keyup="allowNum($event)"
                             >
                         </div>
                     </div>
@@ -94,7 +91,7 @@ const calcTemplate = `
                         <label for="calc-fleet-width">Ширина судна <span>(B)</span></label>
     
                         <div 
-                            class="form__input calc-section__float-value value" 
+                            class="form__input calc-section__float-value value required" 
                             :class="{valid: form.fleetWidth !== ''}"
                             @click="focusInput"
                         >
@@ -104,7 +101,7 @@ const calcTemplate = `
                                 placeholder="Ввод..." 
                                 v-model="form.fleetWidth" 
                                 :disabled="checkFleetWidth" 
-                                @keydown="allowNum($event)"
+                                @keyup="allowNum($event)"
                             >
                         </div>
                     </div>
@@ -114,7 +111,7 @@ const calcTemplate = `
                     >
                         <label for="calc-fleet-height">Высота борта судна <span>(D)</span></label>
                         <div 
-                            class="form__input calc-section__float-value value" 
+                            class="form__input calc-section__float-value value required" 
                             :class="{valid: form.fleetHeight !== ''}"
                             @click="focusInput"
                         >
@@ -124,7 +121,7 @@ const calcTemplate = `
                                 placeholder="Ввод..." 
                                 v-model="form.fleetHeight" 
                                 :disabled="checkFleetHeight" 
-                                @keydown="allowNum($event)"
+                                @keyup="allowNum($event)"
                             >
                         </div>
                     </div>
@@ -164,7 +161,7 @@ const calcTemplate = `
                     <div class="form__input-wrapper calc-section__date">
                         <label for="calc-date">Дата прибытия</label>
                         <div 
-                            class="form__input date" 
+                            class="form__input date required" 
                             :class="{valid: form.date !== ''}"
                             @click="focusInput"
                         >
@@ -323,6 +320,7 @@ export function initCalc() {
                 if (this.valid) {
                     const formInfo = {
                         ...this.form,
+                        total: this.result,
                         url: location.href
                     }
                     setFormInformation(formInfo)
@@ -368,9 +366,15 @@ export function initCalc() {
 
             },
             allowNum(event) {
-                let keyCode = event.key;
+                const keyCode = event.key;
+                const patternOne = /^\d+(\.?)\d*$/g;
+                const patternTwo = /^\d+(,?)\d*$/g;
+                const value = event.currentTarget.value;
                 if (keyCode !== ',' && keyCode !== '.' && isNaN(keyCode) && event.keyCode > 9) { // numbers, comma and control keys
                     event.preventDefault();
+                }
+                if( !value.match(patternOne) &&!value.match(patternTwo)) {
+                    event.currentTarget.value = value.slice(0, -1);
                 }
             },
             focusInput(event) {

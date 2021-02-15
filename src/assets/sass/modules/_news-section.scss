@@ -270,9 +270,11 @@
         flex-shrink: 0;
         height: auto;
         min-height: 76px;
+        max-height: 96px;
         @media screen and (min-width: $xl-width) {
           width: 237px;
           min-height: 190px;
+          max-height: 237px;
         }
 
         img {

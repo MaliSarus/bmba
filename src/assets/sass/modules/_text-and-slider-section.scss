@@ -92,11 +92,8 @@
       margin-bottom: 60px;
       font-size: 22px;
       line-height: 110%;
-      @media screen and (min-width: $md-width) {
-        font-size: 26px;
-      }
       @media screen and (min-width: $lg-width) {
-        font-size: 22px;
+        font-size: 46px;
         margin-bottom: 50px;
       }
     }

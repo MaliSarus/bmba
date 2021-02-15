@@ -3,10 +3,10 @@ import {smWidth} from "./window-width-values";
 export function initMap() {
     const ports = [
         {
-            position: [59.88, 30.24],
+            position: [59.94,30.32],
             layout: `
-                <div class="geo-section__placemark placemark placemark_bottom">
-                    <div class="placemark__image"><img src="./assets/img/dest/geo/spb.jpg" alt=""></div>
+                <div class="geo-section__placemark placemark">
+                    <div class="placemark__image"><img src="/local/templates/main/assets/img/dest/geo/spb.jpg" alt=""></div>
                     <div class="placemark__content">
                         <div class="placemark__subtitle">Морской торговый порт</div>
                         <div class="placemark__title">Санкт-Петербург</div>
@@ -15,10 +15,10 @@ export function initMap() {
             `
         },
         {
-            position: [59.94,30.27],
+            position: [59.66,28.26],
             layout: `
-                <div class="geo-section__placemark placemark">
-                    <div class="placemark__image"><img src="./assets/img/dest/geo/spb.jpg" alt=""></div>
+                <div class="geo-section__placemark placemark placemark_bottom">
+                    <div class="placemark__image"><img src="/local/templates/main/assets/img/dest/geo/ust-luga.jpg" alt=""></div>
                     <div class="placemark__content">
                         <div class="placemark__subtitle">Морской торговый порт</div>
                         <div class="placemark__title">Усть-Луга</div>
@@ -27,10 +27,10 @@ export function initMap() {
             `
         },
         {
-            position: [60.48,28.79],
+            position: [60.62,28.57],
             layout: `
                 <div class="geo-section__placemark placemark">
-                    <div class="placemark__image"><img src="./assets/img/dest/geo/spb.jpg" alt=""></div>
+                    <div class="placemark__image"><img src="/local/templates/main/assets/img/dest/geo/visotsk.jpg" alt=""></div>
                     <div class="placemark__content">
                         <div class="placemark__subtitle">Морской торговый порт</div>
                         <div class="placemark__title">Высоцк</div>

@@ -3,7 +3,7 @@
     <div class="new-section__main ">
         <div class="container ">
             <div class="row ">
-                <div class="col-12 col-xl-10 offset-xl-2 col-xxl-9 offset-xxl-3 ">
+                <div class="col-12 col-xl-10 offset-xl-1 ">
                     <div class="new-section__content text">
                         <a href="#" class="new-section__back link_back"></a>
                         <a href="#" class="new-section__back desktop">Назад</a>

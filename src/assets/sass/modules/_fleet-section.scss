@@ -110,8 +110,6 @@
           padding-left: 33px;
 
           &.current {
-            margin: 40px 0 !important;
-
             a {
               color: #2F333E;
             }
@@ -299,7 +297,7 @@
 
   &__slider {
     position: relative;
-    background: #000;
+    background: #f7faf9;
     height: 100%;
 
     &::before {

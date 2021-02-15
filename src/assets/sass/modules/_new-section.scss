@@ -5,13 +5,14 @@
     .new-section__content{
       max-width: none;
     }
+    .new-section__background{
+      background: transparent;
+    }
   }
 
   &__background {
     width: 100%;
-    padding-top: 58%;
-    background: url("../img/dest/new/bg_mobile.jpg") center no-repeat;
-    background-size: cover;
+    padding-top: 20%;
     @media screen and (min-width: $xl-width) {
       padding-top: 0;
       position: absolute;
@@ -74,6 +75,7 @@
         display: inline-block;
         width: auto;
         height: auto;
+        margin-bottom: 30px;
       }
     }
   }
@@ -140,13 +142,17 @@
     }
 
     h2 {
+      margin-top: 50px;
+      margin-bottom: 25px;
       font-size: 18px;
       text-transform: none;
       @media screen and (min-width: $md-width) {
         font-size: 28px;
+        margin-bottom: 30px;
       }
       @media screen and (min-width: $xl-width) {
         font-size: 36px;
+        margin-bottom: 40px;
       }
     }
     a{
@@ -176,12 +182,13 @@
 
   &__date {
     position: absolute;
-    left: 0;
-    top: 28px;
+    right: 0;
+    top: 97px;
     width: 80px;
     height: 160px;
     background: url("../img/dest/new/date-lines.svg") center no-repeat;
     background-size: contain;
+    transform: translateX(100%);
     &-block {
       position: absolute;
       left: 0;

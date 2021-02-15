@@ -1,14 +1,14 @@
-.two-column-text-section{
-  .text{
-    .two-column-text-section__list{
-      >p{
+.two-column-text-section {
+  .text {
+    .two-column-text-section__list {
+      > p {
         font-weight: bold;
         font-size: 16px;
         line-height: 100%;
         text-transform: uppercase;
         margin-bottom: 30px;
         color: $main-color;
-        @media screen and (min-width: $xl-width){
+        @media screen and (min-width: $xl-width) {
           font-size: 22px;
           margin-bottom: 47px;
 
@@ -16,27 +16,46 @@
       }
     }
   }
-  &__list{
+
+  &__list {
+    > p {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 100%;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: $main-color;
+      @media screen and (min-width: $xl-width) {
+        font-size: 22px;
+        margin-bottom: 47px;
+
+      }
+    }
+
     margin-top: 0;
-    &:not(:last-child){
+
+    &:not(:last-child) {
       margin-bottom: 70px;
     }
 
-    ul{
+    ul {
       padding-left: 11px;
-      @media screen and (min-width: $lg-width){
+      @media screen and (min-width: $lg-width) {
         padding-left: 17px;
       }
-      li{
+
+      li {
         list-style: disc;
         color: #B6C0CE;
-        &:not(:last-child){
+
+        &:not(:last-child) {
           margin-bottom: 20px;
           @media screen and (min-width: $lg-width) {
             margin-bottom: 26px;
           }
         }
-        p{
+
+        p {
           margin: 0;
         }
       }

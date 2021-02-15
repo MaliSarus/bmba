@@ -90,6 +90,16 @@
     &.invalid{
       border-left: 3px solid #FB4667;
     }
+    &.required{
+      &::before{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        content: '*';
+        font-size: 14px;
+        color: #9EBDB3;
+      }
+    }
     &.value{
       &::after {
         background: url("../img/dest/ui/form-value-icon.svg") center no-repeat;

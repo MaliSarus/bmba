@@ -6,7 +6,7 @@ import partnersSliderInit from "./modules/partners";
 import textAndSliderInit from "./modules/text-and-slider";
 import historySliderInit from "./modules/history";
 import initAccordion from "./modules/accordion";
-import {videoContainerChangeWidth, videoPlayButtonHandle} from "./modules/video";
+import {videoContainerChangeWidth, videoPlayButtonHandle, videoSnippetPlayButtonHandle} from "./modules/video";
 import sliderArrowsHandle from "./modules/slider-arrows";
 import {servicesCardInit} from "./modules/services";
 import documentsSliderInit from "./modules/documents";
@@ -21,6 +21,7 @@ import initFleetSection, {initScrollBar} from "./modules/fleet-section";
 import placeCircleElement from "./modules/circle-menu";
 import {scrollTo, setFirstSectionOffset, setHeightToMobileVh} from "./modules/helpers";
 import contactsInit from "./modules/contacts";
+import initSlider from "./modules/slider";
 
 // import homePageTopInit from "./modules/home-page-top";
 
@@ -77,12 +78,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     const sections = document.querySelectorAll('section')
-    sections.forEach(section =>{
+    sections.forEach(section => {
         const order = section.getAttribute('data-order');
         const sectionBlockTitle = section.querySelectorAll('.block-title');
         sectionBlockTitle.forEach(title => {
             const formatOrder = order < 10 ? '0' + order : order
-            title.setAttribute('data-title-num',formatOrder)
+            title.setAttribute('data-title-num', formatOrder)
         })
 
     })
@@ -92,10 +93,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
         fleetPrimarySliderInit()
     }
     if (isSet('.video-section')) {
+
         videoContainerChangeWidth();
-        videoPlayButtonHandle()
         window.addEventListener('resize', videoContainerChangeWidth)
+        videoPlayButtonHandle()
     }
+
+    if (isSet('.video')) {
+        videoSnippetPlayButtonHandle()
+    }
+
     if (isSet('.partners-section')) {
         partnersSliderInit()
     }
@@ -105,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (isSet('.history-section')) {
         historySliderInit();
     }
-    if (isSet('.faq-section')) {
+    if (isSet('.accordion')) {
         const acc = document.querySelectorAll('.accordion .accordion__title');
         initAccordion(acc)
     }
@@ -130,7 +137,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         initMap()
         const hideInfoButton = document.querySelector('.geo-section__info-hide');
         const infoBlock = document.querySelector('.geo-section__info');
-        const openButton = document.querySelector('.geo-section__info-open')
+        const openButton = document.querySelector('.geo-section__info-open');
+        if (infoBlock.classList.contains('hide')) {
+            if (window.innerWidth < lgWidth) {
+                infoBlock.style.marginTop = (infoBlock.offsetHeight * -1) + 'px';
+            }
+        }
         hideInfoButton.addEventListener('click', function () {
             infoBlock.classList.add('hide');
             openButton.classList.remove('active')
@@ -163,19 +175,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
         initScrollBar()
     }
 
-    if (isSet('.first-section')){
+    if (isSet('.first-section')) {
         const firstSection = document.querySelectorAll('.first-section')
-        firstSection.forEach(section =>{
+        firstSection.forEach(section => {
             setFirstSectionOffset(section)
         })
         window.addEventListener('resize', function () {
-            firstSection.forEach(section =>{
+            firstSection.forEach(section => {
                 setFirstSectionOffset(section)
             })
         })
     }
-    if (isSet('.contacts-section')){
+    if (isSet('.contacts-section')) {
         contactsInit();
+    }
+    if (isSet('.table')) {
+        window.addEventListener("load resize", function () {
+            const tables = document.querySelectorAll('.table')
+            tables.forEach(table => {
+                const scrollWidth = table.querySelector('.tbl-content').offsetWidth - table.querySelector('.tbl-content table').offsetWidth;
+                table.querySelector('.tbl-header').style.paddingRight = scrollWidth;
+            })
+        });
+        window.dispatchEvent(new Event('resize'));
+    }
+    if (isSet('.text-and-picture_slider')){
+        initSlider('.text-and-picture_slider .text-and-picture__slider', 1)
     }
 })
 

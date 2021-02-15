@@ -19,7 +19,6 @@
                                 <div class="swiper-slide"><img src="../assets/img/dest/fleet-primary/2.jpg" alt="">
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

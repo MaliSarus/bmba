@@ -294,26 +294,30 @@
             width: 100%;
             @media screen and (min-width: $lg-width) {
               display: flex;
-              justify-content: space-between;
+              justify-content: flex-start;
             }
 
             li {
               margin-bottom: 15px;
               @media screen and (min-width: $lg-width) {
                 margin-bottom: 0;
+                flex-basis: calc(100% / 3);
                 &:nth-child(1n) {
+                  text-align: left !important;
                   * {
                     text-align: left !important;
                   }
                 }
 
                 &:nth-child(2n) {
+                  text-align: center !important;
                   * {
                     text-align: center !important;
                   }
                 }
 
                 &:nth-child(3n) {
+                  text-align: right !important;
                   * {
                     text-align: right !important;
                   }

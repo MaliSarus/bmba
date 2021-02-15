@@ -49,7 +49,8 @@
 
 </style>
 <div class="preloader">
-    <video class="preloader-load" src="./assets/img/dest/ui/bmba-preloader.mp4" alt="" type="video/mp4" autoplay muted></video>
+    <video class="preloader-load" src="./assets/img/dest/ui/bmba-preloader.mp4" alt="" type="video/mp4" autoplay
+           muted></video>
     <img class="preloader-ready" src="./assets/img/dest/ui/preloader-ready.svg" alt="">
 </div>
 <script>
@@ -90,28 +91,47 @@
     <div class="request-popup">
         <div class="request-popup__block">
             <form action="#" class="form request-popup__form">
-                <div class="form__title">Оформление заявки</div>
-<!--                <div class="form__subtitle">Укажите свои данные и мы свяжемся с Вами в течение дня</div>-->
-                <div class="form__group">
-                    <div class="form__input name valid"><input type="text" placeholder="Имя"></div>
-                    <div class="form__input email"><input type="email" placeholder="E-mail"></div>
-                    <div class="form__input phone"><input type="tel" placeholder="Телефон"></div>
-                </div>
-                <small>Нажимая на кнопку “Отправить” Вы соглашаетесь c политикой обработки персональных
-                    данных</small>
-                <div class="form__submit">
-                    <button class="link ">Отправить</button>
+                <div class="request-popup__form-wrapper">
+                    <div class="form__title">Оформление заявки</div>
+                    <!--                <div class="form__subtitle">Укажите свои данные и мы свяжемся с Вами в течение дня</div>-->
+                    <div class="form__group">
+                        <div class="form__input name no-required"><input type="text" placeholder="Имя"></div>
+                        <div class="form__input email required"><input type="email" placeholder="E-mail"></div>
+                        <div class="form__input phone required"><input type="tel" placeholder="Телефон"></div>
+                    </div>
+                    <small>Нажимая на кнопку “Отправить” Вы соглашаетесь c политикой обработки персональных
+                        данных</small>
+                    <div class="form__submit">
+                        <button class="link " type="submit">Отправить</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
     <div class="success-popup">
         <div class="success-popup__block">
-            <div class="success-popup__title">Спасибо</div>
-            <div class="success-popup__subtitle">Заявка отправлена. Наш менеджер перезвонит Вам в ближайшее время для уточнения деталей.</div>
-            <button class="link success-popup__close">Закрыть</button>
+            <div class="success-popup__block-wrapper">
+                <div class="success-popup__title">Спасибо</div>
+                <div class="success-popup__subtitle">Заявка отправлена. Наш менеджер перезвонит Вам в ближайшее время
+                    для
+                    уточнения деталей.
+                </div>
+                <button class="link success-popup__close">Закрыть</button>
+            </div>
         </div>
     </div>
+    <div class="wrong-popup">
+        <div class="wrong-popup__block">
+            <div class="wrong-popup__block-wrapper">
+                <div class="wrong-popup__title">Ошибка</div>
+                <div class="wrong-popup__subtitle">
+                    Произошла ошибка при отправке заявки. Попробуйте повторить попытку позднее.
+                </div>
+                <button class="link wrong-popup__close success-popup__close">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
 
     <div class="video-popup">
         <div class="video-popup__block">

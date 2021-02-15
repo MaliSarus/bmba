@@ -121,112 +121,6 @@ body.ready {
   height: 100%;
 }
 
-.list {
-  > :first-child {
-    margin-top: 0;
-  }
-
-  > :last-child {
-    margin-bottom: 0;
-  }
-
-  > p {
-    margin-top: 0;
-    @media screen and (min-width: $lg-width) {
-      margin-bottom: 40px;
-    }
-  }
-
-  ul {
-    padding: 0;
-
-    li {
-      list-style: none;
-      padding: 0;
-    }
-  }
-  &.pic-list{
-    ul{
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: -20px;
-      margin-left: -20px;
-      li{
-        padding-bottom: 56px;
-        padding-left: 20px;
-        padding-right: 20px;
-        a{
-          position: relative;
-          display: inline-block;
-          height: 242px;
-          @media screen and (min-width: $sm-width){
-            height: 300px;
-          }
-          &::before{
-            position: absolute;
-            left: 50%;
-            bottom: -34px;
-            display: block;
-            content: '';
-            width: 60px;
-            height: 60px;
-            background-color: white;
-            background-image: url("../img/dest/ui/loop.svg");
-            background-position: center;
-            background-size: 21px 21px;
-            background-repeat: no-repeat;
-            transform: translateX(-50%);
-            box-shadow: 0px 20px 20px -7px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transition: opacity .5s;
-            @media screen and (min-width: $lg-width){
-              width: 69px;
-              height: 69px;
-            }
-          }
-          &:hover{
-            &::before{
-              opacity: 1;
-            }
-          }
-          img{
-            width: 100%;
-            height: 100%;
-            object-position: center;
-            object-fit: cover;
-          }
-        }
-
-      }
-    }
-  }
-  &.doc-list{
-    ul{
-      li{
-        position: relative;
-        padding-left: 34px;
-        &::before{
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          display: block;
-          content: '';
-          width: 30px;
-          background-image: url("../img/dest/rights/pdf-file.svg");
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-        a{
-          padding: 10px 0;
-          display: inline-block;
-        }
-      }
-    }
-  }
-}
-
 .text {
   > :last-child {
     margin-bottom: 0;
@@ -366,20 +260,6 @@ body.ready {
   position: relative;
 }
 
-.accordion {
-  &__title {
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    outline: none;
-  }
-
-  &__content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-  }
-}
 
 .background-title {
   position: absolute;
@@ -417,4 +297,53 @@ body.ready {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh) * 100);
 }
+
+.float-call-link{
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: white;
+  box-shadow: 0 5px 10px rgba(black, .1);
+  z-index: 499;
+  @media screen and (min-width: $md-width){
+    display: none;
+  }
+  a{
+    width: 50px;
+    height: 50px;
+    &::before{
+      width: 50px;
+      background-size: 25px;
+    }
+    span{
+      width: 50px;
+    }
+  }
+}
+
+.fslightbox {
+  &-container {
+    background: rgba($accent-color, .6) !important;
+  }
+  &-slide-number-container{
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+  }
+  &-slash{
+    width: 2px!important;
+    height: 13px!important;
+  }
+
+  &-slide-btn,&-toolbar{
+    background: $accent-color !important;
+  }
+}
+
 

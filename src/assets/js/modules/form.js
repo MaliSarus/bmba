@@ -1,14 +1,22 @@
 import {getFormInformation} from "./calc";
 import getParents from "./getParents";
 import fadeOutEffect from "./fadeOut";
+import {offsetTop} from "./helpers";
+import axios from "axios";
 
-function requestPopupSubmit(form){
-    const formInfo = {
+const baseURL = 'http://bmbasite.beget.tech/ajax/form.php'
+
+function requestPopupData(form){
+    return {
         ...getFormInformation(),
         name: form.querySelector('.form__input.name input').value,
         email: form.querySelector('.form__input.email input').value,
         phone: form.querySelector('.form__input.phone input').value,
+        type: 'request'
     };
+}
+
+function requestPopupSuccess(form) {
     const requestPopup = getParents(form,document.querySelector('.request-popup'))
     const successPopup = document.querySelector('.success-popup');
     fadeOutEffect(requestPopup, function () {
@@ -19,14 +27,23 @@ function requestPopupSubmit(form){
     })
 }
 
-function requestSectionSubmit(form){
-    const formInfo = {
+function requestSectionData(form){
+    return {
         name: form.querySelector('.form__input.name input').value,
         email: form.querySelector('.form__input.email input').value,
         phone: form.querySelector('.form__input.phone input').value,
-    };
+        type: 'application'
+    }
+}
+function requestSectionSuccess(form) {
     form.reset();
     document.querySelector('.success-popup').classList.add('open')
+    document.body.classList.add('hidden')
+}
+
+function popupError(form) {
+    form.reset();
+    document.querySelector('.wrong-popup').classList.add('open')
     document.body.classList.add('hidden')
 }
 
@@ -35,7 +52,7 @@ export default function formInit() {
     const formMailInput = document.querySelectorAll('form input[type="email"]');
     const formNameInput = document.querySelectorAll('form .form__input.name input[type="text"]');
     const formPhoneInput = document.querySelectorAll('form input[type="tel"]');
-    const formInputs = document.querySelectorAll('form input');
+    const formRequiredInputs = document.querySelectorAll('form .form__input.required input');
     const forms = document.querySelectorAll('form');
 
     formPhoneInput.forEach(phoneInput=>{
@@ -43,11 +60,10 @@ export default function formInit() {
             this.value = this.value.replace(/[^-\d\+]/,'')
         })
     })
-    formInputs.forEach(input => {
+    formRequiredInputs.forEach(input => {
         input.addEventListener('input', function () {
             const inputVal = this.value;
             const inputWrapper = this.parentNode;
-            console.log(inputVal !== '')
             if(inputVal !== ''){
                 inputWrapper.classList.remove('invalid');
                 inputWrapper.classList.add('valid')
@@ -78,23 +94,52 @@ export default function formInit() {
     forms.forEach(form => {
         form.addEventListener('submit', function (event) {
             event.preventDefault();
-            const inputs = Array.prototype.slice.call(this.querySelectorAll('.form__input'));
+            const inputs = Array.prototype.slice.call(this.querySelectorAll('.form__input.required'));
             const invalidInputs = inputs.filter(input => {
-                return !input.classList.contains('valid')
+                return !input.classList.contains('valid');
             })
             const invalid =  invalidInputs.length > 0;
             if (!invalid){
-                if (form.classList.contains('request-popup__form')){
-                   requestPopupSubmit(form)
+                if (!form.classList.contains('calc-section__form')) {
+                    let data;
+                    if (form.classList.contains('request-popup__form')) {
+                        data = requestPopupData(form);
+                    }
+                    if (form.classList.contains('request-section__form')) {
+                        data = requestSectionData(form);
+                    }
+                    console.log(data.type)
+                    const dataType = data.type;
+                    axios
+                        .post(baseURL, data)
+                        .then(res => {
+                            console.log(res)
+                            if (res.status === 200 && res.data.status !== 'error') {
+                                switch (dataType) {
+                                    case "application":
+                                        requestPopupSuccess(form);
+                                    case "request":
+                                        requestSectionSuccess(form);
+                                }
+                            }
+                            else {
+                                popupError(form);
+                            }
+                        })
                 }
-                if (form.classList.contains('request-section__form')){
-                    requestSectionSubmit(form)
-                }
+
             }
             else {
                 invalidInputs.forEach(input=>{
                     input.classList.add('invalid')
                 })
+                const elementPosition = offsetTop(invalidInputs[0]);
+                let headerOffset = document.querySelector('header').offsetHeight;
+                let offsetPosition = elementPosition - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
             }
         })
     })
