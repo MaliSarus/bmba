@@ -30,6 +30,9 @@
     &-wrapper{
       position: relative;
       display: none;
+      @media screen and (max-width: $lg-width){
+        padding-top: 0 !important;
+      }
       @media screen and (min-width: $sm-width){
         display: block;
       }

@@ -37,46 +37,38 @@
         transition: opacity 1s, visibility 1s;
     }
 
-    .preloader-load, .preloader-ready {
+    .preloader-load {
         width: 254px;
         max-width: 100%;
         object-position: center;
     }
 
-    .preloader-ready {
-        display: none;
+    .preloader-load svg{
+        width: 100%;
     }
+
+
 
 </style>
 <div class="preloader">
-    <video class="preloader-load" src="./assets/img/dest/ui/bmba-preloader.mp4" alt="" type="video/mp4" autoplay
-           muted></video>
-    <img class="preloader-ready" src="./assets/img/dest/ui/preloader-ready.svg" alt="">
+    <div class="preloader-load" alt=""></div>
 </div>
+<script src="./assets/js/bodymovin.js"></script>
 <script>
     document.body.classList.add('hidden')
     var preloaderLoad = document.querySelector('.preloader-load');
+    var animItem = bodymovin.loadAnimation({
+        wrapper: preloaderLoad,
+        animType: 'svg',
+        loop: false,
+        autoplay: true,
+        path: './assets/img/preloader.json'
+    })
     var preloaderReady = document.querySelector('.preloader-ready');
-    var preloaderTimeout = setTimeout(function () {
-        preloaderLoad.classList.add('d-none');
-        preloaderReady.classList.add('d-block')
-        clearTimeout(preloaderTimeout)
-    }, 4000)
-
-    function checkPreloaderReady(preloader) {
-        return preloader.querySelector('.preloader-ready').classList.contains('d-block')
-    }
-
-    var preloader = document.querySelector('.preloader');
-    var preloaderReadyInterval = setInterval(function () {
-        if (checkPreloaderReady(preloader)) {
-            document.body.classList.add('ready');
-            document.body.classList.remove('hidden')
-            clearInterval(preloaderReadyInterval)
-        }
-    }, 1000)
-
-
+    animItem.addEventListener('complete', function () {
+        document.body.classList.add('ready');
+        document.body.classList.remove('hidden')
+    })
 </script>
 <!--Блок и скрипт для прелоадера-->
 <script>

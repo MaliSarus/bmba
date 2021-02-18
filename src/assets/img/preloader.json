@@ -1,0 +1,1569 @@
+{
+  "v": "5.7.1",
+  "fr": 30,
+  "ip": 0,
+  "op": 150,
+  "w": 500,
+  "h": 500,
+  "nm": "Композиция 1",
+  "ddd": 0,
+  "assets": [
+    {
+      "id": "image_0",
+      "w": 97,
+      "h": 97,
+      "u": "",
+      "p": "data:image/png;base64,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",
+      "e": 1
+    },
+    {
+      "id": "image_1",
+      "w": 219,
+      "h": 110,
+      "u": "",
+      "p": "data:image/png;base64,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",
+      "e": 1
+    },
+    {
+      "id": "image_2",
+      "w": 137,
+      "h": 207,
+      "u": "",
+      "p": "data:image/png;base64,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",
+      "e": 1
+    },
+    {
+      "id": "image_3",
+      "w": 137,
+      "h": 208,
+      "u": "",
+      "p": "data:image/png;base64,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",
+      "e": 1
+    },
+    {
+      "id": "image_4",
+      "w": 220,
+      "h": 111,
+      "u": "",
+      "p": "data:image/png;base64,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",
+      "e": 1
+    },
+    {
+      "id": "comp_0",
+      "layers": [
+        {
+          "ddd": 0,
+          "ind": 1,
+          "ty": 4,
+          "nm": "Слой-фигура 1",
+          "td": 1,
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                0,
+                0,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            }
+          },
+          "ao": 0,
+          "shapes": [
+            {
+              "ty": "gr",
+              "it": [
+                {
+                  "d": 1,
+                  "ty": "el",
+                  "s": {
+                    "a": 0,
+                    "k": [
+                      203.5,
+                      203.5
+                    ],
+                    "ix": 2
+                  },
+                  "p": {
+                    "a": 0,
+                    "k": [
+                      0,
+                      0
+                    ],
+                    "ix": 3
+                  },
+                  "nm": "Контур эллипса 1",
+                  "mn": "ADBE Vector Shape - Ellipse",
+                  "hd": false
+                },
+                {
+                  "ty": "st",
+                  "c": {
+                    "a": 0,
+                    "k": [
+                      0.733332974303,
+                      0.339345984365,
+                      0.339345984365,
+                      1
+                    ],
+                    "ix": 3
+                  },
+                  "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 4
+                  },
+                  "w": {
+                    "a": 0,
+                    "k": 16,
+                    "ix": 5
+                  },
+                  "lc": 1,
+                  "lj": 1,
+                  "ml": 4,
+                  "bm": 0,
+                  "nm": "Обводка 1",
+                  "mn": "ADBE Vector Graphic - Stroke",
+                  "hd": false
+                },
+                {
+                  "ty": "tr",
+                  "p": {
+                    "a": 0,
+                    "k": [
+                      -19.75,
+                      0.25
+                    ],
+                    "ix": 2
+                  },
+                  "a": {
+                    "a": 0,
+                    "k": [
+                      0,
+                      0
+                    ],
+                    "ix": 1
+                  },
+                  "s": {
+                    "a": 0,
+                    "k": [
+                      101.693,
+                      101.693
+                    ],
+                    "ix": 3
+                  },
+                  "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  },
+                  "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                  },
+                  "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                  },
+                  "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                  },
+                  "nm": "Преобразовать"
+                }
+              ],
+              "nm": "Эллипс 1",
+              "np": 3,
+              "cix": 2,
+              "bm": 0,
+              "ix": 1,
+              "mn": "ADBE Vector Group",
+              "hd": false
+            },
+            {
+              "ty": "tm",
+              "s": {
+                "a": 0,
+                "k": 0,
+                "ix": 1
+              },
+              "e": {
+                "a": 1,
+                "k": [
+                  {
+                    "i": {
+                      "x": [
+                        0
+                      ],
+                      "y": [
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.333
+                      ],
+                      "y": [
+                        0
+                      ]
+                    },
+                    "t": 14,
+                    "s": [
+                      0
+                    ]
+                  },
+                  {
+                    "t": 90,
+                    "s": [
+                      50
+                    ]
+                  }
+                ],
+                "ix": 2
+              },
+              "o": {
+                "a": 0,
+                "k": 90,
+                "ix": 3
+              },
+              "m": 1,
+              "ix": 2,
+              "nm": "Обрезать контуры 1",
+              "mn": "ADBE Vector Filter - Trim",
+              "hd": false
+            }
+          ],
+          "ip": 0,
+          "op": 300,
+          "st": 0,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 2,
+          "ty": 2,
+          "nm": "Vector-1.png",
+          "cl": "png",
+          "tt": 1,
+          "refId": "image_1",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                230.25,
+                303,
+                0
+              ],
+              "ix": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                109.5,
+                55,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            }
+          },
+          "ao": 0,
+          "ip": 0,
+          "op": 300,
+          "st": 0,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 3,
+          "ty": 4,
+          "nm": "Слой-фигура 3",
+          "td": 1,
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                269,
+                243,
+                0
+              ],
+              "ix": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                0,
+                0,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            }
+          },
+          "ao": 0,
+          "shapes": [
+            {
+              "ty": "gr",
+              "it": [
+                {
+                  "d": 1,
+                  "ty": "el",
+                  "s": {
+                    "a": 0,
+                    "k": [
+                      203.5,
+                      203.5
+                    ],
+                    "ix": 2
+                  },
+                  "p": {
+                    "a": 0,
+                    "k": [
+                      0,
+                      0
+                    ],
+                    "ix": 3
+                  },
+                  "nm": "Контур эллипса 1",
+                  "mn": "ADBE Vector Shape - Ellipse",
+                  "hd": false
+                },
+                {
+                  "ty": "st",
+                  "c": {
+                    "a": 0,
+                    "k": [
+                      0.733332974303,
+                      0.339345984365,
+                      0.339345984365,
+                      1
+                    ],
+                    "ix": 3
+                  },
+                  "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 4
+                  },
+                  "w": {
+                    "a": 0,
+                    "k": 18,
+                    "ix": 5
+                  },
+                  "lc": 1,
+                  "lj": 1,
+                  "ml": 4,
+                  "bm": 0,
+                  "nm": "Обводка 1",
+                  "mn": "ADBE Vector Graphic - Stroke",
+                  "hd": false
+                },
+                {
+                  "ty": "tr",
+                  "p": {
+                    "a": 0,
+                    "k": [
+                      -19.25,
+                      -0.25
+                    ],
+                    "ix": 2
+                  },
+                  "a": {
+                    "a": 0,
+                    "k": [
+                      0,
+                      0
+                    ],
+                    "ix": 1
+                  },
+                  "s": {
+                    "a": 0,
+                    "k": [
+                      101.693,
+                      104.639
+                    ],
+                    "ix": 3
+                  },
+                  "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  },
+                  "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                  },
+                  "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                  },
+                  "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                  },
+                  "nm": "Преобразовать"
+                }
+              ],
+              "nm": "Эллипс 1",
+              "np": 3,
+              "cix": 2,
+              "bm": 0,
+              "ix": 1,
+              "mn": "ADBE Vector Group",
+              "hd": false
+            },
+            {
+              "ty": "tm",
+              "s": {
+                "a": 0,
+                "k": 0,
+                "ix": 1
+              },
+              "e": {
+                "a": 1,
+                "k": [
+                  {
+                    "i": {
+                      "x": [
+                        0
+                      ],
+                      "y": [
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.333
+                      ],
+                      "y": [
+                        0
+                      ]
+                    },
+                    "t": 14,
+                    "s": [
+                      25
+                    ]
+                  },
+                  {
+                    "t": 90,
+                    "s": [
+                      90
+                    ]
+                  }
+                ],
+                "ix": 2
+              },
+              "o": {
+                "a": 0,
+                "k": 90,
+                "ix": 3
+              },
+              "m": 1,
+              "ix": 2,
+              "nm": "Обрезать контуры 1",
+              "mn": "ADBE Vector Filter - Trim",
+              "hd": false
+            }
+          ],
+          "ip": 0,
+          "op": 300,
+          "st": 0,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 4,
+          "ty": 2,
+          "nm": "Vector-6.png",
+          "cl": "png",
+          "tt": 1,
+          "refId": "image_2",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                204.5,
+                235.5,
+                0
+              ],
+              "ix": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                68.5,
+                103.5,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            }
+          },
+          "ao": 0,
+          "ip": 0,
+          "op": 300,
+          "st": 0,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 5,
+          "ty": 4,
+          "nm": "Слой-фигура 4",
+          "td": 1,
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                268,
+                258,
+                0
+              ],
+              "ix": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                0,
+                0,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            }
+          },
+          "ao": 0,
+          "shapes": [
+            {
+              "ty": "gr",
+              "it": [
+                {
+                  "d": 1,
+                  "ty": "el",
+                  "s": {
+                    "a": 0,
+                    "k": [
+                      203.5,
+                      203.5
+                    ],
+                    "ix": 2
+                  },
+                  "p": {
+                    "a": 0,
+                    "k": [
+                      0,
+                      0
+                    ],
+                    "ix": 3
+                  },
+                  "nm": "Контур эллипса 1",
+                  "mn": "ADBE Vector Shape - Ellipse",
+                  "hd": false
+                },
+                {
+                  "ty": "st",
+                  "c": {
+                    "a": 0,
+                    "k": [
+                      0.733332974303,
+                      0.339345984365,
+                      0.339345984365,
+                      1
+                    ],
+                    "ix": 3
+                  },
+                  "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 4
+                  },
+                  "w": {
+                    "a": 0,
+                    "k": 18,
+                    "ix": 5
+                  },
+                  "lc": 1,
+                  "lj": 1,
+                  "ml": 4,
+                  "bm": 0,
+                  "nm": "Обводка 1",
+                  "mn": "ADBE Vector Graphic - Stroke",
+                  "hd": false
+                },
+                {
+                  "ty": "tr",
+                  "p": {
+                    "a": 0,
+                    "k": [
+                      -19.25,
+                      -0.25
+                    ],
+                    "ix": 2
+                  },
+                  "a": {
+                    "a": 0,
+                    "k": [
+                      0,
+                      0
+                    ],
+                    "ix": 1
+                  },
+                  "s": {
+                    "a": 0,
+                    "k": [
+                      101.693,
+                      104.639
+                    ],
+                    "ix": 3
+                  },
+                  "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  },
+                  "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                  },
+                  "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                  },
+                  "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                  },
+                  "nm": "Преобразовать"
+                }
+              ],
+              "nm": "Эллипс 1",
+              "np": 3,
+              "cix": 2,
+              "bm": 0,
+              "ix": 1,
+              "mn": "ADBE Vector Group",
+              "hd": false
+            },
+            {
+              "ty": "tm",
+              "s": {
+                "a": 0,
+                "k": 0,
+                "ix": 1
+              },
+              "e": {
+                "a": 1,
+                "k": [
+                  {
+                    "i": {
+                      "x": [
+                        0
+                      ],
+                      "y": [
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.333
+                      ],
+                      "y": [
+                        0
+                      ]
+                    },
+                    "t": 14,
+                    "s": [
+                      43
+                    ]
+                  },
+                  {
+                    "t": 90,
+                    "s": [
+                      100
+                    ]
+                  }
+                ],
+                "ix": 2
+              },
+              "o": {
+                "a": 0,
+                "k": 200,
+                "ix": 3
+              },
+              "m": 1,
+              "ix": 2,
+              "nm": "Обрезать контуры 1",
+              "mn": "ADBE Vector Filter - Trim",
+              "hd": false
+            }
+          ],
+          "ip": 0,
+          "op": 300,
+          "st": 0,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 6,
+          "ty": 2,
+          "nm": "Vector-7.png",
+          "cl": "png",
+          "tt": 1,
+          "refId": "image_3",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                290.25,
+                264.5,
+                0
+              ],
+              "ix": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                68.5,
+                104,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            }
+          },
+          "ao": 0,
+          "ip": 0,
+          "op": 300,
+          "st": 0,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 7,
+          "ty": 4,
+          "nm": "Слой-фигура 2",
+          "td": 1,
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                288.5,
+                250,
+                0
+              ],
+              "ix": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                0,
+                0,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            }
+          },
+          "ao": 0,
+          "shapes": [
+            {
+              "ty": "gr",
+              "it": [
+                {
+                  "d": 1,
+                  "ty": "el",
+                  "s": {
+                    "a": 0,
+                    "k": [
+                      203.5,
+                      203.5
+                    ],
+                    "ix": 2
+                  },
+                  "p": {
+                    "a": 0,
+                    "k": [
+                      0,
+                      0
+                    ],
+                    "ix": 3
+                  },
+                  "nm": "Контур эллипса 1",
+                  "mn": "ADBE Vector Shape - Ellipse",
+                  "hd": false
+                },
+                {
+                  "ty": "st",
+                  "c": {
+                    "a": 0,
+                    "k": [
+                      0.733332974303,
+                      0.339345984365,
+                      0.339345984365,
+                      1
+                    ],
+                    "ix": 3
+                  },
+                  "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 4
+                  },
+                  "w": {
+                    "a": 0,
+                    "k": 16,
+                    "ix": 5
+                  },
+                  "lc": 1,
+                  "lj": 1,
+                  "ml": 4,
+                  "bm": 0,
+                  "nm": "Обводка 1",
+                  "mn": "ADBE Vector Graphic - Stroke",
+                  "hd": false
+                },
+                {
+                  "ty": "tr",
+                  "p": {
+                    "a": 0,
+                    "k": [
+                      -19.75,
+                      0.25
+                    ],
+                    "ix": 2
+                  },
+                  "a": {
+                    "a": 0,
+                    "k": [
+                      0,
+                      0
+                    ],
+                    "ix": 1
+                  },
+                  "s": {
+                    "a": 0,
+                    "k": [
+                      101.693,
+                      101.693
+                    ],
+                    "ix": 3
+                  },
+                  "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  },
+                  "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                  },
+                  "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                  },
+                  "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                  },
+                  "nm": "Преобразовать"
+                }
+              ],
+              "nm": "Эллипс 1",
+              "np": 3,
+              "cix": 2,
+              "bm": 0,
+              "ix": 1,
+              "mn": "ADBE Vector Group",
+              "hd": false
+            },
+            {
+              "ty": "tm",
+              "s": {
+                "a": 0,
+                "k": 0,
+                "ix": 1
+              },
+              "e": {
+                "a": 1,
+                "k": [
+                  {
+                    "i": {
+                      "x": [
+                        0
+                      ],
+                      "y": [
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.333
+                      ],
+                      "y": [
+                        0
+                      ]
+                    },
+                    "t": 14,
+                    "s": [
+                      50
+                    ]
+                  },
+                  {
+                    "t": 90,
+                    "s": [
+                      100
+                    ]
+                  }
+                ],
+                "ix": 2
+              },
+              "o": {
+                "a": 0,
+                "k": 90,
+                "ix": 3
+              },
+              "m": 1,
+              "ix": 2,
+              "nm": "Обрезать контуры 1",
+              "mn": "ADBE Vector Filter - Trim",
+              "hd": false
+            }
+          ],
+          "ip": 0,
+          "op": 300,
+          "st": 0,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 8,
+          "ty": 2,
+          "nm": "Vector.png",
+          "cl": "png",
+          "tt": 1,
+          "refId": "image_4",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                267.5,
+                193.75,
+                0
+              ],
+              "ix": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                110,
+                55.5,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            }
+          },
+          "ao": 0,
+          "ip": 0,
+          "op": 300,
+          "st": 0,
+          "bm": 0
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ddd": 0,
+      "ind": 1,
+      "ty": 2,
+      "nm": "Group 15.png",
+      "cl": "png",
+      "refId": "image_0",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "i": {
+                "x": [
+                  0.833
+                ],
+                "y": [
+                  0.833
+                ]
+              },
+              "o": {
+                "x": [
+                  0.167
+                ],
+                "y": [
+                  0.167
+                ]
+              },
+              "t": 0,
+              "s": [
+                0
+              ]
+            },
+            {
+              "t": 14,
+              "s": [
+                100
+              ]
+            }
+          ],
+          "ix": 11
+        },
+        "r": {
+          "a": 1,
+          "k": [
+            {
+              "i": {
+                "x": [
+                  0.633
+                ],
+                "y": [
+                  0.41
+                ]
+              },
+              "o": {
+                "x": [
+                  0.167
+                ],
+                "y": [
+                  0
+                ]
+              },
+              "t": 0,
+              "s": [
+                -45
+              ]
+            },
+            {
+              "i": {
+                "x": [
+                  0.026
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.333
+                ],
+                "y": [
+                  0.173
+                ]
+              },
+              "t": 14,
+              "s": [
+                0
+              ]
+            },
+            {
+              "t": 90,
+              "s": [
+                720
+              ]
+            }
+          ],
+          "ix": 10
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            245,
+            248.75,
+            0
+          ],
+          "ix": 2
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            48.5,
+            48.5,
+            0
+          ],
+          "ix": 1
+        },
+        "s": {
+          "a": 1,
+          "k": [
+            {
+              "i": {
+                "x": [
+                  0.254,
+                  0.254,
+                  0.667
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.333,
+                  0.333,
+                  0.333
+                ],
+                "y": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "t": 0,
+              "s": [
+                74.072,
+                74.072,
+                100
+              ]
+            },
+            {
+              "t": 14,
+              "s": [
+                119.072,
+                119.072,
+                100
+              ]
+            }
+          ],
+          "ix": 6
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 300,
+      "st": 0,
+      "bm": 0
+    },
+    {
+      "ddd": 0,
+      "ind": 2,
+      "ty": 0,
+      "nm": "Предварительная композиция 1",
+      "refId": "comp_0",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 0,
+          "k": 100,
+          "ix": 11
+        },
+        "r": {
+          "a": 1,
+          "k": [
+            {
+              "i": {
+                "x": [
+                  0
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.333
+                ],
+                "y": [
+                  0
+                ]
+              },
+              "t": 14,
+              "s": [
+                -90
+              ]
+            },
+            {
+              "t": 90,
+              "s": [
+                0
+              ]
+            }
+          ],
+          "ix": 10
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            250,
+            250,
+            0
+          ],
+          "ix": 2
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            250,
+            250,
+            0
+          ],
+          "ix": 1
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ],
+          "ix": 6
+        }
+      },
+      "ao": 0,
+      "w": 500,
+      "h": 500,
+      "ip": 0,
+      "op": 300,
+      "st": 0,
+      "bm": 0
+    },
+    {
+      "ddd": 0,
+      "ind": 4,
+      "ty": 4,
+      "nm": "Слой-фигура 1",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 0,
+          "k": 100,
+          "ix": 11
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            250,
+            250,
+            0
+          ],
+          "ix": 2
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            0,
+            0
+          ],
+          "ix": 1
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ],
+          "ix": 6
+        }
+      },
+      "ao": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "it": [
+            {
+              "ty": "rc",
+              "d": 1,
+              "s": {
+                "a": 0,
+                "k": [
+                  522,
+                  522
+                ],
+                "ix": 2
+              },
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ],
+                "ix": 3
+              },
+              "r": {
+                "a": 0,
+                "k": 0,
+                "ix": 4
+              },
+              "nm": "Контур прямоугольника 1",
+              "mn": "ADBE Vector Shape - Rect",
+              "hd": false
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "ix": 4
+              },
+              "o": {
+                "a": 0,
+                "k": 100,
+                "ix": 5
+              },
+              "r": 1,
+              "bm": 0,
+              "nm": "Заливка 1",
+              "mn": "ADBE Vector Graphic - Fill",
+              "hd": false
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  -3,
+                  -3
+                ],
+                "ix": 2
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ],
+                "ix": 1
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ],
+                "ix": 3
+              },
+              "r": {
+                "a": 0,
+                "k": 0,
+                "ix": 6
+              },
+              "o": {
+                "a": 0,
+                "k": 100,
+                "ix": 7
+              },
+              "sk": {
+                "a": 0,
+                "k": 0,
+                "ix": 4
+              },
+              "sa": {
+                "a": 0,
+                "k": 0,
+                "ix": 5
+              },
+              "nm": "Преобразовать"
+            }
+          ],
+          "nm": "Прямоугольник 1",
+          "np": 3,
+          "cix": 2,
+          "bm": 0,
+          "ix": 1,
+          "mn": "ADBE Vector Group",
+          "hd": false
+        }
+      ],
+      "ip": 0,
+      "op": 300,
+      "st": 0,
+      "bm": 0
+    }
+  ],
+  "markers": []
+}

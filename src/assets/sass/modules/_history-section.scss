@@ -130,7 +130,6 @@
         height: 16px;
         background-size: contain;
         background: url("../img/dest/ui/history-round.svg") no-repeat center;
-        transition: background .25s;
 
         &::before, &::after {
           position: absolute;

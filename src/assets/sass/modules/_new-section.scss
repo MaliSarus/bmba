@@ -4,6 +4,8 @@
   &.new-section_rights{
     .new-section__content{
       max-width: none;
+      padding-left: 0;
+      padding-right: 0;
     }
     .new-section__background{
       background: transparent;
@@ -15,7 +17,7 @@
     padding-top: 20%;
     @media screen and (min-width: $xl-width) {
       padding-top: 0;
-      position: absolute;
+      position: fixed;
       left: 0;
       top: 0;
       bottom: 0;

@@ -41,6 +41,38 @@
       }
     }
   }
+  &__made-by{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 20px 0;
+    line-height: 100%;
+    @media screen and (min-width: $xl-width){
+      font-size: 16px;
+    }
+    a{
+      height: 100%;
+      width: auto;
+      max-height: 14px;
+      margin-left: 10px;
+      transform: translateY(-2px);
+      @media screen and (min-width: $xl-width) {
+        max-height: 16px;
+        transform: translateY(-2px);
+      }
+    }
+    svg {
+      height: 100%;
+      width: auto;
+    }
+  }
 
   &__block {
     position: relative;
