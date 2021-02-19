@@ -2,12 +2,12 @@ import Vue from 'vue/dist/vue.min.js'
 import axios from 'axios'
 import Datepicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ru';
-const baseURL = 'http://bmbasite.beget.tech/ajax/get_forecast.php'
+const baseURL = 'https://bmba-ustluga.ru/ajax/get_forecast.php'
 let formInfo = {}
 const months = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'ноя.', 'дек.'];
 
 function setFormInformation(formFields) {
-    formInfo = {...formFields}
+    formInfo = {...formFields }
 }
 
 export function getFormInformation() {
@@ -231,8 +231,8 @@ export function initCalc() {
             fleetVolume() {
                 if (this.floatFleetLength && this.floatFleetWidth && this.floatFleetHeight) {
                     const value = (this.floatFleetLength *
-                        this.floatFleetWidth *
-                        this.floatFleetHeight)
+                            this.floatFleetWidth *
+                            this.floatFleetHeight)
                         .toFixed(2);
                     return new Intl.NumberFormat('ru-RU').format(value)
                 } else {
@@ -291,7 +291,7 @@ export function initCalc() {
                 const fleetVolume = (this.floatFleetLength *
                         this.floatFleetWidth *
                         this.floatFleetHeight)
-                        .toFixed(2);
+                    .toFixed(2);
                 const number = (fleetVolume *
                     this.fleetCoefficient *
                     this.nonGoingCoefficient *
@@ -343,8 +343,7 @@ export function initCalc() {
 
                 if (month >= 0 && month < 4 || month === 11) {
                     this.seasonCoefficient = 1.2
-                }
-                else {
+                } else {
                     this.seasonCoefficient = 1
                 }
 
@@ -373,7 +372,7 @@ export function initCalc() {
                 if (keyCode !== ',' && keyCode !== '.' && isNaN(keyCode) && event.keyCode > 9) { // numbers, comma and control keys
                     event.preventDefault();
                 }
-                if( !value.match(patternOne) &&!value.match(patternTwo)) {
+                if (!value.match(patternOne) && !value.match(patternTwo)) {
                     event.currentTarget.value = value.slice(0, -1);
                 }
             },
@@ -384,11 +383,11 @@ export function initCalc() {
         },
         created() {
             const that = this;
-            document.addEventListener('click', function (event) {
+            document.addEventListener('click', function(event) {
                 const datePicker = document.getElementsByClassName('calc-section__datepicker')[0];
                 const datePickerInput = document.querySelector('.calc-section__date .form__input');
-                const isClickInside = datePicker.contains(event.target)
-                    || datePickerInput.contains(event.target);
+                const isClickInside = datePicker.contains(event.target) ||
+                    datePickerInput.contains(event.target);
                 if (isClickInside === false) {
                     that.datePickerFocus = false;
                 }
@@ -407,7 +406,7 @@ export function initCalc() {
                     document.querySelector('.weather__temp .weather__value').innerHTML = this.weather.temp + '<sup>o</sup>';
                     document.querySelector('.weather__wind .weather__value').textContent = this.weather.wind;
                 })
-                .catch(rej =>{
+                .catch(rej => {
                     console.log(rej)
                 })
             axios.get(baseURL + '?type=daily')
@@ -419,7 +418,7 @@ export function initCalc() {
                         return new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
                     })
                 })
-                .catch(rej =>{
+                .catch(rej => {
                     console.log(rej)
                 })
         },
@@ -431,12 +430,11 @@ export function initCalc() {
         destroyed() {
             window.removeEventListener('resize', this.onResize);
         },
-        watch:{
-            datePickerFocus(val){
-                if(val){
+        watch: {
+            datePickerFocus(val) {
+                if (val) {
                     document.body.classList.add('hidden')
-                }
-                else {
+                } else {
                     document.body.classList.remove('hidden')
                 }
             }
