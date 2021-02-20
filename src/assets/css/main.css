@@ -140,9 +140,9 @@
 }
 
 .hamburger--squeeze .hamburger-inner::before {
-  -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-  -o-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  -o-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
 }
 
 .hamburger--squeeze .hamburger-inner::after {
@@ -168,9 +168,9 @@
 .hamburger--squeeze.is-active .hamburger-inner::before {
   top: 0;
   opacity: 0;
-  -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-  -o-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  -o-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
 }
 
 .hamburger--squeeze.is-active .hamburger-inner::after {
@@ -3775,6 +3775,13 @@ body.ready .site-wrapper {
 .partners-section__slider-arrows::before {
   top: 0;
   bottom: 0;
+}
+
+.partners-section__slider-arrows .slider-arrows__next::before,
+.partners-section__slider-arrows .slider-arrows__next::after,
+.partners-section__slider-arrows .slider-arrows__prev::before,
+.partners-section__slider-arrows .slider-arrows__prev::after {
+  background-position: 100% center;
 }
 
 .partners-section__slider .swiper-wrapper {

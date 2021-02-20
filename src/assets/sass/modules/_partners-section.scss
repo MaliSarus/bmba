@@ -43,6 +43,14 @@
         top: 0;
         bottom: 0;
       }
+      .slider-arrows{
+        &__next,&__prev
+        {
+          &::before,&::after{
+            background-position: 100% center;
+          }
+        }
+      }
       @media screen and (min-width: $xl-width) {
         display: none;
       }
