@@ -5,7 +5,13 @@ import { offsetTop } from "./helpers";
 import axios from "axios";
 
 const baseURL = 'https://bmba-ustluga.ru/ajax/form.php'
-
+function resetForm(form) {
+    const validInputs = form.querySelectorAll('.valid');
+    validInputs.forEach(input=>{
+        input.classList.remove('valid');
+    })
+    form.reset()
+}
 function requestPopupData(form) {
     return {
         ...getFormInformation(),
@@ -20,7 +26,7 @@ function requestPopupSuccess(form) {
     const requestPopup = getParents(form, document.querySelector('.request-popup'))
     const successPopup = document.querySelector('.success-popup');
     fadeOutEffect(requestPopup, function() {
-        form.reset();
+        resetForm(form)
         requestPopup.classList.remove('open');
         requestPopup.removeAttribute('style');
         successPopup.classList.add('open')
@@ -37,7 +43,7 @@ function requestSectionData(form) {
 }
 
 function requestSectionSuccess(form) {
-    form.reset();
+    resetForm(form)
     document.querySelector('.success-popup').classList.add('open')
     document.body.classList.add('hidden')
 }
@@ -116,9 +122,9 @@ export default function formInit() {
                             console.log(res)
                             if (res.status === 200 && res.data.status !== 'error') {
                                 switch (dataType) {
-                                    case "application":
-                                        requestPopupSuccess(form);
                                     case "request":
+                                        requestPopupSuccess(form);
+                                    case "application":
                                         requestSectionSuccess(form);
                                 }
                             } else {

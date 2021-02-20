@@ -1,4 +1,4 @@
-<section class="history-section with-lines" data-order="2">
+<section class="history-section with-lines" data-order="2" id="history">
     <div class="history-section__background-title background-title">
         <div class="container-fluid">
             <div class="row">
